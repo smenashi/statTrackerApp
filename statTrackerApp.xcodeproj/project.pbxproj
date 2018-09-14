@@ -12,7 +12,7 @@
 		8198238621484C8100E02A9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8198238421484C8100E02A9C /* Main.storyboard */; };
 		8198238821484C8200E02A9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8198238721484C8200E02A9C /* Assets.xcassets */; };
 		8198238B21484C8200E02A9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8198238921484C8200E02A9C /* LaunchScreen.storyboard */; };
-		AC00398A214B1A3E008BAF39 /* HockeyUI.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC003988214B1A3E008BAF39 /* HockeyUI.storyboard */; };
+		AC7CE6AB214B30AA008A8B51 /* HockeyUI.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC7CE6AA214B30AA008A8B51 /* HockeyUI.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +23,7 @@
 		8198238721484C8200E02A9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8198238A21484C8200E02A9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8198238C21484C8200E02A9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AC003989214B1A3E008BAF39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ../statAppUI/statTrackerApp/Base.lproj/HockeyUI.storyboard; sourceTree = "<group>"; };
+		AC7CE6AA214B30AA008A8B51 /* HockeyUI.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HockeyUI.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,7 +42,7 @@
 			children = (
 				8198237F21484C8100E02A9C /* statTrackerApp */,
 				8198237E21484C8100E02A9C /* Products */,
-				AC003988214B1A3E008BAF39 /* HockeyUI.storyboard */,
+				AC7CE6AA214B30AA008A8B51 /* HockeyUI.storyboard */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,7 +128,7 @@
 				8198238B21484C8200E02A9C /* LaunchScreen.storyboard in Resources */,
 				8198238821484C8200E02A9C /* Assets.xcassets in Resources */,
 				8198238621484C8100E02A9C /* Main.storyboard in Resources */,
-				AC00398A214B1A3E008BAF39 /* HockeyUI.storyboard in Resources */,
+				AC7CE6AB214B30AA008A8B51 /* HockeyUI.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,14 +161,6 @@
 				8198238A21484C8200E02A9C /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		AC003988214B1A3E008BAF39 /* HockeyUI.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AC003989214B1A3E008BAF39 /* Base */,
-			);
-			name = HockeyUI.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
