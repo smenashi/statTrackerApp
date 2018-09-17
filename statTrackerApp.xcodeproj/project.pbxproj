@@ -42,7 +42,6 @@
 			children = (
 				8198237F21484C8100E02A9C /* statTrackerApp */,
 				8198237E21484C8100E02A9C /* Products */,
-				AC7CE6AA214B30AA008A8B51 /* HockeyUI.storyboard */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +61,7 @@
 				8198238421484C8100E02A9C /* Main.storyboard */,
 				8198238721484C8200E02A9C /* Assets.xcassets */,
 				8198238921484C8200E02A9C /* LaunchScreen.storyboard */,
+				AC7CE6AA214B30AA008A8B51 /* HockeyUI.storyboard */,
 				8198238C21484C8200E02A9C /* Info.plist */,
 			);
 			path = statTrackerApp;
