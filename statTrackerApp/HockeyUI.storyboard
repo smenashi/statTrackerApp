@@ -551,13 +551,23 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ywx-16-qUI">
-                                <rect key="frame" x="27" y="31" width="91" height="30"/>
+                                <rect key="frame" x="27" y="37" width="91" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="ywx-16-qUI" secondAttribute="height" multiplier="91:30" id="cxh-gh-NOp"/>
+                                    <constraint firstAttribute="width" secondItem="ywx-16-qUI" secondAttribute="height" multiplier="91:30" id="7jo-6N-Ayd"/>
                                 </constraints>
                                 <state key="normal" title="CLOCK">
                                     <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Sq-Pj-PdZ">
+                                <rect key="frame" x="156" y="37" width="117" height="30"/>
+                                <color key="backgroundColor" red="0.71783095269999997" green="1" blue="0.8413570038" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="1Sq-Pj-PdZ" secondAttribute="height" multiplier="39:10" id="hkC-dC-afI"/>
+                                </constraints>
+                                <state key="normal" title="manPowerConfig">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
                         </subviews>
@@ -571,9 +581,9 @@
                             <constraint firstItem="JTW-WN-4cm" firstAttribute="width" secondItem="JTW-WN-4cm" secondAttribute="height" multiplier="10:9" id="4LI-s7-xD6"/>
                             <constraint firstItem="WD2-18-JCp" firstAttribute="leading" secondItem="ziq-6X-hXM" secondAttribute="trailing" constant="22" id="5RM-7f-fwb"/>
                             <constraint firstItem="PWP-yj-a90" firstAttribute="top" secondItem="tsX-TQ-VPM" secondAttribute="bottom" constant="28" id="6gg-iJ-owy"/>
+                            <constraint firstItem="xNz-v3-enX" firstAttribute="top" secondItem="ywx-16-qUI" secondAttribute="bottom" constant="20" id="6xS-f4-2HH"/>
                             <constraint firstItem="Da6-vA-l27" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="27" id="7U9-M9-Kba"/>
                             <constraint firstItem="DAi-1u-L8k" firstAttribute="leading" secondItem="xNz-v3-enX" secondAttribute="leading" id="7X8-9I-uza"/>
-                            <constraint firstItem="ywx-16-qUI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="27" id="7Xo-Ha-XtS"/>
                             <constraint firstItem="0mc-gG-HWH" firstAttribute="width" secondItem="0mc-gG-HWH" secondAttribute="height" multiplier="10:9" id="8bV-G9-iQR"/>
                             <constraint firstItem="e1q-vQ-go2" firstAttribute="top" secondItem="ebO-rA-K1B" secondAttribute="bottom" constant="37" id="8dj-J1-ZIR"/>
                             <constraint firstItem="0mc-gG-HWH" firstAttribute="leading" secondItem="GHj-WV-zrZ" secondAttribute="trailing" constant="22" id="9C8-ki-qhT"/>
@@ -605,11 +615,11 @@
                             <constraint firstItem="1bT-wq-nfr" firstAttribute="leading" secondItem="xA7-KS-kUN" secondAttribute="trailing" constant="22" id="Jdw-5F-Zr0"/>
                             <constraint firstItem="tsX-TQ-VPM" firstAttribute="top" secondItem="xA7-KS-kUN" secondAttribute="bottom" constant="28" id="Jz6-G9-KYb"/>
                             <constraint firstItem="zTm-xd-ces" firstAttribute="width" secondItem="zTm-xd-ces" secondAttribute="height" multiplier="10:9" id="Kqh-6H-u9K"/>
+                            <constraint firstItem="ywx-16-qUI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="27" id="KwG-AH-gqj"/>
                             <constraint firstItem="GHj-WV-zrZ" firstAttribute="baseline" secondItem="0mc-gG-HWH" secondAttribute="baseline" id="KxK-45-HGa"/>
                             <constraint firstItem="7LU-93-Dti" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="L81-Lr-ACg"/>
                             <constraint firstItem="GHj-WV-zrZ" firstAttribute="leading" secondItem="VNs-n8-Dej" secondAttribute="leading" id="LEM-il-iV8"/>
                             <constraint firstItem="sue-kp-ONa" firstAttribute="leading" secondItem="ZJO-hs-qth" secondAttribute="trailing" constant="108" id="LN2-gQ-iw3"/>
-                            <constraint firstItem="ywx-16-qUI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="11" id="LRa-R5-3dh"/>
                             <constraint firstItem="9Hx-Dw-aRi" firstAttribute="width" secondItem="9Hx-Dw-aRi" secondAttribute="height" multiplier="10:9" id="Lap-mc-NZZ"/>
                             <constraint firstItem="sue-kp-ONa" firstAttribute="leading" secondItem="9Hx-Dw-aRi" secondAttribute="leading" id="MAN-pc-a0C"/>
                             <constraint firstItem="80h-PI-YG2" firstAttribute="top" secondItem="a0C-a8-rrP" secondAttribute="bottom" constant="28" id="MWf-wD-E9M"/>
@@ -622,6 +632,7 @@
                             <constraint firstItem="9Hx-Dw-aRi" firstAttribute="leading" secondItem="0en-14-m7I" secondAttribute="trailing" constant="108" id="PUY-N9-xGE"/>
                             <constraint firstItem="tsX-TQ-VPM" firstAttribute="top" secondItem="xA7-KS-kUN" secondAttribute="bottom" constant="28" id="Pci-0G-zuj"/>
                             <constraint firstItem="ywe-Xe-YDI" firstAttribute="leading" secondItem="e1q-vQ-go2" secondAttribute="leading" id="Qa1-AI-0mL"/>
+                            <constraint firstItem="1Sq-Pj-PdZ" firstAttribute="leading" secondItem="ywx-16-qUI" secondAttribute="trailing" constant="38" id="RcM-1n-4Eg"/>
                             <constraint firstItem="9Hx-Dw-aRi" firstAttribute="top" secondItem="sue-kp-ONa" secondAttribute="bottom" constant="28" id="S0o-OT-aGO"/>
                             <constraint firstItem="5Dz-Pd-JAT" firstAttribute="top" secondItem="DAi-1u-L8k" secondAttribute="bottom" constant="28" id="S3S-nN-It7"/>
                             <constraint firstItem="9Hx-Dw-aRi" firstAttribute="width" secondItem="9Hx-Dw-aRi" secondAttribute="height" multiplier="10:9" id="SHz-hC-si9"/>
@@ -644,6 +655,7 @@
                             <constraint firstItem="3L2-yx-BEe" firstAttribute="leading" secondItem="Da6-vA-l27" secondAttribute="trailing" constant="114" id="a5o-vN-tjV"/>
                             <constraint firstItem="7LU-93-Dti" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="a5q-Uc-gfY"/>
                             <constraint firstItem="ye6-Fv-qDf" firstAttribute="top" secondItem="49o-r3-KJ2" secondAttribute="bottom" constant="52" id="a7e-at-srr"/>
+                            <constraint firstItem="xA7-KS-kUN" firstAttribute="top" secondItem="1Sq-Pj-PdZ" secondAttribute="bottom" constant="20" id="aDf-Wk-8C0"/>
                             <constraint firstItem="ebO-rA-K1B" firstAttribute="leading" secondItem="k6J-xL-Zip" secondAttribute="leading" id="aNq-Xq-xkZ"/>
                             <constraint firstItem="tsX-TQ-VPM" firstAttribute="leading" secondItem="DAi-1u-L8k" secondAttribute="trailing" constant="22" id="azS-oc-FRQ"/>
                             <constraint firstItem="sue-kp-ONa" firstAttribute="width" secondItem="sue-kp-ONa" secondAttribute="height" multiplier="10:9" id="bG5-o0-99r"/>
@@ -660,7 +672,6 @@
                             <constraint firstItem="sue-kp-ONa" firstAttribute="width" secondItem="sue-kp-ONa" secondAttribute="height" multiplier="10:9" id="fJC-LX-vNL"/>
                             <constraint firstItem="80h-PI-YG2" firstAttribute="top" secondItem="a0C-a8-rrP" secondAttribute="bottom" constant="28" id="ffQ-ON-1JP"/>
                             <constraint firstItem="0mc-gG-HWH" firstAttribute="width" secondItem="0mc-gG-HWH" secondAttribute="height" multiplier="10:9" id="gOH-Lp-Tm0"/>
-                            <constraint firstItem="xNz-v3-enX" firstAttribute="top" secondItem="ywx-16-qUI" secondAttribute="bottom" constant="26" id="ghN-ct-TwU"/>
                             <constraint firstItem="sue-kp-ONa" firstAttribute="baseline" secondItem="JTW-WN-4cm" secondAttribute="baseline" id="hFK-f0-BIn"/>
                             <constraint firstItem="xA7-KS-kUN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="67" id="hbA-Dm-zbK"/>
                             <constraint firstItem="GHj-WV-zrZ" firstAttribute="top" secondItem="ziq-6X-hXM" secondAttribute="bottom" constant="28" id="iXb-Vw-uA8"/>
@@ -724,6 +735,7 @@
                         <outlet property="Player1" destination="xNz-v3-enX" id="xPe-Z8-INF"/>
                         <outlet property="Player2" destination="xA7-KS-kUN" id="0yO-uY-ZBf"/>
                         <outlet property="gameClock" destination="ywx-16-qUI" id="BUW-Cm-ftk"/>
+                        <outlet property="manPowerConfig" destination="1Sq-Pj-PdZ" id="FVi-qk-Zi0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

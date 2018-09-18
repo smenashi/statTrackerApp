@@ -19,6 +19,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var gameClock: UIButton!
     /////////////////////////////////////////
     
+    // Man Power Configurations Buttons /////
+    @IBOutlet weak var manPowerConfig: UIButton!
+    /////////////////////////////////////////
+    
     // Player buttons ///////////////////////
     @IBOutlet weak var Player1: UIButton!
     @IBOutlet weak var Player2: UIButton!
