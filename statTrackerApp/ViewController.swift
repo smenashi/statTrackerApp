@@ -14,6 +14,11 @@ class ViewController: UIViewController {
     var countStr = ""
 
     @IBOutlet weak var displayCount: UILabel!
+    
+    // Game Clock ///////////////////////////
+    @IBOutlet weak var gameClock: UIButton!
+    /////////////////////////////////////////
+    
     // Player buttons ///////////////////////
     @IBOutlet weak var Player1: UIButton!
     @IBOutlet weak var Player2: UIButton!
