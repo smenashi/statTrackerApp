@@ -20,7 +20,12 @@ class ViewController: UIViewController {
     /////////////////////////////////////////
     
     // Man Power Configurations Buttons /////
-    @IBOutlet weak var manPowerConfig: UIButton!
+    @IBOutlet weak var manPow5v5: UIButton!
+    @IBOutlet weak var manPow5v4: UIButton!
+    @IBOutlet weak var manPow5v3: UIButton!
+    @IBOutlet weak var manPow4v5: UIButton!
+    @IBOutlet weak var manPow3v5: UIButton!
+    @IBOutlet weak var manPow3v3: UIButton!
     /////////////////////////////////////////
     
     // Player buttons ///////////////////////
@@ -49,24 +54,21 @@ class ViewController: UIViewController {
     /////////////////////////////////////////
     
     // Line buttons /////////////////////////
-    @IBOutlet weak var Line1: UIButton!
-    @IBOutlet weak var Line2: UIButton!
-    @IBOutlet weak var Line3: UIButton!
-    @IBOutlet weak var Line4: UIButton!
-    @IBOutlet weak var Line5: UIButton!
-    @IBOutlet weak var Line6: UIButton!
-    @IBOutlet weak var Line7: UIButton!
-    @IBOutlet weak var Line8: UIButton!
-    @IBOutlet weak var Line9: UIButton!
-    @IBOutlet weak var Line10: UIButton!
+    @IBOutlet weak var f1: UIButton!
+    @IBOutlet weak var f2: UIButton!
+    @IBOutlet weak var f3: UIButton!
+    @IBOutlet weak var f4: UIButton!
+    @IBOutlet weak var d1: UIButton!
+    @IBOutlet weak var d2: UIButton!
+    @IBOutlet weak var d3: UIButton!
     /////////////////////////////////////////
     
     // Event buttons ////////////////////////
-    @IBOutlet weak var Event1: UIButton!
-    @IBOutlet weak var Event2: UIButton!
-    @IBOutlet weak var Event3: UIButton!
-    @IBOutlet weak var Event4: UIButton!
-    @IBOutlet weak var Event5: UIButton!
+    @IBOutlet weak var shotFor_button: UIButton!
+    @IBOutlet weak var shotAgainst_button: UIButton!
+    @IBOutlet weak var goalsFor_button: UIButton!
+    @IBOutlet weak var goalAgainst_button: UIButton!
+    @IBOutlet weak var penalties_button: UIButton!
     /////////////////////////////////////////
     
     
