@@ -97,3 +97,35 @@ class ViewController: UIViewController {
 
 }
 
+/*     private func loadHockeyGame() {
+ let hockeyViewController = HockeyViewController()
+ addChild(hockeyViewController)
+ }
+ 
+ override func viewDidLoad() {
+ super.viewDidLoad()
+ }
+ 
+ @IBAction func startGame(_ sender: Any) {
+ loadHockeyGame()
+ }
+ }
+ 
+ extension UIViewController {
+ func addChild(_ child: UIViewController) {
+ addChildViewController(child)
+ view.addSubview(child.view)
+ child.didMove(toParentViewController: self)
+ }
+ 
+ func removeChild() {
+ guard parent != nil else {
+ return
+ }
+ 
+ willMove(toParentViewController: nil)
+ removeFromParentViewController()
+ view.removeFromSuperview()
+ }
+ }*/
+

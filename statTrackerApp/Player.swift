@@ -77,6 +77,7 @@ class Player {
     
 }
 
+// making class hashable to collect in set
 extension Player: Equatable {
     static func == (lhs: Player, rhs: Player) -> Bool {
         return lhs.enabled == rhs.enabled &&
