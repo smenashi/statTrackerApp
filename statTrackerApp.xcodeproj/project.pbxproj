@@ -7,19 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		811543FC215803C600ACFF97 /* game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811543FB215803C600ACFF97 /* game.swift */; };
 		8198238121484C8100E02A9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8198238021484C8100E02A9C /* AppDelegate.swift */; };
 		8198238321484C8100E02A9C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8198238221484C8100E02A9C /* ViewController.swift */; };
 		8198238621484C8100E02A9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8198238421484C8100E02A9C /* Main.storyboard */; };
 		8198238821484C8200E02A9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8198238721484C8200E02A9C /* Assets.xcassets */; };
 		8198238B21484C8200E02A9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8198238921484C8200E02A9C /* LaunchScreen.storyboard */; };
-		81B9C7712155797C004C3F15 /* player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B9C7702155797C004C3F15 /* player.swift */; };
 		81B9C77921557DDC004C3F15 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81B9C77821557DDC004C3F15 /* SQLite.framework */; };
 		AC7CE6AB214B30AA008A8B51 /* HockeyUI.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC7CE6AA214B30AA008A8B51 /* HockeyUI.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		811543FB215803C600ACFF97 /* game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = game.swift; sourceTree = "<group>"; };
 		8198237D21484C8100E02A9C /* statTrackerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = statTrackerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8198238021484C8100E02A9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8198238221484C8100E02A9C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -27,7 +24,6 @@
 		8198238721484C8200E02A9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8198238A21484C8200E02A9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8198238C21484C8200E02A9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		81B9C7702155797C004C3F15 /* player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = player.swift; sourceTree = "<group>"; };
 		81B9C77421557D45004C3F15 /* SQLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SQLite.framework; path = ../../Carthage/Build/iOS/SQLite.framework; sourceTree = "<group>"; };
 		81B9C77621557DC1004C3F15 /* SQLite.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SQLite.framework.dSYM; path = Carthage/Build/iOS/SQLite.framework.dSYM; sourceTree = "<group>"; };
 		81B9C77821557DDC004C3F15 /* SQLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SQLite.framework; path = Carthage/Build/iOS/SQLite.framework; sourceTree = "<group>"; };
@@ -68,8 +64,6 @@
 			children = (
 				8198238021484C8100E02A9C /* AppDelegate.swift */,
 				8198238221484C8100E02A9C /* ViewController.swift */,
-				81B9C7702155797C004C3F15 /* player.swift */,
-				811543FB215803C600ACFF97 /* game.swift */,
 				8198238421484C8100E02A9C /* Main.storyboard */,
 				8198238721484C8200E02A9C /* Assets.xcassets */,
 				8198238921484C8200E02A9C /* LaunchScreen.storyboard */,
@@ -180,9 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8198238321484C8100E02A9C /* ViewController.swift in Sources */,
-				81B9C7712155797C004C3F15 /* player.swift in Sources */,
 				8198238121484C8100E02A9C /* AppDelegate.swift in Sources */,
-				811543FC215803C600ACFF97 /* game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
