@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		811544202159689000ACFF97 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8115441F2159689000ACFF97 /* Player.swift */; };
+		81154422215968B800ACFF97 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81154421215968B800ACFF97 /* Game.swift */; };
 		8198238121484C8100E02A9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8198238021484C8100E02A9C /* AppDelegate.swift */; };
 		8198238321484C8100E02A9C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8198238221484C8100E02A9C /* ViewController.swift */; };
 		8198238621484C8100E02A9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8198238421484C8100E02A9C /* Main.storyboard */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8115441F2159689000ACFF97 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Player.swift; path = ../Player.swift; sourceTree = "<group>"; };
+		81154421215968B800ACFF97 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		8198237D21484C8100E02A9C /* statTrackerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = statTrackerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8198238021484C8100E02A9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8198238221484C8100E02A9C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +66,8 @@
 		8198237F21484C8100E02A9C /* statTrackerApp */ = {
 			isa = PBXGroup;
 			children = (
+				8115441F2159689000ACFF97 /* Player.swift */,
+				81154421215968B800ACFF97 /* Game.swift */,
 				8198238021484C8100E02A9C /* AppDelegate.swift */,
 				8198238221484C8100E02A9C /* ViewController.swift */,
 				8198238421484C8100E02A9C /* Main.storyboard */,
@@ -174,7 +180,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8198238321484C8100E02A9C /* ViewController.swift in Sources */,
+				811544202159689000ACFF97 /* Player.swift in Sources */,
 				8198238121484C8100E02A9C /* AppDelegate.swift in Sources */,
+				81154422215968B800ACFF97 /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
