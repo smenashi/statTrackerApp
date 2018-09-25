@@ -416,6 +416,9 @@
                                 <state key="normal" title="Shot For">
                                     <color key="titleColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="onClickShotForButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hWz-bC-uvy"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ywe-Xe-YDI">
                                 <rect key="frame" x="408" y="287" width="105" height="37"/>

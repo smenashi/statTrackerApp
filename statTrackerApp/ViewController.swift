@@ -93,8 +93,35 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // hidden until drop down buttons {Shot For || Goal For} are pressed
         playersDropDown.isHidden = true
-        print("Hello, World!")
-        print(playersList.count)
+        // hardcoding initial players visuals on ice for demo purposes
+        Player1.backgroundColor = .green
+        Player2.backgroundColor = .green
+        Player3.backgroundColor = .green
+        Player13.backgroundColor = .green
+        Player14.backgroundColor = .green
+        Player20.backgroundColor = .green
+        
+        // hardcoding starting manpower config for demo purposes
+        manPow3v5.alpha = 1
+        manPow3v3.alpha = 0.5
+        manPow4v5.alpha = 0.5
+        manPow5v3.alpha = 0.5
+        manPow5v4.alpha = 0.5
+        manPow5v5.alpha = 0.5
+        
+        //print("Hello, World!")
+        // NOTE: encounters error here, need to solve conflicting constraints
+        // that don't show up in the XCode UI
+        //print(playersList.count)
+    }
+    
+    @IBAction func onClickShotForButton(_ sender: Any) {
+        if playersDropDown.isHidden{
+            animate(toggle: true, type: goalForButton)
+        }
+        else{
+            animate(toggle: false, type: goalForButton)
+        }
     }
     
     @IBAction func onClickGoalForButton(_ sender: Any) {
