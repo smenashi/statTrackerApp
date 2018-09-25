@@ -28,12 +28,11 @@ class Player {
     var penalty = 0
     
     /*
-     // database attributes
-     let firstName = Expression<String?>("firstName")
-     let lastName = Expression<String?>("lastName")
-     let jerseyNumber = Expression<Int64?>("jerseyNumber")
-     
-     */
+    // database attributes
+    let firstName = Expression<String?>("firstName")
+    let lastName = Expression<String?>("lastName")
+    let jerseyNumber = Expression<Int64?>("jerseyNumber")
+    */
     
     init(firstName:String, lastName:String, jerseyNum:Int) {
         _firstName = firstName

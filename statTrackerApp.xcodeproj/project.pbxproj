@@ -15,7 +15,6 @@
 		8198238621484C8100E02A9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8198238421484C8100E02A9C /* Main.storyboard */; };
 		8198238821484C8200E02A9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8198238721484C8200E02A9C /* Assets.xcassets */; };
 		8198238B21484C8200E02A9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8198238921484C8200E02A9C /* LaunchScreen.storyboard */; };
-		81B9C77921557DDC004C3F15 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81B9C77821557DDC004C3F15 /* SQLite.framework */; };
 		AC7CE6AB214B30AA008A8B51 /* HockeyUI.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC7CE6AA214B30AA008A8B51 /* HockeyUI.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -30,9 +29,6 @@
 		8198238721484C8200E02A9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8198238A21484C8200E02A9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8198238C21484C8200E02A9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		81B9C77421557D45004C3F15 /* SQLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SQLite.framework; path = ../../Carthage/Build/iOS/SQLite.framework; sourceTree = "<group>"; };
-		81B9C77621557DC1004C3F15 /* SQLite.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SQLite.framework.dSYM; path = Carthage/Build/iOS/SQLite.framework.dSYM; sourceTree = "<group>"; };
-		81B9C77821557DDC004C3F15 /* SQLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SQLite.framework; path = Carthage/Build/iOS/SQLite.framework; sourceTree = "<group>"; };
 		AC7CE6AA214B30AA008A8B51 /* HockeyUI.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HockeyUI.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -41,7 +37,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81B9C77921557DDC004C3F15 /* SQLite.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,7 +48,6 @@
 			children = (
 				8198237F21484C8100E02A9C /* statTrackerApp */,
 				8198237E21484C8100E02A9C /* Products */,
-				81B9C77321557D45004C3F15 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,16 +76,6 @@
 			path = statTrackerApp;
 			sourceTree = "<group>";
 		};
-		81B9C77321557D45004C3F15 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				81B9C77821557DDC004C3F15 /* SQLite.framework */,
-				81B9C77621557DC1004C3F15 /* SQLite.framework.dSYM */,
-				81B9C77421557D45004C3F15 /* SQLite.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -102,7 +86,6 @@
 				8198237921484C8100E02A9C /* Sources */,
 				8198237A21484C8100E02A9C /* Frameworks */,
 				8198237B21484C8100E02A9C /* Resources */,
-				81B9C77221557CB2004C3F15 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -160,23 +143,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		81B9C77221557CB2004C3F15 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/SQLite.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8198237921484C8100E02A9C /* Sources */ = {
