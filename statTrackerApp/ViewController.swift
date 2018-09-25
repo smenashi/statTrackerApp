@@ -14,9 +14,14 @@ class ViewController: UIViewController {
     var countStr = ""
 
     @IBOutlet weak var displayCount: UILabel!
-    
-    // Game Clock ///////////////////////////
+   
+    // Game Clock and Time //////////////////
     @IBOutlet weak var gameClock: UIButton!
+    @IBOutlet weak var gameTime: UILabel!
+    
+    @IBAction func gameClockPressed(_ sender: UIButton) {
+        // stops/starts time when pressed
+    }
     /////////////////////////////////////////
     
     // Man Power Configurations Buttons /////
@@ -64,19 +69,76 @@ class ViewController: UIViewController {
     /////////////////////////////////////////
     
     // Event buttons ////////////////////////
-    @IBOutlet weak var shotFor_button: UIButton!
-    @IBOutlet weak var shotAgainst_button: UIButton!
-    @IBOutlet weak var goalsFor_button: UIButton!
-    @IBOutlet weak var goalAgainst_button: UIButton!
-    @IBOutlet weak var penalties_button: UIButton!
+    @IBOutlet weak var shotForButton: UIButton!
+    @IBOutlet weak var shotAgainstButton: UIButton!
+    @IBOutlet weak var goalForButton: UIButton!
+    @IBOutlet weak var goalAgainstButton: UIButton!
+    @IBOutlet weak var penaltiesButton: UIButton!
+
     /////////////////////////////////////////
+    
+    
+    // Goal For functions ///////////////////////////////////////////////////////
+    // ref:
+    // https://www.youtube.com/watch?v=b1LiBiLjca4&index=13&list=PLWVdXdO5KDTwyK5ic9OYI49_EpkEP4v8M&t=0s
+
+    // table containing current players on ice for drop down menus
+    
+    @IBOutlet weak var playersDropDown: UITableViewCell!
+    // hardcoding players for demo purposes: will be in each cell of drop-down menu
+    var playersList = ["player1", "player2", "player3", "player4", "player5"]
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        // hidden until drop down buttons {Shot For || Goal For} are pressed
+        playersDropDown.isHidden = true
+        print("Hello, World!")
+        print(playersList.count)
     }
-
+    
+    @IBAction func onClickGoalForButton(_ sender: Any) {
+        // animation plays that "drops down" the table view
+        if playersDropDown.isHidden{
+            animate(toggle: true, type: goalForButton)
+        }
+        else{
+            animate(toggle: false, type: goalForButton)
+        }
+        
+    }
+    
+//    @IBAction func onClickGoalFor(_ sender: Any) {
+//        // animation plays that "drops down" the table view
+//        if playersOnIce.isHidden{
+//            animate(toggle: true, type: goalForButton)
+//        }
+//        else{
+//            animate(toggle: false, type: goalForButton)
+//        }
+//
+//    }
+    
+    func animate(toggle: Bool, type: UIButton){
+        // animation handler for menu drop, takes toggle param and ui button that triggers
+        // animation
+        if type == goalForButton {
+            if toggle {
+                UIView.animate(withDuration: 0.3) {
+                    self.playersDropDown.isHidden = false
+                }
+            }
+            else {
+                UIView.animate(withDuration: 0.3) {
+                    self.playersDropDown.isHidden = true
+                }
+                
+            }
+        }
+    }
+    ////////////////////////////////////////////////////////////
+    
+    
     @IBAction func addPressed(_ sender: Any) {
         count += 1
     }
@@ -96,6 +158,34 @@ class ViewController: UIViewController {
      */
 
 }
+
+// extension for ViewController to properly handle drop-down menu
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    // extends ViewController with proper functionality to handle
+    // the drop-down menu
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // number of cells in table: depends on number of players on ice (NOT harcoded 5)
+        print(playersList.count)
+        return playersList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "player", for: indexPath)
+        // creates one cell #of playerList.count times, with label corresponding
+        // to the name in each index
+        
+        cell.textLabel?.text = playersList[indexPath.row]
+        return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        animate(toggle: false, type: goalForButton)
+        // access the cell in the table selected via: playerList[indexPath.row]
+    }
+}
+
+
+
+
 
 /*     private func loadHockeyGame() {
  let hockeyViewController = HockeyViewController()
