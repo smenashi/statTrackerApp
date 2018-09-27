@@ -447,6 +447,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         animate(toggle: false, type: goalForButton)
         // access the cell in the table selected via: playerList[indexPath.row]
+        // this is where the data for the selected players is handled:
+        // Ex: the player selected under Goal For will get +1 to their goals made
+        // Ex: the player selected under Shot For will get +1 to their shots made
     }
 }
 
