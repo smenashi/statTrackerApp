@@ -24,6 +24,15 @@ class ViewController: UIViewController {
     // Game Clock and Time //////////////////
     @IBOutlet weak var gameClock: UIButton!
     @IBOutlet weak var gameTime: UILabel!
+    /////////////////////////////////////////
+    
+    
+    // Period Buttons ///////////////////////
+    // set current period.alpha = 1.0, all other periods alpha = 0.5
+    @IBOutlet weak var period1: UIButton!
+    @IBOutlet weak var period2: UIButton!
+    @IBOutlet weak var period3: UIButton!
+    @IBOutlet weak var overtime: UIButton!
     
     /////////////////////////////////////////
     
@@ -331,8 +340,13 @@ class ViewController: UIViewController {
     // -------------------------------------------------------------------------------
 
     
+    // -------------------------------------------------------------------------------
+    // End Game Button: this ends the game
+    @IBAction func onClickEndGame(_ sender: Any) {
+        // cleanup and data prep occurs
+    }
     
-    
+    // -------------------------------------------------------------------------------
 
     // ~~~~~~~~~~~~~~~~~~~~~~FUNC BUTTONS END ~~~~~~~~~~~~~~~~~~~~~~~~~
     
