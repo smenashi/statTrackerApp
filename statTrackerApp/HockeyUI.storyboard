@@ -720,6 +720,20 @@
                                     <action selector="onClickEndGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A6s-fD-REm"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EJN-8s-vE9">
+                                <rect key="frame" x="21" y="742" width="101" height="115"/>
+                                <color key="backgroundColor" red="0.71783095269999997" green="1" blue="0.8413570038" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="115" id="4Xh-mF-26k"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="101" id="PUc-ey-Ajn"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="102" id="aBC-6T-llM"/>
+                                    <constraint firstAttribute="width" constant="101" id="aJh-mb-eG1"/>
+                                </constraints>
+                                <state key="normal" title="End Period"/>
+                                <connections>
+                                    <action selector="onClickEndPeriod:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ieP-eP-7rV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -733,6 +747,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gQ4-Vf-MnO" secondAttribute="trailing" constant="20" id="3ez-vC-l1o"/>
                             <constraint firstItem="Vxs-Dc-lRy" firstAttribute="trailing" secondItem="ywe-Xe-YDI" secondAttribute="trailing" id="6bQ-gK-OZ4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ON8-Js-vkl" secondAttribute="trailing" constant="174" id="6lY-4r-6MB"/>
+                            <constraint firstItem="0E7-tH-SPG" firstAttribute="top" secondItem="EJN-8s-vE9" secondAttribute="bottom" constant="32" id="79r-Ba-IjU"/>
                             <constraint firstItem="ebO-rA-K1B" firstAttribute="height" secondItem="Vxs-Dc-lRy" secondAttribute="height" id="7Pu-YC-t7J"/>
                             <constraint firstItem="4tv-d0-WDL" firstAttribute="leading" secondItem="zGH-WN-koZ" secondAttribute="trailing" constant="37" id="8KX-ZJ-Ehh"/>
                             <constraint firstItem="zGH-WN-koZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="8gw-gF-415"/>
@@ -779,6 +794,7 @@
                             <constraint firstItem="e1q-vQ-go2" firstAttribute="top" secondItem="ebO-rA-K1B" secondAttribute="bottom" constant="24" id="lbF-h6-SAg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0E7-tH-SPG" secondAttribute="bottom" constant="20" id="lcT-dt-tHT"/>
                             <constraint firstItem="fHq-vh-6K2" firstAttribute="leading" secondItem="j6B-du-Lii" secondAttribute="trailing" constant="31" id="n0v-vQ-eFa"/>
+                            <constraint firstItem="EJN-8s-vE9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="21" id="oP4-W1-xH3"/>
                             <constraint firstItem="lOM-pC-QtA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="orW-eP-hLU"/>
                             <constraint firstItem="e1q-vQ-go2" firstAttribute="leading" secondItem="ebO-rA-K1B" secondAttribute="leading" id="pnA-yf-ZGT"/>
                             <constraint firstItem="k6J-xL-Zip" firstAttribute="height" secondItem="Vxs-Dc-lRy" secondAttribute="height" id="qSV-Ex-Xp9"/>

@@ -92,7 +92,7 @@ class ViewController: UIViewController {
     // OUTLETS END !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     
     
-    // FUNC BUTTONS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    // FUNC BUTTONS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     // this section contains all the functions linked to all the buttons
     // that have some functionality linked to them for quick reference
     // and use down the line
@@ -242,8 +242,7 @@ class ViewController: UIViewController {
     //                          accordingly
     // -------------------------------------------------------------------------------
     @IBAction func onClickShotForButton(_ sender: Any) {
-        // Shot For button clicked:
-        
+        // Shot For button clicked: update relevant stats to the players on ice, along with other stats
         // animations for drop-down menu ---------------
         if playersDropDown.isHidden{
             animate(toggle: true, type: goalForButton)
@@ -251,7 +250,8 @@ class ViewController: UIViewController {
         else{
             animate(toggle: false, type: goalForButton)
         }
-        // ---------------------------------------------
+        
+        // execute relevant stat updates here
     }
     @IBAction func onClickShotAgainst(_ sender: Any) {
         // shot against clicked: update relevant stats to players on ice,
@@ -259,10 +259,12 @@ class ViewController: UIViewController {
         
     }
     
-    
+
     @IBAction func onClickGoalForButton(_ sender: Any) {
         // Goal For button clicked: update relevant stats to current players on ice
-        //
+        // ref:
+        // https://www.youtube.com/watch?v=b1LiBiLjca4&index=13&list=PLWVdXdO5KDTwyK5ic9OYI49_EpkEP4v8M&t=0s
+
         
         // animation plays that "drops down" the table view --
         if playersDropDown.isHidden{
@@ -271,11 +273,12 @@ class ViewController: UIViewController {
         else{
             animate(toggle: false, type: goalForButton)
         }
-        // ---------------------------------------------------
         
+        // execute relevant stat updates here
         
         
     }
+    
     @IBAction func onClickGoalAgainst(_ sender: Any) {
         // Goal Against button clicked: update relevant stats to players on ice
         //                              and any other stats
@@ -334,29 +337,101 @@ class ViewController: UIViewController {
     
     // -------------------------------------------------------------------------------
     // Game Clock Button: this starts/stops the countdown timer for the game
+    // ref: https://medium.com/ios-os-x-development/build-an-stopwatch-with-swift-3-0-c7040818a10f
+    
+
+    // running value that will be updated
+    var gameSeconds = 1200                  // this will be converted and formatted appropriately
+    // init timer object
+    var gameTimer = Timer()
+    // to reset timer whenever a period ends
+    var newPeriod = true
+    
+    // boolean making sure only one timer is created
+    var isTimerRunning = false
+    
+    // gates game clock button usage
+    var clockPaused = true
+    
     @IBAction func onClickGameClock(_ sender: Any) {
         // CLOCK button clicked:
+        
+        if newPeriod == true{   // check if we started a new period
+            gameSeconds = 1200  // reset time
+            newPeriod = false   // update flag
+        }
+        
+        if self.clockPaused == false{
+            // pauses the clock and changes boolean value
+            gameTimer.invalidate()
+            isTimerRunning = true
+            self.clockPaused = true
+        }
+            
+        else{
+            // continues running the timer
+            runTimer()
+            self.clockPaused = false
+            isTimerRunning = true
+        }
     }
+    
+    func runTimer() {
+        // runs the timer countdown
+        gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(ViewController.updateTimer)), userInfo: nil, repeats: true)
+        isTimerRunning = true
+    }
+    
+    @objc func updateTimer() {
+        // updates the values displayed on the game time label
+        gameSeconds -= 1
+        // update label with properly-formatted version:
+        gameTime.text = formatTime(time: TimeInterval(gameSeconds))
+    }
+    
+    func formatTime(time:TimeInterval) -> String{
+            // formats the time on the time label to the desired format: hh:mm:ss
+            // standard modular arithmetic to derive hours, minutes, seconds from given seconds
+            let hours = Int(time) / 3600
+            let minutes = Int(time) / 60 % 60
+            let seconds = Int(time) % 60
+            
+            // string will be formatted with 2 digits for each of the values derived above
+            return String(format:"%02i:%02i:%02i", hours, minutes, seconds)
+    }
+    
     // -------------------------------------------------------------------------------
-
+    // End Period Button:   ends the period, resets timer
+    //
+    // Cosmetically:        - change .alpha of Period Buttons appropriately
+    //
+    // Logically:           - reset timer
+    //                      - update stats accordingly
+    // -------------------------------------------------------------------------------
+    @IBAction func onClickEndPeriod(_ sender: Any) {
+        // resets timer to 00:20:00
+        gameTimer.invalidate()              // stop timer
+        let initSeconds = 1200
+        gameTime.text = formatTime(time: TimeInterval(initSeconds)) // reset label
+        isTimerRunning = false
+        newPeriod = true
+        self.clockPaused = true
+        
+        // execute relevant stat-related logic for end of period here
+    }
     
     // -------------------------------------------------------------------------------
     // End Game Button: this ends the game
     @IBAction func onClickEndGame(_ sender: Any) {
-        // cleanup and data prep occurs
+        // cleanup and data prep occurs// -------------------------------------------------------------------------------
     }
     
-    // -------------------------------------------------------------------------------
-
-    // ~~~~~~~~~~~~~~~~~~~~~~FUNC BUTTONS END ~~~~~~~~~~~~~~~~~~~~~~~~~
+    // ~~~~~~~~~~~~~~~~~~~~~~FUNC BUTTONS END ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     
-    // Goal For functions ///////////////////////////////////////////////////////
-    // ref:
-    // https://www.youtube.com/watch?v=b1LiBiLjca4&index=13&list=PLWVdXdO5KDTwyK5ic9OYI49_EpkEP4v8M&t=0s
-
+    
     // table containing current players on ice for drop down menus
-    
     @IBOutlet weak var playersDropDown: UITableViewCell!
+    
     // hardcoding players for demo purposes: will be in each cell of drop-down menu
     var playersList = ["player1", "player2", "player3", "player4", "player5"]
     
