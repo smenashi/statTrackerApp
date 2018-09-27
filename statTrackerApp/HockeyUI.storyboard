@@ -32,6 +32,9 @@
                                 <state key="normal" title="F2">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="clickF2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F0z-Qu-Qai"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HjE-iS-Woq">
                                 <rect key="frame" x="21" y="327" width="50" height="30"/>
@@ -40,6 +43,9 @@
                                 <state key="normal" title="F3">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="clickF3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JxB-VW-d8j"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hEk-gE-5nK">
                                 <rect key="frame" x="21" y="409" width="50" height="30"/>
@@ -48,6 +54,9 @@
                                 <state key="normal" title="F4">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="clickF4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rR1-E1-vPi"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CY7-hX-zYq">
                                 <rect key="frame" x="21" y="491" width="50" height="30"/>
@@ -56,6 +65,9 @@
                                 <state key="normal" title="D1">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="clickD1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="f2a-Tg-Cu8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ibe-x0-wgt">
                                 <rect key="frame" x="21" y="573" width="50" height="30"/>
@@ -64,6 +76,9 @@
                                 <state key="normal" title="D2">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="clickD2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gld-pk-rjG"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rsj-Ej-oP6">
                                 <rect key="frame" x="21" y="655" width="50" height="30"/>
@@ -72,6 +87,9 @@
                                 <state key="normal" title="D3">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="clickD3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qWi-4X-utl"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xNz-v3-enX">
                                 <rect key="frame" x="103" y="151" width="61" height="52"/>
@@ -87,6 +105,9 @@
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <connections>
+                                    <action selector="clickPlayer1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qWD-ey-QzZ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xA7-KS-kUN">
                                 <rect key="frame" x="185" y="151" width="61" height="52"/>
@@ -103,6 +124,9 @@
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <connections>
+                                    <action selector="clickPlayer2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mXO-pL-36U"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1bT-wq-nfr">
                                 <rect key="frame" x="266" y="151" width="61" height="52"/>
@@ -119,6 +143,9 @@
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <connections>
+                                    <action selector="clickPlayer3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MmO-pa-Alw"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DAi-1u-L8k">
                                 <rect key="frame" x="103" y="234" width="61" height="52"/>
@@ -134,6 +161,9 @@
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <connections>
+                                    <action selector="clickPlayer4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1rL-hY-gzA"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tsX-TQ-VPM">
                                 <rect key="frame" x="185" y="234" width="61" height="52"/>
@@ -150,6 +180,9 @@
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <connections>
+                                    <action selector="clickPlayer5:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KSC-hb-cRc"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i6k-jU-Bj7">
                                 <rect key="frame" x="266" y="234" width="61" height="52"/>
@@ -166,6 +199,9 @@
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <connections>
+                                    <action selector="clickPlayer6:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cYq-oW-627"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Dz-Pd-JAT">
                                 <rect key="frame" x="103" y="316" width="61" height="52"/>
@@ -181,6 +217,9 @@
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <connections>
+                                    <action selector="clickPlayer7:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VPh-Wx-CCZ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PWP-yj-a90">
                                 <rect key="frame" x="185" y="316" width="61" height="52"/>
@@ -197,6 +236,9 @@
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <connections>
+                                    <action selector="clickPlayer8:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5xY-W0-SxC"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a0C-a8-rrP">
                                 <rect key="frame" x="266" y="316" width="61" height="52"/>
@@ -213,6 +255,9 @@
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <connections>
+                                    <action selector="clickPlayer9:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ClY-Xx-YyR"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zTm-xd-ces">
                                 <rect key="frame" x="185" y="398" width="61" height="52"/>
@@ -229,6 +274,9 @@
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <connections>
+                                    <action selector="clickPlayer11:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r5d-vl-rbG"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="thW-CL-3sC">
                                 <rect key="frame" x="103" y="398" width="61" height="52"/>
@@ -244,6 +292,9 @@
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <connections>
+                                    <action selector="clickPlayer10:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dPM-vg-3hF"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WD2-18-JCp">
                                 <rect key="frame" x="227" y="480" width="60" height="52"/>
@@ -260,6 +311,9 @@
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <connections>
+                                    <action selector="clickPlayer14:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XHg-fN-b9r"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ziq-6X-hXM">
                                 <rect key="frame" x="145" y="480" width="61" height="52"/>
@@ -275,6 +329,9 @@
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <connections>
+                                    <action selector="clickPlayer13:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YHA-VQ-dZH"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0mc-gG-HWH">
                                 <rect key="frame" x="227" y="562" width="60" height="52"/>
@@ -291,6 +348,9 @@
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <connections>
+                                    <action selector="clickPlayer16:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n11-4j-aSe"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GHj-WV-zrZ">
                                 <rect key="frame" x="145" y="562" width="61" height="52"/>
@@ -306,6 +366,9 @@
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <connections>
+                                    <action selector="clickPlayer15:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1eQ-fY-h4c"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1xr-Sj-Q6N">
                                 <rect key="frame" x="227" y="644" width="60" height="52"/>
@@ -322,6 +385,9 @@
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <connections>
+                                    <action selector="clickPlayer18:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kak-Us-URW"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sue-kp-ONa">
                                 <rect key="frame" x="185" y="725" width="61" height="54"/>
@@ -338,6 +404,9 @@
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <connections>
+                                    <action selector="clickPlayer19:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m2k-61-cyk"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VNs-n8-Dej">
                                 <rect key="frame" x="145" y="644" width="61" height="52"/>
@@ -353,6 +422,9 @@
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <connections>
+                                    <action selector="clickPlayer17:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aoD-kD-vsr"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Hx-Dw-aRi">
                                 <rect key="frame" x="185" y="809" width="61" height="52"/>
@@ -369,6 +441,9 @@
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <connections>
+                                    <action selector="clickPlayer20:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Mu-JD-ei8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3L2-yx-BEe">
                                 <rect key="frame" x="185" y="889" width="61" height="52"/>
@@ -385,6 +460,9 @@
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <connections>
+                                    <action selector="clickPlayer21:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uhM-RT-BUn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JTW-WN-4cm">
                                 <rect key="frame" x="295" y="725" width="60" height="54"/>
@@ -401,6 +479,9 @@
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <connections>
+                                    <action selector="clickPlayer22:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jyu-8U-lSM"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="49o-r3-KJ2">
                                 <rect key="frame" x="21" y="162" width="50" height="30"/>
@@ -409,6 +490,9 @@
                                 <state key="normal" title="F1">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="clickF1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5mT-Dn-HgQ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vxs-Dc-lRy">
                                 <rect key="frame" x="408" y="151" width="105" height="37"/>
@@ -439,6 +523,9 @@
                                 <state key="normal" title="Goal Against">
                                     <color key="titleColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="onClickGoalAgainst:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wrs-qa-dg6"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e1q-vQ-go2">
                                 <rect key="frame" x="408" y="429" width="105" height="37"/>
@@ -450,6 +537,9 @@
                                 <state key="normal" title="Penalties">
                                     <color key="titleColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="onClickPenalties:" destination="BYZ-38-t0r" eventType="touchUpInside" id="voY-Hg-iRG"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k6J-xL-Zip">
                                 <rect key="frame" x="408" y="219" width="105" height="37"/>
@@ -457,11 +547,9 @@
                                 <state key="normal" title="Shot Against">
                                     <color key="titleColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lOM-pC-QtA">
-                                <rect key="frame" x="60" y="78" width="77" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="5v5"/>
+                                <connections>
+                                    <action selector="onClickShotAgainst:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Eq-MH-JQv"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aT5-3x-UaJ">
                                 <rect key="frame" x="174" y="78" width="77" height="30"/>
@@ -470,6 +558,9 @@
                                     <constraint firstAttribute="width" constant="77" id="MBd-5W-D59"/>
                                 </constraints>
                                 <state key="normal" title="5v4"/>
+                                <connections>
+                                    <action selector="click5v4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p0j-rc-2Vq"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6qr-Ru-fx5">
                                 <rect key="frame" x="288" y="78" width="77" height="30"/>
@@ -478,6 +569,9 @@
                                     <constraint firstAttribute="width" constant="77" id="rbq-B7-7Wo"/>
                                 </constraints>
                                 <state key="normal" title="5v3"/>
+                                <connections>
+                                    <action selector="click5v3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="55F-YA-SeK"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHq-vh-6K2">
                                 <rect key="frame" x="516" y="78" width="77" height="30"/>
@@ -486,6 +580,9 @@
                                     <constraint firstAttribute="width" constant="77" id="iSL-lN-CeO"/>
                                 </constraints>
                                 <state key="normal" title="3v5"/>
+                                <connections>
+                                    <action selector="click3v5:" destination="BYZ-38-t0r" eventType="touchUpInside" id="99W-nl-WAu"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbZ-u1-OCw">
                                 <rect key="frame" x="630" y="78" width="77" height="30"/>
@@ -494,6 +591,9 @@
                                     <constraint firstAttribute="width" constant="77" id="qqA-HH-Pqq"/>
                                 </constraints>
                                 <state key="normal" title="3v3"/>
+                                <connections>
+                                    <action selector="click3v3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5cf-nk-iPU"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ywx-16-qUI">
                                 <rect key="frame" x="474" y="592" width="210" height="187"/>
@@ -506,13 +606,16 @@
                                     <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="gameClockPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k76-WM-hmj"/>
+                                    <action selector="onClickGameClock:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bp1-wi-bqK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j6B-du-Lii">
                                 <rect key="frame" x="408" y="78" width="77" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="4v5"/>
+                                <connections>
+                                    <action selector="click4v5:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9FS-3r-a3g"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="80h-PI-YG2">
                                 <rect key="frame" x="266" y="398" width="61" height="52"/>
@@ -529,6 +632,9 @@
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <connections>
+                                    <action selector="clickPlayer12:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DQI-BC-2Rz"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8V-mV-f50">
                                 <rect key="frame" x="320" y="20" width="128" height="36"/>
@@ -553,11 +659,19 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lOM-pC-QtA">
+                                <rect key="frame" x="60" y="80" width="77" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="5v5"/>
+                                <connections>
+                                    <action selector="click5v5:" destination="BYZ-38-t0r" eventType="touchUpInside" id="38C-tE-vDx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wbZ-u1-OCw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="58" id="0ir-z5-L3y"/>
-                            <constraint firstItem="lOM-pC-QtA" firstAttribute="baseline" secondItem="wbZ-u1-OCw" secondAttribute="baseline" id="1s8-Eh-FSu"/>
+                            <constraint firstItem="lOM-pC-QtA" firstAttribute="baseline" secondItem="wbZ-u1-OCw" secondAttribute="baseline" constant="2" id="1s8-Eh-FSu"/>
                             <constraint firstItem="e1q-vQ-go2" firstAttribute="height" secondItem="Vxs-Dc-lRy" secondAttribute="height" id="2kz-Ga-o40"/>
                             <constraint firstItem="aT5-3x-UaJ" firstAttribute="baseline" secondItem="6qr-Ru-fx5" secondAttribute="baseline" id="2v9-7O-HLF"/>
                             <constraint firstAttribute="bottom" secondItem="7LU-93-Dti" secondAttribute="bottom" id="2vL-Zx-VMP"/>
@@ -592,7 +706,7 @@
                             <constraint firstItem="j6B-du-Lii" firstAttribute="width" secondItem="lOM-pC-QtA" secondAttribute="width" id="awz-XE-0oP"/>
                             <constraint firstItem="ywe-Xe-YDI" firstAttribute="width" secondItem="Vxs-Dc-lRy" secondAttribute="width" id="eOM-7l-DMz"/>
                             <constraint firstItem="A8V-mV-f50" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eSk-dj-4Wj"/>
-                            <constraint firstItem="lOM-pC-QtA" firstAttribute="baseline" secondItem="aT5-3x-UaJ" secondAttribute="baseline" id="eUO-TW-gZB"/>
+                            <constraint firstItem="lOM-pC-QtA" firstAttribute="baseline" secondItem="aT5-3x-UaJ" secondAttribute="baseline" constant="2" id="eUO-TW-gZB"/>
                             <constraint firstItem="k6J-xL-Zip" firstAttribute="top" secondItem="Vxs-Dc-lRy" secondAttribute="bottom" constant="31" id="evM-Uh-zRx"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ywx-16-qUI" secondAttribute="bottom" constant="245" id="iHp-oO-eY2"/>
                             <constraint firstItem="ebO-rA-K1B" firstAttribute="width" secondItem="Vxs-Dc-lRy" secondAttribute="width" id="k5O-yC-PMx"/>
