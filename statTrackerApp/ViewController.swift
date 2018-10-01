@@ -485,6 +485,10 @@ class ViewController: UIViewController {
         // shot against clicked: update relevant stats to players on ice,
         //                       and any other stats
         
+        let ice = game.getIce()
+        for player in ice {
+            game.getPlayer(number: player).increaseShotAgainst()
+        }
     }
     
 
@@ -510,7 +514,10 @@ class ViewController: UIViewController {
     @IBAction func onClickGoalAgainst(_ sender: Any) {
         // Goal Against button clicked: update relevant stats to players on ice
         //                              and any other stats
-        
+        let ice = game.getIce()
+        for player in ice {
+            game.getPlayer(number: player).increaseGoalAgainst()
+        }
     }
     
     @IBAction func onClickPenalties(_ sender: Any) {
@@ -667,7 +674,7 @@ class ViewController: UIViewController {
     
 
     // running value that will be updated
-    var gameSeconds = 1200                  // this will be converted and formatted appropriately
+    var gameSeconds = 120                  // 1200 for real game
     // init timer object
     var gameTimer = Timer()
     // to reset timer whenever a period ends
@@ -683,7 +690,7 @@ class ViewController: UIViewController {
         // CLOCK button clicked:
         
         if newPeriod == true{   // check if we started a new period
-            gameSeconds = 1200  // reset time
+            gameSeconds = 120  // reset time, 1200 for real game
             newPeriod = false   // update flag
         }
         
@@ -692,6 +699,9 @@ class ViewController: UIViewController {
             gameTimer.invalidate()
             isTimerRunning = true
             self.clockPaused = true
+            for player in game.getIce() {
+                game.getPlayer(number: player).stopClock()
+            }
         }
             
         else{
@@ -699,6 +709,9 @@ class ViewController: UIViewController {
             runTimer()
             self.clockPaused = false
             isTimerRunning = true
+            for player in game.getIce() {
+                game.getPlayer(number: player).startClock()
+            }
         }
     }
     
@@ -749,7 +762,17 @@ class ViewController: UIViewController {
     // -------------------------------------------------------------------------------
     // End Game Button: this ends the game
     @IBAction func onClickEndGame(_ sender: Any) {
-        // cleanup and data prep occurs// -------------------------------------------------------------------------------
+        // using this button to stop timer for now //
+        gameTimer.invalidate()
+        gameTime.text = formatTime(time: TimeInterval(0))
+        for player in game.getIce() {
+            game.getPlayer(number: player).stopClock()
+        }
+        
+        // CHAD!!! This is the section where you can send stats to the database for processing
+        // Check out Player.swift for function calls for accessing player statistics
+        // To access all players (i.e. in a loop) use game.getaAllPlayers, which returns an array of all players
+        
     }
     
     // ~~~~~~~~~~~~~~~~~~~~~~FUNC BUTTONS END ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -767,14 +790,10 @@ class ViewController: UIViewController {
         // hidden until drop down buttons {Shot For || Goal For} are pressed
         playersDropDown.isHidden = true
         // hardcoding initial players visuals on ice for demo purposes
-        /*
-        Player1.backgroundColor = .green
-        Player2.backgroundColor = .green
-        Player3.backgroundColor = .green
-        Player13.backgroundColor = .green
-        Player14.backgroundColor = .green
-        Player20.backgroundColor = .green
-        */
+        onClickGameClock((Any).self)
+        clickD1((Any).self)
+        clickF1((Any).self)
+        clickPlayer19((Any).self)
         // hardcoding starting manpower config for demo purposes
         manPow3v5.alpha = 1
         manPow3v3.alpha = 0.5

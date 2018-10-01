@@ -13,7 +13,8 @@ class Player {
     
     //funcitonal attributes
     var enabled = false
-    // var clock
+    var clock = Clock()
+    var iceTime:TimeInterval = 0
     
     // hard-coding these attributes for now
     var _firstName = "John"
@@ -22,8 +23,10 @@ class Player {
     
     // stat variables
     var shotFor = 0
+    var shotForTaken = 0
     var shotAgainst = 0
     var goalFor = 0
+    var goalForTaken = 0
     var goalAgainst = 0
     var penalty = 0
     
@@ -53,9 +56,26 @@ class Player {
         return enabled
     }
     
-    // stat methods
+    // clock methods
+    func startClock() {
+        clock.start()
+    }
+    
+    func stopClock() {
+        iceTime += clock.stop()
+    }
+    
+    func getIceTime() -> TimeInterval {
+        return iceTime
+    }
+    
+    // increasing stat methods
     func increaseShotFor() {
         shotFor += 1
+    }
+    
+    func increaseShotForTaken() {
+        shotForTaken += 1
     }
     
     func increaseShotAgainst() {
@@ -66,13 +86,47 @@ class Player {
         goalFor += 1
     }
     
+    func increaseGoaltForTaken() {
+        goalForTaken += 1
+    }
+    
     func increaseGoalAgainst() {
-        goalFor += 1
+        goalAgainst += 1
     }
     
     func increasePenalty() {
         penalty += 1
     }
+    
+    // accessing stat methods
+    func getShotFor() -> Int {
+        return shotFor
+    }
+    
+    func getShotForTaken() -> Int {
+        return shotForTaken
+    }
+    
+    func getShotAgainst() -> Int {
+        return shotAgainst
+    }
+    
+    func getGoalFor() -> Int {
+        return goalFor
+    }
+    
+    func getGoaltForTaken() -> Int {
+        return goalForTaken
+    }
+    
+    func getGoalAgainst() -> Int {
+        return goalAgainst
+    }
+    
+    func getPenalty() -> Int {
+        return penalty
+    }
+    
     
 }
 

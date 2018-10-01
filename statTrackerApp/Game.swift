@@ -49,6 +49,10 @@ class Game {
     }
     
     // getting players
+    func getAllPlayers() -> Array<Player> {
+        return players
+    }
+    
     func getPlayer1() -> Player {
         return players[0]
     }
@@ -124,14 +128,14 @@ class Game {
     func putOnIce(addPlayer:Player) {
         onIce.insert(players.firstIndex(of: addPlayer) ?? -1)
         addPlayer.enablePlayer()
-        print(onIce)
+        addPlayer.startClock()
         
     }
     
     func takeOffIce(removePlayer:Player) {
         onIce.remove(players.firstIndex(of: removePlayer) ?? -1)
         removePlayer.disablePlayer()
-        print(onIce)
+        removePlayer.stopClock()
     }
     
     func getIce() -> Set<Int> {

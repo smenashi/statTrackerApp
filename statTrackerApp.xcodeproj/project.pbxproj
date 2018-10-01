@@ -10,6 +10,7 @@
 		81154426215969C800ACFF97 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81154425215969C800ACFF97 /* Player.swift */; };
 		81154428215969D800ACFF97 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81154427215969D800ACFF97 /* Game.swift */; };
 		8115442A21596B3600ACFF97 /* HockeyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8115442921596B3600ACFF97 /* HockeyViewController.swift */; };
+		8187226C2161DC2500B6009C /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8187226B2161DC2500B6009C /* Clock.swift */; };
 		8198238121484C8100E02A9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8198238021484C8100E02A9C /* AppDelegate.swift */; };
 		8198238321484C8100E02A9C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8198238221484C8100E02A9C /* ViewController.swift */; };
 		8198238621484C8100E02A9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8198238421484C8100E02A9C /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 		81154425215969C800ACFF97 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		81154427215969D800ACFF97 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		8115442921596B3600ACFF97 /* HockeyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HockeyViewController.swift; sourceTree = "<group>"; };
+		8187226B2161DC2500B6009C /* Clock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
 		8198237D21484C8100E02A9C /* statTrackerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = statTrackerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8198238021484C8100E02A9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8198238221484C8100E02A9C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 			children = (
 				8198238021484C8100E02A9C /* AppDelegate.swift */,
 				8198238221484C8100E02A9C /* ViewController.swift */,
+				8187226B2161DC2500B6009C /* Clock.swift */,
 				8198238421484C8100E02A9C /* Main.storyboard */,
 				8198238721484C8200E02A9C /* Assets.xcassets */,
 				8198238921484C8200E02A9C /* LaunchScreen.storyboard */,
@@ -149,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8187226C2161DC2500B6009C /* Clock.swift in Sources */,
 				8198238321484C8100E02A9C /* ViewController.swift in Sources */,
 				81154426215969C800ACFF97 /* Player.swift in Sources */,
 				8115442A21596B3600ACFF97 /* HockeyViewController.swift in Sources */,
