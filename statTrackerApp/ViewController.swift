@@ -12,6 +12,11 @@ class ViewController: UIViewController {
     
     var count = 0
     var countStr = ""
+    
+    var playerButtonColor = UIColor(red: 0.83921569, green: 0.72941176, blue: 0.54509804, alpha: 1.0)
+    
+    // hard-coding game
+    var game = Game(player1: Player(firstName: "Player", lastName: "1", jerseyNum: 1), player2: Player(firstName: "Player", lastName: "2", jerseyNum: 2), player3: Player(firstName: "Player", lastName: "3", jerseyNum: 3), player4: Player(firstName: "Player", lastName: "4", jerseyNum: 4), player5: Player(firstName: "Player", lastName: "5", jerseyNum: 5), player6: Player(firstName: "Player", lastName: "6", jerseyNum: 6), player7: Player(firstName: "Player", lastName: "7", jerseyNum: 7), player8: Player(firstName: "Player", lastName: "8", jerseyNum: 8), player9: Player(firstName: "Player", lastName: "9", jerseyNum: 9), player10: Player(firstName: "Player", lastName: "10", jerseyNum: 10), player11: Player(firstName: "Player", lastName: "11", jerseyNum: 11), player12: Player(firstName: "Player", lastName: "12", jerseyNum: 12), player13: Player(firstName: "Player", lastName: "13", jerseyNum: 13), player14: Player(firstName: "Player", lastName: "14", jerseyNum: 14), player15: Player(firstName: "Player", lastName: "15", jerseyNum: 15), player16: Player(firstName: "Player", lastName: "16", jerseyNum: 16), player17: Player(firstName: "Player", lastName: "17", jerseyNum: 17), player18: Player(firstName: "Player", lastName: "18", jerseyNum: 18), player19: Player(firstName: "Player", lastName: "19", jerseyNum: 19), player20: Player(firstName: "Player", lastName: "20", jerseyNum: 20), player21: Player(firstName: "Player", lastName: "21", jerseyNum: 21), player22: Player(firstName: "Player", lastName: "22", jerseyNum: 22))
 
     @IBOutlet weak var displayCount: UILabel!
    
@@ -68,6 +73,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var Player20: UIButton!
     @IBOutlet weak var Player21: UIButton!
     @IBOutlet weak var Player22: UIButton!
+    
+    lazy var playerButtons = [Player1, Player2, Player3, Player4, Player5, Player6, Player7, Player8, Player9, Player10, Player11, Player12, Player13, Player14, Player15, Player16, Player17, Player18, Player19, Player20, Player21, Player22]
+    
     /////////////////////////////////////////
     
     // Line buttons /////////////////////////
@@ -146,69 +154,289 @@ class ViewController: UIViewController {
     // ----------------------------------------------------------------------------
     @IBAction func clickPlayer1(_ sender: Any) {
         // Player1 is clicked
+        let player = game.getPlayer1()
+        if player.isEnabled() {
+            game.takeOffIce(removePlayer: player)
+            Player1.backgroundColor = playerButtonColor
+        } else {
+            if !game.iceIsFull() {
+                game.putOnIce(addPlayer: player)
+                Player1.backgroundColor = .green
+            }
+        }
     }
     @IBAction func clickPlayer2(_ sender: Any) {
         // Player2 is clicked
+        let player = game.getPlayer2()
+        if player.isEnabled() {
+            game.takeOffIce(removePlayer: player)
+            Player2.backgroundColor = playerButtonColor
+        } else {
+            if !game.iceIsFull() {
+                game.putOnIce(addPlayer: player)
+                Player2.backgroundColor = .green
+            }
+        }
     }
     @IBAction func clickPlayer3(_ sender: Any) {
         // Player3 is clicked
+        let player = game.getPlayer3()
+        if player.isEnabled() {
+            game.takeOffIce(removePlayer: player)
+            Player3.backgroundColor = playerButtonColor
+        } else {
+            if !game.iceIsFull() {
+                game.putOnIce(addPlayer: player)
+                Player3.backgroundColor = .green
+            }
+        }
     }
     @IBAction func clickPlayer4(_ sender: Any) {
         // Player4 is clicked
+        let player = game.getPlayer4()
+        if player.isEnabled() {
+            game.takeOffIce(removePlayer: player)
+            Player4.backgroundColor = playerButtonColor
+        } else {
+            if !game.iceIsFull() {
+                game.putOnIce(addPlayer: player)
+                Player4.backgroundColor = .green
+            }
+        }
     }
     @IBAction func clickPlayer5(_ sender: Any) {
         // Player5 is clicked
+        let player = game.getPlayer5()
+        if player.isEnabled() {
+            game.takeOffIce(removePlayer: player)
+            Player5.backgroundColor = playerButtonColor
+        } else {
+            if !game.iceIsFull() {
+                game.putOnIce(addPlayer: player)
+                Player5.backgroundColor = .green
+            }
+        }
     }
     @IBAction func clickPlayer6(_ sender: Any) {
         // Player6 is clicked
+        let player = game.getPlayer6()
+        if player.isEnabled() {
+            game.takeOffIce(removePlayer: player)
+            Player6.backgroundColor = playerButtonColor
+        } else {
+            if !game.iceIsFull() {
+                game.putOnIce(addPlayer: player)
+                Player6.backgroundColor = .green
+            }
+        }
     }
     @IBAction func clickPlayer7(_ sender: Any) {
         // Player7 is clicked
+        let player = game.getPlayer7()
+        if player.isEnabled() {
+            game.takeOffIce(removePlayer: player)
+            Player7.backgroundColor = playerButtonColor
+        } else {
+            if !game.iceIsFull() {
+                game.putOnIce(addPlayer: player)
+                Player7.backgroundColor = .green
+            }
+        }
     }
     @IBAction func clickPlayer8(_ sender: Any) {
         // Player8 is clicked
+        let player = game.getPlayer8()
+        if player.isEnabled() {
+            game.takeOffIce(removePlayer: player)
+            Player8.backgroundColor = playerButtonColor
+        } else {
+            if !game.iceIsFull() {
+                game.putOnIce(addPlayer: player)
+                Player8.backgroundColor = .green
+            }
+        }
     }
     @IBAction func clickPlayer9(_ sender: Any) {
         // Player9 is clicked
+        let player = game.getPlayer9()
+        if player.isEnabled() {
+            game.takeOffIce(removePlayer: player)
+            Player9.backgroundColor = playerButtonColor
+        } else {
+            if !game.iceIsFull() {
+                game.putOnIce(addPlayer: player)
+                Player9.backgroundColor = .green
+            }
+        }
     }
     @IBAction func clickPlayer10(_ sender: Any) {
         // Player10 is clicked
+        let player = game.getPlayer10()
+        if player.isEnabled() {
+            game.takeOffIce(removePlayer: player)
+            Player10.backgroundColor = playerButtonColor
+        } else {
+            if !game.iceIsFull() {
+                game.putOnIce(addPlayer: player)
+                Player10.backgroundColor = .green
+            }
+        }
     }
     @IBAction func clickPlayer11(_ sender: Any) {
         // Player11 is clicked
+        let player = game.getPlayer11()
+        if player.isEnabled() {
+            game.takeOffIce(removePlayer: player)
+            Player11.backgroundColor = playerButtonColor
+        } else {
+            if !game.iceIsFull() {
+                game.putOnIce(addPlayer: player)
+                Player11.backgroundColor = .green
+            }
+        }
     }
     @IBAction func clickPlayer12(_ sender: Any) {
         // Player12 is clicked
+        let player = game.getPlayer12()
+        if player.isEnabled() {
+            game.takeOffIce(removePlayer: player)
+            Player12.backgroundColor = playerButtonColor
+        } else {
+            if !game.iceIsFull() {
+                game.putOnIce(addPlayer: player)
+                Player12.backgroundColor = .green
+            }
+        }
     }
     @IBAction func clickPlayer13(_ sender: Any) {
         // Player13 is clicked
+        let player = game.getPlayer13()
+        if player.isEnabled() {
+            game.takeOffIce(removePlayer: player)
+            Player13.backgroundColor = playerButtonColor
+        } else {
+            if !game.iceIsFull() {
+                game.putOnIce(addPlayer: player)
+                Player13.backgroundColor = .green
+            }
+        }
     }
     @IBAction func clickPlayer14(_ sender: Any) {
         // Player14 is clicked
+        let player = game.getPlayer14()
+        if player.isEnabled() {
+            game.takeOffIce(removePlayer: player)
+            Player14.backgroundColor = playerButtonColor
+        } else {
+            if !game.iceIsFull() {
+                game.putOnIce(addPlayer: player)
+                Player14.backgroundColor = .green
+            }
+        }
     }
     @IBAction func clickPlayer15(_ sender: Any) {
         // Player15 is clicked
+        let player = game.getPlayer15()
+        if player.isEnabled() {
+            game.takeOffIce(removePlayer: player)
+            Player15.backgroundColor = playerButtonColor
+        } else {
+            if !game.iceIsFull() {
+                game.putOnIce(addPlayer: player)
+                Player15.backgroundColor = .green
+            }
+        }
     }
     @IBAction func clickPlayer16(_ sender: Any) {
         // Player16 is clicked
+        let player = game.getPlayer16()
+        if player.isEnabled() {
+            game.takeOffIce(removePlayer: player)
+            Player16.backgroundColor = playerButtonColor
+        } else {
+            if !game.iceIsFull() {
+                game.putOnIce(addPlayer: player)
+                Player16.backgroundColor = .green
+            }
+        }
     }
     @IBAction func clickPlayer17(_ sender: Any) {
         // Player17 is clicked
+        let player = game.getPlayer17()
+        if player.isEnabled() {
+            game.takeOffIce(removePlayer: player)
+            Player17.backgroundColor = playerButtonColor
+        } else {
+            if !game.iceIsFull() {
+                game.putOnIce(addPlayer: player)
+                Player17.backgroundColor = .green
+            }
+        }
     }
     @IBAction func clickPlayer18(_ sender: Any) {
         // Player18 is clicked
+        let player = game.getPlayer18()
+        if player.isEnabled() {
+            game.takeOffIce(removePlayer: player)
+            Player18.backgroundColor = playerButtonColor
+        } else {
+            if !game.iceIsFull() {
+                game.putOnIce(addPlayer: player)
+                Player18.backgroundColor = .green
+            }
+        }
     }
     @IBAction func clickPlayer19(_ sender: Any) {
         // Player19 is clicked
+        let player = game.getPlayer19()
+        if player.isEnabled() {
+            game.takeOffIce(removePlayer: player)
+            Player19.backgroundColor = playerButtonColor
+        } else {
+            if !game.iceIsFull() {
+                game.putOnIce(addPlayer: player)
+                Player19.backgroundColor = .green
+            }
+        }
     }
     @IBAction func clickPlayer20(_ sender: Any) {
         // Player20 is clicked
+        let player = game.getPlayer20()
+        if player.isEnabled() {
+            game.takeOffIce(removePlayer: player)
+            Player20.backgroundColor = playerButtonColor
+        } else {
+            if !game.iceIsFull() {
+                game.putOnIce(addPlayer: player)
+                Player20.backgroundColor = .green
+            }
+        }
     }
     @IBAction func clickPlayer21(_ sender: Any) {
         // Player21 is clicked
+        let player = game.getPlayer21()
+        if player.isEnabled() {
+            game.takeOffIce(removePlayer: player)
+            Player21.backgroundColor = playerButtonColor
+        } else {
+            if !game.iceIsFull() {
+                game.putOnIce(addPlayer: player)
+                Player21.backgroundColor = .green
+            }
+        }
     }
     @IBAction func clickPlayer22(_ sender: Any) {
         // Player22 is clicked
+        let player = game.getPlayer22()
+        if player.isEnabled() {
+            game.takeOffIce(removePlayer: player)
+            Player22.backgroundColor = playerButtonColor
+        } else {
+            if !game.iceIsFull() {
+                game.putOnIce(addPlayer: player)
+                Player22.backgroundColor = .green
+            }
+        }
     }
     
     
@@ -308,30 +536,128 @@ class ViewController: UIViewController {
     
     @IBAction func clickF1(_ sender: Any) {
         // F1 line button clicked:  disengage 3 players from F, put F1 players on
+        let ice = game.getIce()
+        let f1 = [0, 1, 2]
+        for player in ice {
+            if player < 12 {
+                let playerButton = playerButtons[player]
+                game.takeOffIce(removePlayer: game.getPlayer(number: player))
+                playerButton?.backgroundColor = playerButtonColor
+            }
+        }
+        for forward in f1 {
+            let playerButton = playerButtons[forward]
+            game.putOnIce(addPlayer: game.getPlayer(number: forward))
+            playerButton?.backgroundColor = .green
+        }
     }
     
     @IBAction func clickF2(_ sender: Any) {
         // F2 line button clicked:  disengage 3 players from F, put F2 players on
+        let ice = game.getIce()
+        let f2 = [3, 4, 5]
+        for player in ice {
+            if player < 12 {
+                let playerButton = playerButtons[player]
+                game.takeOffIce(removePlayer: game.getPlayer(number: player))
+                playerButton?.backgroundColor = playerButtonColor
+            }
+        }
+        for forward in f2 {
+            let playerButton = playerButtons[forward]
+            game.putOnIce(addPlayer: game.getPlayer(number: forward))
+            playerButton?.backgroundColor = .green
+        }
     }
     
     @IBAction func clickF3(_ sender: Any) {
         // F3 line button clicked:  disengage 3 players from F, put F3 players on
+        let ice = game.getIce()
+        let f3 = [6, 7, 8]
+        for player in ice {
+            if player < 12 {
+                let playerButton = playerButtons[player]
+                game.takeOffIce(removePlayer: game.getPlayer(number: player))
+                playerButton?.backgroundColor = playerButtonColor
+            }
+        }
+        for forward in f3 {
+            let playerButton = playerButtons[forward]
+            game.putOnIce(addPlayer: game.getPlayer(number: forward))
+            playerButton?.backgroundColor = .green
+        }
     }
     
     @IBAction func clickF4(_ sender: Any) {
         // F4 line button clicked:  disengage 3 players from F, put F4 players on
+        let ice = game.getIce()
+        let f4 = [9, 10, 11]
+        for player in ice {
+            if player < 12 {
+                let playerButton = playerButtons[player]
+                game.takeOffIce(removePlayer: game.getPlayer(number: player))
+                playerButton?.backgroundColor = playerButtonColor
+            }
+        }
+        for forward in f4 {
+            let playerButton = playerButtons[forward]
+            game.putOnIce(addPlayer: game.getPlayer(number: forward))
+            playerButton?.backgroundColor = .green
+        }
     }
     
     @IBAction func clickD1(_ sender: Any) {
         // D1 line button clicked:  disengage 2 players from D, put D1 players on
+        let ice = game.getIce()
+        let d1 = [12, 13]
+        for player in ice {
+            if player > 11 && player < 18 {
+                let playerButton = playerButtons[player]
+                game.takeOffIce(removePlayer: game.getPlayer(number: player))
+                playerButton?.backgroundColor = playerButtonColor
+            }
+        }
+        for defender in d1 {
+            let playerButton = playerButtons[defender]
+            game.putOnIce(addPlayer: game.getPlayer(number: defender))
+            playerButton?.backgroundColor = .green
+        }
     }
     
     @IBAction func clickD2(_ sender: Any) {
         // D2 line button clicked:  disengage 2 players from D, put D2 players on
+        let ice = game.getIce()
+        let d2 = [14, 15]
+        for player in ice {
+            if player > 11 && player < 18 {
+                let playerButton = playerButtons[player]
+                game.takeOffIce(removePlayer: game.getPlayer(number: player))
+                playerButton?.backgroundColor = playerButtonColor
+            }
+        }
+        for defender in d2 {
+            let playerButton = playerButtons[defender]
+            game.putOnIce(addPlayer: game.getPlayer(number: defender))
+            playerButton?.backgroundColor = .green
+        }
     }
     
     @IBAction func clickD3(_ sender: Any) {
         // D3 line button clicked:  disengage 2 players from D, put D3 players on
+        let ice = game.getIce()
+        let d3 = [16, 17]
+        for player in ice {
+            if player > 11 && player < 18 {
+                let playerButton = playerButtons[player]
+                game.takeOffIce(removePlayer: game.getPlayer(number: player))
+                playerButton?.backgroundColor = playerButtonColor
+            }
+        }
+        for defender in d3 {
+            let playerButton = playerButtons[defender]
+            game.putOnIce(addPlayer: game.getPlayer(number: defender))
+            playerButton?.backgroundColor = .green
+        }
     }
     
     
@@ -441,13 +767,14 @@ class ViewController: UIViewController {
         // hidden until drop down buttons {Shot For || Goal For} are pressed
         playersDropDown.isHidden = true
         // hardcoding initial players visuals on ice for demo purposes
+        /*
         Player1.backgroundColor = .green
         Player2.backgroundColor = .green
         Player3.backgroundColor = .green
         Player13.backgroundColor = .green
         Player14.backgroundColor = .green
         Player20.backgroundColor = .green
-        
+        */
         // hardcoding starting manpower config for demo purposes
         manPow3v5.alpha = 1
         manPow3v3.alpha = 0.5
