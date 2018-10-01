@@ -243,8 +243,16 @@ class ViewController: UIViewController {
     // -------------------------------------------------------------------------------
     @IBAction func onClickShotForButton(_ sender: Any) {
         // Shot For button clicked: update relevant stats to the players on ice, along with other stats
+        
+        // get new X & Y positions for the drop-down menu
+        let newX = shotForButton.frame.minX
+        let newY = shotForButton.frame.maxY
+        
         // animations for drop-down menu ---------------
         if playersDropDown.isHidden{
+            //update x and y coords
+            playersDropDown.frame.origin.x = newX
+            playersDropDown.frame.origin.y = newY
             animate(toggle: true, type: goalForButton)
         }
         else{
@@ -264,10 +272,16 @@ class ViewController: UIViewController {
         // Goal For button clicked: update relevant stats to current players on ice
         // ref:
         // https://www.youtube.com/watch?v=b1LiBiLjca4&index=13&list=PLWVdXdO5KDTwyK5ic9OYI49_EpkEP4v8M&t=0s
-
+        
+        // get new X & Y positions for the drop-down menu
+        let newX = goalForButton.frame.minX
+        let newY = goalForButton.frame.maxY
         
         // animation plays that "drops down" the table view --
         if playersDropDown.isHidden{
+            //update x and y coords
+            playersDropDown.frame.origin.x = newX
+            playersDropDown.frame.origin.y = newY
             animate(toggle: true, type: goalForButton)
         }
         else{
@@ -288,6 +302,23 @@ class ViewController: UIViewController {
     @IBAction func onClickPenalties(_ sender: Any) {
         // Penalties button clicked: update stats to players on ice accordingly
         //                           and any other stats
+        
+        // get new X & Y positions for the drop-down menu
+        let newX = penaltiesButton.frame.minX
+        let newY = penaltiesButton.frame.maxY
+        
+        // animation plays that "drops down" the table view --
+        if playersDropDown.isHidden{
+            //update x and y coords
+            playersDropDown.frame.origin.x = newX
+            playersDropDown.frame.origin.y = newY
+            animate(toggle: true, type: goalForButton)
+        }
+        else{
+            animate(toggle: false, type: goalForButton)
+        }
+        
+        // execute relevant stat updates here
         
     }
     
@@ -372,7 +403,7 @@ class ViewController: UIViewController {
             // continues running the timer
             runTimer()
             self.clockPaused = false
-            isTimerRunning = true
+           // isTimerRunning = true
         }
     }
     
@@ -430,14 +461,22 @@ class ViewController: UIViewController {
     
     
     // table containing current players on ice for drop down menus
-    @IBOutlet weak var playersDropDown: UITableViewCell!
+    @IBOutlet weak var playersDropDown: UITableView!
     
     // hardcoding players for demo purposes: will be in each cell of drop-down menu
     var playersList = ["player1", "player2", "player3", "player4", "player5"]
     
+    // array that will contain
+    var playersOnIce = NSArray()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("Hello World")
+        print("Number of players in playersList: \(playersList.count)")
+        print(playersList[1])
+        
+       // print("Number of players in onIce set: \(playersOnIce)")
+        
         // hidden until drop down buttons {Shot For || Goal For} are pressed
         playersDropDown.isHidden = true
         // hardcoding initial players visuals on ice for demo purposes
@@ -449,12 +488,18 @@ class ViewController: UIViewController {
         Player20.backgroundColor = .green
         
         // hardcoding starting manpower config for demo purposes
-        manPow3v5.alpha = 1
+        manPow3v5.alpha = 0.5
         manPow3v3.alpha = 0.5
         manPow4v5.alpha = 0.5
         manPow5v3.alpha = 0.5
         manPow5v4.alpha = 0.5
-        manPow5v5.alpha = 0.5
+        manPow5v5.alpha = 1
+        
+        // hardcoding starting period opacities
+        period1.alpha = 1
+        period2.alpha = 0.5
+        period3.alpha = 0.5
+        overtime.alpha = 0.5
         
         //print("Hello, World!")
         // NOTE: encounters error here, need to solve conflicting constraints
@@ -521,15 +566,16 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     // the drop-down menu
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // number of cells in table: depends on number of players on ice (NOT harcoded 5)
+        
         print(playersList.count)
         return playersList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        print("accessed tableView function")
         let cell = tableView.dequeueReusableCell(withIdentifier: "player", for: indexPath)
         // creates one cell #of playerList.count times, with label corresponding
         // to the name in each index
-        
         cell.textLabel?.text = playersList[indexPath.row]
         return cell
     }
