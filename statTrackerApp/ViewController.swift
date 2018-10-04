@@ -472,7 +472,16 @@ class ViewController: UIViewController {
     @IBAction func onClickShotForButton(_ sender: Any) {
         // Shot For button clicked: update relevant stats to the players on ice, along with other stats
         // animations for drop-down menu ---------------
+        playersDropDown.reloadData() // reload drop-down data
+        // get new X & Y positions for the drop-down menu
+        let newX = shotForButton.frame.minX
+        let newY = shotForButton.frame.maxY
+        
         if playersDropDown.isHidden{
+            //update x and y coords
+            playersDropDown.frame.origin.x = newX
+            playersDropDown.frame.origin.y = newY
+            
             animate(toggle: true, type: goalForButton)
         }
         else{
@@ -496,10 +505,16 @@ class ViewController: UIViewController {
         // Goal For button clicked: update relevant stats to current players on ice
         // ref:
         // https://www.youtube.com/watch?v=b1LiBiLjca4&index=13&list=PLWVdXdO5KDTwyK5ic9OYI49_EpkEP4v8M&t=0s
-
+        playersDropDown.reloadData() // reload drop-down data
+        // get new X & Y positions for the drop-down menu
+        let newX = goalForButton.frame.minX
+        let newY = goalForButton.frame.maxY
+        
         
         // animation plays that "drops down" the table view --
         if playersDropDown.isHidden{
+            playersDropDown.frame.origin.x = newX
+            playersDropDown.frame.origin.y = newY
             animate(toggle: true, type: goalForButton)
         }
         else{
@@ -674,7 +689,7 @@ class ViewController: UIViewController {
     
 
     // running value that will be updated
-    var gameSeconds = 120                  // 1200 for real game
+    var gameSeconds = 1200                  // 1200 for real game
     // init timer object
     var gameTimer = Timer()
     // to reset timer whenever a period ends
@@ -688,9 +703,9 @@ class ViewController: UIViewController {
     
     @IBAction func onClickGameClock(_ sender: Any) {
         // CLOCK button clicked:
-        
+        playersDropDown.reloadData() // reload drop-down data
         if newPeriod == true{   // check if we started a new period
-            gameSeconds = 120  // reset time, 1200 for real game
+            gameSeconds = 1200  // reset time, 1200 for real game
             newPeriod = false   // update flag
         }
         
@@ -731,12 +746,12 @@ class ViewController: UIViewController {
     func formatTime(time:TimeInterval) -> String{
             // formats the time on the time label to the desired format: hh:mm:ss
             // standard modular arithmetic to derive hours, minutes, seconds from given seconds
-            let hours = Int(time) / 3600
+//            let hours = Int(time) / 3600 (switched to just minutes and seconds
             let minutes = Int(time) / 60 % 60
             let seconds = Int(time) % 60
             
             // string will be formatted with 2 digits for each of the values derived above
-            return String(format:"%02i:%02i:%02i", hours, minutes, seconds)
+            return String(format:"%02i:%02i", minutes, seconds)
     }
     
     // -------------------------------------------------------------------------------
@@ -749,6 +764,7 @@ class ViewController: UIViewController {
     // -------------------------------------------------------------------------------
     @IBAction func onClickEndPeriod(_ sender: Any) {
         // resets timer to 00:20:00
+       playersDropDown.reloadData() // reload drop-down data
         gameTimer.invalidate()              // stop timer
         let initSeconds = 1200
         gameTime.text = formatTime(time: TimeInterval(initSeconds)) // reset label
@@ -765,9 +781,17 @@ class ViewController: UIViewController {
         // using this button to stop timer for now //
         gameTimer.invalidate()
         gameTime.text = formatTime(time: TimeInterval(0))
+        playersDropDown.reloadData() // reload drop-down data
+        print("These are all the players on ice: ")
+        
         for player in game.getIce() {
             game.getPlayer(number: player).stopClock()
+            
+            print(game.getPlayer(number: player)._jerseyNumber)
+//            print(game.getPlayer(number: player)._lastName)
+            
         }
+        print(game.currIceNames)
         
         // CHAD!!! This is the section where you can send stats to the database for processing
         // Check out Player.swift for function calls for accessing player statistics
@@ -779,47 +803,41 @@ class ViewController: UIViewController {
     
     
     // table containing current players on ice for drop down menus
-    @IBOutlet weak var playersDropDown: UITableViewCell!
+//    @IBOutlet weak var playersDropDown: UITableViewCell!
+    @IBOutlet weak var playersDropDown: UITableView!
     
     // hardcoding players for demo purposes: will be in each cell of drop-down menu
     var playersList = ["player1", "player2", "player3", "player4", "player5"]
     
+    @IBOutlet weak var playerClickedLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // hidden until drop down buttons {Shot For || Goal For} are pressed
         playersDropDown.isHidden = true
         // hardcoding initial players visuals on ice for demo purposes
-        onClickGameClock((Any).self)
+        //onClickGameClock((Any).self)
+        
         clickD1((Any).self)
         clickF1((Any).self)
         clickPlayer19((Any).self)
         // hardcoding starting manpower config for demo purposes
-        manPow3v5.alpha = 1
+        manPow3v5.alpha = 0.5
         manPow3v3.alpha = 0.5
         manPow4v5.alpha = 0.5
         manPow5v3.alpha = 0.5
         manPow5v4.alpha = 0.5
-        manPow5v5.alpha = 0.5
+        manPow5v5.alpha = 1
         
-        //print("Hello, World!")
-        // NOTE: encounters error here, need to solve conflicting constraints
-        // that don't show up in the XCode UI
-        //print(playersList.count)
+        // hardcoding starting period opacities
+        period1.alpha = 1
+        period2.alpha = 0.5
+        period3.alpha = 0.5
+        overtime.alpha = 0.5
+        
+    
     }
     
-    
-    
-//    @IBAction func onClickGoalFor(_ sender: Any) {
-//        // animation plays that "drops down" the table view
-//        if playersOnIce.isHidden{
-//            animate(toggle: true, type: goalForButton)
-//        }
-//        else{
-//            animate(toggle: false, type: goalForButton)
-//        }
-//
-//    }
     
     func animate(toggle: Bool, type: UIButton){
         // animation handler for menu drop, takes toggle param and ui button that triggers
@@ -861,26 +879,73 @@ class ViewController: UIViewController {
 
 }
 
+
+
+
 // extension for ViewController to properly handle drop-down menu
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     // extends ViewController with proper functionality to handle
     // the drop-down menu
+    
+    func updateOnce(){
+        playersDropDown.reloadData()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfSections section: Int) -> Int {
+        // builds n number of cells in the table: n = number of players on ice + 1
+        // +1 for "Unknown" option
+        return game.getIce().count + 1
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // number of cells in table: depends on number of players on ice (NOT harcoded 5)
-        print(playersList.count)
-        return playersList.count
+        // populates n number of cells in the table: n = number of players on ice + 1
+        // +1 for "Unknown" option
+//        playersDropDown.reloadData()
+        return game.getIce().count + 1
+        
+//        return playersList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "player", for: indexPath)
-        // creates one cell #of playerList.count times, with label corresponding
-        // to the name in each index
+        // populates dropdown menu cells with labels
+//        updateOnce()
+        // get latest array of player names
+        game.updateCurrentIce()
         
-        cell.textLabel?.text = playersList[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "player", for: indexPath)
+        
+        
+//IGNORE THIS://////////////////////////////////////////////////////////////////////////////////////////////////////
+//        // this will store the current players on ice
+//        var currIce: Array<Player> = Array()
+//        // this will store the names of current players to display on the screen
+//        var currIceNames: Array<String> = Array()
+//        // will store the text of each player to be displayed on the screen
+//        var labelString = ""
+//
+//        // build the array from the set of players currently on ice
+//        for player in game.getIce() {
+//            currIce.append(game.getPlayer(number: player))
+//            labelString = String(game.getPlayer(number: player)._jerseyNumber) //+ game.getPlayer(number: player)._lastName
+//            currIceNames.append(labelString)
+//        }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+       
+        // set labels to cells
+        print("TESTING: \n \(game.currIceNames)\n")
+        
+        cell.textLabel?.text = game.currIceNames[indexPath.row]
+//        cell.textLabel?.text = playersList[indexPath.row]
         return cell
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // handles what happens when a specific row is selected: "didSelectRowAt"
+       // game.updateCurrentIce()
+        playerClickedLabel?.text = game.currIceNames[indexPath.row]
         animate(toggle: false, type: goalForButton)
+        
+            
         // access the cell in the table selected via: playerList[indexPath.row]
         // this is where the data for the selected players is handled:
         // Ex: the player selected under Goal For will get +1 to their goals made

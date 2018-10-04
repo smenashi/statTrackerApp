@@ -48,6 +48,17 @@ class Game {
         players.append(player22)
     }
     
+    // testing something:
+    // this will store the current players on ice in array form for the tableView object in ViewController to use
+    var currIce: Array<Player> = Array()
+    // this will store the names of current players to display on the screen
+    var currIceNames: Array<String> = Array()
+    // will store the text of each player to be displayed on the screen
+    var labelString = ""
+    
+    
+    
+    
     // getting players
     func getAllPlayers() -> Array<Player> {
         return players
@@ -130,12 +141,18 @@ class Game {
         addPlayer.enablePlayer()
         addPlayer.startClock()
         
+        // update array of players to be displayed in drop-down menu
+        updateCurrentIce()
+        
     }
     
     func takeOffIce(removePlayer:Player) {
         onIce.remove(players.firstIndex(of: removePlayer) ?? -1)
         removePlayer.disablePlayer()
         removePlayer.stopClock()
+      
+        // update array of players to be displayed in drop-down menu
+        updateCurrentIce()
     }
     
     func getIce() -> Set<Int> {
@@ -175,6 +192,27 @@ class Game {
         if player.isEnabled() {
             player.increasePenalty()
         }
+    }
+    
+    // Testing something:
+    
+    func updateCurrentIce(){
+        // updates arrays currIce and currIceNames whenever the on-ice config changes
+        
+        // reset values
+        currIce.removeAll()
+        currIceNames.removeAll()
+        labelString = ""
+        for player in onIce {
+            currIce.append(players[player])
+            labelString = "Player # \(String(players[player]._jerseyNumber))" //+ players[player]._lastName
+            currIceNames.append(labelString)
+        }
+        // sort them: fix later
+        currIceNames.sort()
+        currIceNames.append("Unknown")
+        
+        
     }
     
 }
