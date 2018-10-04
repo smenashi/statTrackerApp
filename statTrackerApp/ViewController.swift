@@ -469,10 +469,15 @@ class ViewController: UIViewController {
     //                      - (not implemented yet) choose for/against, update stats
     //                          accordingly
     // -------------------------------------------------------------------------------
+    
+    // this will come in handy for determining what stat the drop down menu corresponds to
+    var dropDownClicked = ""
+    
     @IBAction func onClickShotForButton(_ sender: Any) {
         // Shot For button clicked: update relevant stats to the players on ice, along with other stats
         // animations for drop-down menu ---------------
         playersDropDown.reloadData() // reload drop-down data
+        dropDownClicked = "shotFor" // mark which dropDown was clicked
         // get new X & Y positions for the drop-down menu
         let newX = shotForButton.frame.minX
         let newY = shotForButton.frame.maxY
@@ -488,8 +493,9 @@ class ViewController: UIViewController {
             animate(toggle: false, type: goalForButton)
         }
         
-        // execute relevant stat updates here
+        // CHAD: increase the shot for for each player on ice here
     }
+    
     @IBAction func onClickShotAgainst(_ sender: Any) {
         // shot against clicked: update relevant stats to players on ice,
         //                       and any other stats
@@ -506,6 +512,7 @@ class ViewController: UIViewController {
         // ref:
         // https://www.youtube.com/watch?v=b1LiBiLjca4&index=13&list=PLWVdXdO5KDTwyK5ic9OYI49_EpkEP4v8M&t=0s
         playersDropDown.reloadData() // reload drop-down data
+        dropDownClicked = "goalFor" // mark which dropDown was clicked
         // get new X & Y positions for the drop-down menu
         let newX = goalForButton.frame.minX
         let newY = goalForButton.frame.maxY
@@ -521,8 +528,7 @@ class ViewController: UIViewController {
             animate(toggle: false, type: goalForButton)
         }
         
-        // execute relevant stat updates here
-        
+        // CHAD: increase the shot for for each player on ice here
         
     }
     
@@ -887,9 +893,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     // extends ViewController with proper functionality to handle
     // the drop-down menu
     
-    func updateOnce(){
-        playersDropDown.reloadData()
-    }
     
     func tableView(_ tableView: UITableView, numberOfSections section: Int) -> Int {
         // builds n number of cells in the table: n = number of players on ice + 1
@@ -900,15 +903,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // populates n number of cells in the table: n = number of players on ice + 1
         // +1 for "Unknown" option
-//        playersDropDown.reloadData()
         return game.getIce().count + 1
-        
-//        return playersList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // populates dropdown menu cells with labels
-//        updateOnce()
+       
         // get latest array of player names
         game.updateCurrentIce()
         
@@ -931,25 +931,47 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 //        }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
        
-        // set labels to cells
-        print("TESTING: \n \(game.currIceNames)\n")
         
+//        print("TESTING: \n \(game.currIceNames)\n")
+        // set labels to cells
         cell.textLabel?.text = game.currIceNames[indexPath.row]
-//        cell.textLabel?.text = playersList[indexPath.row]
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // handles what happens when a specific row is selected: "didSelectRowAt"
-       // game.updateCurrentIce()
-        playerClickedLabel?.text = game.currIceNames[indexPath.row]
+        
+        // animation plays for drop down menu
         animate(toggle: false, type: goalForButton)
         
-            
-        // access the cell in the table selected via: playerList[indexPath.row]
         // this is where the data for the selected players is handled:
         // Ex: the player selected under Goal For will get +1 to their goals made
         // Ex: the player selected under Shot For will get +1 to their shots made
+        // CHAD:
+        //// tested and works to track the NAMES of the player:
+        // uncomment this to see the label "Player-Clicked" change to the name of the player
+        //         playerClickedLabel?.text = game.currIceNames[indexPath.row]
+        // NOTE:
+        //          Game.swift has methods to increment stats
+        //          Player.swift contains the player class
+        
+        
+        // Shot For button clicked, update that stat for selected player
+        if dropDownClicked == "shotFor"{
+//            print("Shot For was clicked!")
+            // CHAD: use game.currIceNames[indexPath.row] which is the jerseynumber of the selected player to access
+            //          the individual player and increment their relevant stat
+        
+        }
+        
+        // Goal For button clicked, update that stat for selected player
+        if dropDownClicked == "goalFor"{
+//            print("Goal For was clicked!")
+            // CHAD: use game.currIceNames[indexPath.row] which is the jerseynumber of the selected player to access
+            //          the individual player and increment their relevant stat
+            
+        }
+        
     }
 }
 

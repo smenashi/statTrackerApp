@@ -18,7 +18,7 @@ class Game {
     var _gameId = 0
     var onIce = Set<Int>()
     
-    // players
+    // players: need this to generate drop-down menus (see below)
     var players = Array<Player> ()
     
     // hard-coding game
@@ -48,12 +48,12 @@ class Game {
         players.append(player22)
     }
     
-    // testing something:
+    // Added by Nick, for generating drop-down menus:
     // this will store the current players on ice in array form for the tableView object in ViewController to use
     var currIce: Array<Player> = Array()
     // this will store the names of current players to display on the screen
     var currIceNames: Array<String> = Array()
-    // will store the text of each player to be displayed on the screen
+    // will store the string label corresponding to each player to be displayed on the screen
     var labelString = ""
     
     
@@ -194,8 +194,7 @@ class Game {
         }
     }
     
-    // Testing something:
-    
+    // Added by Nick: needed to be able to populate drop-downs: the UIKit framework is annoying and can't handle set elements
     func updateCurrentIce(){
         // updates arrays currIce and currIceNames whenever the on-ice config changes
         
@@ -203,18 +202,19 @@ class Game {
         currIce.removeAll()
         currIceNames.removeAll()
         labelString = ""
+        
+        // populate currIceNames with jersey numbers for now, will establish a proper string format down the line
         for player in onIce {
             currIce.append(players[player])
             labelString = "Player # \(String(players[player]._jerseyNumber))" //+ players[player]._lastName
             currIceNames.append(labelString)
         }
-        // sort them: fix later
+        
+        // sort them by jersey number: fix later
         currIceNames.sort()
         currIceNames.append("Unknown")
         
-        
     }
-    
 }
 
 
