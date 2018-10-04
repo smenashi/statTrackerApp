@@ -788,16 +788,16 @@ class ViewController: UIViewController {
         gameTimer.invalidate()
         gameTime.text = formatTime(time: TimeInterval(0))
         playersDropDown.reloadData() // reload drop-down data
-        print("These are all the players on ice: ")
+//        print("These are all the players on ice: ")
         
         for player in game.getIce() {
             game.getPlayer(number: player).stopClock()
             
-            print(game.getPlayer(number: player)._jerseyNumber)
+//            print(game.getPlayer(number: player)._jerseyNumber)
 //            print(game.getPlayer(number: player)._lastName)
             
         }
-        print(game.currIceNames)
+//        print(game.currIceNames)
         
         // CHAD!!! This is the section where you can send stats to the database for processing
         // Check out Player.swift for function calls for accessing player statistics
