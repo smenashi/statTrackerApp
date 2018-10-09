@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F99F99C2166B23100E94C84 /* SQLite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F99F99B2166B23100E94C84 /* SQLite.swift */; };
+		6F99F99E2166B26B00E94C84 /* EmailHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F99F99D2166B26B00E94C84 /* EmailHandler.swift */; };
+		6F99F9A02166B2D100E94C84 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F99F99F2166B2D100E94C84 /* UserDefaults.swift */; };
 		81154426215969C800ACFF97 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81154425215969C800ACFF97 /* Player.swift */; };
 		81154428215969D800ACFF97 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81154427215969D800ACFF97 /* Game.swift */; };
 		8115442A21596B3600ACFF97 /* HockeyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8115442921596B3600ACFF97 /* HockeyViewController.swift */; };
@@ -20,6 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6F99F99B2166B23100E94C84 /* SQLite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLite.swift; sourceTree = "<group>"; };
+		6F99F99D2166B26B00E94C84 /* EmailHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailHandler.swift; sourceTree = "<group>"; };
+		6F99F99F2166B2D100E94C84 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		81154425215969C800ACFF97 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		81154427215969D800ACFF97 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		8115442921596B3600ACFF97 /* HockeyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HockeyViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +81,9 @@
 				81154425215969C800ACFF97 /* Player.swift */,
 				81154427215969D800ACFF97 /* Game.swift */,
 				8115442921596B3600ACFF97 /* HockeyViewController.swift */,
+				6F99F99B2166B23100E94C84 /* SQLite.swift */,
+				6F99F99D2166B26B00E94C84 /* EmailHandler.swift */,
+				6F99F99F2166B2D100E94C84 /* UserDefaults.swift */,
 			);
 			path = statTrackerApp;
 			sourceTree = "<group>";
@@ -153,8 +162,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8187226C2161DC2500B6009C /* Clock.swift in Sources */,
+				6F99F99C2166B23100E94C84 /* SQLite.swift in Sources */,
 				8198238321484C8100E02A9C /* ViewController.swift in Sources */,
+				6F99F99E2166B26B00E94C84 /* EmailHandler.swift in Sources */,
 				81154426215969C800ACFF97 /* Player.swift in Sources */,
+				6F99F9A02166B2D100E94C84 /* UserDefaults.swift in Sources */,
 				8115442A21596B3600ACFF97 /* HockeyViewController.swift in Sources */,
 				8198238121484C8100E02A9C /* AppDelegate.swift in Sources */,
 				81154428215969D800ACFF97 /* Game.swift in Sources */,
@@ -302,6 +314,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K7S7R5M94G;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -323,6 +336,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K7S7R5M94G;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",

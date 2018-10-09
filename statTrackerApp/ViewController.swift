@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MessageUI
 
 class ViewController: UIViewController {
     
@@ -16,7 +17,11 @@ class ViewController: UIViewController {
     var playerButtonColor = UIColor(red: 0.83921569, green: 0.72941176, blue: 0.54509804, alpha: 1.0)
     
     // hard-coding game
+    /*
     var game = Game(player1: Player(firstName: "Player", lastName: "1", jerseyNum: 1), player2: Player(firstName: "Player", lastName: "2", jerseyNum: 2), player3: Player(firstName: "Player", lastName: "3", jerseyNum: 3), player4: Player(firstName: "Player", lastName: "4", jerseyNum: 4), player5: Player(firstName: "Player", lastName: "5", jerseyNum: 5), player6: Player(firstName: "Player", lastName: "6", jerseyNum: 6), player7: Player(firstName: "Player", lastName: "7", jerseyNum: 7), player8: Player(firstName: "Player", lastName: "8", jerseyNum: 8), player9: Player(firstName: "Player", lastName: "9", jerseyNum: 9), player10: Player(firstName: "Player", lastName: "10", jerseyNum: 10), player11: Player(firstName: "Player", lastName: "11", jerseyNum: 11), player12: Player(firstName: "Player", lastName: "12", jerseyNum: 12), player13: Player(firstName: "Player", lastName: "13", jerseyNum: 13), player14: Player(firstName: "Player", lastName: "14", jerseyNum: 14), player15: Player(firstName: "Player", lastName: "15", jerseyNum: 15), player16: Player(firstName: "Player", lastName: "16", jerseyNum: 16), player17: Player(firstName: "Player", lastName: "17", jerseyNum: 17), player18: Player(firstName: "Player", lastName: "18", jerseyNum: 18), player19: Player(firstName: "Player", lastName: "19", jerseyNum: 19), player20: Player(firstName: "Player", lastName: "20", jerseyNum: 20), player21: Player(firstName: "Player", lastName: "21", jerseyNum: 21), player22: Player(firstName: "Player", lastName: "22", jerseyNum: 22))
+    */
+    
+    var game = Game(player1: Player(firstName: "Willet", lastName: "9", jerseyNum: 9), player2: Player(firstName: "Brochu", lastName: "15", jerseyNum: 15), player3: Player(firstName: "Conway", lastName: "18", jerseyNum: 18), player4: Player(firstName: "Beniers", lastName: "16", jerseyNum: 16), player5: Player(firstName: "Gagnon", lastName: "10", jerseyNum: 10), player6: Player(firstName: "Bray", lastName: "26", jerseyNum: 26), player7: Player(firstName: "Bruneteau", lastName: "22", jerseyNum: 22), player8: Player(firstName: "Daigler", lastName: "20", jerseyNum: 20), player9: Player(firstName: "Ursitti", lastName: "12", jerseyNum: 12), player10: Player(firstName: "Stickel", lastName: "27", jerseyNum: 27), player11: Player(firstName: "Nichols", lastName: "23", jerseyNum: 23), player12: Player(firstName: "Simson", lastName: "19", jerseyNum: 19), player13: Player(firstName: "Allen", lastName: "5", jerseyNum: 5), player14: Player(firstName: "Labonte", lastName: "4", jerseyNum: 4), player15: Player(firstName: "Jones", lastName: "44", jerseyNum: 44), player16: Player(firstName: "Morrison", lastName: "14", jerseyNum: 14), player17: Player(firstName: "Chen", lastName: "7", jerseyNum: 7), player18: Player(firstName: "Cochrane", lastName: "2", jerseyNum: 2), player19: Player(firstName: "Buitenhuis", lastName: "29", jerseyNum: 29), player20: Player(firstName: "Tiribassi", lastName: "34", jerseyNum: 34), player21: Player(firstName: "Negron", lastName: "1", jerseyNum: 1), player22: Player(firstName: "Stimola", lastName: "6", jerseyNum: 6))
 
     @IBOutlet weak var displayCount: UILabel!
    
@@ -493,7 +498,10 @@ class ViewController: UIViewController {
             animate(toggle: false, type: goalForButton)
         }
         
-        // CHAD: increase the shot for for each player on ice here
+        // : increase the shot for for each player on ice here
+        for player in game.currIce {
+            player.increaseShotFor()
+        }
     }
     
     @IBAction func onClickShotAgainst(_ sender: Any) {
@@ -528,7 +536,10 @@ class ViewController: UIViewController {
             animate(toggle: false, type: goalForButton)
         }
         
-        // CHAD: increase the shot for for each player on ice here
+        // : increase the GOAL for for each player on ice here
+        for player in game.currIce {
+            player.increaseGoalFor()
+        }
         
     }
     
@@ -797,6 +808,33 @@ class ViewController: UIViewController {
 //            print(game.getPlayer(number: player)._lastName)
             
         }
+        var sql:String
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        for player in game.getAllPlayers() {
+            //replace when DB already works (for now temp fix)
+            sql = "replace into playerStats(name, number, iceTime, shotsFor, shotsForTaken, shotsAgainst, goalsFor, goalsForTaken, goalsAgainst) values( \"\(player._firstName)\", \(player._jerseyNumber), \(player.iceTime), \(player.shotFor), \(player.shotForTaken), \(player.shotAgainst), \(player.goalFor), \(player.goalForTaken), \(player.goalAgainst))"
+            
+            //print(sql)
+            appDelegate.database?.executeNoReturn(execCommand: sql)
+            
+        }
+        //let emailer = EmailViewController()
+        let mystring = appDelegate.database?.getStatTableCSV()
+        if !MFMailComposeViewController.canSendMail() {
+            print("Mail services are not available")
+        }
+        let composeVC = MFMailComposeViewController()
+        composeVC.mailComposeDelegate = self as? MFMailComposeViewControllerDelegate
+        // Configure the fields of the interface.
+        composeVC.setToRecipients(["cmorse529@gmail.com"])
+        composeVC.setSubject("Game Statistics Summary")
+        composeVC.setMessageBody("Statistics attached", isHTML: false)
+        composeVC.addAttachmentData((mystring?.data(using: .utf8))!, mimeType: "text/csv", fileName: "gameStats.csv")
+        // Present the view controller modally.
+        self.present(composeVC, animated: true, completion: nil)
+        
+        
+        
 //        print(game.currIceNames)
         
         // CHAD!!! This is the section where you can send stats to the database for processing
@@ -840,6 +878,15 @@ class ViewController: UIViewController {
         period2.alpha = 0.5
         period3.alpha = 0.5
         overtime.alpha = 0.5
+        
+        /////this loads the names of the players onto the buttons
+        let currPlayers = game.getAllPlayers()
+        let playerButtons = [Player1, Player2, Player3, Player4, Player5, Player6, Player7, Player8, Player9, Player10, Player11, Player12, Player13, Player14, Player15, Player16, Player17, Player18, Player19, Player20, Player21, Player22]
+        for i in stride(from: 0, to: 22, by: 1) {
+            playerButtons[i]!.setTitle(currPlayers[i]._firstName, for: .normal)
+        }
+        /////player buttons now have the right names on them
+        
         
     
     }
@@ -897,13 +944,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfSections section: Int) -> Int {
         // builds n number of cells in the table: n = number of players on ice + 1
         // +1 for "Unknown" option
-        return game.getIce().count + 1
+        return game.getIce().count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // populates n number of cells in the table: n = number of players on ice + 1
         // +1 for "Unknown" option
-        return game.getIce().count + 1
+        return game.getIce().count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -934,7 +981,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         
 //        print("TESTING: \n \(game.currIceNames)\n")
         // set labels to cells
-        cell.textLabel?.text = game.currIceNames[indexPath.row]
+        cell.textLabel?.text = game.currIce[indexPath.row]._firstName
         return cell
     }
     
@@ -947,7 +994,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         // this is where the data for the selected players is handled:
         // Ex: the player selected under Goal For will get +1 to their goals made
         // Ex: the player selected under Shot For will get +1 to their shots made
-        // CHAD:
+        // :
         //// tested and works to track the NAMES of the player:
         // uncomment this to see the label "Player-Clicked" change to the name of the player
         //         playerClickedLabel?.text = game.currIceNames[indexPath.row]
@@ -959,16 +1006,19 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         // Shot For button clicked, update that stat for selected player
         if dropDownClicked == "shotFor"{
 //            print("Shot For was clicked!")
-            // CHAD: use game.currIceNames[indexPath.row] which is the jerseynumber of the selected player to access
+            // : use game.currIceNames[indexPath.row] which is the jerseynumber of the selected player to access
             //          the individual player and increment their relevant stat
+            //print(game.currIce[indexPath.row]._firstName)
+            game.currIce[indexPath.row].increaseShotForTaken()
         
         }
         
         // Goal For button clicked, update that stat for selected player
         if dropDownClicked == "goalFor"{
 //            print("Goal For was clicked!")
-            // CHAD: use game.currIceNames[indexPath.row] which is the jerseynumber of the selected player to access
+            // : use game.currIceNames[indexPath.row] which is the jerseynumber of the selected player to access
             //          the individual player and increment their relevant stat
+            game.currIce[indexPath.row].increaseGoaltForTaken()
             
         }
         
