@@ -45,21 +45,28 @@ class SQLiteDB {
             print("error preparing insert: \(errmsg)")
             return "ERROR"
         }
-        var csv = "Number, Name, IceTime, ShotsFor, ShotsForTaken, ShotsAgainst, GoalsFor, GoalForTaken, GoalAgainst\n"
+        var csv = "Number, Name, IceTime, ShotsFor, ShotsForTaken, ShotsAgainst, GoalsFor, GoalForTaken, GoalAgainst, +/-, Shot +/-, Corsi\n"
         
         //, ShotsFor, ShotsForTaken, ShotsAgainst, goalsFor, goalsForTaken, goalsAgainst\n"
         while(sqlite3_step(stmt) == SQLITE_ROW){
             //print (stmt!)
             let number = sqlite3_column_int(stmt, 0)
             let name = String(cString: sqlite3_column_text(stmt, 1))
-            let icetime = String(cString: sqlite3_column_text(stmt, 2))
+            let icetime = sqlite3_column_int(stmt, 2)
+            let icetimeStr = String(format:"%02i:%02i", icetime/60, icetime%60)
             let shotFor = sqlite3_column_int(stmt, 3)
             let shotForTaken = sqlite3_column_int(stmt, 4)
             let shotAgainst = sqlite3_column_int(stmt, 5)
             let goalFor = sqlite3_column_int(stmt, 6)
             let goalForTaken = sqlite3_column_int(stmt, 7)
             let goalAgainst = sqlite3_column_int(stmt, 8)
-            let newline = "\(number),\(name),\(icetime),\(shotFor),\(shotForTaken),\(shotAgainst),\(goalFor),\(goalForTaken),\(goalAgainst)\n"
+            let plusMinus = goalFor - goalAgainst
+            let shotPlusMinus = shotFor - shotAgainst
+            var corsi = 0
+            if icetime != 0{
+                corsi = Int(shotPlusMinus * (3600/icetime))
+            }
+            let newline = "\(number),\(name),\(icetimeStr),\(shotFor),\(shotForTaken),\(shotAgainst),\(goalFor),\(goalForTaken),\(goalAgainst),\(plusMinus),\(shotPlusMinus),\(corsi)\n"
             csv.append(contentsOf: newline)
         }
         return csv

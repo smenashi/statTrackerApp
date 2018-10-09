@@ -539,6 +539,7 @@ class ViewController: UIViewController {
         // : increase the GOAL for for each player on ice here
         for player in game.currIce {
             player.increaseGoalFor()
+            player.increaseShotFor()
         }
         
     }
@@ -1029,6 +1030,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 //            print("Goal For was clicked!")
             // : use game.currIceNames[indexPath.row] which is the jerseynumber of the selected player to access
             //          the individual player and increment their relevant stat
+            game.currIce[indexPath.row].increaseShotForTaken()
             game.currIce[indexPath.row].increaseGoaltForTaken()
             
         }
