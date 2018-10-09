@@ -446,7 +446,7 @@
                                     <constraint firstAttribute="width" constant="265" id="Ll5-wn-DGy"/>
                                     <constraint firstAttribute="height" constant="236" id="V8j-d4-khF"/>
                                 </constraints>
-                                <state key="normal" title="CLOCK">
+                                <state key="normal">
                                     <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -580,6 +580,27 @@
                                     <action selector="onClickEndPeriod:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ieP-eP-7rV"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FvN-TY-B1I">
+                                <rect key="frame" x="524" y="772" width="38" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.85725446428571428" blue="0.28297991071428569" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Stop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q84-0d-A5t">
+                                <rect key="frame" x="589" y="772" width="36" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.85725446428571428" blue="0.28297991071428569" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="/" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kwo-NV-euT">
+                                <rect key="frame" x="572" y="772" width="6" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -710,6 +731,8 @@
                         <outlet property="playersDropDown" destination="gQ4-Vf-MnO" id="q3M-xy-Fon"/>
                         <outlet property="shotAgainstButton" destination="k6J-xL-Zip" id="Eil-ug-YTL"/>
                         <outlet property="shotForButton" destination="Vxs-Dc-lRy" id="A6I-wR-Nbl"/>
+                        <outlet property="startLabel" destination="FvN-TY-B1I" id="JyI-ON-09C"/>
+                        <outlet property="stopLabel" destination="Q84-0d-A5t" id="ZkH-TX-nRn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

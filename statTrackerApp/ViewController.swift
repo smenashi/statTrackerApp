@@ -718,12 +718,20 @@ class ViewController: UIViewController {
     // gates game clock button usage
     var clockPaused = true
     
+    // clock labels: change based on state
+    @IBOutlet weak var startLabel: UILabel!
+    @IBOutlet weak var stopLabel: UILabel!
+    
+    
+    
     @IBAction func onClickGameClock(_ sender: Any) {
         // CLOCK button clicked:
         playersDropDown.reloadData() // reload drop-down data
         if newPeriod == true{   // check if we started a new period
             gameSeconds = 1200  // reset time, 1200 for real game
             newPeriod = false   // update flag
+            stopLabel.alpha = 1   //make stop label more opaque: "click to stop"
+            startLabel.alpha = 0.4    // make start label less opaque
         }
         
         if self.clockPaused == false{
@@ -731,6 +739,8 @@ class ViewController: UIViewController {
             gameTimer.invalidate()
             isTimerRunning = true
             self.clockPaused = true
+            stopLabel.alpha = 0.4
+            startLabel.alpha = 1
             for player in game.getIce() {
                 game.getPlayer(number: player).stopClock()
             }
@@ -741,6 +751,8 @@ class ViewController: UIViewController {
             runTimer()
             self.clockPaused = false
             isTimerRunning = true
+            stopLabel.alpha = 1   //make stop label more opaque: "click to stop"
+            startLabel.alpha = 0.4   // make start label less opaque
             for player in game.getIce() {
                 game.getPlayer(number: player).startClock()
             }
