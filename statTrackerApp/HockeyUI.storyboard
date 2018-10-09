@@ -91,394 +91,233 @@
                                     <action selector="clickD3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qWi-4X-utl"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xNz-v3-enX">
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="xNz-v3-enX">
                                 <rect key="frame" x="103" y="151" width="61" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.83921568627450982" green="0.72941176470588232" blue="0.54509803921568623" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Player1">
-                                            <attributes>
-                                                <font key="NSFont" metaFont="system" size="15"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
+                                <state key="normal" title="Player1"/>
                                 <connections>
                                     <action selector="clickPlayer1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qWD-ey-QzZ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xA7-KS-kUN">
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xA7-KS-kUN">
                                 <rect key="frame" x="185" y="151" width="61" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Player2">
-                                            <attributes>
-                                                <font key="NSFont" metaFont="system" size="15"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
+                                <state key="normal" title="Player2"/>
                                 <connections>
                                     <action selector="clickPlayer2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mXO-pL-36U"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1bT-wq-nfr">
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1bT-wq-nfr">
                                 <rect key="frame" x="266" y="151" width="61" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Player3">
-                                            <attributes>
-                                                <font key="NSFont" metaFont="system" size="15"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
+                                <state key="normal" title="Player3"/>
                                 <connections>
                                     <action selector="clickPlayer3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MmO-pa-Alw"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DAi-1u-L8k">
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DAi-1u-L8k">
                                 <rect key="frame" x="103" y="234" width="61" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Player4">
-                                            <attributes>
-                                                <font key="NSFont" metaFont="system" size="15"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
+                                <state key="normal" title="Player4"/>
                                 <connections>
                                     <action selector="clickPlayer4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1rL-hY-gzA"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tsX-TQ-VPM">
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tsX-TQ-VPM">
                                 <rect key="frame" x="185" y="234" width="61" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Player5">
-                                            <attributes>
-                                                <font key="NSFont" metaFont="system" size="15"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
+                                <state key="normal" title="Player5"/>
                                 <connections>
                                     <action selector="clickPlayer5:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KSC-hb-cRc"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i6k-jU-Bj7">
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i6k-jU-Bj7">
                                 <rect key="frame" x="266" y="234" width="61" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Player6">
-                                            <attributes>
-                                                <font key="NSFont" metaFont="system" size="15"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
+                                <state key="normal" title="Player6"/>
                                 <connections>
                                     <action selector="clickPlayer6:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cYq-oW-627"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Dz-Pd-JAT">
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Dz-Pd-JAT">
                                 <rect key="frame" x="103" y="316" width="61" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Player7">
-                                            <attributes>
-                                                <font key="NSFont" metaFont="system" size="15"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
+                                <state key="normal" title="Player7"/>
                                 <connections>
                                     <action selector="clickPlayer7:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VPh-Wx-CCZ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PWP-yj-a90">
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PWP-yj-a90">
                                 <rect key="frame" x="185" y="316" width="61" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Player8">
-                                            <attributes>
-                                                <font key="NSFont" metaFont="system" size="15"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
+                                <state key="normal" title="Player8"/>
                                 <connections>
                                     <action selector="clickPlayer8:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5xY-W0-SxC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a0C-a8-rrP">
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a0C-a8-rrP">
                                 <rect key="frame" x="266" y="316" width="61" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Player9">
-                                            <attributes>
-                                                <font key="NSFont" metaFont="system" size="15"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
+                                <state key="normal" title="Player9"/>
                                 <connections>
                                     <action selector="clickPlayer9:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ClY-Xx-YyR"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zTm-xd-ces">
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zTm-xd-ces">
                                 <rect key="frame" x="185" y="398" width="61" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Player11">
-                                            <attributes>
-                                                <font key="NSFont" metaFont="system" size="15"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
+                                <state key="normal" title="Player11"/>
                                 <connections>
                                     <action selector="clickPlayer11:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r5d-vl-rbG"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="thW-CL-3sC">
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="thW-CL-3sC">
                                 <rect key="frame" x="103" y="398" width="61" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Player10">
-                                            <attributes>
-                                                <font key="NSFont" metaFont="system" size="15"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
+                                <state key="normal" title="Player10"/>
                                 <connections>
                                     <action selector="clickPlayer10:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dPM-vg-3hF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WD2-18-JCp">
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WD2-18-JCp">
                                 <rect key="frame" x="227" y="480" width="60" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Player14">
-                                            <attributes>
-                                                <font key="NSFont" metaFont="system" size="15"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
+                                <state key="normal" title="Player14"/>
                                 <connections>
                                     <action selector="clickPlayer14:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XHg-fN-b9r"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ziq-6X-hXM">
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ziq-6X-hXM">
                                 <rect key="frame" x="145" y="480" width="61" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Player13">
-                                            <attributes>
-                                                <font key="NSFont" metaFont="system" size="15"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
+                                <state key="normal" title="Player13"/>
                                 <connections>
                                     <action selector="clickPlayer13:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YHA-VQ-dZH"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0mc-gG-HWH">
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0mc-gG-HWH">
                                 <rect key="frame" x="227" y="562" width="60" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Player16">
-                                            <attributes>
-                                                <font key="NSFont" metaFont="system" size="15"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
+                                <state key="normal" title="Player16"/>
                                 <connections>
                                     <action selector="clickPlayer16:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n11-4j-aSe"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GHj-WV-zrZ">
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GHj-WV-zrZ">
                                 <rect key="frame" x="145" y="562" width="61" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Player15">
-                                            <attributes>
-                                                <font key="NSFont" metaFont="system" size="15"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
+                                <state key="normal" title="Player15"/>
                                 <connections>
                                     <action selector="clickPlayer15:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1eQ-fY-h4c"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1xr-Sj-Q6N">
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xr-Sj-Q6N">
                                 <rect key="frame" x="227" y="644" width="60" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Player18">
-                                            <attributes>
-                                                <font key="NSFont" metaFont="system" size="15"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
+                                <state key="normal" title="Player18"/>
                                 <connections>
                                     <action selector="clickPlayer18:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kak-Us-URW"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sue-kp-ONa">
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sue-kp-ONa">
                                 <rect key="frame" x="185" y="725" width="61" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Player19">
-                                            <attributes>
-                                                <font key="NSFont" metaFont="system" size="15"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
+                                <state key="normal" title="Player19"/>
                                 <connections>
                                     <action selector="clickPlayer19:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m2k-61-cyk"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VNs-n8-Dej">
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VNs-n8-Dej">
                                 <rect key="frame" x="145" y="644" width="61" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Player17">
-                                            <attributes>
-                                                <font key="NSFont" metaFont="system" size="15"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
+                                <state key="normal" title="Player17"/>
                                 <connections>
                                     <action selector="clickPlayer17:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aoD-kD-vsr"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Hx-Dw-aRi">
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Hx-Dw-aRi">
                                 <rect key="frame" x="185" y="809" width="61" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Player20">
-                                            <attributes>
-                                                <font key="NSFont" metaFont="system" size="15"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
+                                <state key="normal" title="Player20"/>
                                 <connections>
                                     <action selector="clickPlayer20:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Mu-JD-ei8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3L2-yx-BEe">
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3L2-yx-BEe">
                                 <rect key="frame" x="185" y="889" width="61" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Player21">
-                                            <attributes>
-                                                <font key="NSFont" metaFont="system" size="15"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
+                                <state key="normal" title="Player21"/>
                                 <connections>
                                     <action selector="clickPlayer21:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uhM-RT-BUn"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JTW-WN-4cm">
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTW-WN-4cm">
                                 <rect key="frame" x="295" y="725" width="60" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Player22">
-                                            <attributes>
-                                                <font key="NSFont" metaFont="system" size="15"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
+                                <state key="normal" title="Player22"/>
                                 <connections>
                                     <action selector="clickPlayer22:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jyu-8U-lSM"/>
                                 </connections>
@@ -622,21 +461,13 @@
                                     <action selector="click4v5:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9FS-3r-a3g"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="80h-PI-YG2">
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80h-PI-YG2">
                                 <rect key="frame" x="266" y="398" width="61" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Player12">
-                                            <attributes>
-                                                <font key="NSFont" metaFont="system" size="15"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
+                                <state key="normal" title="Player12"/>
                                 <connections>
                                     <action selector="clickPlayer12:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DQI-BC-2Rz"/>
                                 </connections>
