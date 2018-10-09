@@ -853,7 +853,6 @@ class ViewController: UIViewController {
     // hardcoding players for demo purposes: will be in each cell of drop-down menu
     var playersList = ["player1", "player2", "player3", "player4", "player5"]
     
-    @IBOutlet weak var playerClickedLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()

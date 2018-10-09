@@ -449,6 +449,12 @@
                                 <state key="normal" title="CLOCK">
                                     <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.clipsToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="onClickGameClock:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bp1-wi-bqK"/>
                                 </connections>
@@ -501,8 +507,8 @@
                                     <action selector="click5v5:" destination="BYZ-38-t0r" eventType="touchUpInside" id="38C-tE-vDx"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8V-mV-f50">
-                                <rect key="frame" x="520" y="595" width="109.5" height="48"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8V-mV-f50">
+                                <rect key="frame" x="521" y="595" width="107.5" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -574,13 +580,6 @@
                                     <action selector="onClickEndPeriod:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ieP-eP-7rV"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player-Clicked" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xJA-Hp-F7j">
-                                <rect key="frame" x="587" y="151" width="137" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -708,7 +707,6 @@
                         <outlet property="period1" destination="zGH-WN-koZ" id="ez7-eO-PFA"/>
                         <outlet property="period2" destination="4tv-d0-WDL" id="EOq-n4-thD"/>
                         <outlet property="period3" destination="lRb-dO-Ufy" id="l3Z-1g-OJv"/>
-                        <outlet property="playerClickedLabel" destination="xJA-Hp-F7j" id="u3P-vg-2zA"/>
                         <outlet property="playersDropDown" destination="gQ4-Vf-MnO" id="q3M-xy-Fon"/>
                         <outlet property="shotAgainstButton" destination="k6J-xL-Zip" id="Eil-ug-YTL"/>
                         <outlet property="shotForButton" destination="Vxs-Dc-lRy" id="A6I-wR-Nbl"/>
