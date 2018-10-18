@@ -456,25 +456,6 @@
                                     <action selector="clickPlayer12:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DQI-BC-2Rz"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gQ4-Vf-MnO">
-                                <rect key="frame" x="623" y="573" width="145" height="302"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="player" id="tgz-aV-VTm">
-                                        <rect key="frame" x="0.0" y="28" width="145" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tgz-aV-VTm" id="h7k-yb-I5c">
-                                            <rect key="frame" x="0.0" y="0.0" width="145" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="yHd-QJ-9yC"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="C0b-Rj-wNF"/>
-                                </connections>
-                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lOM-pC-QtA">
                                 <rect key="frame" x="60" y="78" width="77" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -597,18 +578,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJf-ey-VLu">
-                                <rect key="frame" x="590" y="151" width="155" height="50"/>
-                                <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="FbZ-UX-CG0"/>
-                                    <constraint firstAttribute="width" constant="155" id="wjg-Dt-aPL"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title="Icing For">
-                                    <color key="titleColor" red="1" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Qm-dd-bkR">
                                 <rect key="frame" x="590" y="219" width="155" height="50"/>
                                 <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -620,6 +589,9 @@
                                 <state key="normal" title="Icing Against">
                                     <color key="titleColor" red="1" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="onClickIcingAgainst:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cMw-VN-h6u"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vqc-ne-CJ0">
                                 <rect key="frame" x="590" y="355" width="155" height="50"/>
@@ -632,6 +604,9 @@
                                 <state key="normal" title="Penalties Taken">
                                     <color key="titleColor" red="1" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="onClickPenaltiesTaken:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hJ0-b3-iVI"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e1q-vQ-go2">
                                 <rect key="frame" x="590" y="287" width="155" height="50"/>
@@ -644,7 +619,44 @@
                                 <state key="normal" title="Penalties Drawn">
                                     <color key="titleColor" red="1" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="onClickPenaltiesDrawn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3oj-Gj-dz3"/>
+                                </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJf-ey-VLu">
+                                <rect key="frame" x="590" y="151" width="155" height="50"/>
+                                <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="FbZ-UX-CG0"/>
+                                    <constraint firstAttribute="width" constant="155" id="wjg-Dt-aPL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Icing For">
+                                    <color key="titleColor" red="1" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onClickIcingFor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lSw-1a-HcZ"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gQ4-Vf-MnO">
+                                <rect key="frame" x="623" y="573" width="155" height="302"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="player" id="tgz-aV-VTm">
+                                        <rect key="frame" x="0.0" y="28" width="155" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tgz-aV-VTm" id="h7k-yb-I5c">
+                                            <rect key="frame" x="0.0" y="0.0" width="155" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="yHd-QJ-9yC"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="C0b-Rj-wNF"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -766,6 +778,8 @@
                         <outlet property="gameTime" destination="A8V-mV-f50" id="V7V-QK-3zg"/>
                         <outlet property="goalAgainstButton" destination="ebO-rA-K1B" id="YdB-5a-4jx"/>
                         <outlet property="goalForButton" destination="ywe-Xe-YDI" id="799-ia-ZKj"/>
+                        <outlet property="icingAgainstButton" destination="8Qm-dd-bkR" id="Q2m-hK-Xul"/>
+                        <outlet property="icingForButton" destination="WJf-ey-VLu" id="2Mu-KD-cdj"/>
                         <outlet property="manPow3v3" destination="wbZ-u1-OCw" id="erl-c1-285"/>
                         <outlet property="manPow3v5" destination="fHq-vh-6K2" id="T5D-ek-4iK"/>
                         <outlet property="manPow4v5" destination="j6B-du-Lii" id="ipc-ic-yx1"/>
@@ -773,6 +787,8 @@
                         <outlet property="manPow5v4" destination="aT5-3x-UaJ" id="bts-88-8h5"/>
                         <outlet property="manPow5v5" destination="lOM-pC-QtA" id="bHd-Bk-QrY"/>
                         <outlet property="overtime" destination="ON8-Js-vkl" id="Ho6-1E-8UU"/>
+                        <outlet property="penaltiesDrawnButton" destination="e1q-vQ-go2" id="xoB-qT-keG"/>
+                        <outlet property="penaltiesTakenButton" destination="Vqc-ne-CJ0" id="Y9w-fb-5ty"/>
                         <outlet property="period1" destination="zGH-WN-koZ" id="ez7-eO-PFA"/>
                         <outlet property="period2" destination="4tv-d0-WDL" id="EOq-n4-thD"/>
                         <outlet property="period3" destination="lRb-dO-Ufy" id="l3Z-1g-OJv"/>
