@@ -36,14 +36,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var gameTime: UILabel!
     /////////////////////////////////////////
     
-    
-    // Period Buttons ///////////////////////
-    // set current period.alpha = 1.0, all other periods alpha = 0.5
-    @IBOutlet weak var period1: UIButton!
-    @IBOutlet weak var period2: UIButton!
-    @IBOutlet weak var period3: UIButton!
-    @IBOutlet weak var overtime: UIButton!
-    
+    // Period Labels //////////////////
+    @IBOutlet weak var period1Label: UILabel!
+    @IBOutlet weak var period2Label: UILabel!
+    @IBOutlet weak var period3Label: UILabel!
+    @IBOutlet weak var otLabel: UILabel!
     /////////////////////////////////////////
     
     // Man Power Configurations Buttons /////
@@ -953,13 +950,14 @@ class ViewController: UIViewController {
         manPow5v3.alpha = 0.5
         manPow5v4.alpha = 0.5
         manPow5v5.alpha = 1
+       
+        // starting period opacities
+        period1Label.alpha = 1
+        period2Label.alpha = 0.5
+        period3Label.alpha = 0.5
+        otLabel.alpha = 0.5
         
-        // hardcoding starting period opacities
-        period1.alpha = 1
-        period2.alpha = 0.5
-        period3.alpha = 0.5
-        overtime.alpha = 0.5
-        
+       
         /////this loads the names of the players onto the buttons
         let currPlayers = game.getAllPlayers()
         let playerButtons = [Player1, Player2, Player3, Player4, Player5, Player6, Player7, Player8, Player9, Player10, Player11, Player12, Player13, Player14, Player15, Player16, Player17, Player18, Player19, Player20, Player21, Player22]

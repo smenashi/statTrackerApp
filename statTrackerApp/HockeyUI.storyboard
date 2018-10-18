@@ -25,8 +25,19 @@
                                     <constraint firstAttribute="width" secondItem="7LU-93-Dti" secondAttribute="height" multiplier="3:4" id="6sL-6F-UiE"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="49o-r3-KJ2">
+                                <rect key="frame" x="20" y="135" width="75" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <state key="normal" title="F1">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickF1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5mT-Dn-HgQ"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ye6-Fv-qDf">
-                                <rect key="frame" x="21" y="245" width="50" height="30"/>
+                                <rect key="frame" x="20" y="219" width="75" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <state key="normal" title="F2">
@@ -37,7 +48,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HjE-iS-Woq">
-                                <rect key="frame" x="21" y="327" width="50" height="30"/>
+                                <rect key="frame" x="20" y="300" width="75" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <state key="normal" title="F3">
@@ -48,7 +59,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hEk-gE-5nK">
-                                <rect key="frame" x="21" y="409" width="50" height="30"/>
+                                <rect key="frame" x="21" y="382" width="75" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <state key="normal" title="F4">
@@ -59,7 +70,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CY7-hX-zYq">
-                                <rect key="frame" x="21" y="491" width="50" height="30"/>
+                                <rect key="frame" x="20" y="464" width="75" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <state key="normal" title="D1">
@@ -70,7 +81,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ibe-x0-wgt">
-                                <rect key="frame" x="21" y="573" width="50" height="30"/>
+                                <rect key="frame" x="21" y="546" width="75" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <state key="normal" title="D2">
@@ -81,7 +92,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rsj-Ej-oP6">
-                                <rect key="frame" x="21" y="655" width="50" height="30"/>
+                                <rect key="frame" x="21" y="628" width="75" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <state key="normal" title="D3">
@@ -89,248 +100,6 @@
                                 </state>
                                 <connections>
                                     <action selector="clickD3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qWi-4X-utl"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="xNz-v3-enX">
-                                <rect key="frame" x="103" y="151" width="61" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.83921568627450982" green="0.72941176470588232" blue="0.54509803921568623" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Player1"/>
-                                <connections>
-                                    <action selector="clickPlayer1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qWD-ey-QzZ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xA7-KS-kUN">
-                                <rect key="frame" x="185" y="151" width="61" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Player2"/>
-                                <connections>
-                                    <action selector="clickPlayer2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mXO-pL-36U"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1bT-wq-nfr">
-                                <rect key="frame" x="266" y="151" width="61" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Player3"/>
-                                <connections>
-                                    <action selector="clickPlayer3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MmO-pa-Alw"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DAi-1u-L8k">
-                                <rect key="frame" x="103" y="234" width="61" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Player4"/>
-                                <connections>
-                                    <action selector="clickPlayer4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1rL-hY-gzA"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tsX-TQ-VPM">
-                                <rect key="frame" x="185" y="234" width="61" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Player5"/>
-                                <connections>
-                                    <action selector="clickPlayer5:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KSC-hb-cRc"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i6k-jU-Bj7">
-                                <rect key="frame" x="266" y="234" width="61" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Player6"/>
-                                <connections>
-                                    <action selector="clickPlayer6:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cYq-oW-627"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Dz-Pd-JAT">
-                                <rect key="frame" x="103" y="316" width="61" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Player7"/>
-                                <connections>
-                                    <action selector="clickPlayer7:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VPh-Wx-CCZ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PWP-yj-a90">
-                                <rect key="frame" x="185" y="316" width="61" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Player8"/>
-                                <connections>
-                                    <action selector="clickPlayer8:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5xY-W0-SxC"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a0C-a8-rrP">
-                                <rect key="frame" x="266" y="316" width="61" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Player9"/>
-                                <connections>
-                                    <action selector="clickPlayer9:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ClY-Xx-YyR"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zTm-xd-ces">
-                                <rect key="frame" x="185" y="398" width="61" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Player11"/>
-                                <connections>
-                                    <action selector="clickPlayer11:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r5d-vl-rbG"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="thW-CL-3sC">
-                                <rect key="frame" x="103" y="398" width="61" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Player10"/>
-                                <connections>
-                                    <action selector="clickPlayer10:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dPM-vg-3hF"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WD2-18-JCp">
-                                <rect key="frame" x="227" y="480" width="60" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Player14"/>
-                                <connections>
-                                    <action selector="clickPlayer14:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XHg-fN-b9r"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ziq-6X-hXM">
-                                <rect key="frame" x="145" y="480" width="61" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Player13"/>
-                                <connections>
-                                    <action selector="clickPlayer13:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YHA-VQ-dZH"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0mc-gG-HWH">
-                                <rect key="frame" x="227" y="562" width="60" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Player16"/>
-                                <connections>
-                                    <action selector="clickPlayer16:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n11-4j-aSe"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GHj-WV-zrZ">
-                                <rect key="frame" x="145" y="562" width="61" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Player15"/>
-                                <connections>
-                                    <action selector="clickPlayer15:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1eQ-fY-h4c"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xr-Sj-Q6N">
-                                <rect key="frame" x="227" y="644" width="60" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Player18"/>
-                                <connections>
-                                    <action selector="clickPlayer18:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kak-Us-URW"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sue-kp-ONa">
-                                <rect key="frame" x="185" y="725" width="61" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Player19"/>
-                                <connections>
-                                    <action selector="clickPlayer19:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m2k-61-cyk"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VNs-n8-Dej">
-                                <rect key="frame" x="145" y="644" width="61" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Player17"/>
-                                <connections>
-                                    <action selector="clickPlayer17:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aoD-kD-vsr"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Hx-Dw-aRi">
-                                <rect key="frame" x="185" y="809" width="61" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Player20"/>
-                                <connections>
-                                    <action selector="clickPlayer20:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Mu-JD-ei8"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3L2-yx-BEe">
-                                <rect key="frame" x="185" y="889" width="61" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Player21"/>
-                                <connections>
-                                    <action selector="clickPlayer21:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uhM-RT-BUn"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTW-WN-4cm">
-                                <rect key="frame" x="295" y="725" width="60" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Player22"/>
-                                <connections>
-                                    <action selector="clickPlayer22:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jyu-8U-lSM"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="49o-r3-KJ2">
-                                <rect key="frame" x="21" y="162" width="50" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
-                                <state key="normal" title="F1">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="clickF1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5mT-Dn-HgQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vxs-Dc-lRy">
@@ -394,7 +163,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aT5-3x-UaJ">
-                                <rect key="frame" x="174" y="78" width="77" height="30"/>
+                                <rect key="frame" x="174" y="63" width="77" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="77" id="MBd-5W-D59"/>
@@ -405,7 +174,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6qr-Ru-fx5">
-                                <rect key="frame" x="288" y="78" width="77" height="30"/>
+                                <rect key="frame" x="288" y="63" width="77" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="77" id="rbq-B7-7Wo"/>
@@ -416,7 +185,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHq-vh-6K2">
-                                <rect key="frame" x="516" y="78" width="77" height="30"/>
+                                <rect key="frame" x="516" y="63" width="77" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="77" id="iSL-lN-CeO"/>
@@ -427,7 +196,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbZ-u1-OCw">
-                                <rect key="frame" x="630" y="78" width="77" height="30"/>
+                                <rect key="frame" x="630" y="63" width="77" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="77" id="qqA-HH-Pqq"/>
@@ -438,71 +207,19 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j6B-du-Lii">
-                                <rect key="frame" x="408" y="78" width="77" height="30"/>
+                                <rect key="frame" x="408" y="63" width="77" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="4v5"/>
                                 <connections>
                                     <action selector="click4v5:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9FS-3r-a3g"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80h-PI-YG2">
-                                <rect key="frame" x="266" y="398" width="61" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Player12"/>
-                                <connections>
-                                    <action selector="clickPlayer12:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DQI-BC-2Rz"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lOM-pC-QtA">
-                                <rect key="frame" x="60" y="78" width="77" height="30"/>
+                                <rect key="frame" x="60" y="63" width="77" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="5v5"/>
                                 <connections>
                                     <action selector="click5v5:" destination="BYZ-38-t0r" eventType="touchUpInside" id="38C-tE-vDx"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zGH-WN-koZ">
-                                <rect key="frame" x="175" y="28" width="77" height="30"/>
-                                <color key="backgroundColor" red="0.71783095269999997" green="1" blue="0.8413570038" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="77" id="dRw-ej-MY1"/>
-                                </constraints>
-                                <state key="normal" title="Period 1"/>
-                                <connections>
-                                    <action selector="click5v4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sb2-pE-R3d"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4tv-d0-WDL">
-                                <rect key="frame" x="289" y="28" width="77" height="30"/>
-                                <color key="backgroundColor" red="0.71783095269999997" green="1" blue="0.8413570038" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="77" id="81i-gl-GsL"/>
-                                </constraints>
-                                <state key="normal" title="Period 2"/>
-                                <connections>
-                                    <action selector="click5v3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qrn-U3-4R2"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ON8-Js-vkl">
-                                <rect key="frame" x="517" y="28" width="77" height="30"/>
-                                <color key="backgroundColor" red="0.71783095269999997" green="1" blue="0.8413570038" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="77" id="qkr-KP-fU2"/>
-                                </constraints>
-                                <state key="normal" title="Overtime"/>
-                                <connections>
-                                    <action selector="click3v5:" destination="BYZ-38-t0r" eventType="touchUpInside" id="acu-nG-6xS"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lRb-dO-Ufy">
-                                <rect key="frame" x="409" y="28" width="77" height="30"/>
-                                <color key="backgroundColor" red="0.71783095269999997" green="1" blue="0.8413570038" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Period 3"/>
-                                <connections>
-                                    <action selector="click4v5:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ev0-1G-uzP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0E7-tH-SPG">
@@ -657,30 +374,296 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="C0b-Rj-wNF"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="xNz-v3-enX">
+                                <rect key="frame" x="130" y="113" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.83921568627450982" green="0.72941176470588232" blue="0.54509803921568623" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Player1"/>
+                                <connections>
+                                    <action selector="clickPlayer1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qWD-ey-QzZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xA7-KS-kUN">
+                                <rect key="frame" x="212" y="113" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Player2"/>
+                                <connections>
+                                    <action selector="clickPlayer2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mXO-pL-36U"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1bT-wq-nfr">
+                                <rect key="frame" x="293" y="113" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Player3"/>
+                                <connections>
+                                    <action selector="clickPlayer3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MmO-pa-Alw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DAi-1u-L8k">
+                                <rect key="frame" x="130" y="196" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Player4"/>
+                                <connections>
+                                    <action selector="clickPlayer4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1rL-hY-gzA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tsX-TQ-VPM">
+                                <rect key="frame" x="212" y="196" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Player5"/>
+                                <connections>
+                                    <action selector="clickPlayer5:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KSC-hb-cRc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i6k-jU-Bj7">
+                                <rect key="frame" x="293" y="196" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Player6"/>
+                                <connections>
+                                    <action selector="clickPlayer6:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cYq-oW-627"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Dz-Pd-JAT">
+                                <rect key="frame" x="130" y="278" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Player7"/>
+                                <connections>
+                                    <action selector="clickPlayer7:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VPh-Wx-CCZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PWP-yj-a90">
+                                <rect key="frame" x="212" y="278" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Player8"/>
+                                <connections>
+                                    <action selector="clickPlayer8:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5xY-W0-SxC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a0C-a8-rrP">
+                                <rect key="frame" x="293" y="278" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Player9"/>
+                                <connections>
+                                    <action selector="clickPlayer9:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ClY-Xx-YyR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="thW-CL-3sC">
+                                <rect key="frame" x="130" y="360" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Player10"/>
+                                <connections>
+                                    <action selector="clickPlayer10:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dPM-vg-3hF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zTm-xd-ces">
+                                <rect key="frame" x="212" y="360" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Player11"/>
+                                <connections>
+                                    <action selector="clickPlayer11:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r5d-vl-rbG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80h-PI-YG2">
+                                <rect key="frame" x="293" y="360" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Player12"/>
+                                <connections>
+                                    <action selector="clickPlayer12:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DQI-BC-2Rz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ziq-6X-hXM">
+                                <rect key="frame" x="172" y="442" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Player13"/>
+                                <connections>
+                                    <action selector="clickPlayer13:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YHA-VQ-dZH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WD2-18-JCp">
+                                <rect key="frame" x="254" y="442" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Player14"/>
+                                <connections>
+                                    <action selector="clickPlayer14:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XHg-fN-b9r"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0mc-gG-HWH">
+                                <rect key="frame" x="254" y="524" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Player16"/>
+                                <connections>
+                                    <action selector="clickPlayer16:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n11-4j-aSe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GHj-WV-zrZ">
+                                <rect key="frame" x="172" y="524" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Player15"/>
+                                <connections>
+                                    <action selector="clickPlayer15:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1eQ-fY-h4c"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VNs-n8-Dej">
+                                <rect key="frame" x="172" y="606" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Player17"/>
+                                <connections>
+                                    <action selector="clickPlayer17:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aoD-kD-vsr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xr-Sj-Q6N">
+                                <rect key="frame" x="254" y="606" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Player18"/>
+                                <connections>
+                                    <action selector="clickPlayer18:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kak-Us-URW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sue-kp-ONa">
+                                <rect key="frame" x="212" y="770" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Player19"/>
+                                <connections>
+                                    <action selector="clickPlayer19:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m2k-61-cyk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Hx-Dw-aRi">
+                                <rect key="frame" x="212" y="852" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Player20"/>
+                                <connections>
+                                    <action selector="clickPlayer20:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Mu-JD-ei8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3L2-yx-BEe">
+                                <rect key="frame" x="212" y="934" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Player21"/>
+                                <connections>
+                                    <action selector="clickPlayer21:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uhM-RT-BUn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTW-WN-4cm">
+                                <rect key="frame" x="212" y="688" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.83921568629999999" green="0.72941176470000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Player22"/>
+                                <connections>
+                                    <action selector="clickPlayer22:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jyu-8U-lSM"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Period 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SgP-09-co9">
+                                <rect key="frame" x="177" y="20" width="80" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.71783095269999997" green="1" blue="0.8413570038" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Period 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VRK-NA-MGp">
+                                <rect key="frame" x="284" y="20" width="80" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.71783095269999997" green="1" blue="0.8413570038" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Period 3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbf-aq-lpF">
+                                <rect key="frame" x="403" y="20" width="80" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.71783095269999997" green="1" blue="0.8413570038" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Overtime" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fge-41-dkA">
+                                <rect key="frame" x="511" y="20" width="80" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.71783095269999997" green="1" blue="0.8413570038" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="wbZ-u1-OCw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="58" id="0ir-z5-L3y"/>
-                            <constraint firstItem="zGH-WN-koZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="175" id="0yV-69-BPJ"/>
+                            <constraint firstItem="wbZ-u1-OCw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="43" id="0ir-z5-L3y"/>
                             <constraint firstItem="lOM-pC-QtA" firstAttribute="baseline" secondItem="wbZ-u1-OCw" secondAttribute="baseline" id="1s8-Eh-FSu"/>
-                            <constraint firstItem="ON8-Js-vkl" firstAttribute="leading" secondItem="lRb-dO-Ufy" secondAttribute="trailing" constant="31" id="25a-uz-7ZI"/>
                             <constraint firstItem="aT5-3x-UaJ" firstAttribute="baseline" secondItem="6qr-Ru-fx5" secondAttribute="baseline" id="2v9-7O-HLF"/>
                             <constraint firstAttribute="bottom" secondItem="7LU-93-Dti" secondAttribute="bottom" id="2vL-Zx-VMP"/>
                             <constraint firstItem="ywe-Xe-YDI" firstAttribute="top" secondItem="k6J-xL-Zip" secondAttribute="bottom" constant="18" id="5DW-7S-yNN"/>
                             <constraint firstItem="8Qm-dd-bkR" firstAttribute="width" secondItem="Vxs-Dc-lRy" secondAttribute="width" id="5Xs-6X-yS8"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ON8-Js-vkl" secondAttribute="trailing" constant="174" id="6lY-4r-6MB"/>
                             <constraint firstItem="0E7-tH-SPG" firstAttribute="top" secondItem="EJN-8s-vE9" secondAttribute="bottom" constant="32" id="79r-Ba-IjU"/>
-                            <constraint firstItem="4tv-d0-WDL" firstAttribute="leading" secondItem="zGH-WN-koZ" secondAttribute="trailing" constant="37" id="8KX-ZJ-Ehh"/>
-                            <constraint firstItem="zGH-WN-koZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="8gw-gF-415"/>
                             <constraint firstItem="fHq-vh-6K2" firstAttribute="width" secondItem="lOM-pC-QtA" secondAttribute="width" id="93S-Dc-iAh"/>
-                            <constraint firstItem="lRb-dO-Ufy" firstAttribute="height" secondItem="zGH-WN-koZ" secondAttribute="height" id="9Bj-WT-B1U"/>
                             <constraint firstItem="k6J-xL-Zip" firstAttribute="top" secondItem="Vxs-Dc-lRy" secondAttribute="bottom" constant="18" id="9Df-Xw-BQb"/>
                             <constraint firstItem="Vqc-ne-CJ0" firstAttribute="width" secondItem="Vxs-Dc-lRy" secondAttribute="width" id="9dF-ti-lhg"/>
                             <constraint firstItem="wbZ-u1-OCw" firstAttribute="leading" secondItem="fHq-vh-6K2" secondAttribute="trailing" constant="37" id="CXj-uM-dyA"/>
-                            <constraint firstItem="4tv-d0-WDL" firstAttribute="baseline" secondItem="lRb-dO-Ufy" secondAttribute="baseline" id="DiV-gA-Xhj"/>
                             <constraint firstItem="6qr-Ru-fx5" firstAttribute="width" secondItem="lOM-pC-QtA" secondAttribute="width" id="FIh-52-k0e"/>
                             <constraint firstItem="Vqc-ne-CJ0" firstAttribute="top" secondItem="e1q-vQ-go2" secondAttribute="bottom" constant="18" id="G3B-ZH-Ia4"/>
-                            <constraint firstItem="ON8-Js-vkl" firstAttribute="width" secondItem="zGH-WN-koZ" secondAttribute="width" id="GCc-LK-NEK"/>
                             <constraint firstItem="e1q-vQ-go2" firstAttribute="width" secondItem="Vxs-Dc-lRy" secondAttribute="width" id="IlU-qu-wlm"/>
                             <constraint firstItem="Vqc-ne-CJ0" firstAttribute="leading" secondItem="ebO-rA-K1B" secondAttribute="trailing" constant="27" id="J5p-lC-HJP"/>
                             <constraint firstItem="ebO-rA-K1B" firstAttribute="top" secondItem="ywe-Xe-YDI" secondAttribute="bottom" constant="18" id="Jy4-3Y-I1S"/>
@@ -690,15 +673,12 @@
                             <constraint firstItem="7LU-93-Dti" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="MAu-ox-UNN"/>
                             <constraint firstItem="e1q-vQ-go2" firstAttribute="height" secondItem="Vxs-Dc-lRy" secondAttribute="height" id="MDS-Jx-vqR"/>
                             <constraint firstItem="WJf-ey-VLu" firstAttribute="height" secondItem="Vxs-Dc-lRy" secondAttribute="height" id="MXY-1k-4K1"/>
-                            <constraint firstItem="Vxs-Dc-lRy" firstAttribute="top" secondItem="fHq-vh-6K2" secondAttribute="bottom" constant="43" id="NFb-b2-XNP"/>
+                            <constraint firstItem="Vxs-Dc-lRy" firstAttribute="top" secondItem="fHq-vh-6K2" secondAttribute="bottom" constant="58" id="NFb-b2-XNP"/>
                             <constraint firstItem="ebO-rA-K1B" firstAttribute="top" secondItem="ywe-Xe-YDI" secondAttribute="bottom" constant="18" id="Nih-wi-13c"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8Qm-dd-bkR" secondAttribute="trailing" constant="23" id="PgW-sD-c5x"/>
                             <constraint firstItem="WJf-ey-VLu" firstAttribute="width" secondItem="Vxs-Dc-lRy" secondAttribute="width" id="SYd-5M-5Vp"/>
-                            <constraint firstItem="4tv-d0-WDL" firstAttribute="height" secondItem="zGH-WN-koZ" secondAttribute="height" id="ULx-kY-SM6"/>
                             <constraint firstItem="k6J-xL-Zip" firstAttribute="width" secondItem="Vxs-Dc-lRy" secondAttribute="width" id="UhD-fn-jik"/>
-                            <constraint firstItem="zGH-WN-koZ" firstAttribute="baseline" secondItem="4tv-d0-WDL" secondAttribute="baseline" id="Vaf-SA-0dW"/>
                             <constraint firstItem="aT5-3x-UaJ" firstAttribute="width" secondItem="lOM-pC-QtA" secondAttribute="width" id="WGZ-P7-eEO"/>
-                            <constraint firstItem="A8V-mV-f50" firstAttribute="centerX" secondItem="ywx-16-qUI" secondAttribute="centerX" constant="-499.75" id="WUr-ni-3NG"/>
                             <constraint firstItem="j6B-du-Lii" firstAttribute="leading" secondItem="6qr-Ru-fx5" secondAttribute="trailing" constant="43" id="Wrg-Pw-clA"/>
                             <constraint firstItem="6qr-Ru-fx5" firstAttribute="leading" secondItem="aT5-3x-UaJ" secondAttribute="trailing" constant="37" id="X0z-gf-Vzn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WJf-ey-VLu" secondAttribute="trailing" constant="23" id="X3G-YT-Dco"/>
@@ -706,33 +686,29 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ywx-16-qUI" secondAttribute="trailing" constant="61" id="XYq-wG-55s"/>
                             <constraint firstItem="6qr-Ru-fx5" firstAttribute="baseline" secondItem="j6B-du-Lii" secondAttribute="baseline" id="Xld-Q5-NrY"/>
                             <constraint firstItem="e1q-vQ-go2" firstAttribute="leading" secondItem="ywe-Xe-YDI" secondAttribute="trailing" constant="27" id="Ycl-Td-JK0"/>
-                            <constraint firstItem="ywx-16-qUI" firstAttribute="top" secondItem="A8V-mV-f50" secondAttribute="bottom" constant="647" id="ZHk-JD-GQ8"/>
                             <constraint firstItem="j6B-du-Lii" firstAttribute="width" secondItem="lOM-pC-QtA" secondAttribute="width" id="awz-XE-0oP"/>
-                            <constraint firstItem="4tv-d0-WDL" firstAttribute="width" secondItem="zGH-WN-koZ" secondAttribute="width" id="bHR-Yp-fiA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="e1q-vQ-go2" secondAttribute="trailing" constant="23" id="bbg-1l-GKD"/>
                             <constraint firstItem="Vqc-ne-CJ0" firstAttribute="top" secondItem="e1q-vQ-go2" secondAttribute="bottom" constant="18" id="br8-pM-wid"/>
                             <constraint firstItem="WJf-ey-VLu" firstAttribute="leading" secondItem="Vxs-Dc-lRy" secondAttribute="trailing" constant="27" id="cU8-CI-XFx"/>
                             <constraint firstItem="ebO-rA-K1B" firstAttribute="height" secondItem="Vxs-Dc-lRy" secondAttribute="height" id="d4k-lz-RWj"/>
                             <constraint firstItem="0E7-tH-SPG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="dLC-ps-fSY"/>
-                            <constraint firstItem="ON8-Js-vkl" firstAttribute="height" secondItem="zGH-WN-koZ" secondAttribute="height" id="dYI-CA-0D2"/>
                             <constraint firstItem="lOM-pC-QtA" firstAttribute="baseline" secondItem="aT5-3x-UaJ" secondAttribute="baseline" id="eUO-TW-gZB"/>
-                            <constraint firstItem="lRb-dO-Ufy" firstAttribute="baseline" secondItem="ON8-Js-vkl" secondAttribute="baseline" id="eh9-k5-b6q"/>
                             <constraint firstItem="e1q-vQ-go2" firstAttribute="top" secondItem="8Qm-dd-bkR" secondAttribute="bottom" constant="18" id="g5t-cs-JJd"/>
                             <constraint firstItem="ywe-Xe-YDI" firstAttribute="top" secondItem="k6J-xL-Zip" secondAttribute="bottom" constant="18" id="gQH-IF-4Zu"/>
-                            <constraint firstItem="lRb-dO-Ufy" firstAttribute="leading" secondItem="4tv-d0-WDL" secondAttribute="trailing" constant="43" id="gf0-XH-A7n"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Vqc-ne-CJ0" secondAttribute="trailing" constant="23" id="goV-nW-fbL"/>
+                            <constraint firstItem="A8V-mV-f50" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="19" id="i4u-gd-Pe6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ywx-16-qUI" secondAttribute="bottom" constant="74" id="iHp-oO-eY2"/>
                             <constraint firstItem="k6J-xL-Zip" firstAttribute="height" secondItem="Vxs-Dc-lRy" secondAttribute="height" id="kLJ-Of-yb1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0E7-tH-SPG" secondAttribute="bottom" constant="20" id="lcT-dt-tHT"/>
                             <constraint firstItem="fHq-vh-6K2" firstAttribute="leading" secondItem="j6B-du-Lii" secondAttribute="trailing" constant="31" id="n0v-vQ-eFa"/>
-                            <constraint firstItem="WJf-ey-VLu" firstAttribute="top" secondItem="wbZ-u1-OCw" secondAttribute="bottom" constant="43" id="nLi-JC-VlV"/>
+                            <constraint firstItem="WJf-ey-VLu" firstAttribute="top" secondItem="wbZ-u1-OCw" secondAttribute="bottom" constant="58" id="nLi-JC-VlV"/>
                             <constraint firstItem="8Qm-dd-bkR" firstAttribute="leading" secondItem="k6J-xL-Zip" secondAttribute="trailing" constant="27" id="nN6-WC-iqD"/>
                             <constraint firstItem="EJN-8s-vE9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="21" id="oP4-W1-xH3"/>
                             <constraint firstItem="lOM-pC-QtA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="orW-eP-hLU"/>
                             <constraint firstAttribute="trailing" secondItem="7LU-93-Dti" secondAttribute="trailing" id="qXT-Jh-YHe"/>
                             <constraint firstItem="8Qm-dd-bkR" firstAttribute="leading" secondItem="k6J-xL-Zip" secondAttribute="trailing" constant="27" id="r1e-ft-3XT"/>
-                            <constraint firstItem="lRb-dO-Ufy" firstAttribute="width" secondItem="zGH-WN-koZ" secondAttribute="width" id="rlR-9m-bdl"/>
                             <constraint firstItem="7LU-93-Dti" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="tNo-8Z-RFn"/>
+                            <constraint firstItem="A8V-mV-f50" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="21" id="uOg-NI-0u3"/>
                             <constraint firstItem="Vqc-ne-CJ0" firstAttribute="height" secondItem="Vxs-Dc-lRy" secondAttribute="height" id="v2a-u1-xMf"/>
                             <constraint firstItem="ywe-Xe-YDI" firstAttribute="width" secondItem="Vxs-Dc-lRy" secondAttribute="width" id="wYl-wl-l7M"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wbZ-u1-OCw" secondAttribute="trailing" constant="61" id="wtz-yZ-ugg"/>
@@ -786,12 +762,12 @@
                         <outlet property="manPow5v3" destination="6qr-Ru-fx5" id="Wm3-XW-8zA"/>
                         <outlet property="manPow5v4" destination="aT5-3x-UaJ" id="bts-88-8h5"/>
                         <outlet property="manPow5v5" destination="lOM-pC-QtA" id="bHd-Bk-QrY"/>
-                        <outlet property="overtime" destination="ON8-Js-vkl" id="Ho6-1E-8UU"/>
+                        <outlet property="otLabel" destination="fge-41-dkA" id="zM7-Fb-lIH"/>
                         <outlet property="penaltiesDrawnButton" destination="e1q-vQ-go2" id="xoB-qT-keG"/>
                         <outlet property="penaltiesTakenButton" destination="Vqc-ne-CJ0" id="Y9w-fb-5ty"/>
-                        <outlet property="period1" destination="zGH-WN-koZ" id="ez7-eO-PFA"/>
-                        <outlet property="period2" destination="4tv-d0-WDL" id="EOq-n4-thD"/>
-                        <outlet property="period3" destination="lRb-dO-Ufy" id="l3Z-1g-OJv"/>
+                        <outlet property="period1Label" destination="SgP-09-co9" id="MbA-Xy-N8P"/>
+                        <outlet property="period2Label" destination="VRK-NA-MGp" id="uFX-5x-bhG"/>
+                        <outlet property="period3Label" destination="vbf-aq-lpF" id="aR4-qC-DPO"/>
                         <outlet property="playersDropDown" destination="gQ4-Vf-MnO" id="q3M-xy-Fon"/>
                         <outlet property="shotAgainstButton" destination="k6J-xL-Zip" id="Eil-ug-YTL"/>
                         <outlet property="shotForButton" destination="Vxs-Dc-lRy" id="A6I-wR-Nbl"/>
