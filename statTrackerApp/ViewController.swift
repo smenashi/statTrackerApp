@@ -98,7 +98,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var shotAgainstButton: UIButton!
     @IBOutlet weak var goalForButton: UIButton!
     @IBOutlet weak var goalAgainstButton: UIButton!
-    @IBOutlet weak var penaltiesButton: UIButton!
+   
 
     /////////////////////////////////////////
     
@@ -553,11 +553,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func onClickPenalties(_ sender: Any) {
-        // Penalties button clicked: update stats to players on ice accordingly
-        //                           and any other stats
-        
-    }
+    
     
     // -------------------------------------------------------------------------------
     // Line Buttons
