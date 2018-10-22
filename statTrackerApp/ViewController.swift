@@ -42,6 +42,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var period3Label: UILabel!
     @IBOutlet weak var otLabel: UILabel!
     /////////////////////////////////////////
+    // Period Labels array
+    var periodLabels = Array<UILabel>()
+    // Current Period
+    var currPeriod = 0
     
     // Man Power Configurations Buttons /////
     @IBOutlet weak var manPow5v5: UIButton!
@@ -868,6 +872,13 @@ class ViewController: UIViewController {
         newPeriod = true
         self.clockPaused = true
         
+        // change alphas of period labels
+        if currPeriod != 3{
+            periodLabels[currPeriod].alpha = 0.5
+            currPeriod += 1
+            periodLabels[currPeriod].alpha = 1
+        }
+        
         // execute relevant stat-related logic for end of period here
     }
     
@@ -956,6 +967,12 @@ class ViewController: UIViewController {
         period2Label.alpha = 0.5
         period3Label.alpha = 0.5
         otLabel.alpha = 0.5
+        
+        // populate array of labels
+        periodLabels.append(period1Label)
+        periodLabels.append(period2Label)
+        periodLabels.append(period3Label)
+        periodLabels.append(otLabel)
         
        
         /////this loads the names of the players onto the buttons
