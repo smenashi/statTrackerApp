@@ -55,6 +55,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var manPow3v5: UIButton!
     @IBOutlet weak var manPow3v3: UIButton!
     /////////////////////////////////////////
+    // Manpower buttons array
+    var manPowerAlphas = Array<UIButton>()
+    // Default config
+    var  currConfig = 0
     
     // Player buttons ///////////////////////
     @IBOutlet weak var Player1: UIButton!
@@ -125,22 +129,40 @@ class ViewController: UIViewController {
     // --------------------------------------------------------------------
     @IBAction func click5v5(_ sender: Any) {
         // manpower button 5v5 is clicked: change current manpower config to 5v5
-        
+        manPowerAlphas[currConfig].alpha = 0.5
+        manPow5v5.alpha = 1
+        currConfig = 0
+
     }
     @IBAction func click5v4(_ sender: Any) {
         // manpower button 5v4 is clicked: change current manpower config to 5v4
+        manPowerAlphas[currConfig].alpha = 0.5
+        manPow5v4.alpha = 1
+        currConfig = 1
     }
     @IBAction func click5v3(_ sender: Any) {
         // manpower button 5v3 is clicked: change current manpower config to 5v3
+        manPowerAlphas[currConfig].alpha = 0.5
+        manPow5v3.alpha = 1
+        currConfig = 2
     }
     @IBAction func click4v5(_ sender: Any) {
         // manpower button 4v5 is clicked: change current manpower config to 4v5
+        manPowerAlphas[currConfig].alpha = 0.5
+        manPow4v5.alpha = 1
+        currConfig = 3
     }
     @IBAction func click3v5(_ sender: Any) {
         // manpower button 3v5 is clicked: change current manpower config to 3v5
+        manPowerAlphas[currConfig].alpha = 0.5
+        manPow3v5.alpha = 1
+        currConfig = 4
     }
     @IBAction func click3v3(_ sender: Any) {
         // manpower button 3v3 is clicked: change current manpower config to 3v3
+        manPowerAlphas[currConfig].alpha = 0.5
+        manPow3v3.alpha = 1
+        currConfig = 5
     }
     
     // -------------------------------------------------------------------------------
@@ -954,6 +976,7 @@ class ViewController: UIViewController {
         clickD1((Any).self)
         clickF1((Any).self)
         clickPlayer19((Any).self)
+        
         // hardcoding starting manpower config for demo purposes
         manPow3v5.alpha = 0.5
         manPow3v3.alpha = 0.5
@@ -962,6 +985,9 @@ class ViewController: UIViewController {
         manPow5v4.alpha = 0.5
         manPow5v5.alpha = 1
        
+        // populate array of manpower buttons for handling opacity changes
+        manPowerAlphas += [manPow5v5, manPow5v4, manPow5v3, manPow4v5, manPow3v5, manPow3v3]
+        
         // starting period opacities
         period1Label.alpha = 1
         period2Label.alpha = 0.5
@@ -969,11 +995,7 @@ class ViewController: UIViewController {
         otLabel.alpha = 0.5
         
         // populate array of labels
-        periodLabels.append(period1Label)
-        periodLabels.append(period2Label)
-        periodLabels.append(period3Label)
-        periodLabels.append(otLabel)
-        
+        periodLabels += [period1Label, period2Label, period3Label, otLabel]
        
         /////this loads the names of the players onto the buttons
         let currPlayers = game.getAllPlayers()
