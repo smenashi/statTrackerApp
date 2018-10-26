@@ -817,6 +817,9 @@
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Player1"/>
+                                <connections>
+                                    <action selector="P1Clicked:" destination="Wzz-rR-rLg" eventType="touchUpInside" id="cIA-O4-TTt"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Kp-iE-1gh">
                                 <rect key="frame" x="540" y="20" width="75" height="75"/>
@@ -825,6 +828,9 @@
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Player2"/>
+                                <connections>
+                                    <action selector="P2Clicked:" destination="Wzz-rR-rLg" eventType="touchUpInside" id="CaB-GM-f6H"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xDC-XC-qMD">
                                 <rect key="frame" x="621" y="20" width="75" height="75"/>
@@ -833,6 +839,9 @@
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Player3"/>
+                                <connections>
+                                    <action selector="P3Clicked:" destination="Wzz-rR-rLg" eventType="touchUpInside" id="sNr-fj-wdJ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kDe-1R-iAi">
                                 <rect key="frame" x="458" y="103" width="75" height="75"/>
@@ -841,6 +850,9 @@
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Player4"/>
+                                <connections>
+                                    <action selector="P4Clicked:" destination="Wzz-rR-rLg" eventType="touchUpInside" id="GBW-Ex-JQu"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="naD-mW-mNV">
                                 <rect key="frame" x="540" y="103" width="75" height="75"/>
@@ -849,6 +861,9 @@
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Player5"/>
+                                <connections>
+                                    <action selector="P5Clicked:" destination="Wzz-rR-rLg" eventType="touchUpInside" id="8eW-1Q-EJN"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FSp-WF-Ei6">
                                 <rect key="frame" x="621" y="103" width="75" height="75"/>
@@ -857,6 +872,9 @@
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Player6"/>
+                                <connections>
+                                    <action selector="P6Clicked:" destination="Wzz-rR-rLg" eventType="touchUpInside" id="utR-8X-XdO"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQl-rl-bv4">
                                 <rect key="frame" x="458" y="185" width="75" height="75"/>
@@ -865,6 +883,9 @@
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Player7"/>
+                                <connections>
+                                    <action selector="P7Clicked:" destination="Wzz-rR-rLg" eventType="touchUpInside" id="PvE-WO-Bk2"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1fM-YU-OyQ">
                                 <rect key="frame" x="540" y="185" width="75" height="75"/>
@@ -873,6 +894,9 @@
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Player8"/>
+                                <connections>
+                                    <action selector="P8Clicked:" destination="Wzz-rR-rLg" eventType="touchUpInside" id="xKo-zu-gR3"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WWY-DZ-LoU">
                                 <rect key="frame" x="621" y="185" width="75" height="75"/>
@@ -881,6 +905,9 @@
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Player9"/>
+                                <connections>
+                                    <action selector="P9Clicked:" destination="Wzz-rR-rLg" eventType="touchUpInside" id="xPb-e2-7Y0"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A3p-KG-HFK">
                                 <rect key="frame" x="458" y="267" width="75" height="75"/>
@@ -889,6 +916,9 @@
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Player10"/>
+                                <connections>
+                                    <action selector="P10Clicked:" destination="Wzz-rR-rLg" eventType="touchUpInside" id="gVa-6h-jRn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NFU-6n-cqq">
                                 <rect key="frame" x="540" y="267" width="75" height="75"/>
@@ -897,6 +927,10 @@
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Player11"/>
+                                <connections>
+                                    <action selector="P11Clicked:" destination="Wzz-rR-rLg" eventType="touchUpInside" id="ab7-tq-edI"/>
+                                    <action selector="P12Clicked:" destination="Wzz-rR-rLg" eventType="touchUpInside" id="v6q-Tb-I5c"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ex-jw-U9o">
                                 <rect key="frame" x="621" y="267" width="75" height="75"/>
@@ -905,6 +939,9 @@
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Player12"/>
+                                <connections>
+                                    <action selector="P12Clicked:" destination="Wzz-rR-rLg" eventType="touchUpInside" id="Fd7-iI-jbu"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4rh-w6-CRN">
                                 <rect key="frame" x="500" y="349" width="75" height="75"/>
@@ -913,6 +950,9 @@
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Player13"/>
+                                <connections>
+                                    <action selector="P13Clicked:" destination="Wzz-rR-rLg" eventType="touchUpInside" id="cpM-LQ-635"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQw-TO-IN3">
                                 <rect key="frame" x="582" y="349" width="75" height="75"/>
@@ -921,6 +961,9 @@
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Player14"/>
+                                <connections>
+                                    <action selector="P14Clicked:" destination="Wzz-rR-rLg" eventType="touchUpInside" id="x1o-Gy-Hd0"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5m-Rn-Rxv">
                                 <rect key="frame" x="582" y="431" width="75" height="75"/>
@@ -929,6 +972,9 @@
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Player16"/>
+                                <connections>
+                                    <action selector="P16Clicked:" destination="Wzz-rR-rLg" eventType="touchUpInside" id="aNQ-q7-cNr"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZEZ-bH-ai0">
                                 <rect key="frame" x="500" y="431" width="75" height="75"/>
@@ -937,6 +983,9 @@
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Player15"/>
+                                <connections>
+                                    <action selector="P15Clicked:" destination="Wzz-rR-rLg" eventType="touchUpInside" id="RC4-68-Q0b"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EpB-UI-mZF">
                                 <rect key="frame" x="500" y="513" width="75" height="75"/>
@@ -945,6 +994,9 @@
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Player17"/>
+                                <connections>
+                                    <action selector="P17Clicked:" destination="Wzz-rR-rLg" eventType="touchUpInside" id="oe7-Wr-f1K"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZVB-Ha-njW">
                                 <rect key="frame" x="582" y="513" width="75" height="75"/>
@@ -953,6 +1005,9 @@
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Player18"/>
+                                <connections>
+                                    <action selector="P18Clicked:" destination="Wzz-rR-rLg" eventType="touchUpInside" id="9vL-7j-HRz"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4tG-SE-ezo">
                                 <rect key="frame" x="540" y="677" width="75" height="75"/>
@@ -961,6 +1016,9 @@
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Player19"/>
+                                <connections>
+                                    <action selector="P19Clicked:" destination="Wzz-rR-rLg" eventType="touchUpInside" id="rg4-tW-KZZ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rDY-Jz-6vr">
                                 <rect key="frame" x="540" y="759" width="75" height="75"/>
@@ -969,6 +1027,9 @@
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Player20"/>
+                                <connections>
+                                    <action selector="P20Clicked:" destination="Wzz-rR-rLg" eventType="touchUpInside" id="91X-Y0-M26"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DAe-xc-awH">
                                 <rect key="frame" x="540" y="841" width="75" height="75"/>
@@ -977,6 +1038,9 @@
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Player21"/>
+                                <connections>
+                                    <action selector="P21Clicked:" destination="Wzz-rR-rLg" eventType="touchUpInside" id="ngM-aO-zui"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ba2-ak-HDH">
                                 <rect key="frame" x="540" y="595" width="75" height="75"/>
@@ -985,6 +1049,9 @@
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Player22"/>
+                                <connections>
+                                    <action selector="P22Clicked:" destination="Wzz-rR-rLg" eventType="touchUpInside" id="koQ-ye-UXH"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wKF-xU-2LX">
                                 <rect key="frame" x="531" y="951" width="92" height="30"/>
@@ -1066,7 +1133,29 @@
                         <viewLayoutGuide key="safeArea" id="Agu-5y-2Zg"/>
                     </view>
                     <connections>
+                        <outlet property="D11Button" destination="4rh-w6-CRN" id="o1f-Td-txC"/>
+                        <outlet property="D12Button" destination="jQw-TO-IN3" id="ldI-nI-mzA"/>
+                        <outlet property="D21Button" destination="ZEZ-bH-ai0" id="dYh-2a-ntp"/>
+                        <outlet property="D22Button" destination="f5m-Rn-Rxv" id="UpI-X7-cNQ"/>
+                        <outlet property="D31Button" destination="EpB-UI-mZF" id="lIC-Mz-sbh"/>
+                        <outlet property="D32Button" destination="ZVB-Ha-njW" id="O0J-Fy-LXI"/>
+                        <outlet property="F11Button" destination="4a8-cK-GWI" id="ukB-UQ-0Jh"/>
+                        <outlet property="F12Button" destination="2Kp-iE-1gh" id="XjP-Xs-JSq"/>
+                        <outlet property="F13Button" destination="xDC-XC-qMD" id="xaJ-Z1-7oM"/>
+                        <outlet property="F21Button" destination="kDe-1R-iAi" id="ema-Ap-Dt6"/>
+                        <outlet property="F22Button" destination="naD-mW-mNV" id="EAb-UK-wbW"/>
+                        <outlet property="F23Button" destination="FSp-WF-Ei6" id="dTt-gF-odF"/>
+                        <outlet property="F31Button" destination="jQl-rl-bv4" id="1ZX-U9-MAg"/>
+                        <outlet property="F32Button" destination="1fM-YU-OyQ" id="ls0-LH-ASa"/>
+                        <outlet property="F33Button" destination="WWY-DZ-LoU" id="EQp-UG-imd"/>
+                        <outlet property="F41Button" destination="A3p-KG-HFK" id="w9s-Ef-1yM"/>
+                        <outlet property="F42Button" destination="NFU-6n-cqq" id="Ir5-Nb-X21"/>
+                        <outlet property="F43Button" destination="4ex-jw-U9o" id="WWn-kk-YLH"/>
+                        <outlet property="G1Button" destination="4tG-SE-ezo" id="pl7-Kt-VdS"/>
+                        <outlet property="G2Button" destination="rDY-Jz-6vr" id="lXV-QE-DCZ"/>
+                        <outlet property="G3Button" destination="DAe-xc-awH" id="sy5-Dx-7Gs"/>
                         <outlet property="RosterTable" destination="Z9h-hL-3Ti" id="ePY-x3-0U6"/>
+                        <outlet property="X1Button" destination="ba2-ak-HDH" id="Q1Z-Z4-RZ1"/>
                         <outlet property="addPlayer" destination="pIu-Mc-rbz" id="Dkg-7u-Y27"/>
                         <outlet property="doneButton" destination="X7C-o6-h5m" id="TKR-su-Kh4"/>
                         <outlet property="inputField" destination="Ze4-2h-OR7" id="75u-72-qda"/>
