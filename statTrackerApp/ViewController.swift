@@ -1079,25 +1079,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "player", for: indexPath)
         
-        
-//IGNORE THIS://////////////////////////////////////////////////////////////////////////////////////////////////////
-//        // this will store the current players on ice
-//        var currIce: Array<Player> = Array()
-//        // this will store the names of current players to display on the screen
-//        var currIceNames: Array<String> = Array()
-//        // will store the text of each player to be displayed on the screen
-//        var labelString = ""
-//
-//        // build the array from the set of players currently on ice
-//        for player in game.getIce() {
-//            currIce.append(game.getPlayer(number: player))
-//            labelString = String(game.getPlayer(number: player)._jerseyNumber) //+ game.getPlayer(number: player)._lastName
-//            currIceNames.append(labelString)
-//        }
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-       
-        
-//        print("TESTING: \n \(game.currIceNames)\n")
         // set labels to cells
         cell.textLabel?.text = game.currIce[indexPath.row]._firstName
         return cell

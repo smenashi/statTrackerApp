@@ -810,11 +810,6 @@
                                     <segue destination="fOh-0j-0RM" kind="show" id="Txw-mc-6vl"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4Ve-xr-2MY">
-                                <rect key="frame" x="0.0" y="20" width="384" height="782"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </tableView>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="4a8-cK-GWI">
                                 <rect key="frame" x="458" y="20" width="75" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
@@ -999,10 +994,86 @@
                                     <segue destination="fOh-0j-0RM" kind="show" id="ySa-LL-khI"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Z9h-hL-3Ti">
+                                <rect key="frame" x="20" y="50" width="317" height="876"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="player_roster" id="ts3-Ka-nji">
+                                        <rect key="frame" x="0.0" y="28" width="317" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ts3-Ka-nji" id="AOz-iG-Jjo">
+                                            <rect key="frame" x="0.0" y="0.0" width="317" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Wzz-rR-rLg" id="DXq-C8-9MC"/>
+                                    <outlet property="delegate" destination="Wzz-rR-rLg" id="8am-7B-INz"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7nE-8X-Hp4">
+                                <rect key="frame" x="276" y="20" width="55" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Remove"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pIu-Mc-rbz">
+                                <rect key="frame" x="28" y="20" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addPlayerClicked:" destination="Wzz-rR-rLg" eventType="touchUpInside" id="rT5-do-77q"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ze4-2h-OR7">
+                                <rect key="frame" x="215" y="405" width="338" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="contentStretch" x="1" y="0.050000000000000003" width="1" height="1"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X7C-o6-h5m">
+                                <rect key="frame" x="574" y="405" width="37" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="doneButtonClicked:" destination="Wzz-rR-rLg" eventType="touchUpInside" id="CYa-tC-hjA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eCf-qb-rCF">
+                                <rect key="frame" x="574" y="405" width="37" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="next_nameClicked:" destination="Wzz-rR-rLg" eventType="touchUpInside" id="qr1-UP-hOY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qKX-3Y-xaT">
+                                <rect key="frame" x="574" y="405" width="37" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="next_numberClicked:" destination="Wzz-rR-rLg" eventType="touchUpInside" id="SX7-KD-pMz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Agu-5y-2Zg"/>
                     </view>
+                    <connections>
+                        <outlet property="RosterTable" destination="Z9h-hL-3Ti" id="ePY-x3-0U6"/>
+                        <outlet property="addPlayer" destination="pIu-Mc-rbz" id="Dkg-7u-Y27"/>
+                        <outlet property="doneButton" destination="X7C-o6-h5m" id="TKR-su-Kh4"/>
+                        <outlet property="inputField" destination="Ze4-2h-OR7" id="75u-72-qda"/>
+                        <outlet property="next_name" destination="eCf-qb-rCF" id="1pS-ai-WM7"/>
+                        <outlet property="next_number" destination="qKX-3Y-xaT" id="wyY-MR-u1g"/>
+                        <outlet property="removePlayer" destination="7nE-8X-Hp4" id="uWv-aG-RHI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9GL-Ox-e19" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1043,6 +1114,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="gRQ-Fr-8c3"/>
+        <segue reference="Txw-mc-6vl"/>
     </inferredMetricsTieBreakers>
 </document>
