@@ -37,8 +37,6 @@ class SQLiteDB {
         //can add season game time
         executeNoReturn(execCommand: "create table if not exists playerStats(number INT PRIMARY KEY, name TEXT NOT NULL, iceTime text NOT NULL, shotsFor INT NOT NULL, shotsForTaken INT NOT NULL, shotsAgainst INT NOT NULL, goalsFor INT NOT NULL, goalsForTaken INT NOT NULL, goalsAgainst INT NOT NULL)")
         executeNoReturn(execCommand: "create table if not exists currentRoster(studentID INT PRIMARY KEY, lastName TEXT NOT NULL, number INT NOT NULL, position INT NOT NULL)")
-        //let sql = "replace into currentRoster(studentID, lastName, number, position) values (1, \"Player1\", 1, 1), (2, \"Player2\", 2, 2), (3, \"Player3\", 3, 3), (4, \"Player4\", 4, 4), (5, \"Player5\", 5, 5), (6, \"Player6\", 6, 6), (7, \"Player7\", 7, 7), (8, \"Player8\", 8, 8), (9, \"Player9\", 9, 9), (10, \"Player10\", 10, 10), (11, \"Player11\", 11, 11), (12, \"Player12\", 12, 12), (13, \"Player13\", 13, 13), (14, \"Player14\", 14, 14), (15, \"Player15\", 15, 15), (16, \"Player16\", 16, 16), (17, \"Player17\", 17, 17), (18, \"Player18\", 18, 18), (19, \"Player19\", 19, 19), (20, \"Player20\", 20, 20), (21, \"Player21\", 21, 21), (22, \"Player22\", 22, 22)"
-        //executeNoReturn(execCommand: sql)
     }
     
     func getCurrentRoster()->[rosterPlayer]{

@@ -21,9 +21,13 @@ class ViewController: UIViewController {
     var game = Game(player1: Player(firstName: "Player", lastName: "1", jerseyNum: 1), player2: Player(firstName: "Player", lastName: "2", jerseyNum: 2), player3: Player(firstName: "Player", lastName: "3", jerseyNum: 3), player4: Player(firstName: "Player", lastName: "4", jerseyNum: 4), player5: Player(firstName: "Player", lastName: "5", jerseyNum: 5), player6: Player(firstName: "Player", lastName: "6", jerseyNum: 6), player7: Player(firstName: "Player", lastName: "7", jerseyNum: 7), player8: Player(firstName: "Player", lastName: "8", jerseyNum: 8), player9: Player(firstName: "Player", lastName: "9", jerseyNum: 9), player10: Player(firstName: "Player", lastName: "10", jerseyNum: 10), player11: Player(firstName: "Player", lastName: "11", jerseyNum: 11), player12: Player(firstName: "Player", lastName: "12", jerseyNum: 12), player13: Player(firstName: "Player", lastName: "13", jerseyNum: 13), player14: Player(firstName: "Player", lastName: "14", jerseyNum: 14), player15: Player(firstName: "Player", lastName: "15", jerseyNum: 15), player16: Player(firstName: "Player", lastName: "16", jerseyNum: 16), player17: Player(firstName: "Player", lastName: "17", jerseyNum: 17), player18: Player(firstName: "Player", lastName: "18", jerseyNum: 18), player19: Player(firstName: "Player", lastName: "19", jerseyNum: 19), player20: Player(firstName: "Player", lastName: "20", jerseyNum: 20), player21: Player(firstName: "Player", lastName: "21", jerseyNum: 21), player22: Player(firstName: "Player", lastName: "22", jerseyNum: 22))
     */
     
+    var playerArray: [rosterPlayer] = []
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    //playerArray = appDelegate.database?.getCurrentRoster() ?? []
+    
+    
     var game = Game(player1: Player(firstName: "Willet", lastName: "9", jerseyNum: 9), player2: Player(firstName: "Brochu", lastName: "15", jerseyNum: 15), player3: Player(firstName: "Conway", lastName: "18", jerseyNum: 18), player4: Player(firstName: "Beniers", lastName: "16", jerseyNum: 16), player5: Player(firstName: "Gagnon", lastName: "10", jerseyNum: 10), player6: Player(firstName: "Bray", lastName: "26", jerseyNum: 26), player7: Player(firstName: "Bruneteau", lastName: "22", jerseyNum: 22), player8: Player(firstName: "Daigler", lastName: "20", jerseyNum: 20), player9: Player(firstName: "Ursitti", lastName: "12", jerseyNum: 12), player10: Player(firstName: "Stickel", lastName: "27", jerseyNum: 27), player11: Player(firstName: "Nichols", lastName: "23", jerseyNum: 23), player12: Player(firstName: "Simson", lastName: "19", jerseyNum: 19), player13: Player(firstName: "Allen", lastName: "5", jerseyNum: 5), player14: Player(firstName: "Labonte", lastName: "4", jerseyNum: 4), player15: Player(firstName: "Jones", lastName: "44", jerseyNum: 44), player16: Player(firstName: "Morrison", lastName: "14", jerseyNum: 14), player17: Player(firstName: "Chen", lastName: "7", jerseyNum: 7), player18: Player(firstName: "Cochrane", lastName: "2", jerseyNum: 2), player19: Player(firstName: "Buitenhuis", lastName: "29", jerseyNum: 29), player20: Player(firstName: "Tiribassi", lastName: "34", jerseyNum: 34), player21: Player(firstName: "Negron", lastName: "1", jerseyNum: 1), player22: Player(firstName: "Stimola", lastName: "6", jerseyNum: 6))
 
-    
 
     @IBOutlet weak var displayCount: UILabel!
    
@@ -112,6 +116,16 @@ class ViewController: UIViewController {
     
 
     /////////////////////////////////////////
+    func init_roster(){
+        playerArray = appDelegate.database?.getCurrentRoster() ?? []
+        var tempRoster = Array(repeating: Player(firstName: "Empty", lastName: "Empty", jerseyNum: 0), count: 22)
+        for player in playerArray{
+            if player.position != 0{
+                tempRoster[player.position - 1] = Player(firstName: String(player.studentID), lastName: player.lastName, jerseyNum: player.number)
+            }
+        }
+        game = Game(player1: tempRoster[0], player2: tempRoster[1], player3: tempRoster[2], player4: tempRoster[3], player5: tempRoster[4], player6: tempRoster[5], player7: tempRoster[6], player8: tempRoster[7], player9: tempRoster[8], player10: tempRoster[9], player11: tempRoster[10], player12: tempRoster[11], player13: tempRoster[12], player14: tempRoster[13], player15: tempRoster[14], player16: tempRoster[15], player17: tempRoster[16], player18: tempRoster[17], player19: tempRoster[18], player20: tempRoster[19], player21: tempRoster[20], player22: tempRoster[21])
+    }
     
     // OUTLETS END !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     
@@ -970,6 +984,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        init_roster()
         // hidden until drop down buttons {Shot For || Goal For} are pressed
         playersDropDown.isHidden = true
         // hardcoding initial players visuals on ice for demo purposes
