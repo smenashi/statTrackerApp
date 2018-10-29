@@ -27,14 +27,19 @@ class rosterPlayer {
 class RosterScreenViewController: UIViewController {
     //    ref: https://www.youtube.com/watch?v=MC4mDQ7UqEE
     @IBOutlet weak var RosterTable: UITableView!
-    @IBOutlet weak var removePlayer: UIButton!
+    //@IBOutlet weak var removePlayer: UIButton!
     @IBOutlet weak var addPlayer: UIButton!
     @IBOutlet weak var next_name: UIButton!
     @IBOutlet weak var next_number: UIButton!
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var SaveExitButton: UIButton!
     
+    //input labels
+    @IBOutlet weak var enterStudID: UILabel!
+    @IBOutlet weak var enterLastName: UILabel!
+    @IBOutlet weak var enterJerseyNum: UILabel!
     
+    //input field
     @IBOutlet weak var inputField: UITextField!
     
     //roster position buttons
@@ -389,12 +394,16 @@ class RosterScreenViewController: UIViewController {
     }
     
     @IBAction func addPlayerClicked(_ sender: Any) {
+        inputField.isHidden = false
+        enterStudID.isHidden = false
         next_name.isHidden = false
     }
 
     @IBAction func next_nameClicked(_ sender: Any) {
         // input from studentId is processed
         insertStudentID()
+        enterStudID.isHidden = true
+        enterLastName.isHidden = false
         next_name.isHidden = true
         next_number.isHidden = false
     }
@@ -402,6 +411,8 @@ class RosterScreenViewController: UIViewController {
     @IBAction func next_numberClicked(_ sender: Any) {
         // input for lastName processed
         insertPlayerName()
+        enterLastName.isHidden = true
+        enterJerseyNum.isHidden = false
         next_number.isHidden = true
         doneButton.isHidden = false
     }
@@ -412,7 +423,9 @@ class RosterScreenViewController: UIViewController {
         insertPlayerNumber()
         print(lastName)
         print(number)
-        
+        enterJerseyNum.isHidden = true
+        inputField.isHidden = true
+        doneButton.isHidden = true
         // append variables to cellBuffer
         //cellBuffer += "\(studentID) "
         //cellBuffer += "\(lastName) "
@@ -461,8 +474,8 @@ class RosterScreenViewController: UIViewController {
     
 
     
-    @IBAction func removePlayerClicked(_ sender: Any) {
-    }
+  //  @IBAction func removePlayerClicked(_ sender: Any) {
+    //}
     
     
     override func viewDidLoad() {
@@ -471,6 +484,13 @@ class RosterScreenViewController: UIViewController {
         doneButton.isHidden = true
         next_name.isHidden = true
         next_number.isHidden = true
+        
+        // hide input bar when loaded
+        inputField.isHidden = true
+        // hide input labels
+        enterStudID.isHidden = true
+        enterLastName.isHidden = true
+        enterJerseyNum.isHidden = true
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         playerArray = appDelegate.database?.getCurrentRoster() ?? []
