@@ -111,8 +111,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var goalAgainstButton: UIButton!
     @IBOutlet weak var icingForButton: UIButton!
     @IBOutlet weak var icingAgainstButton: UIButton!
-    @IBOutlet weak var penaltiesDrawnButton: UIButton!
-    @IBOutlet weak var penaltiesTakenButton: UIButton!
+    
     
 
     /////////////////////////////////////////
@@ -622,25 +621,32 @@ class ViewController: UIViewController {
 //        for player in game.currIce {
 //
 //        }
-        
-        
-        
-        
+    
     }
+    
     
     @IBAction func onClickIcingAgainst(_ sender: Any) {
         // Icing Against button clicked: update relevant stats to players on ice
     }
     
-    @IBAction func onClickPenaltiesDrawn(_ sender: Any) {
-        // Penalties Drawn button clicked: update relevant stats
+    
+    // Penalty Buttons:
+    // ----------------------------------------------
+    // <Min> For: -------------------
+    
+    
+    @IBOutlet weak var penalty2ForButton: UIButton!
+    
+    @IBAction func penalty2ForClicked(_ sender: Any) {
+        // 2:00 For clicked: update relevant stats to players on ice
         //  has drop-down for selecting player
         
+        
         playersDropDown.reloadData() // reload drop-down data
-        dropDownClicked = "penaltiesDrawn" // mark which dropDown was clicked
+        dropDownClicked = "2For" // mark which dropDown was clicked
         // get new X & Y positions for the drop-down menu
-        let newX = penaltiesDrawnButton.frame.minX
-        let newY = penaltiesDrawnButton.frame.maxY
+        let newX = penalty2ForButton.frame.minX
+        let newY = penalty2ForButton.frame.maxY
         
         
         // animation plays that "drops down" the table view --
@@ -653,17 +659,81 @@ class ViewController: UIViewController {
             animate(toggle: false, type: goalForButton)
         }
         
-        // : increase the Penalties Drawn for each player on ice here
-        //        for player in game.currIce {
-        //
-        //        }
+    }
+    
+    @IBOutlet weak var penalty4ForButton: UIButton!
+    @IBAction func penalty4ForClicked(_ sender: Any) {
+        // 4:00 For clicked: update relevant stats to players on ice
+        //  has drop-down for selecting player
         
+        
+        playersDropDown.reloadData() // reload drop-down data
+        dropDownClicked = "4For" // mark which dropDown was clicked
+        // get new X & Y positions for the drop-down menu
+        let newX = penalty4ForButton.frame.minX
+        let newY = penalty4ForButton.frame.maxY
+        
+        
+        // animation plays that "drops down" the table view --
+        if playersDropDown.isHidden{
+            playersDropDown.frame.origin.x = newX
+            playersDropDown.frame.origin.y = newY
+            animate(toggle: true, type: goalForButton)
+        }
+        else{
+            animate(toggle: false, type: goalForButton)
+        }
         
     }
     
-    @IBAction func onClickPenaltiesTaken(_ sender: Any) {
-        // Penalties Taken button clicked: update relevant stats
+    @IBOutlet weak var penalty5ForButton: UIButton!
+    @IBAction func penalty5ForClicked(_ sender: Any) {
+        // 5:00 For clicked: update relevant stats to players on ice
+        //  has drop-down for selecting player
+        
+        
+        playersDropDown.reloadData() // reload drop-down data
+        dropDownClicked = "5For" // mark which dropDown was clicked
+        // get new X & Y positions for the drop-down menu
+        let newX = penalty5ForButton.frame.minX
+        let newY = penalty5ForButton.frame.maxY
+        
+        
+        // animation plays that "drops down" the table view --
+        if playersDropDown.isHidden{
+            playersDropDown.frame.origin.x = newX
+            playersDropDown.frame.origin.y = newY
+            animate(toggle: true, type: goalForButton)
+        }
+        else{
+            animate(toggle: false, type: goalForButton)
+        }
     }
+
+    // <Min> Against: ---------------
+    @IBAction func penalty2AgainstClicked(_ sender: Any) {
+    }
+   
+    @IBAction func penalty4AgainstClicked(_ sender: Any) {
+    }
+    
+    @IBAction func penalty5AgainstClicked(_ sender: Any) {
+    }
+    
+    // ----------------------------------------------
+
+    // Penalty Boxes: ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    // Outlets: reference these objects to modify their text accordingly
+    // jersey number labels
+    @IBOutlet weak var jerseynum1: UILabel!
+    @IBOutlet weak var jerseynum2: UILabel!
+    // timer labels
+    @IBOutlet weak var timer1: UILabel!
+    @IBOutlet weak var timer2: UILabel!
+    
+    
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    
     
     
     
@@ -1138,16 +1208,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             game.currIce[indexPath.row].increaseGoaltForTaken()
             
         }
-        // Icing For button clicked, update the stat for the selected player
-//        if dropDownClicked == "icingFor"{
-////            game.currIce[indexPath.row].<method-name-here>
-//
-//        }
-        // Penalties Drawn button clicked, update the stat for the selected player
-        //        if dropDownClicked == "penaltiesDrawn"{
-        ////            game.currIce[indexPath.row].<method-name-here>
-        //
-        //        }
+
     }
 }
 
