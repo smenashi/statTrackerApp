@@ -13,7 +13,7 @@ class Player {
     
     //funcitonal attributes
     var enabled = false
-    var clock = Clock()
+    var clock = PlayerClock()
     var iceTime:TimeInterval = 0
     
     // hard-coding these attributes for now
@@ -58,15 +58,15 @@ class Player {
     
     // clock methods
     func startClock() {
-        clock.start()
+        clock.startClock()
     }
     
     func stopClock() {
-        iceTime += clock.stop()
+        clock.stopClock()
     }
     
     func getIceTime() -> TimeInterval {
-        return iceTime
+        return clock.getIceTime()
     }
     
     // increasing stat methods
