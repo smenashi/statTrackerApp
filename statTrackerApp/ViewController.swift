@@ -11,9 +11,6 @@ import MessageUI
 
 class ViewController: UIViewController {
     
-    var count = 0
-    var countStr = ""
-    
     var playerButtonColor = UIColor(red: 0.83921569, green: 0.72941176, blue: 0.54509804, alpha: 1.0)
     
     // hard-coding game
@@ -23,7 +20,7 @@ class ViewController: UIViewController {
     
     var game = Game(player1: Player(firstName: "Willet", lastName: "9", jerseyNum: 9), player2: Player(firstName: "Brochu", lastName: "15", jerseyNum: 15), player3: Player(firstName: "Conway", lastName: "18", jerseyNum: 18), player4: Player(firstName: "Beniers", lastName: "16", jerseyNum: 16), player5: Player(firstName: "Gagnon", lastName: "10", jerseyNum: 10), player6: Player(firstName: "Bray", lastName: "26", jerseyNum: 26), player7: Player(firstName: "Bruneteau", lastName: "22", jerseyNum: 22), player8: Player(firstName: "Daigler", lastName: "20", jerseyNum: 20), player9: Player(firstName: "Ursitti", lastName: "12", jerseyNum: 12), player10: Player(firstName: "Stickel", lastName: "27", jerseyNum: 27), player11: Player(firstName: "Nichols", lastName: "23", jerseyNum: 23), player12: Player(firstName: "Simson", lastName: "19", jerseyNum: 19), player13: Player(firstName: "Allen", lastName: "5", jerseyNum: 5), player14: Player(firstName: "Labonte", lastName: "4", jerseyNum: 4), player15: Player(firstName: "Jones", lastName: "44", jerseyNum: 44), player16: Player(firstName: "Morrison", lastName: "14", jerseyNum: 14), player17: Player(firstName: "Chen", lastName: "7", jerseyNum: 7), player18: Player(firstName: "Cochrane", lastName: "2", jerseyNum: 2), player19: Player(firstName: "Buitenhuis", lastName: "29", jerseyNum: 29), player20: Player(firstName: "Tiribassi", lastName: "34", jerseyNum: 34), player21: Player(firstName: "Negron", lastName: "1", jerseyNum: 1), player22: Player(firstName: "Stimola", lastName: "6", jerseyNum: 6))
 
-    
+    var _manpower: (Int, Int) = (5,5)
 
     @IBOutlet weak var displayCount: UILabel!
    
@@ -528,7 +525,7 @@ class ViewController: UIViewController {
         
         // : increase the shot for for each player on ice here
         for player in game.currIce {
-            player.increaseShotFor()
+            player.increaseShotFor(manpower: _manpower)
         }
     }
     
@@ -538,7 +535,7 @@ class ViewController: UIViewController {
         
         let ice = game.getIce()
         for player in ice {
-            game.getPlayer(number: player).increaseShotAgainst()
+            game.getPlayer(number: player).increaseShotAgainst(manpower: _manpower)
         }
     }
     
@@ -566,8 +563,8 @@ class ViewController: UIViewController {
         
         // : increase the GOAL for for each player on ice here
         for player in game.currIce {
-            player.increaseGoalFor()
-            player.increaseShotFor()
+            player.increaseGoalFor(manpower: _manpower)
+            player.increaseShotFor(manpower: _manpower)
         }
         
     }
@@ -577,7 +574,7 @@ class ViewController: UIViewController {
         //                              and any other stats
         let ice = game.getIce()
         for player in ice {
-            game.getPlayer(number: player).increaseGoalAgainst()
+            game.getPlayer(number: player).increaseGoalAgainst(manpower: _manpower)
         }
     }
     
@@ -604,9 +601,11 @@ class ViewController: UIViewController {
         }
         
         // : increase the ICING FOR for each player on ice here
-//        for player in game.currIce {
-//
-//        }
+        let ice = game.getIce()
+        for player in ice {
+            game.getPlayer(number:player).increaseIcingFor(manpower: _manpower)
+        }
+
     
     }
     
@@ -645,6 +644,10 @@ class ViewController: UIViewController {
             animate(toggle: false, type: goalForButton)
         }
         
+        let ice = game.getIce()
+        for player in ice {
+            game.getPlayer(number:player).increaseIcingAgainst(manpower: _manpower)
+        }
     }
     
     @IBOutlet weak var penalty4ForButton: UIButton!
@@ -1132,7 +1135,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             // : use game.currIceNames[indexPath.row] which is the jerseynumber of the selected player to access
             //          the individual player and increment their relevant stat
             //print(game.currIce[indexPath.row]._firstName)
-            game.currIce[indexPath.row].increaseShotForTaken()
+            game.currIce[indexPath.row].increaseShotForTaken(manpower: _manpower)
         
         }
         
@@ -1141,11 +1144,24 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 //            print("Goal For was clicked!")
             // : use game.currIceNames[indexPath.row] which is the jerseynumber of the selected player to access
             //          the individual player and increment their relevant stat
-            game.currIce[indexPath.row].increaseShotForTaken()
-            game.currIce[indexPath.row].increaseGoaltForTaken()
+            game.currIce[indexPath.row].increaseShotForTaken(manpower: _manpower)
+            game.currIce[indexPath.row].increaseGoaltForTaken(manpower: _manpower)
             
         }
-
+        
+        if dropDownClicked == "penaltyFor"{
+            print("penaltyFor clicked!")
+            game.currIce[indexPath.row].increasePenaltyFor(manpower:_manpower)
+        }
+/*
+        if dropDownClicked == "penaltyAgainst"{
+            
+        }
+*/
+        if dropDownClicked == "icingFor"{
+            print("icingFor clicked!")
+            game.currIce[indexPath.row].increaseIcingFor(manpower:_manpower)
+        }
     }
 }
 

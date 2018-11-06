@@ -164,33 +164,47 @@ class Game {
     }
     
     // stat buttons
-    func shotFor() {
+    func shotFor(takenBy:Int, manpower: (Int, Int) = (5,5)) {
         for player in onIce {
-            players[player].increaseShotFor()
+            players[player].increaseShotFor(manpower: manpower)
+        }
+        players[takenBy].increaseShotForTaken(manpower: manpower)
+    }
+    
+    func shotAgainst(manpower: (Int, Int) = (5,5)) {
+        for player in onIce {
+            players[player].increaseShotAgainst(manpower: manpower)
         }
     }
     
-    func shotAgainst() {
+    func goalFor(takenBy:Int, manpower: (Int, Int) = (5,5)) {
         for player in onIce {
-            players[player].increaseShotAgainst()
+            players[player].increaseGoalFor(manpower: manpower)
+        }
+        players[takenBy].increaseGoaltForTaken(manpower: manpower)
+    }
+    
+    func goalAgainst(manpower: (Int, Int) = (5,5)) {
+        for player in onIce {
+            players[player].increaseGoalAgainst(manpower: manpower)
         }
     }
     
-    func goalFor() {
-        for player in onIce {
-            players[player].increaseGoalFor()
-        }
+    func penaltyFor(penaltyBy:Int, manpower: (Int, Int) = (5,5)) {
+        players[penaltyBy].increasePenaltyFor(manpower: manpower)
     }
     
-    func goalAgainst() {
-        for player in onIce {
-            players[player].increaseGoalAgainst()
-        }
+    func penaltyAgainst(drawnBy:Int, manpower: (Int, Int) = (5,5)) {
+        players[drawnBy].increasePenaltyAgainst(manpower: manpower)
     }
     
-    func penalty(player:Player) {
-        if player.isEnabled() {
-            player.increasePenalty()
+    func icingFor(drawnBy: Int, manpower:(Int, Int) = (5,5)) {
+        players[drawnBy].increaseIcingFor(manpower: manpower)
+    }
+    
+    func icingAgainst(manpower:(Int, Int) = (5,5)) {
+        for player in onIce {
+            players[player].increaseIcingAgainst(manpower: manpower)
         }
     }
     
