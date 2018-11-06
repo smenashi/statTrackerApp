@@ -23,8 +23,8 @@ class Clock {
     func stop() -> TimeInterval {
         if let time = startTime {
             startTime = nil
-            
-            return NSDate.init().timeIntervalSince(time as Date)
+            let timeInt = NSDate.init().timeIntervalSince(time as Date)
+            return timeInt
         }
         else {
             return 0

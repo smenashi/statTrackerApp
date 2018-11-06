@@ -63,6 +63,7 @@ class Player {
     
     func stopClock() {
         clock.stopClock()
+        iceTime = getIceTime()
     }
     
     func getIceTime() -> TimeInterval {

@@ -187,7 +187,7 @@ class ViewController: UIViewController {
     // ----------------------------------------------------------------------------
     @IBAction func clickPlayer1(_ sender: Any) {
         // Player1 is clicked
-        let player = game.getPlayer1()
+        let player = game.getPlayer(number: 0)
         if player.isEnabled() {
             game.takeOffIce(removePlayer: player)
             Player1.backgroundColor = playerButtonColor
@@ -200,7 +200,7 @@ class ViewController: UIViewController {
     }
     @IBAction func clickPlayer2(_ sender: Any) {
         // Player2 is clicked
-        let player = game.getPlayer2()
+        let player = game.getPlayer(number: 1)
         if player.isEnabled() {
             game.takeOffIce(removePlayer: player)
             Player2.backgroundColor = playerButtonColor
@@ -213,7 +213,7 @@ class ViewController: UIViewController {
     }
     @IBAction func clickPlayer3(_ sender: Any) {
         // Player3 is clicked
-        let player = game.getPlayer3()
+        let player = game.getPlayer(number: 2)
         if player.isEnabled() {
             game.takeOffIce(removePlayer: player)
             Player3.backgroundColor = playerButtonColor
@@ -226,7 +226,7 @@ class ViewController: UIViewController {
     }
     @IBAction func clickPlayer4(_ sender: Any) {
         // Player4 is clicked
-        let player = game.getPlayer4()
+        let player = game.getPlayer(number: 3)
         if player.isEnabled() {
             game.takeOffIce(removePlayer: player)
             Player4.backgroundColor = playerButtonColor
@@ -239,7 +239,7 @@ class ViewController: UIViewController {
     }
     @IBAction func clickPlayer5(_ sender: Any) {
         // Player5 is clicked
-        let player = game.getPlayer5()
+        let player = game.getPlayer(number: 4)
         if player.isEnabled() {
             game.takeOffIce(removePlayer: player)
             Player5.backgroundColor = playerButtonColor
@@ -252,7 +252,7 @@ class ViewController: UIViewController {
     }
     @IBAction func clickPlayer6(_ sender: Any) {
         // Player6 is clicked
-        let player = game.getPlayer6()
+        let player = game.getPlayer(number: 5)
         if player.isEnabled() {
             game.takeOffIce(removePlayer: player)
             Player6.backgroundColor = playerButtonColor
@@ -265,7 +265,7 @@ class ViewController: UIViewController {
     }
     @IBAction func clickPlayer7(_ sender: Any) {
         // Player7 is clicked
-        let player = game.getPlayer7()
+        let player = game.getPlayer(number: 6)
         if player.isEnabled() {
             game.takeOffIce(removePlayer: player)
             Player7.backgroundColor = playerButtonColor
@@ -278,7 +278,7 @@ class ViewController: UIViewController {
     }
     @IBAction func clickPlayer8(_ sender: Any) {
         // Player8 is clicked
-        let player = game.getPlayer8()
+        let player = game.getPlayer(number: 7)
         if player.isEnabled() {
             game.takeOffIce(removePlayer: player)
             Player8.backgroundColor = playerButtonColor
@@ -291,7 +291,7 @@ class ViewController: UIViewController {
     }
     @IBAction func clickPlayer9(_ sender: Any) {
         // Player9 is clicked
-        let player = game.getPlayer9()
+        let player = game.getPlayer(number: 8)
         if player.isEnabled() {
             game.takeOffIce(removePlayer: player)
             Player9.backgroundColor = playerButtonColor
@@ -304,7 +304,7 @@ class ViewController: UIViewController {
     }
     @IBAction func clickPlayer10(_ sender: Any) {
         // Player10 is clicked
-        let player = game.getPlayer10()
+        let player = game.getPlayer(number: 9)
         if player.isEnabled() {
             game.takeOffIce(removePlayer: player)
             Player10.backgroundColor = playerButtonColor
@@ -317,7 +317,7 @@ class ViewController: UIViewController {
     }
     @IBAction func clickPlayer11(_ sender: Any) {
         // Player11 is clicked
-        let player = game.getPlayer11()
+        let player = game.getPlayer(number: 10)
         if player.isEnabled() {
             game.takeOffIce(removePlayer: player)
             Player11.backgroundColor = playerButtonColor
@@ -330,7 +330,7 @@ class ViewController: UIViewController {
     }
     @IBAction func clickPlayer12(_ sender: Any) {
         // Player12 is clicked
-        let player = game.getPlayer12()
+        let player = game.getPlayer(number: 11)
         if player.isEnabled() {
             game.takeOffIce(removePlayer: player)
             Player12.backgroundColor = playerButtonColor
@@ -343,7 +343,7 @@ class ViewController: UIViewController {
     }
     @IBAction func clickPlayer13(_ sender: Any) {
         // Player13 is clicked
-        let player = game.getPlayer13()
+        let player = game.getPlayer(number: 12)
         if player.isEnabled() {
             game.takeOffIce(removePlayer: player)
             Player13.backgroundColor = playerButtonColor
@@ -356,7 +356,7 @@ class ViewController: UIViewController {
     }
     @IBAction func clickPlayer14(_ sender: Any) {
         // Player14 is clicked
-        let player = game.getPlayer14()
+        let player = game.getPlayer(number: 13)
         if player.isEnabled() {
             game.takeOffIce(removePlayer: player)
             Player14.backgroundColor = playerButtonColor
@@ -369,7 +369,7 @@ class ViewController: UIViewController {
     }
     @IBAction func clickPlayer15(_ sender: Any) {
         // Player15 is clicked
-        let player = game.getPlayer15()
+        let player = game.getPlayer(number: 14)
         if player.isEnabled() {
             game.takeOffIce(removePlayer: player)
             Player15.backgroundColor = playerButtonColor
@@ -382,7 +382,7 @@ class ViewController: UIViewController {
     }
     @IBAction func clickPlayer16(_ sender: Any) {
         // Player16 is clicked
-        let player = game.getPlayer16()
+        let player = game.getPlayer(number: 15)
         if player.isEnabled() {
             game.takeOffIce(removePlayer: player)
             Player16.backgroundColor = playerButtonColor
@@ -395,7 +395,7 @@ class ViewController: UIViewController {
     }
     @IBAction func clickPlayer17(_ sender: Any) {
         // Player17 is clicked
-        let player = game.getPlayer17()
+        let player = game.getPlayer(number: 16)
         if player.isEnabled() {
             game.takeOffIce(removePlayer: player)
             Player17.backgroundColor = playerButtonColor
@@ -408,7 +408,7 @@ class ViewController: UIViewController {
     }
     @IBAction func clickPlayer18(_ sender: Any) {
         // Player18 is clicked
-        let player = game.getPlayer18()
+        let player = game.getPlayer(number: 17)
         if player.isEnabled() {
             game.takeOffIce(removePlayer: player)
             Player18.backgroundColor = playerButtonColor
@@ -421,7 +421,7 @@ class ViewController: UIViewController {
     }
     @IBAction func clickPlayer19(_ sender: Any) {
         // Player19 is clicked
-        let player = game.getPlayer19()
+        let player = game.getPlayer(number: 18)
         if player.isEnabled() {
             game.takeOffIce(removePlayer: player)
             Player19.backgroundColor = playerButtonColor
@@ -434,7 +434,7 @@ class ViewController: UIViewController {
     }
     @IBAction func clickPlayer20(_ sender: Any) {
         // Player20 is clicked
-        let player = game.getPlayer20()
+        let player = game.getPlayer(number: 19)
         if player.isEnabled() {
             game.takeOffIce(removePlayer: player)
             Player20.backgroundColor = playerButtonColor
@@ -447,7 +447,7 @@ class ViewController: UIViewController {
     }
     @IBAction func clickPlayer21(_ sender: Any) {
         // Player21 is clicked
-        let player = game.getPlayer21()
+        let player = game.getPlayer(number: 20)
         if player.isEnabled() {
             game.takeOffIce(removePlayer: player)
             Player21.backgroundColor = playerButtonColor
@@ -460,7 +460,7 @@ class ViewController: UIViewController {
     }
     @IBAction func clickPlayer22(_ sender: Any) {
         // Player22 is clicked
-        let player = game.getPlayer22()
+        let player = game.getPlayer(number: 21)
         if player.isEnabled() {
             game.takeOffIce(removePlayer: player)
             Player22.backgroundColor = playerButtonColor
@@ -869,7 +869,7 @@ class ViewController: UIViewController {
     // Game Clock Button: this starts/stops the countdown timer for the game
     // ref: https://medium.com/ios-os-x-development/build-an-stopwatch-with-swift-3-0-c7040818a10f
     
-
+/*
     // running value that will be updated
     var gameSeconds = 1200                  // 1200 for real game
     // init timer object
@@ -882,71 +882,39 @@ class ViewController: UIViewController {
     
     // gates game clock button usage
     var clockPaused = true
+*/
+    // initialize GameClock instance
+    var gameTimer = GameClock()
     
     // clock labels: change based on state
     @IBOutlet weak var startLabel: UILabel!
     @IBOutlet weak var stopLabel: UILabel!
     
     
-    
     @IBAction func onClickGameClock(_ sender: Any) {
         // CLOCK button clicked:
         playersDropDown.reloadData() // reload drop-down data
-        if newPeriod == true{   // check if we started a new period
-            gameSeconds = 1200  // reset time, 1200 for real game
-            newPeriod = false   // update flag
-            stopLabel.alpha = 1   //make stop label more opaque: "click to stop"
-            startLabel.alpha = 0.4    // make start label less opaque
-        }
+        if gameTimer.clockOnFlag {
+            gameTimer.stopGameClock()
         
-        if self.clockPaused == false{
-            // pauses the clock and changes boolean value
-            gameTimer.invalidate()
-            isTimerRunning = true
-            self.clockPaused = true
             stopLabel.alpha = 0.4
             startLabel.alpha = 1
             for player in game.getIce() {
                 game.getPlayer(number: player).stopClock()
             }
         }
-            
-        else{
-            // continues running the timer
-            runTimer()
-            self.clockPaused = false
-            isTimerRunning = true
-            stopLabel.alpha = 1   //make stop label more opaque: "click to stop"
-            startLabel.alpha = 0.4   // make start label less opaque
+        
+        else {
+            // pauses the clock and changes boolean value
+            gameTimer.startGameClock(timerLabel: gameTime)
+            stopLabel.alpha = 1
+            startLabel.alpha = 0.4
             for player in game.getIce() {
                 game.getPlayer(number: player).startClock()
             }
         }
     }
-    
-    func runTimer() {
-        // runs the timer countdown
-        gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(ViewController.updateTimer)), userInfo: nil, repeats: true)
-        isTimerRunning = true
-    }
-    
-    @objc func updateTimer() {
-        // updates the values displayed on the game time label
-        gameSeconds -= 1
-        // update label with properly-formatted version:
-        gameTime.text = formatTime(time: TimeInterval(gameSeconds))
-    }
-    
-    func formatTime(time:TimeInterval) -> String{
-            // formats the time on the time label to the desired format: hh:mm:ss
-            // standard modular arithmetic to derive hours, minutes, seconds from given seconds
-//            let hours = Int(time) / 3600 (switched to just minutes and seconds
-            let minutes = Int(time) / 60 % 60
-            let seconds = Int(time) % 60
-            
-            // string will be formatted with 2 digits for each of the values derived above
-            return String(format:"%02i:%02i", minutes, seconds)
-    }
+
     
     // -------------------------------------------------------------------------------
     // End Period Button:   ends the period, resets timer
@@ -958,13 +926,9 @@ class ViewController: UIViewController {
     // -------------------------------------------------------------------------------
     @IBAction func onClickEndPeriod(_ sender: Any) {
         // resets timer to 00:20:00
-       playersDropDown.reloadData() // reload drop-down data
-        gameTimer.invalidate()              // stop timer
-        let initSeconds = 1200
-        gameTime.text = formatTime(time: TimeInterval(initSeconds)) // reset label
-        isTimerRunning = false
-        newPeriod = true
-        self.clockPaused = true
+        playersDropDown.reloadData() // reload drop-down data
+        gameTimer.stopGameClock()
+        gameTimer.startNewPeriod(timerLabel: gameTime)
         
         // change alphas of period labels
         if currPeriod != 3{
@@ -980,8 +944,8 @@ class ViewController: UIViewController {
     // End Game Button: this ends the game
     @IBAction func onClickEndGame(_ sender: Any) {
         // using this button to stop timer for now //
-        gameTimer.invalidate()
-        gameTime.text = formatTime(time: TimeInterval(0))
+        gameTimer.stopGameClock()
+        gameTimer.endGame(timerLabel: gameTime)
         playersDropDown.reloadData() // reload drop-down data
 //        print("These are all the players on ice: ")
         
@@ -1048,6 +1012,7 @@ class ViewController: UIViewController {
         clickD1((Any).self)
         clickF1((Any).self)
         clickPlayer19((Any).self)
+        onClickGameClock((Any).self)
         
         // hardcoding starting manpower config for demo purposes
         manPow3v5.alpha = 0.5
@@ -1099,19 +1064,6 @@ class ViewController: UIViewController {
             }
         }
     }
-    ////////////////////////////////////////////////////////////
-    
-    
-    @IBAction func addPressed(_ sender: Any) {
-        count += 1
-    }
-    
-    
-    @IBAction func getCountPressed(_ sender: Any) {
-        countStr = String(count)
-        displayCount.text = countStr
-    }
-    
     
     /*
     override func didReceiveMemoryWarning() {
