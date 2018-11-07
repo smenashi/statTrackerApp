@@ -13,7 +13,7 @@ class Player {
     
     //funcitonal attributes
     var enabled = false
-    var clock = Clock()
+    var clock = PlayerClock()
     var iceTime:TimeInterval = 0
     
     // hard-coding these attributes for now
@@ -29,6 +29,7 @@ class Player {
     var goalForTaken = 0
     var goalAgainst = 0
     var penalty = 0
+
     
     /*
     // database attributes
@@ -58,44 +59,57 @@ class Player {
     
     // clock methods
     func startClock() {
-        clock.start()
+        clock.startClock()
     }
     
     func stopClock() {
-        iceTime += clock.stop()
+        clock.stopClock()
+        iceTime = getIceTime()
     }
     
     func getIceTime() -> TimeInterval {
-        return iceTime
+        return clock.getIceTime()
     }
     
-    // increasing stat methods
-    func increaseShotFor() {
-        shotFor += 1
+    // increasing stat methods --> insert statements go in these!
+    func increaseShotFor(manpower:(Int, Int) = (5,5)) {
+        //shotFor += 1
     }
     
-    func increaseShotForTaken() {
-        shotForTaken += 1
+    func increaseShotForTaken(manpower:(Int, Int) = (5,5)) {
+        //shotForTaken += 1
     }
     
-    func increaseShotAgainst() {
-        shotAgainst += 1
+    func increaseShotAgainst(manpower:(Int, Int) = (5,5)) {
+        //shotAgainst += 1
     }
     
-    func increaseGoalFor() {
-        goalFor += 1
+    func increaseGoalFor(manpower:(Int, Int) = (5,5)) {
+        //goalFor += 1
     }
     
-    func increaseGoaltForTaken() {
-        goalForTaken += 1
+    func increaseGoaltForTaken(manpower:(Int, Int) = (5,5)) {
+        //goalForTaken += 1
     }
     
-    func increaseGoalAgainst() {
-        goalAgainst += 1
+    func increaseGoalAgainst(manpower:(Int, Int) = (5,5)) {
+        //goalAgainst += 1
     }
     
-    func increasePenalty() {
-        penalty += 1
+    func increasePenaltyFor(manpower:(Int, Int) = (5,5)) {
+        //penalty += 1
+    }
+    
+    func increasePenaltyAgainst(manpower:(Int, Int) = (5,5)) {
+        //penalty += 1
+    }
+    
+    func increaseIcingFor(manpower:(Int, Int) = (5,5)) {
+        // chad!
+    }
+    
+    func increaseIcingAgainst(manpower:(Int, Int) = (5,5)) {
+        // chad!
     }
     
     // accessing stat methods
