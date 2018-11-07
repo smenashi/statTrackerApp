@@ -700,13 +700,67 @@ class ViewController: UIViewController {
     }
 
     // <Min> Against: ---------------
+  
+    @IBOutlet weak var penalty2Against: UIButton!
     @IBAction func penalty2AgainstClicked(_ sender: Any) {
+        
+        playersDropDown.reloadData() // reload drop-down data
+        dropDownClicked = "2Against" // mark which dropDown was clicked
+        // get new X & Y positions for the drop-down menu
+        let newX = penalty2Against.frame.minX
+        let newY = penalty2Against.frame.maxY
+        
+        
+        // animation plays that "drops down" the table view --
+        if playersDropDown.isHidden{
+            playersDropDown.frame.origin.x = newX
+            playersDropDown.frame.origin.y = newY
+            animate(toggle: true, type: goalForButton)
+        }
+        else{
+            animate(toggle: false, type: goalForButton)
+        }
     }
    
+    @IBOutlet weak var penalty4Against: UIButton!
     @IBAction func penalty4AgainstClicked(_ sender: Any) {
+        playersDropDown.reloadData() // reload drop-down data
+        dropDownClicked = "4Against" // mark which dropDown was clicked
+        // get new X & Y positions for the drop-down menu
+        let newX = penalty4Against.frame.minX
+        let newY = penalty4Against.frame.maxY
+        
+        
+        // animation plays that "drops down" the table view --
+        if playersDropDown.isHidden{
+            playersDropDown.frame.origin.x = newX
+            playersDropDown.frame.origin.y = newY
+            animate(toggle: true, type: goalForButton)
+        }
+        else{
+            animate(toggle: false, type: goalForButton)
+        }
     }
     
+    
+    @IBOutlet weak var penalty5Against: UIButton!
     @IBAction func penalty5AgainstClicked(_ sender: Any) {
+        playersDropDown.reloadData() // reload drop-down data
+        dropDownClicked = "5Against" // mark which dropDown was clicked
+        // get new X & Y positions for the drop-down menu
+        let newX = penalty5Against.frame.minX
+        let newY = penalty5Against.frame.maxY
+        
+        
+        // animation plays that "drops down" the table view --
+        if playersDropDown.isHidden{
+            playersDropDown.frame.origin.x = newX
+            playersDropDown.frame.origin.y = newY
+            animate(toggle: true, type: goalForButton)
+        }
+        else{
+            animate(toggle: false, type: goalForButton)
+        }
     }
     
     // ----------------------------------------------
@@ -939,6 +993,9 @@ class ViewController: UIViewController {
             currPeriod += 1
             periodLabels[currPeriod].alpha = 1
         }
+        // change alphas of game clock labels:
+        startLabel.alpha = 1
+        stopLabel.alpha = 0.4
         
         // execute relevant stat-related logic for end of period here
     }
@@ -995,6 +1052,14 @@ class ViewController: UIViewController {
     }
     
     // ~~~~~~~~~~~~~~~~~~~~~~FUNC BUTTONS END ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    
+    // Error Flag Button:
+    
+    @IBOutlet weak var errorFlagButton: UIButton!
+    
+    @IBAction func errorFlagClicked(_ sender: Any) {
+        // what happens when the error flag is clicked
+    }
     
     
     // table containing current players on ice for drop down menus

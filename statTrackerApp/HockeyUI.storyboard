@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fOh-0j-0RM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fOh-0j-0RM">
     <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -776,6 +776,15 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="C0b-Rj-wNF"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tAe-CB-apK">
+                                <rect key="frame" x="448" y="875" width="81" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button" image="hirnlichtspieles-black-flag-vectorized-"/>
+                                <connections>
+                                    <action selector="errorFlagClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E5C-EK-t5k"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -921,6 +930,7 @@
                         <outlet property="d2" destination="ibe-x0-wgt" id="Y5X-ay-Koy"/>
                         <outlet property="d3" destination="Rsj-Ej-oP6" id="QtS-Vp-xvx"/>
                         <outlet property="displayCount" destination="A8V-mV-f50" id="6M0-4F-qRT"/>
+                        <outlet property="errorFlagButton" destination="tAe-CB-apK" id="o6b-nb-BJf"/>
                         <outlet property="f1" destination="49o-r3-KJ2" id="ceJ-Nu-n0q"/>
                         <outlet property="f2" destination="ye6-Fv-qDf" id="N7X-Uj-oJK"/>
                         <outlet property="f3" destination="HjE-iS-Woq" id="dn6-EK-Qt1"/>
@@ -940,8 +950,11 @@
                         <outlet property="manPow5v4" destination="aT5-3x-UaJ" id="bts-88-8h5"/>
                         <outlet property="manPow5v5" destination="lOM-pC-QtA" id="bHd-Bk-QrY"/>
                         <outlet property="otLabel" destination="fge-41-dkA" id="zM7-Fb-lIH"/>
+                        <outlet property="penalty2Against" destination="EfE-yE-SGE" id="izn-OL-lJf"/>
                         <outlet property="penalty2ForButton" destination="ebk-43-p0Y" id="vFg-K0-05L"/>
+                        <outlet property="penalty4Against" destination="egw-8v-cag" id="Zox-XA-GKw"/>
                         <outlet property="penalty4ForButton" destination="cEM-Q9-KRU" id="k5h-dk-GCb"/>
+                        <outlet property="penalty5Against" destination="Jmw-9h-YuO" id="G2K-L4-NRR"/>
                         <outlet property="penalty5ForButton" destination="JZG-0f-AES" id="VYY-5Q-ufV"/>
                         <outlet property="period1Label" destination="SgP-09-co9" id="MbA-Xy-N8P"/>
                         <outlet property="period2Label" destination="VRK-NA-MGp" id="uFX-5x-bhG"/>
@@ -1420,6 +1433,9 @@
             <point key="canvasLocation" x="399" y="574"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="hirnlichtspieles-black-flag-vectorized-" width="2400" height="2306"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="gRQ-Fr-8c3"/>
     </inferredMetricsTieBreakers>
