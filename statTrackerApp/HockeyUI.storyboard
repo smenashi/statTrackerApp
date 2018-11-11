@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fOh-0j-0RM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fOh-0j-0RM">
     <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -776,6 +776,18 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="C0b-Rj-wNF"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tAe-CB-apK">
+                                <rect key="frame" x="448" y="875" width="81" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="81" id="SoF-Iv-az8"/>
+                                    <constraint firstAttribute="height" constant="100" id="wFj-ML-4w0"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button" image="hirnlichtspieles-black-flag-vectorized-"/>
+                                <connections>
+                                    <action selector="errorFlagClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E5C-EK-t5k"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -796,9 +808,11 @@
                             <constraint firstItem="k6J-xL-Zip" firstAttribute="top" secondItem="Vxs-Dc-lRy" secondAttribute="bottom" constant="-50" id="9Df-Xw-BQb"/>
                             <constraint firstItem="EfE-yE-SGE" firstAttribute="width" secondItem="ebk-43-p0Y" secondAttribute="width" id="9rA-Ne-szf"/>
                             <constraint firstItem="pf7-qO-9UB" firstAttribute="top" secondItem="Jmw-9h-YuO" secondAttribute="bottom" constant="40" id="A3e-iJ-TJs"/>
+                            <constraint firstItem="ywx-16-qUI" firstAttribute="leading" secondItem="tAe-CB-apK" secondAttribute="trailing" constant="32" id="Az5-st-VKX"/>
                             <constraint firstItem="f5s-t1-IJl" firstAttribute="top" secondItem="WJf-ey-VLu" secondAttribute="bottom" constant="16" id="BcW-96-ngh"/>
                             <constraint firstItem="Kwo-NV-euT" firstAttribute="top" secondItem="Jmw-9h-YuO" secondAttribute="bottom" constant="341" id="BeF-en-0k4"/>
                             <constraint firstItem="wbZ-u1-OCw" firstAttribute="leading" secondItem="fHq-vh-6K2" secondAttribute="trailing" constant="37" id="CXj-uM-dyA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tAe-CB-apK" secondAttribute="bottom" constant="49" id="D8S-4G-Avg"/>
                             <constraint firstItem="xRw-RI-55S" firstAttribute="top" secondItem="bTa-Er-MBd" secondAttribute="bottom" constant="33" id="EKE-j7-K1s"/>
                             <constraint firstItem="6qr-Ru-fx5" firstAttribute="width" secondItem="lOM-pC-QtA" secondAttribute="width" id="FIh-52-k0e"/>
                             <constraint firstItem="EfE-yE-SGE" firstAttribute="leading" secondItem="ebk-43-p0Y" secondAttribute="trailing" constant="21" id="Hdh-vt-YKh"/>
@@ -826,6 +840,7 @@
                             <constraint firstItem="9tn-mf-LYk" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="19" id="Q49-6N-IUp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Jmw-9h-YuO" secondAttribute="trailing" constant="23" id="QG3-TX-lXT"/>
                             <constraint firstItem="JZG-0f-AES" firstAttribute="top" secondItem="cEM-Q9-KRU" secondAttribute="bottom" constant="23" id="QTe-Yl-VDw"/>
+                            <constraint firstItem="ywx-16-qUI" firstAttribute="leading" secondItem="tAe-CB-apK" secondAttribute="trailing" constant="32" id="RXH-jt-oB9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="egw-8v-cag" secondAttribute="trailing" constant="23" id="S0h-Gg-3i8"/>
                             <constraint firstItem="WJf-ey-VLu" firstAttribute="width" secondItem="Vxs-Dc-lRy" secondAttribute="width" id="SYd-5M-5Vp"/>
                             <constraint firstItem="egw-8v-cag" firstAttribute="top" secondItem="EfE-yE-SGE" secondAttribute="bottom" constant="19" id="UPP-vs-5wU"/>
@@ -890,6 +905,7 @@
                             <constraint firstItem="FvN-TY-B1I" firstAttribute="top" secondItem="Jmw-9h-YuO" secondAttribute="bottom" constant="341" id="zGu-Fa-7FK"/>
                             <constraint firstItem="aT5-3x-UaJ" firstAttribute="leading" secondItem="lOM-pC-QtA" secondAttribute="trailing" constant="37" id="zks-on-6dT"/>
                             <constraint firstItem="ebk-43-p0Y" firstAttribute="top" secondItem="WJf-ey-VLu" secondAttribute="bottom" constant="45" id="zu9-Hn-d8m"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tAe-CB-apK" secondAttribute="bottom" constant="49" id="zuh-aX-619"/>
                             <constraint firstItem="JZG-0f-AES" firstAttribute="height" secondItem="ebk-43-p0Y" secondAttribute="height" id="zv7-MB-XVR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -921,6 +937,7 @@
                         <outlet property="d2" destination="ibe-x0-wgt" id="Y5X-ay-Koy"/>
                         <outlet property="d3" destination="Rsj-Ej-oP6" id="QtS-Vp-xvx"/>
                         <outlet property="displayCount" destination="A8V-mV-f50" id="6M0-4F-qRT"/>
+                        <outlet property="errorFlagButton" destination="tAe-CB-apK" id="o6b-nb-BJf"/>
                         <outlet property="f1" destination="49o-r3-KJ2" id="ceJ-Nu-n0q"/>
                         <outlet property="f2" destination="ye6-Fv-qDf" id="N7X-Uj-oJK"/>
                         <outlet property="f3" destination="HjE-iS-Woq" id="dn6-EK-Qt1"/>
@@ -940,8 +957,11 @@
                         <outlet property="manPow5v4" destination="aT5-3x-UaJ" id="bts-88-8h5"/>
                         <outlet property="manPow5v5" destination="lOM-pC-QtA" id="bHd-Bk-QrY"/>
                         <outlet property="otLabel" destination="fge-41-dkA" id="zM7-Fb-lIH"/>
+                        <outlet property="penalty2Against" destination="EfE-yE-SGE" id="izn-OL-lJf"/>
                         <outlet property="penalty2ForButton" destination="ebk-43-p0Y" id="vFg-K0-05L"/>
+                        <outlet property="penalty4Against" destination="egw-8v-cag" id="Zox-XA-GKw"/>
                         <outlet property="penalty4ForButton" destination="cEM-Q9-KRU" id="k5h-dk-GCb"/>
+                        <outlet property="penalty5Against" destination="Jmw-9h-YuO" id="G2K-L4-NRR"/>
                         <outlet property="penalty5ForButton" destination="JZG-0f-AES" id="VYY-5Q-ufV"/>
                         <outlet property="period1Label" destination="SgP-09-co9" id="MbA-Xy-N8P"/>
                         <outlet property="period2Label" destination="VRK-NA-MGp" id="uFX-5x-bhG"/>
@@ -1420,6 +1440,9 @@
             <point key="canvasLocation" x="399" y="574"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="hirnlichtspieles-black-flag-vectorized-" width="2400" height="2306"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="gRQ-Fr-8c3"/>
     </inferredMetricsTieBreakers>
