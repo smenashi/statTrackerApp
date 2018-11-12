@@ -12,10 +12,6 @@ class Clock {
     // <script src="https://gist.github.com/irace/de6d576f49dc2eec9b18.js"></script>
     private var startTime: NSDate?
     
-    var isRunning: Bool {
-        return startTime != nil
-    };
-    
     func start() {
         startTime = NSDate.init()
     }

@@ -14,13 +14,9 @@ class ViewController: UIViewController {
     var playerButtonColor = UIColor(red: 0.83921569, green: 0.72941176, blue: 0.54509804, alpha: 1.0)
     
     // hard-coding game
-    /*
-    var game = Game(player1: Player(firstName: "Player", lastName: "1", jerseyNum: 1), player2: Player(firstName: "Player", lastName: "2", jerseyNum: 2), player3: Player(firstName: "Player", lastName: "3", jerseyNum: 3), player4: Player(firstName: "Player", lastName: "4", jerseyNum: 4), player5: Player(firstName: "Player", lastName: "5", jerseyNum: 5), player6: Player(firstName: "Player", lastName: "6", jerseyNum: 6), player7: Player(firstName: "Player", lastName: "7", jerseyNum: 7), player8: Player(firstName: "Player", lastName: "8", jerseyNum: 8), player9: Player(firstName: "Player", lastName: "9", jerseyNum: 9), player10: Player(firstName: "Player", lastName: "10", jerseyNum: 10), player11: Player(firstName: "Player", lastName: "11", jerseyNum: 11), player12: Player(firstName: "Player", lastName: "12", jerseyNum: 12), player13: Player(firstName: "Player", lastName: "13", jerseyNum: 13), player14: Player(firstName: "Player", lastName: "14", jerseyNum: 14), player15: Player(firstName: "Player", lastName: "15", jerseyNum: 15), player16: Player(firstName: "Player", lastName: "16", jerseyNum: 16), player17: Player(firstName: "Player", lastName: "17", jerseyNum: 17), player18: Player(firstName: "Player", lastName: "18", jerseyNum: 18), player19: Player(firstName: "Player", lastName: "19", jerseyNum: 19), player20: Player(firstName: "Player", lastName: "20", jerseyNum: 20), player21: Player(firstName: "Player", lastName: "21", jerseyNum: 21), player22: Player(firstName: "Player", lastName: "22", jerseyNum: 22))
-    */
-    
     var game = Game(player1: Player(firstName: "Willet", lastName: "9", jerseyNum: 9), player2: Player(firstName: "Brochu", lastName: "15", jerseyNum: 15), player3: Player(firstName: "Conway", lastName: "18", jerseyNum: 18), player4: Player(firstName: "Beniers", lastName: "16", jerseyNum: 16), player5: Player(firstName: "Gagnon", lastName: "10", jerseyNum: 10), player6: Player(firstName: "Bray", lastName: "26", jerseyNum: 26), player7: Player(firstName: "Bruneteau", lastName: "22", jerseyNum: 22), player8: Player(firstName: "Daigler", lastName: "20", jerseyNum: 20), player9: Player(firstName: "Ursitti", lastName: "12", jerseyNum: 12), player10: Player(firstName: "Stickel", lastName: "27", jerseyNum: 27), player11: Player(firstName: "Nichols", lastName: "23", jerseyNum: 23), player12: Player(firstName: "Simson", lastName: "19", jerseyNum: 19), player13: Player(firstName: "Allen", lastName: "5", jerseyNum: 5), player14: Player(firstName: "Labonte", lastName: "4", jerseyNum: 4), player15: Player(firstName: "Jones", lastName: "44", jerseyNum: 44), player16: Player(firstName: "Morrison", lastName: "14", jerseyNum: 14), player17: Player(firstName: "Chen", lastName: "7", jerseyNum: 7), player18: Player(firstName: "Cochrane", lastName: "2", jerseyNum: 2), player19: Player(firstName: "Buitenhuis", lastName: "29", jerseyNum: 29), player20: Player(firstName: "Tiribassi", lastName: "34", jerseyNum: 34), player21: Player(firstName: "Negron", lastName: "1", jerseyNum: 1), player22: Player(firstName: "Stimola", lastName: "6", jerseyNum: 6))
 
-    var _manpower: (Int, Int) = (5,5)
+    var _manpower: String = "5v5"
 
     @IBOutlet weak var displayCount: UILabel!
    
@@ -477,8 +473,9 @@ class ViewController: UIViewController {
     //                      - Goal For
     //                      - Goal Against
     //                      - Penalties
+    //                      - Icing
     //
-    // Cosmetically:    - Shot For, Goal For have drop-down menus attached to them
+    // Cosmetically:    - Shot For, Goal For, Penalties, Penalties Drawn, and Icing have drop-down menus attached to them
     //                  - these drop-down menus close either when the button is
     //                      pressed or when a cell is clicked
     //
@@ -523,20 +520,16 @@ class ViewController: UIViewController {
             animate(toggle: false, type: goalForButton)
         }
         
-        // : increase the shot for for each player on ice here
-        for player in game.currIce {
-            player.increaseShotFor(manpower: _manpower)
-        }
+        // update statistics
+        game.shotFor(manpower: _manpower)
     }
     
     @IBAction func onClickShotAgainst(_ sender: Any) {
         // shot against clicked: update relevant stats to players on ice,
         //                       and any other stats
         
-        let ice = game.getIce()
-        for player in ice {
-            game.getPlayer(number: player).increaseShotAgainst(manpower: _manpower)
-        }
+        game.shotAgainst(manpower: _manpower)
+        
     }
     
 
@@ -561,21 +554,16 @@ class ViewController: UIViewController {
             animate(toggle: false, type: goalForButton)
         }
         
-        // : increase the GOAL for for each player on ice here
-        for player in game.currIce {
-            player.increaseGoalFor(manpower: _manpower)
-            player.increaseShotFor(manpower: _manpower)
-        }
+        // : increase the SHOT and GOAL for for each player on ice here
+        game.shotFor()
+        game.goalFor(manpower: _manpower)
         
     }
     
     @IBAction func onClickGoalAgainst(_ sender: Any) {
         // Goal Against button clicked: update relevant stats to players on ice
         //                              and any other stats
-        let ice = game.getIce()
-        for player in ice {
-            game.getPlayer(number: player).increaseGoalAgainst(manpower: _manpower)
-        }
+        game.goalAgainst()
     }
     
     @IBAction func onClickIcingFor(_ sender: Any) {
@@ -584,7 +572,7 @@ class ViewController: UIViewController {
         
         
         playersDropDown.reloadData() // reload drop-down data
-        dropDownClicked = "icingFor" // mark which dropDown was clicked
+        dropDownClicked = "icing" // mark which dropDown was clicked
         // get new X & Y positions for the drop-down menu
         let newX = icingForButton.frame.minX
         let newY = icingForButton.frame.maxY
@@ -600,11 +588,8 @@ class ViewController: UIViewController {
             animate(toggle: false, type: goalForButton)
         }
         
-        // : increase the ICING FOR for each player on ice here
-        let ice = game.getIce()
-        for player in ice {
-            game.getPlayer(number:player).increaseIcingFor(manpower: _manpower)
-        }
+        // : increase the ICING for each player on ice here
+        game.icing(manpower: _manpower)
 
     
     }
@@ -612,6 +597,7 @@ class ViewController: UIViewController {
     
     @IBAction func onClickIcingAgainst(_ sender: Any) {
         // Icing Against button clicked: update relevant stats to players on ice
+        game.icingDrawn(manpower: _manpower)
     }
     
     
@@ -644,10 +630,6 @@ class ViewController: UIViewController {
             animate(toggle: false, type: goalForButton)
         }
         
-        let ice = game.getIce()
-        for player in ice {
-            game.getPlayer(number:player).increaseIcingAgainst(manpower: _manpower)
-        }
     }
     
     @IBOutlet weak var penalty4ForButton: UIButton!
@@ -1214,7 +1196,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             
         }
         
-        if dropDownClicked == "penaltyFor"{
+        if dropDownClicked == "penaltyFor" {
             print("penaltyFor clicked!")
             game.currIce[indexPath.row].increasePenaltyFor(manpower:_manpower)
         }
@@ -1223,9 +1205,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             
         }
 */
-        if dropDownClicked == "icingFor"{
-            print("icingFor clicked!")
-            game.currIce[indexPath.row].increaseIcingFor(manpower:_manpower)
+        if dropDownClicked == "icing" {
+            print("icing clicked!")
+            game.currIce[indexPath.row].increaseIcingByPlayer(manpower:_manpower)
         }
     }
 }
