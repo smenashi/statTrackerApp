@@ -614,7 +614,7 @@ class ViewController: UIViewController {
         
         
         playersDropDown.reloadData() // reload drop-down data
-        dropDownClicked = "2For" // mark which dropDown was clicked
+        dropDownClicked = "2Us" // mark which dropDown was clicked
         // get new X & Y positions for the drop-down menu
         let newX = penalty2ForButton.frame.minX
         let newY = penalty2ForButton.frame.maxY
@@ -630,6 +630,7 @@ class ViewController: UIViewController {
             animate(toggle: false, type: goalForButton)
         }
         
+        
     }
     
     @IBOutlet weak var penalty4ForButton: UIButton!
@@ -639,7 +640,7 @@ class ViewController: UIViewController {
         
         
         playersDropDown.reloadData() // reload drop-down data
-        dropDownClicked = "4For" // mark which dropDown was clicked
+        dropDownClicked = "4Us" // mark which dropDown was clicked
         // get new X & Y positions for the drop-down menu
         let newX = penalty4ForButton.frame.minX
         let newY = penalty4ForButton.frame.maxY
@@ -664,7 +665,7 @@ class ViewController: UIViewController {
         
         
         playersDropDown.reloadData() // reload drop-down data
-        dropDownClicked = "5For" // mark which dropDown was clicked
+        dropDownClicked = "5Us" // mark which dropDown was clicked
         // get new X & Y positions for the drop-down menu
         let newX = penalty5ForButton.frame.minX
         let newY = penalty5ForButton.frame.maxY
@@ -687,7 +688,7 @@ class ViewController: UIViewController {
     @IBAction func penalty2AgainstClicked(_ sender: Any) {
         
         playersDropDown.reloadData() // reload drop-down data
-        dropDownClicked = "2Against" // mark which dropDown was clicked
+        dropDownClicked = "2Them" // mark which dropDown was clicked
         // get new X & Y positions for the drop-down menu
         let newX = penalty2Against.frame.minX
         let newY = penalty2Against.frame.maxY
@@ -707,7 +708,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var penalty4Against: UIButton!
     @IBAction func penalty4AgainstClicked(_ sender: Any) {
         playersDropDown.reloadData() // reload drop-down data
-        dropDownClicked = "4Against" // mark which dropDown was clicked
+        dropDownClicked = "4Them" // mark which dropDown was clicked
         // get new X & Y positions for the drop-down menu
         let newX = penalty4Against.frame.minX
         let newY = penalty4Against.frame.maxY
@@ -728,7 +729,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var penalty5Against: UIButton!
     @IBAction func penalty5AgainstClicked(_ sender: Any) {
         playersDropDown.reloadData() // reload drop-down data
-        dropDownClicked = "5Against" // mark which dropDown was clicked
+        dropDownClicked = "5Them" // mark which dropDown was clicked
         // get new X & Y positions for the drop-down menu
         let newX = penalty5Against.frame.minX
         let newY = penalty5Against.frame.maxY
@@ -1196,15 +1197,36 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             
         }
         
-        if dropDownClicked == "penaltyFor" {
-            print("penaltyFor clicked!")
-            game.currIce[indexPath.row].increasePenaltyFor(manpower:_manpower)
+        if dropDownClicked == "2Us" {
+            print("penalty clicked!")
+            game.currIce[indexPath.row].increasePenalty2min(manpower:_manpower)
         }
-/*
-        if dropDownClicked == "penaltyAgainst"{
-            
+        
+        if dropDownClicked == "2Them" {
+            print("penalty clicked!")
+            game.currIce[indexPath.row].increasePenaltyDrawn2min(manpower:_manpower)
         }
-*/
+        
+        if dropDownClicked == "4Us" {
+            print("penalty clicked!")
+            game.currIce[indexPath.row].increasePenalty4min(manpower:_manpower)
+        }
+        
+        if dropDownClicked == "4Them" {
+            print("penalty clicked!")
+            game.currIce[indexPath.row].increasePenaltyDrawn4min(manpower:_manpower)
+        }
+        
+        if dropDownClicked == "5Us" {
+            print("penalty clicked!")
+            game.currIce[indexPath.row].increasePenalty5min(manpower:_manpower)
+        }
+        
+        if dropDownClicked == "5Them" {
+            print("penalty clicked!")
+            game.currIce[indexPath.row].increasePenaltyDrawn5min(manpower:_manpower)
+        }
+        
         if dropDownClicked == "icing" {
             print("icing clicked!")
             game.currIce[indexPath.row].increaseIcingByPlayer(manpower:_manpower)
