@@ -159,6 +159,73 @@ class ViewController: UIViewController {
         currConfig = 5
     }
     
+    func manpowerUsPressedSwitch() {
+        if _manpower == "5v5" {
+            _manpower = "4v5"
+            click4v5((Any).self)
+        }
+        else if _manpower == "5v4" {
+            _manpower = "4v4"
+            click3v3((Any).self)
+        }
+        else if _manpower == "4v5" {
+            _manpower = "3v5"
+            click3v5((Any).self)
+        }
+    }
+    
+    func manpowerUsReleasedSwitch() {
+        if _manpower == "4v5" {
+            _manpower = "5v5"
+            click5v5((Any).self)
+        }
+        else if _manpower == "4v4" {
+            _manpower = "5v4"
+            click5v4((Any).self)
+        }
+        else if _manpower == "3v5" {
+            _manpower = "4v5"
+            click4v5((Any).self)
+        }
+    }
+    
+    func manpowerThemPressedSwitch() {
+        if _manpower == "5v5" {
+            _manpower = "5v4"
+            click5v4((Any).self)
+        }
+        else if _manpower == "5v4" {
+            _manpower = "5v3"
+            click5v3((Any).self)
+        }
+        else if _manpower == "4v5" {
+            _manpower = "3v5"
+            click3v5((Any).self)
+        }
+    }
+    
+    func manpowerThemReleasedSwitch() {
+        if _manpower == "5v4" {
+            _manpower = "5v5"
+            click5v5((Any).self)
+        }
+        else if _manpower == "4v4" {
+            _manpower = "4v5"
+            click4v5((Any).self)
+        }
+        else if _manpower == "5v3" {
+            _manpower = "5v4"
+            click5v4((Any).self)
+        }
+    }
+    
+    // function for delaying manpower switching
+    // <script src=https://iosrevisited.blogspot.com/2017/08/dispatchafter-gcd-in-swift-swift-3.html></script>
+    func delayManpowerSwitch(_ time:Double, closure:@escaping ()->()) {
+        let when = DispatchTime.now() + time
+        DispatchQueue.main.asyncAfter(deadline: when, execute: closure)
+    }
+    
     // -------------------------------------------------------------------------------
     // Player Buttons:  these are the function signatures for the player buttons
     //                  on the LHS of the screen.
@@ -557,6 +624,7 @@ class ViewController: UIViewController {
         // : increase the SHOT and GOAL for for each player on ice here
         game.shotFor()
         game.goalFor(manpower: _manpower)
+        clearPenaltyBoxes()
         
     }
     
@@ -564,6 +632,7 @@ class ViewController: UIViewController {
         // Goal Against button clicked: update relevant stats to players on ice
         //                              and any other stats
         game.goalAgainst()
+        clearPenaltyBoxes()
     }
     
     @IBAction func onClickIcingFor(_ sender: Any) {
@@ -630,7 +699,15 @@ class ViewController: UIViewController {
             animate(toggle: false, type: goalForButton)
         }
         
-        
+        let thisBox = getNextBox()
+        let penalty = PenaltyClock(penaltyTime: 120, timeUI: thisBox[0])
+        currBoxes.append(penalty)
+        manpowerUsPressedSwitch()
+        penalty.runPenaltyClock()
+        delayManpowerSwitch(120) {
+            self.manpowerUsReleasedSwitch()
+            thisBox[1].text = "Jersey #"
+        }
     }
     
     @IBOutlet weak var penalty4ForButton: UIButton!
@@ -654,6 +731,16 @@ class ViewController: UIViewController {
         }
         else{
             animate(toggle: false, type: goalForButton)
+        }
+        
+        let thisBox = getNextBox()
+        let penalty = PenaltyClock(penaltyTime: 240, timeUI: thisBox[0])
+        currBoxes.append(penalty)
+        manpowerUsPressedSwitch()
+        penalty.runPenaltyClock()
+        delayManpowerSwitch(240) {
+            self.manpowerUsReleasedSwitch()
+            thisBox[1].text = "Jersey #"
         }
         
     }
@@ -680,6 +767,16 @@ class ViewController: UIViewController {
         else{
             animate(toggle: false, type: goalForButton)
         }
+        
+        let thisBox = getNextBox()
+        let penalty = PenaltyClock(penaltyTime: 300, timeUI: thisBox[0])
+        currBoxes.append(penalty)
+        manpowerUsPressedSwitch()
+        penalty.runPenaltyClock()
+        delayManpowerSwitch(300) {
+            self.manpowerUsReleasedSwitch()
+            thisBox[1].text = "Jersey #"
+        }
     }
 
     // <Min> Against: ---------------
@@ -703,6 +800,16 @@ class ViewController: UIViewController {
         else{
             animate(toggle: false, type: goalForButton)
         }
+        
+        let thisBox = getNextBox()
+        let penalty = PenaltyClock(penaltyTime: 120, timeUI: thisBox[0])
+        currBoxes.append(penalty)
+        manpowerUsPressedSwitch()
+        penalty.runPenaltyClock()
+        delayManpowerSwitch(120) {
+            self.manpowerUsReleasedSwitch()
+            thisBox[1].text = "Jersey #"
+        }
     }
    
     @IBOutlet weak var penalty4Against: UIButton!
@@ -722,6 +829,16 @@ class ViewController: UIViewController {
         }
         else{
             animate(toggle: false, type: goalForButton)
+        }
+        
+        let thisBox = getNextBox()
+        let penalty = PenaltyClock(penaltyTime: 240, timeUI: thisBox[0])
+        currBoxes.append(penalty)
+        manpowerUsPressedSwitch()
+        penalty.runPenaltyClock()
+        delayManpowerSwitch(240) {
+            self.manpowerUsReleasedSwitch()
+            thisBox[1].text = "Jersey #"
         }
     }
     
@@ -744,6 +861,16 @@ class ViewController: UIViewController {
         else{
             animate(toggle: false, type: goalForButton)
         }
+        
+        let thisBox = getNextBox()
+        let penalty = PenaltyClock(penaltyTime: 300, timeUI: thisBox[0])
+        currBoxes.append(penalty)
+        manpowerUsPressedSwitch()
+        penalty.runPenaltyClock()
+        delayManpowerSwitch(300) {
+            self.manpowerUsReleasedSwitch()
+            thisBox[1].text = "Jersey #"
+        }
     }
     
     // ----------------------------------------------
@@ -757,6 +884,42 @@ class ViewController: UIViewController {
     @IBOutlet weak var timer1: UILabel!
     @IBOutlet weak var timer2: UILabel!
     
+    var currBox: Int = 0
+    lazy var box = [timer1, jerseynum1]
+    
+    func getNextBox() -> [UILabel] {
+        if currBox == 0 {
+            currBox = 1
+            return [timer1, jerseynum1]
+        } else {
+            currBox = 0
+            return [timer2, jerseynum2]
+        }
+    }
+    
+    // for drop-down menu action
+    func getCurrBoxJersey() -> UILabel {
+        if currBox == 0 {
+            return jerseynum2
+        } else {
+            return jerseynum1
+        }
+    }
+    
+    // for clearing penalty boxes
+    var currBoxes = Array<PenaltyClock>()
+    
+    func clearPenaltyBoxes() {
+        for box in currBoxes {
+            box.timer.invalidate()
+            box._timeUI.text = "00:00"
+        }
+        
+        jerseynum1.text = "Jersey #"
+        jerseynum2.text = "Jersey #"
+        click5v5((Any).self)
+        
+    }
     
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     
@@ -968,6 +1131,7 @@ class ViewController: UIViewController {
         // resets timer to 00:20:00
         playersDropDown.reloadData() // reload drop-down data
         gameTimer.stopGameClock()
+        clearPenaltyBoxes()
         gameTimer.startNewPeriod(timerLabel: gameTime)
         
         // change alphas of period labels
@@ -987,6 +1151,7 @@ class ViewController: UIViewController {
     // End Game Button: this ends the game
     @IBAction func onClickEndGame(_ sender: Any) {
         // using this button to stop timer for now //
+        clearPenaltyBoxes()
         gameTimer.stopGameClock()
         gameTimer.endGame(timerLabel: gameTime)
         playersDropDown.reloadData() // reload drop-down data
@@ -1065,7 +1230,7 @@ class ViewController: UIViewController {
         clickPlayer19((Any).self)
         onClickGameClock((Any).self)
         
-        // hardcoding starting manpower config for demo purposes
+        // hardcoding starting manpower config
         manPow3v5.alpha = 0.5
         manPow3v3.alpha = 0.5
         manPow4v5.alpha = 0.5
@@ -1198,32 +1363,48 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         if dropDownClicked == "2Us" {
-            print("penalty clicked!")
-            game.currIce[indexPath.row].increasePenalty2min(manpower:_manpower)
+            let playerClicked = game.currIce[indexPath.row]
+            let thisBox = getCurrBoxJersey()
+            print("penalty 2Usclicked!")
+            playerClicked.increasePenalty2min(manpower:_manpower)
+            thisBox.text = String(playerClicked._jerseyNumber)
+            
         }
         
         if dropDownClicked == "2Them" {
-            print("penalty clicked!")
+            print("penalty 2Themclicked!")
+            let thisBox = getCurrBoxJersey()
+            thisBox.text = "OPPONENT"
             game.currIce[indexPath.row].increasePenaltyDrawn2min(manpower:_manpower)
         }
         
         if dropDownClicked == "4Us" {
-            print("penalty clicked!")
-            game.currIce[indexPath.row].increasePenalty4min(manpower:_manpower)
+            print("penalty 4Usclicked!")
+            let playerClicked = game.currIce[indexPath.row]
+            let thisBox = getCurrBoxJersey()
+            playerClicked.increasePenalty4min(manpower:_manpower)
+            thisBox.text = String(playerClicked._jerseyNumber)
         }
         
         if dropDownClicked == "4Them" {
-            print("penalty clicked!")
+            print("penalty 4Themclicked!")
+            let thisBox = getCurrBoxJersey()
+            thisBox.text = "OPPONENT"
             game.currIce[indexPath.row].increasePenaltyDrawn4min(manpower:_manpower)
         }
         
         if dropDownClicked == "5Us" {
-            print("penalty clicked!")
-            game.currIce[indexPath.row].increasePenalty5min(manpower:_manpower)
+            print("penalty 5Usclicked!")
+            let playerClicked = game.currIce[indexPath.row]
+            let thisBox = getCurrBoxJersey()
+            playerClicked.increasePenalty5min(manpower:_manpower)
+            thisBox.text = String(playerClicked._jerseyNumber)
         }
         
         if dropDownClicked == "5Them" {
-            print("penalty clicked!")
+            print("penalty 5Themclicked!")
+            let thisBox = getCurrBoxJersey()
+            thisBox.text = "OPPONENT"
             game.currIce[indexPath.row].increasePenaltyDrawn5min(manpower:_manpower)
         }
         
