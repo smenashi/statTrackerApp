@@ -36,7 +36,17 @@ class SQLiteDB {
     func createStatTable(){
         //can add season game time
         executeNoReturn(execCommand: "create table if not exists playerStats(number INT PRIMARY KEY, name TEXT NOT NULL, iceTime text NOT NULL, shotsFor INT NOT NULL, shotsForTaken INT NOT NULL, shotsAgainst INT NOT NULL, goalsFor INT NOT NULL, goalsForTaken INT NOT NULL, goalsAgainst INT NOT NULL)")
-        executeNoReturn(execCommand: "create table if not exists currentRoster(studentID INT PRIMARY KEY, lastName TEXT NOT NULL, number INT NOT NULL, position INT NOT NULL)")
+        
+        
+        executeNoReturn(execCommand: "create table if not exists currentRoster(studentID INTEGER PRIMARY KEY, lastName TEXT NOT NULL, number INTEGER NOT NULL, position INTEGER NOT NULL)")
+        executeNoReturn(execCommand: "create table if not exists allPlayers(studentID INTEGER PRIMARY KEY, lastName TEXT NOT NULL)")
+        executeNoReturn(execCommand: "create table if not exists chronGameStats( statID INTEGER PRIMARY KEY AUTOINCREMENT, seasonYear INTEGER NOT NULL, game TEXT NOT NULL, time INTEGER NOT NULL, statType TEXT NOT NULL, manpower TEXT NOT NULL, statOwnerSID INTEGER NOT NULL, onIce1SID INTEGER NOT NULL, onIce2SID INTEGER NOT NULL, onIce3SID INTEGER NOT NULL, onIce4SID INTEGER NOT NULL, onIce5SID INTEGER NOT NULL)")
+        //in chrongamestats, SID of 0 means nobody
+
+    }
+    
+    func addChronStat(seasonYear:Int, game:String, time:Int, statType:String, manpower:String, statOwnerSID:Int, onIce1SID:Int, onIce2SID:Int, onIce3SID:Int, onIce4SID:Int, onIce5SID:Int){
+        executeNoReturn(execCommand: "insert into chronGameStats(seasonYear, game, time, statType, manpower, statOwnerSID, onIce1SID, onIce2SID, onIce3SID, onIce4SID, onIce5SID) VALUES (\(seasonYear), \(game), \(time), \(statType), \(manpower), \(statOwnerSID), \(onIce1SID), \(onIce2SID), \(onIce3SID), \(onIce4SID), \(onIce5SID))")
     }
     
     func getCurrentRoster()->[rosterPlayer]{

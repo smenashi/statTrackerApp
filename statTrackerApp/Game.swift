@@ -9,8 +9,9 @@
 import Foundation
 
 class Game {
-    var _season = "2018"
+    var _season = 2018
     var _gameId = 0
+    var _opponent = "AWAY_TEAM"
     var onIce = Set<Int>()
     
     // players: need this to generate drop-down menus (see below)

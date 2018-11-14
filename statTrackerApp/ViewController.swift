@@ -10,11 +10,13 @@ import UIKit
 import MessageUI
 
 class ViewController: UIViewController {
+    //this is for database access
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     var playerButtonColor = UIColor(red: 0.83921569, green: 0.72941176, blue: 0.54509804, alpha: 1.0)
     
     // hard-coding game
-    var game = Game(player1: Player(firstName: "Willet", lastName: "9", jerseyNum: 9), player2: Player(firstName: "Brochu", lastName: "15", jerseyNum: 15), player3: Player(firstName: "Conway", lastName: "18", jerseyNum: 18), player4: Player(firstName: "Beniers", lastName: "16", jerseyNum: 16), player5: Player(firstName: "Gagnon", lastName: "10", jerseyNum: 10), player6: Player(firstName: "Bray", lastName: "26", jerseyNum: 26), player7: Player(firstName: "Bruneteau", lastName: "22", jerseyNum: 22), player8: Player(firstName: "Daigler", lastName: "20", jerseyNum: 20), player9: Player(firstName: "Ursitti", lastName: "12", jerseyNum: 12), player10: Player(firstName: "Stickel", lastName: "27", jerseyNum: 27), player11: Player(firstName: "Nichols", lastName: "23", jerseyNum: 23), player12: Player(firstName: "Simson", lastName: "19", jerseyNum: 19), player13: Player(firstName: "Allen", lastName: "5", jerseyNum: 5), player14: Player(firstName: "Labonte", lastName: "4", jerseyNum: 4), player15: Player(firstName: "Jones", lastName: "44", jerseyNum: 44), player16: Player(firstName: "Morrison", lastName: "14", jerseyNum: 14), player17: Player(firstName: "Chen", lastName: "7", jerseyNum: 7), player18: Player(firstName: "Cochrane", lastName: "2", jerseyNum: 2), player19: Player(firstName: "Buitenhuis", lastName: "29", jerseyNum: 29), player20: Player(firstName: "Tiribassi", lastName: "34", jerseyNum: 34), player21: Player(firstName: "Negron", lastName: "1", jerseyNum: 1), player22: Player(firstName: "Stimola", lastName: "6", jerseyNum: 6))
+    var game = Game(player1: Player(studentID: 0, lastName: "9", jerseyNum: 9), player2: Player(studentID: 0, lastName: "15", jerseyNum: 15), player3: Player(studentID: 0, lastName: "18", jerseyNum: 18), player4: Player(studentID: 0, lastName: "16", jerseyNum: 16), player5: Player(studentID: 0, lastName: "10", jerseyNum: 10), player6: Player(studentID: 0, lastName: "26", jerseyNum: 26), player7: Player(studentID: 0, lastName: "22", jerseyNum: 22), player8: Player(studentID: 0, lastName: "20", jerseyNum: 20), player9: Player(studentID: 0, lastName: "12", jerseyNum: 12), player10: Player(studentID: 0, lastName: "27", jerseyNum: 27), player11: Player(studentID: 0, lastName: "23", jerseyNum: 23), player12: Player(studentID: 0, lastName: "19", jerseyNum: 19), player13: Player(studentID: 0, lastName: "5", jerseyNum: 5), player14: Player(studentID: 0, lastName: "4", jerseyNum: 4), player15: Player(studentID: 0, lastName: "44", jerseyNum: 44), player16: Player(studentID: 0, lastName: "14", jerseyNum: 14), player17: Player(studentID: 0, lastName: "7", jerseyNum: 7), player18: Player(studentID: 0, lastName: "2", jerseyNum: 2), player19: Player(studentID: 0, lastName: "29", jerseyNum: 29), player20: Player(studentID: 0, lastName: "34", jerseyNum: 34), player21: Player(studentID: 0, lastName: "1", jerseyNum: 1), player22: Player(studentID: 0, lastName: "6", jerseyNum: 6))
 
     var _manpower: String = "5v5"
 
@@ -105,11 +107,11 @@ class ViewController: UIViewController {
 
     /////////////////////////////////////////
     func init_roster(){
-        playerArray = appDelegate.database?.getCurrentRoster() ?? []
-        var tempRoster = Array(repeating: Player(firstName: "Empty", lastName: "Empty", jerseyNum: 0), count: 22)
+        let playerArray = appDelegate.database?.getCurrentRoster() ?? []
+        var tempRoster = Array(repeating: Player(studentID: 0, lastName: "Empty", jerseyNum: 0), count: 22)
         for player in playerArray{
             if player.position != 0{
-                tempRoster[player.position - 1] = Player(firstName: String(player.studentID), lastName: player.lastName, jerseyNum: player.number)
+                tempRoster[player.position - 1] = Player(studentID: player.studentID, lastName: player.lastName, jerseyNum: player.number)
             }
         }
         game = Game(player1: tempRoster[0], player2: tempRoster[1], player3: tempRoster[2], player4: tempRoster[3], player5: tempRoster[4], player6: tempRoster[5], player7: tempRoster[6], player8: tempRoster[7], player9: tempRoster[8], player10: tempRoster[9], player11: tempRoster[10], player12: tempRoster[11], player13: tempRoster[12], player14: tempRoster[13], player15: tempRoster[14], player16: tempRoster[15], player17: tempRoster[16], player18: tempRoster[17], player19: tempRoster[18], player20: tempRoster[19], player21: tempRoster[20], player22: tempRoster[21])
@@ -1178,7 +1180,7 @@ class ViewController: UIViewController {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         for player in game.getAllPlayers() {
             //replace when DB already works (for now temp fix)
-            sql = "replace into playerStats(name, number, iceTime, shotsFor, shotsForTaken, shotsAgainst, goalsFor, goalsForTaken, goalsAgainst) values( \"\(player._firstName)\", \(player._jerseyNumber), \(player.iceTime), \(player.shotFor), \(player.shotForTaken), \(player.shotAgainst), \(player.goalFor), \(player.goalForTaken), \(player.goalAgainst))"
+            sql = "replace into playerStats(name, number, iceTime, shotsFor, shotsForTaken, shotsAgainst, goalsFor, goalsForTaken, goalsAgainst) values( \"\(player._studentID)\", \(player._jerseyNumber), \(player.iceTime), \(player.shotFor), \(player.shotForTaken), \(player.shotAgainst), \(player.goalFor), \(player.goalForTaken), \(player.goalAgainst))"
             
             //print(sql)
             appDelegate.database?.executeNoReturn(execCommand: sql)
@@ -1265,7 +1267,7 @@ class ViewController: UIViewController {
         let currPlayers = game.getAllPlayers()
         let playerButtons = [Player1, Player2, Player3, Player4, Player5, Player6, Player7, Player8, Player9, Player10, Player11, Player12, Player13, Player14, Player15, Player16, Player17, Player18, Player19, Player20, Player21, Player22]
         for i in stride(from: 0, to: 22, by: 1) {
-            playerButtons[i]!.setTitle(currPlayers[i]._firstName, for: .normal)
+            playerButtons[i]!.setTitle(String(currPlayers[i]._jerseyNumber), for: .normal)
         }
         /////player buttons now have the right names on them
         
@@ -1331,7 +1333,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "player", for: indexPath)
         
         // set labels to cells
-        cell.textLabel?.text = game.currIce[indexPath.row]._firstName
+        cell.textLabel?.text = String(game.currIce[indexPath.row]._jerseyNumber)
         return cell
     }
     
@@ -1360,6 +1362,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             //          the individual player and increment their relevant stat
             //print(game.currIce[indexPath.row]._firstName)
             game.currIce[indexPath.row].increaseShotForTaken(manpower: _manpower)
+            print("******************")
+            print(game.onIce.count)
+            appDelegate.database?.addChronStat(seasonYear: game._season, game: game._opponent, time: 0, statType: "shotFor", manpower: _manpower, statOwnerSID: game.currIce[indexPath.row]._studentID, onIce1SID: <#T##Int#>, onIce2SID: <#T##Int#>, onIce3SID: <#T##Int#>, onIce4SID: <#T##Int#>, onIce5SID: <#T##Int#>)
         
         }
         

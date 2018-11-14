@@ -9,14 +9,14 @@
 import Foundation
 class Player {
     
-    init(firstName:String, lastName:String, jerseyNum:Int) {
-        _firstName = firstName
+    init(studentID:Int, lastName:String, jerseyNum:Int) {
+        _studentID = studentID
         _lastName = lastName
         _jerseyNumber = jerseyNum
     }
     
     //------ attributes ------//
-    var _firstName:String
+    var _studentID:Int
     var _lastName:String
     var _jerseyNumber:Int
     
@@ -151,7 +151,7 @@ extension Player: Equatable {
     static func == (lhs: Player, rhs: Player) -> Bool {
         return lhs.enabled == rhs.enabled &&
             lhs._lastName == rhs._lastName &&
-            lhs._firstName == rhs._firstName &&
+            lhs._studentID == rhs._studentID &&
             lhs._jerseyNumber == rhs._jerseyNumber &&
             lhs.shotFor == rhs.shotFor &&
             lhs.shotAgainst == rhs.shotAgainst &&
@@ -171,7 +171,7 @@ extension Player: Equatable {
 
 extension Player: Hashable {
     var hashValue: Int {
-        return enabled.hashValue ^ _lastName.hashValue ^ _firstName.hashValue ^ _jerseyNumber.hashValue ^ shotFor.hashValue ^ shotAgainst.hashValue ^ goalFor.hashValue ^ goalAgainst.hashValue ^ penalty2min.hashValue ^ penaltyDrawn2min.hashValue ^ penalty4min.hashValue ^ penaltyDrawn4min.hashValue ^ penalty5min.hashValue ^ penaltyDrawn5min.hashValue ^  icing.hashValue ^ icingByPlayer.hashValue ^ icingDrawn.hashValue
+        return enabled.hashValue ^ _lastName.hashValue ^ _studentID.hashValue ^ _jerseyNumber.hashValue ^ shotFor.hashValue ^ shotAgainst.hashValue ^ goalFor.hashValue ^ goalAgainst.hashValue ^ penalty2min.hashValue ^ penaltyDrawn2min.hashValue ^ penalty4min.hashValue ^ penaltyDrawn4min.hashValue ^ penalty5min.hashValue ^ penaltyDrawn5min.hashValue ^  icing.hashValue ^ icingByPlayer.hashValue ^ icingDrawn.hashValue
     }
 }
 
