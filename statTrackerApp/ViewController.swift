@@ -1364,7 +1364,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             game.currIce[indexPath.row].increaseShotForTaken(manpower: _manpower)
             print("******************")
             print(game.onIce.count)
-            appDelegate.database?.addChronStat(seasonYear: game._season, game: game._opponent, time: 0, statType: "shotFor", manpower: _manpower, statOwnerSID: game.currIce[indexPath.row]._studentID, onIce1SID: <#T##Int#>, onIce2SID: <#T##Int#>, onIce3SID: <#T##Int#>, onIce4SID: <#T##Int#>, onIce5SID: <#T##Int#>)
+            appDelegate.database?.addChronStat(seasonYear: game._season, game: game._opponent, time: 0, statType: "shotFor", manpower: _manpower, statOwnerSID: game.currIce[indexPath.row]._studentID, onIce1SID: 0, onIce2SID: 0, onIce3SID: 0, onIce4SID: 0, onIce5SID: 0)
         
         }
         

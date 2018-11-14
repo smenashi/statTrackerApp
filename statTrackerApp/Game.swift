@@ -54,7 +54,9 @@ class Game {
     
     
     
-    
+    func getOnIceSIDAsArray()->Array<Int> {
+        return [0,0]
+    }
     // getting players
     func getAllPlayers() -> Array<Player> {
         return players
