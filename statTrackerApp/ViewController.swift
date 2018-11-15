@@ -897,9 +897,15 @@ class ViewController: UIViewController {
     // jersey number labels
     @IBOutlet weak var jerseynum1: UILabel!
     @IBOutlet weak var jerseynum2: UILabel!
+    @IBOutlet weak var jerseynum3: UILabel!
+    @IBOutlet weak var jerseynum4: UILabel!
+    
+    
     // timer labels
     @IBOutlet weak var timer1: UILabel!
     @IBOutlet weak var timer2: UILabel!
+    @IBOutlet weak var timer3: UILabel!
+    @IBOutlet weak var timer4: UILabel!
     
     var currBox: Int = 0
     lazy var box = [timer1, jerseynum1]
