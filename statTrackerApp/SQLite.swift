@@ -50,6 +50,8 @@ class SQLiteDB {
         executeNoReturn(execCommand: "insert into chronGameStats(seasonYear, game, period, time, statType, manpower, statOwnerSID, onIce1SID, onIce2SID, onIce3SID, onIce4SID, onIce5SID, onIce6SID) VALUES (\(seasonYear), \"\(game)\", \(period), \(time), \"\(statType)\", \"\(manpower)\", \(statOwnerSID), \(onIce1SID), \(onIce2SID), \(onIce3SID), \(onIce4SID), \(onIce5SID), \(onIce6SID))")
     }
     
+    
+    
     func getCurrentRoster()->[rosterPlayer]{
         var currentRoster: [rosterPlayer] = []
         let sql = "select * from currentRoster"

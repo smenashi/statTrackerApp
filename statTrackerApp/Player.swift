@@ -5,6 +5,7 @@
 //  Created by Sophie Menashi on 9/21/18.
 //  Copyright © 2018 Sophie Menashi. All rights reserved.
 //
+import UIKit
 
 import Foundation
 class Player {
@@ -23,6 +24,8 @@ class Player {
     //funcitonal attributes
     var enabled = false
     var clock = PlayerClock()
+    var inBox = false
+    var playerButton: UIButton?
     
     // stat variables
     // dictionaries keyed by manpower

@@ -5,7 +5,7 @@
 //  Created by Sophie Menashi on 9/23/18.
 //  Copyright © 2018 Sophie Menashi. All rights reserved.
 //
-
+import UIKit
 import Foundation
 
 class Game {
@@ -16,6 +16,7 @@ class Game {
     
     // players: need this to generate drop-down menus (see below)
     var players = Array<Player> ()
+    var maxOnIce = 6
     
     // hard-coding game
     init(player1:Player, player2:Player, player3:Player, player4:Player, player5:Player, player6:Player, player7:Player, player8:Player, player9:Player, player10:Player, player11:Player, player12:Player, player13:Player, player14:Player, player15:Player, player16:Player, player17:Player, player18:Player, player19:Player, player20:Player, player21:Player, player22:Player){
@@ -163,19 +164,22 @@ class Game {
     }
     
     func putOnIce(addPlayer:Player, manpower: [Int]) {
-        onIce.insert(players.firstIndex(of: addPlayer) ?? -1)
-        addPlayer.enablePlayer()
-        addPlayer.startClock(manpower: manpower)
+        if addPlayer.inBox == false && getIce().count < maxOnIce{
+            onIce.insert(players.firstIndex(of: addPlayer) ?? -1)
+            addPlayer.enablePlayer()
+            addPlayer.startClock(manpower: manpower)
+            addPlayer.playerButton?.backgroundColor = .green
         
         // update array of players to be displayed in drop-down menu
-        updateCurrentIce()
-        
+            updateCurrentIce()
+        }
     }
     
     func takeOffIce(removePlayer:Player) {
         onIce.remove(players.firstIndex(of: removePlayer) ?? -1)
         removePlayer.disablePlayer()
         removePlayer.stopClock()
+        removePlayer.playerButton?.backgroundColor = UIColor(red: 0.83921569, green: 0.72941176, blue: 0.54509804, alpha: 1.0)
       
         // update array of players to be displayed in drop-down menu
         updateCurrentIce()

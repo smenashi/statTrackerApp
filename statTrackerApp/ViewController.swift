@@ -25,6 +25,8 @@ class ViewController: UIViewController {
         let man2 = String(_manpower[1])
         return man1 + "v" + man2
     }
+    var hamBox:[Player] = []
+    var awayBox: [Player] = []
 
     @IBOutlet weak var displayCount: UILabel!
    
@@ -98,7 +100,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var Player22: UIButton!
     
     lazy var playerButtons = [Player1, Player2, Player3, Player4, Player5, Player6, Player7, Player8, Player9, Player10, Player11, Player12, Player13, Player14, Player15, Player16, Player17, Player18, Player19, Player20, Player21, Player22]
-    
     /////////////////////////////////////////
     
     // Line buttons /////////////////////////
@@ -130,6 +131,29 @@ class ViewController: UIViewController {
                 tempRoster[player.position - 1] = Player(studentID: player.studentID, lastName: player.lastName, jerseyNum: player.number)
             }
         }
+        tempRoster[0].playerButton = Player1
+        tempRoster[1].playerButton = Player2
+        tempRoster[2].playerButton = Player3
+        tempRoster[3].playerButton = Player4
+        tempRoster[4].playerButton = Player5
+        tempRoster[5].playerButton = Player6
+        tempRoster[6].playerButton = Player7
+        tempRoster[7].playerButton = Player8
+        tempRoster[8].playerButton = Player9
+        tempRoster[9].playerButton = Player10
+        tempRoster[10].playerButton = Player11
+        tempRoster[11].playerButton = Player12
+        tempRoster[12].playerButton = Player13
+        tempRoster[13].playerButton = Player14
+        tempRoster[14].playerButton = Player15
+        tempRoster[15].playerButton = Player16
+        tempRoster[16].playerButton = Player17
+        tempRoster[17].playerButton = Player18
+        tempRoster[18].playerButton = Player19
+        tempRoster[19].playerButton = Player20
+        tempRoster[20].playerButton = Player21
+        tempRoster[21].playerButton = Player22
+        
         game = Game(player1: tempRoster[0], player2: tempRoster[1], player3: tempRoster[2], player4: tempRoster[3], player5: tempRoster[4], player6: tempRoster[5], player7: tempRoster[6], player8: tempRoster[7], player9: tempRoster[8], player10: tempRoster[9], player11: tempRoster[10], player12: tempRoster[11], player13: tempRoster[12], player14: tempRoster[13], player15: tempRoster[14], player16: tempRoster[15], player17: tempRoster[16], player18: tempRoster[17], player19: tempRoster[18], player20: tempRoster[19], player21: tempRoster[20], player22: tempRoster[21])
     }
     
@@ -318,11 +342,9 @@ class ViewController: UIViewController {
         let player = game.getPlayer(number: 0)
         if player.isEnabled() {
             game.takeOffIce(removePlayer: player)
-            Player1.backgroundColor = playerButtonColor
         } else {
             if !game.iceIsFull() {
                 game.putOnIce(addPlayer: player, manpower:_manpower)
-                Player1.backgroundColor = .green
             }
         }
     }
@@ -331,11 +353,9 @@ class ViewController: UIViewController {
         let player = game.getPlayer(number: 1)
         if player.isEnabled() {
             game.takeOffIce(removePlayer: player)
-            Player2.backgroundColor = playerButtonColor
         } else {
             if !game.iceIsFull() {
                 game.putOnIce(addPlayer: player, manpower:_manpower)
-                Player2.backgroundColor = .green
             }
         }
     }
@@ -344,11 +364,9 @@ class ViewController: UIViewController {
         let player = game.getPlayer(number: 2)
         if player.isEnabled() {
             game.takeOffIce(removePlayer: player)
-            Player3.backgroundColor = playerButtonColor
         } else {
             if !game.iceIsFull() {
                 game.putOnIce(addPlayer: player, manpower:_manpower)
-                Player3.backgroundColor = .green
             }
         }
     }
@@ -357,11 +375,9 @@ class ViewController: UIViewController {
         let player = game.getPlayer(number: 3)
         if player.isEnabled() {
             game.takeOffIce(removePlayer: player)
-            Player4.backgroundColor = playerButtonColor
         } else {
             if !game.iceIsFull() {
                 game.putOnIce(addPlayer: player, manpower:_manpower)
-                Player4.backgroundColor = .green
             }
         }
     }
@@ -370,11 +386,9 @@ class ViewController: UIViewController {
         let player = game.getPlayer(number: 4)
         if player.isEnabled() {
             game.takeOffIce(removePlayer: player)
-            Player5.backgroundColor = playerButtonColor
         } else {
             if !game.iceIsFull() {
                 game.putOnIce(addPlayer: player, manpower:_manpower)
-                Player5.backgroundColor = .green
             }
         }
     }
@@ -383,11 +397,9 @@ class ViewController: UIViewController {
         let player = game.getPlayer(number: 5)
         if player.isEnabled() {
             game.takeOffIce(removePlayer: player)
-            Player6.backgroundColor = playerButtonColor
         } else {
             if !game.iceIsFull() {
                 game.putOnIce(addPlayer: player, manpower:_manpower)
-                Player6.backgroundColor = .green
             }
         }
     }
@@ -396,11 +408,9 @@ class ViewController: UIViewController {
         let player = game.getPlayer(number: 6)
         if player.isEnabled() {
             game.takeOffIce(removePlayer: player)
-            Player7.backgroundColor = playerButtonColor
         } else {
             if !game.iceIsFull() {
                 game.putOnIce(addPlayer: player, manpower:_manpower)
-                Player7.backgroundColor = .green
             }
         }
     }
@@ -409,11 +419,9 @@ class ViewController: UIViewController {
         let player = game.getPlayer(number: 7)
         if player.isEnabled() {
             game.takeOffIce(removePlayer: player)
-            Player8.backgroundColor = playerButtonColor
         } else {
             if !game.iceIsFull() {
                 game.putOnIce(addPlayer: player, manpower:_manpower)
-                Player8.backgroundColor = .green
             }
         }
     }
@@ -422,11 +430,9 @@ class ViewController: UIViewController {
         let player = game.getPlayer(number: 8)
         if player.isEnabled() {
             game.takeOffIce(removePlayer: player)
-            Player9.backgroundColor = playerButtonColor
         } else {
             if !game.iceIsFull() {
                 game.putOnIce(addPlayer: player, manpower:_manpower)
-                Player9.backgroundColor = .green
             }
         }
     }
@@ -435,11 +441,9 @@ class ViewController: UIViewController {
         let player = game.getPlayer(number: 9)
         if player.isEnabled() {
             game.takeOffIce(removePlayer: player)
-            Player10.backgroundColor = playerButtonColor
         } else {
             if !game.iceIsFull() {
                 game.putOnIce(addPlayer: player, manpower:_manpower)
-                Player10.backgroundColor = .green
             }
         }
     }
@@ -448,11 +452,9 @@ class ViewController: UIViewController {
         let player = game.getPlayer(number: 10)
         if player.isEnabled() {
             game.takeOffIce(removePlayer: player)
-            Player11.backgroundColor = playerButtonColor
         } else {
             if !game.iceIsFull() {
                 game.putOnIce(addPlayer: player, manpower:_manpower)
-                Player11.backgroundColor = .green
             }
         }
     }
@@ -461,11 +463,9 @@ class ViewController: UIViewController {
         let player = game.getPlayer(number: 11)
         if player.isEnabled() {
             game.takeOffIce(removePlayer: player)
-            Player12.backgroundColor = playerButtonColor
         } else {
             if !game.iceIsFull() {
                 game.putOnIce(addPlayer: player, manpower:_manpower)
-                Player12.backgroundColor = .green
             }
         }
     }
@@ -474,11 +474,9 @@ class ViewController: UIViewController {
         let player = game.getPlayer(number: 12)
         if player.isEnabled() {
             game.takeOffIce(removePlayer: player)
-            Player13.backgroundColor = playerButtonColor
         } else {
             if !game.iceIsFull() {
                 game.putOnIce(addPlayer: player, manpower:_manpower)
-                Player13.backgroundColor = .green
             }
         }
     }
@@ -487,11 +485,9 @@ class ViewController: UIViewController {
         let player = game.getPlayer(number: 13)
         if player.isEnabled() {
             game.takeOffIce(removePlayer: player)
-            Player14.backgroundColor = playerButtonColor
         } else {
             if !game.iceIsFull() {
                 game.putOnIce(addPlayer: player, manpower:_manpower)
-                Player14.backgroundColor = .green
             }
         }
     }
@@ -500,11 +496,9 @@ class ViewController: UIViewController {
         let player = game.getPlayer(number: 14)
         if player.isEnabled() {
             game.takeOffIce(removePlayer: player)
-            Player15.backgroundColor = playerButtonColor
         } else {
             if !game.iceIsFull() {
                 game.putOnIce(addPlayer: player, manpower:_manpower)
-                Player15.backgroundColor = .green
             }
         }
     }
@@ -513,11 +507,9 @@ class ViewController: UIViewController {
         let player = game.getPlayer(number: 15)
         if player.isEnabled() {
             game.takeOffIce(removePlayer: player)
-            Player16.backgroundColor = playerButtonColor
         } else {
             if !game.iceIsFull() {
                 game.putOnIce(addPlayer: player, manpower:_manpower)
-                Player16.backgroundColor = .green
             }
         }
     }
@@ -526,11 +518,9 @@ class ViewController: UIViewController {
         let player = game.getPlayer(number: 16)
         if player.isEnabled() {
             game.takeOffIce(removePlayer: player)
-            Player17.backgroundColor = playerButtonColor
         } else {
             if !game.iceIsFull() {
                 game.putOnIce(addPlayer: player, manpower:_manpower)
-                Player17.backgroundColor = .green
             }
         }
     }
@@ -539,11 +529,9 @@ class ViewController: UIViewController {
         let player = game.getPlayer(number: 17)
         if player.isEnabled() {
             game.takeOffIce(removePlayer: player)
-            Player18.backgroundColor = playerButtonColor
         } else {
             if !game.iceIsFull() {
                 game.putOnIce(addPlayer: player, manpower:_manpower)
-                Player18.backgroundColor = .green
             }
         }
     }
@@ -552,11 +540,9 @@ class ViewController: UIViewController {
         let player = game.getPlayer(number: 18)
         if player.isEnabled() {
             game.takeOffIce(removePlayer: player)
-            Player19.backgroundColor = playerButtonColor
         } else {
             if !game.iceIsFull() {
                 game.putOnIce(addPlayer: player, manpower:_manpower)
-                Player19.backgroundColor = .green
             }
         }
     }
@@ -565,11 +551,9 @@ class ViewController: UIViewController {
         let player = game.getPlayer(number: 19)
         if player.isEnabled() {
             game.takeOffIce(removePlayer: player)
-            Player20.backgroundColor = playerButtonColor
         } else {
             if !game.iceIsFull() {
                 game.putOnIce(addPlayer: player, manpower:_manpower)
-                Player20.backgroundColor = .green
             }
         }
     }
@@ -578,11 +562,9 @@ class ViewController: UIViewController {
         let player = game.getPlayer(number: 20)
         if player.isEnabled() {
             game.takeOffIce(removePlayer: player)
-            Player21.backgroundColor = playerButtonColor
         } else {
             if !game.iceIsFull() {
                 game.putOnIce(addPlayer: player, manpower:_manpower)
-                Player21.backgroundColor = .green
             }
         }
     }
@@ -591,11 +573,9 @@ class ViewController: UIViewController {
         let player = game.getPlayer(number: 21)
         if player.isEnabled() {
             game.takeOffIce(removePlayer: player)
-            Player22.backgroundColor = playerButtonColor
         } else {
             if !game.iceIsFull() {
                 game.putOnIce(addPlayer: player, manpower:_manpower)
-                Player22.backgroundColor = .green
             }
         }
     }
@@ -1013,6 +993,10 @@ class ViewController: UIViewController {
     var currBoxes = Array<PenaltyClock>()
     
     func clearPenaltyBoxes() {
+        game.maxOnIce = 6
+        for player in hamBox{
+            player.inBox = false
+        }
         for box in currBoxes {
             box.timer.invalidate()
             box._timeUI.text = "00:00"
@@ -1052,15 +1036,11 @@ class ViewController: UIViewController {
         let f1 = [0, 1, 2]
         for player in ice {
             if player < 12 {
-                let playerButton = playerButtons[player]
                 game.takeOffIce(removePlayer: game.getPlayer(number: player))
-                playerButton?.backgroundColor = playerButtonColor
             }
         }
         for forward in f1 {
-            let playerButton = playerButtons[forward]
             game.putOnIce(addPlayer: game.getPlayer(number: forward), manpower: _manpower)
-            playerButton?.backgroundColor = .green
         }
     }
     
@@ -1070,15 +1050,11 @@ class ViewController: UIViewController {
         let f2 = [3, 4, 5]
         for player in ice {
             if player < 12 {
-                let playerButton = playerButtons[player]
                 game.takeOffIce(removePlayer: game.getPlayer(number: player))
-                playerButton?.backgroundColor = playerButtonColor
             }
         }
         for forward in f2 {
-            let playerButton = playerButtons[forward]
             game.putOnIce(addPlayer: game.getPlayer(number: forward), manpower: _manpower)
-            playerButton?.backgroundColor = .green
         }
     }
     
@@ -1088,15 +1064,11 @@ class ViewController: UIViewController {
         let f3 = [6, 7, 8]
         for player in ice {
             if player < 12 {
-                let playerButton = playerButtons[player]
                 game.takeOffIce(removePlayer: game.getPlayer(number: player))
-                playerButton?.backgroundColor = playerButtonColor
             }
         }
         for forward in f3 {
-            let playerButton = playerButtons[forward]
             game.putOnIce(addPlayer: game.getPlayer(number: forward), manpower: _manpower)
-            playerButton?.backgroundColor = .green
         }
     }
     
@@ -1106,15 +1078,11 @@ class ViewController: UIViewController {
         let f4 = [9, 10, 11]
         for player in ice {
             if player < 12 {
-                let playerButton = playerButtons[player]
                 game.takeOffIce(removePlayer: game.getPlayer(number: player))
-                playerButton?.backgroundColor = playerButtonColor
             }
         }
         for forward in f4 {
-            let playerButton = playerButtons[forward]
             game.putOnIce(addPlayer: game.getPlayer(number: forward), manpower: _manpower)
-            playerButton?.backgroundColor = .green
         }
     }
     
@@ -1124,15 +1092,11 @@ class ViewController: UIViewController {
         let d1 = [12, 13]
         for player in ice {
             if player > 11 && player < 18 {
-                let playerButton = playerButtons[player]
                 game.takeOffIce(removePlayer: game.getPlayer(number: player))
-                playerButton?.backgroundColor = playerButtonColor
             }
         }
         for defender in d1 {
-            let playerButton = playerButtons[defender]
             game.putOnIce(addPlayer: game.getPlayer(number: defender), manpower: _manpower)
-            playerButton?.backgroundColor = .green
         }
     }
     
@@ -1142,15 +1106,11 @@ class ViewController: UIViewController {
         let d2 = [14, 15]
         for player in ice {
             if player > 11 && player < 18 {
-                let playerButton = playerButtons[player]
                 game.takeOffIce(removePlayer: game.getPlayer(number: player))
-                playerButton?.backgroundColor = playerButtonColor
             }
         }
         for defender in d2 {
-            let playerButton = playerButtons[defender]
             game.putOnIce(addPlayer: game.getPlayer(number: defender), manpower: _manpower)
-            playerButton?.backgroundColor = .green
         }
     }
     
@@ -1160,15 +1120,11 @@ class ViewController: UIViewController {
         let d3 = [16, 17]
         for player in ice {
             if player > 11 && player < 18 {
-                let playerButton = playerButtons[player]
                 game.takeOffIce(removePlayer: game.getPlayer(number: player))
-                playerButton?.backgroundColor = playerButtonColor
             }
         }
         for defender in d3 {
-            let playerButton = playerButtons[defender]
             game.putOnIce(addPlayer: game.getPlayer(number: defender), manpower: _manpower)
-            playerButton?.backgroundColor = .green
         }
     }
     
@@ -1497,14 +1453,18 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         if dropDownClicked == "2Us" {
-            let playerClicked = game.currIce[indexPath.row]
-            let thisBox = getCurrUsBoxJersey()
-            print("penalty 2Usclicked!")
-            playerClicked.increasePenalty2min(manpower:_manpower)
-            thisBox.text = String(playerClicked._jerseyNumber)
-            
             let onIceSID = game.getOnIceSIDAsArray()
             appDelegate.database?.addChronStat(seasonYear: game._season, game: game._opponent, period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "2penaltyCommited", manpower: manpowerStr(), statOwnerSID: game.currIce[indexPath.row]._studentID, onIce1SID: onIceSID[0], onIce2SID: onIceSID[1], onIce3SID: onIceSID[2], onIce4SID: onIceSID[3], onIce5SID: onIceSID[4], onIce6SID: onIceSID[5])
+            let playerClicked = game.currIce[indexPath.row]
+            let thisBox = getCurrUsBoxJersey()
+            //print("penalty 2Usclicked!")
+            playerClicked.inBox = true
+            playerClicked.increasePenalty2min(manpower:_manpower)
+            thisBox.text = String(playerClicked._jerseyNumber)
+            hamBox.append(playerClicked)
+            game.takeOffIce(removePlayer: playerClicked)
+            game.maxOnIce -= 1
+            
             
         }
         
@@ -1519,14 +1479,19 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         if dropDownClicked == "4Us" {
+            let onIceSID = game.getOnIceSIDAsArray()
+            appDelegate.database?.addChronStat(seasonYear: game._season, game: game._opponent, period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "4penaltyCommited", manpower: manpowerStr(), statOwnerSID: game.currIce[indexPath.row]._studentID, onIce1SID: onIceSID[0], onIce2SID: onIceSID[1], onIce3SID: onIceSID[2], onIce4SID: onIceSID[3], onIce5SID: onIceSID[4], onIce6SID: onIceSID[5])
             print("penalty 4Usclicked!")
             let playerClicked = game.currIce[indexPath.row]
             let thisBox = getCurrUsBoxJersey()
+            playerClicked.inBox = true
             playerClicked.increasePenalty4min(manpower:_manpower)
             thisBox.text = String(playerClicked._jerseyNumber)
+            hamBox.append(playerClicked)
+            game.takeOffIce(removePlayer: playerClicked)
+            game.maxOnIce -= 1
             
-            let onIceSID = game.getOnIceSIDAsArray()
-            appDelegate.database?.addChronStat(seasonYear: game._season, game: game._opponent, period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "4penaltyCommited", manpower: manpowerStr(), statOwnerSID: game.currIce[indexPath.row]._studentID, onIce1SID: onIceSID[0], onIce2SID: onIceSID[1], onIce3SID: onIceSID[2], onIce4SID: onIceSID[3], onIce5SID: onIceSID[4], onIce6SID: onIceSID[5])
+            
         }
         
         if dropDownClicked == "4Them" {
@@ -1540,14 +1505,19 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         if dropDownClicked == "5Us" {
+            let onIceSID = game.getOnIceSIDAsArray()
+            appDelegate.database?.addChronStat(seasonYear: game._season, game: game._opponent, period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "5penaltyCommited", manpower: manpowerStr(), statOwnerSID: game.currIce[indexPath.row]._studentID, onIce1SID: onIceSID[0], onIce2SID: onIceSID[1], onIce3SID: onIceSID[2], onIce4SID: onIceSID[3], onIce5SID: onIceSID[4], onIce6SID: onIceSID[5])
             print("penalty 5Usclicked!")
             let playerClicked = game.currIce[indexPath.row]
             let thisBox = getCurrUsBoxJersey()
             playerClicked.increasePenalty5min(manpower:_manpower)
+            playerClicked.inBox = true
             thisBox.text = String(playerClicked._jerseyNumber)
+            hamBox.append(playerClicked)
+            game.takeOffIce(removePlayer: playerClicked)
+            game.maxOnIce -= 1
             
-            let onIceSID = game.getOnIceSIDAsArray()
-            appDelegate.database?.addChronStat(seasonYear: game._season, game: game._opponent, period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "5penaltyCommited", manpower: manpowerStr(), statOwnerSID: game.currIce[indexPath.row]._studentID, onIce1SID: onIceSID[0], onIce2SID: onIceSID[1], onIce3SID: onIceSID[2], onIce4SID: onIceSID[3], onIce5SID: onIceSID[4], onIce6SID: onIceSID[5])
+            
         }
         
         if dropDownClicked == "5Them" {
