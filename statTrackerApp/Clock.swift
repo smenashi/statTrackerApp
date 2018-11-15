@@ -26,6 +26,7 @@ class Clock {
             return 0
         }
     }
+
     
     func formatTime(time:TimeInterval) -> String{
         // formats the time on the time label to the desired format: hh:mm:ss
