@@ -11,6 +11,32 @@ import UIKit
 // NOTE: this is tied to the Main Menu Screen in HockeyUI.storyboard
 class MainMenuViewController: UIViewController {
 
+    // reference to input buffer
+    @IBOutlet weak var inputCollege: UITextField!
+    
+    // prepare inputCollege text to be sent to ViewController.swift
+    // ref: https://matteomanferdini.com/how-ios-view-controllers-communicate-with-each-other/
+    // ref: https://www.youtube.com/watch?v=HzKcLccB8FI
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is ViewController{
+            let vc = segue.destination as? ViewController
+            vc?.inputCollegeText = inputCollege.text
+        }
+        
+        
+        
+//        let inputText = inputCollege.text
+//        if let destinationViewController = segue.destination as? ViewController{
+//                ViewController.inputCollegeText = inputText
+////        }
+//        let receivingVC = segue.destination as! ViewController
+//        if let text = inputCollege.text{
+//            receivingVC.inputCollegeText = text
+//        }
+        
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

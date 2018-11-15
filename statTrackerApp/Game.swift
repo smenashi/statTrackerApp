@@ -162,10 +162,10 @@ class Game {
         return onIce.count == 6
     }
     
-    func putOnIce(addPlayer:Player) {
+    func putOnIce(addPlayer:Player, manpower: [Int]) {
         onIce.insert(players.firstIndex(of: addPlayer) ?? -1)
         addPlayer.enablePlayer()
-        addPlayer.startClock()
+        addPlayer.startClock(manpower: manpower)
         
         // update array of players to be displayed in drop-down menu
         updateCurrentIce()
@@ -190,64 +190,64 @@ class Game {
     }
     
     // stat buttons
-    func shotFor(manpower:String = "5v5") {
+    func shotFor(manpower:[Int] = [5, 5]) {
         for player in onIce {
             players[player].increaseShotFor(manpower: manpower)
         }
         //players[takenBy].increaseShotForTaken(manpower: manpower)
     }
     
-    func shotAgainst(manpower:String = "5v5") {
+    func shotAgainst(manpower:[Int] = [5, 5]) {
         for player in onIce {
             players[player].increaseShotAgainst(manpower: manpower)
         }
     }
     
-    func goalFor(manpower:String = "5v5") {
+    func goalFor(manpower:[Int] = [5, 5]) {
         for player in onIce {
             players[player].increaseGoalFor(manpower: manpower)
         }
         //players[takenBy].increaseGoaltForTaken(manpower: manpower)
     }
     
-    func goalAgainst(manpower:String = "5v5") {
+    func goalAgainst(manpower:[Int] = [5, 5]) {
         for player in onIce {
             players[player].increaseGoalAgainst(manpower: manpower)
         }
     }
     
-    func penalty2min(penaltyBy:Int, manpower:String = "5v5") {
+    func penalty2min(penaltyBy:Int, manpower:[Int] = [5, 5]) {
         players[penaltyBy].increasePenalty2min(manpower: manpower)
     }
     
-    func penaltyDrawn2min(drawnBy:Int, manpower:String = "5v5") {
+    func penaltyDrawn2min(drawnBy:Int, manpower:[Int] = [5, 5]) {
         players[drawnBy].increasePenaltyDrawn2min(manpower: manpower)
     }
     
-    func penalty4min(penaltyBy:Int, manpower:String = "5v5") {
+    func penalty4min(penaltyBy:Int, manpower:[Int] = [5, 5]) {
         players[penaltyBy].increasePenalty4min(manpower: manpower)
     }
     
-    func penaltyDrawn4min(drawnBy:Int, manpower:String = "5v5") {
+    func penaltyDrawn4min(drawnBy:Int, manpower:[Int] = [5, 5]) {
         players[drawnBy].increasePenaltyDrawn4min(manpower: manpower)
     }
     
-    func penalty5min(penaltyBy:Int, manpower:String = "5v5") {
+    func penalty5min(penaltyBy:Int, manpower:[Int] = [5, 5]) {
         players[penaltyBy].increasePenalty5min(manpower: manpower)
     }
     
-    func penaltyDrawn5min(drawnBy:Int, manpower:String = "5v5") {
+    func penaltyDrawn5min(drawnBy:Int, manpower:[Int] = [5, 5]) {
         players[drawnBy].increasePenaltyDrawn5min(manpower: manpower)
     }
     
-    func icing(manpower:String = "5v5") {
+    func icing(manpower:[Int] = [5, 5]) {
         for player in onIce {
             players[player].increaseIcing(manpower: manpower)
         }
         //players[drawnBy].increaseIcingByPlayer(manpower: manpower)
     }
     
-    func icingDrawn(manpower:String = "5v5") {
+    func icingDrawn(manpower:[Int] = [5, 5]) {
         for player in onIce {
             players[player].increaseIcingDrawn(manpower: manpower)
         }
