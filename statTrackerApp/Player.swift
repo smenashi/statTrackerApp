@@ -23,37 +23,40 @@ class Player {
     //funcitonal attributes
     var enabled = false
     var clock = PlayerClock()
-    var iceTime:TimeInterval = 0
     
     // stat variables
     // dictionaries keyed by manpower
     // because of implicit optional keying, must force with ! in methods
+    
+    // ice time
+    var iceTime:[String:TimeInterval] = ["5v5":0, "5v4":0, "5v3":0, "4v5":0, "4v4":0, "4v3":0, "3v5":0, "3v4":0, "3v3":0]
+    
     // shots
-    var shotFor:[String: Int] = ["5v5":0, "5v4":0, "5v3":0, "4v5":0, "3v5":0, "4v4":0]
-    var shotForTaken:[String: Int] = ["5v5":0, "5v4":0, "5v3":0, "4v5":0, "3v5":0, "4v4":0]
-    var shotAgainst:[String: Int] = ["5v5":0, "5v4":0, "5v3":0, "4v5":0, "3v5":0, "4v4":0]
+    var shotFor:[String: Int] = ["5v5":0, "5v4":0, "5v3":0, "4v5":0, "4v4":0, "4v3":0, "3v5":0, "3v4":0, "3v3":0]
+    var shotForTaken:[String: Int] = ["5v5":0, "5v4":0, "5v3":0, "4v5":0, "4v4":0, "4v3":0, "3v5":0, "3v4":0, "3v3":0]
+    var shotAgainst:[String: Int] = ["5v5":0, "5v4":0, "5v3":0, "4v5":0, "4v4":0, "4v3":0, "3v5":0, "3v4":0, "3v3":0]
     
     // goals
-    var goalFor:[String: Int] = ["5v5":0, "5v4":0, "5v3":0, "4v5":0, "3v5":0, "4v4":0]
-    var goalForTaken:[String: Int] = ["5v5":0, "5v4":0, "5v3":0, "4v5":0, "3v5":0, "4v4":0]
-    var goalAgainst:[String: Int] = ["5v5":0, "5v4":0, "5v3":0, "4v5":0, "3v5":0, "4v4":0]
+    var goalFor:[String: Int] = ["5v5":0, "5v4":0, "5v3":0, "4v5":0, "4v4":0, "4v3":0, "3v5":0, "3v4":0, "3v3":0]
+    var goalForTaken:[String: Int] = ["5v5":0, "5v4":0, "5v3":0, "4v5":0, "4v4":0, "4v3":0, "3v5":0, "3v4":0, "3v3":0]
+    var goalAgainst:[String: Int] = ["5v5":0, "5v4":0, "5v3":0, "4v5":0, "4v4":0, "4v3":0, "3v5":0, "3v4":0, "3v3":0]
     
     // 2-min penalties
-    var penalty2min:[String: Int] = ["5v5":0, "5v4":0, "5v3":0, "4v5":0, "3v5":0, "4v4":0]
-    var penaltyDrawn2min:[String: Int] = ["5v5":0, "5v4":0, "5v3":0, "4v5":0, "3v5":0, "4v4":0]
+    var penalty2min:[String: Int] = ["5v5":0, "5v4":0, "5v3":0, "4v5":0, "4v4":0, "4v3":0, "3v5":0, "3v4":0, "3v3":0]
+    var penaltyDrawn2min:[String: Int] = ["5v5":0, "5v4":0, "5v3":0, "4v5":0, "4v4":0, "4v3":0, "3v5":0, "3v4":0, "3v3":0]
     
     // 4-min penalties
-    var penalty4min:[String: Int] = ["5v5":0, "5v4":0, "5v3":0, "4v5":0, "3v5":0, "4v4":0]
-    var penaltyDrawn4min:[String: Int] = ["5v5":0, "5v4":0, "5v3":0, "4v5":0, "3v5":0, "4v4":0]
+    var penalty4min:[String: Int] = ["5v5":0, "5v4":0, "5v3":0, "4v5":0, "4v4":0, "4v3":0, "3v5":0, "3v4":0, "3v3":0]
+    var penaltyDrawn4min:[String: Int] = ["5v5":0, "5v4":0, "5v3":0, "4v5":0, "4v4":0, "4v3":0, "3v5":0, "3v4":0, "3v3":0]
     
     // 5-min penalties
-    var penalty5min:[String: Int] = ["5v5":0, "5v4":0, "5v3":0, "4v5":0, "3v5":0, "4v4":0]
-    var penaltyDrawn5min:[String: Int] = ["5v5":0, "5v4":0, "5v3":0, "4v5":0, "3v5":0, "4v4":0]
+    var penalty5min:[String: Int] = ["5v5":0, "5v4":0, "5v3":0, "4v5":0, "4v4":0, "4v3":0, "3v5":0, "3v4":0, "3v3":0]
+    var penaltyDrawn5min:[String: Int] = ["5v5":0, "5v4":0, "5v3":0, "4v5":0, "4v4":0, "4v3":0, "3v5":0, "3v4":0, "3v3":0]
     
     // icing
-    var icing:[String: Int] = ["5v5":0, "5v4":0, "5v3":0, "4v5":0, "3v5":0, "4v4":0]
-    var icingByPlayer:[String: Int] = ["5v5":0, "5v4":0, "5v3":0, "4v5":0, "3v5":0, "4v4":0]
-    var icingDrawn:[String: Int] = ["5v5":0, "5v4":0, "5v3":0, "4v5":0, "3v5":0, "4v4":0]
+    var icing:[String: Int] = ["5v5":0, "5v4":0, "5v3":0, "4v5":0, "4v4":0, "4v3":0, "3v5":0, "3v4":0, "3v3":0]
+    var icingByPlayer:[String: Int] = ["5v5":0, "5v4":0, "5v3":0, "4v5":0, "4v4":0, "4v3":0, "3v5":0, "3v4":0, "3v3":0]
+    var icingDrawn:[String: Int] = ["5v5":0, "5v4":0, "5v3":0, "4v5":0, "4v4":0, "4v3":0, "3v5":0, "3v4":0, "3v3":0]
     
     //------ methods ------//
     // enabling/disabling
@@ -74,74 +77,82 @@ class Player {
         clock.startClock()
     }
     
-    func stopClock() {
+    func stopClock(manpower:[Int]) {
         clock.stopClock()
-        iceTime = getIceTime()
+        let time = getIceTime()
+        iceTime[aryToStr(manpower: manpower)] = time
     }
     
     func getIceTime() -> TimeInterval {
         return clock.getIceTime()
     }
     
+    // convert manpower arrays into manpower strings
+    func aryToStr(manpower:[Int]) -> String {
+        let man1 = String(manpower[0])
+        let man2 = String(manpower[1])
+        return man1 + "v" + man2
+    }
+    
     // increasing stat methods --> insert statements go in these!
-    func increaseShotFor(manpower:String = "5v5") {
-        shotFor[manpower]! += 1
+    func increaseShotFor(manpower:[Int] = [5, 5]) {
+        shotFor[aryToStr(manpower: manpower)]! += 1
     }
     
-    func increaseShotForTaken(manpower:String = "5v5") {
-        shotForTaken[manpower]! += 1
+    func increaseShotForTaken(manpower:[Int] = [5, 5]) {
+        shotForTaken[aryToStr(manpower: manpower)]! += 1
     }
     
-    func increaseShotAgainst(manpower:String = "5v5") {
-        shotAgainst[manpower]! += 1
+    func increaseShotAgainst(manpower:[Int] = [5, 5]) {
+        shotAgainst[aryToStr(manpower: manpower)]! += 1
     }
     
-    func increaseGoalFor(manpower:String = "5v5") {
-        goalFor[manpower]! += 1
+    func increaseGoalFor(manpower:[Int] = [5, 5]) {
+        goalFor[aryToStr(manpower: manpower)]! += 1
     }
     
-    func increaseGoaltForTaken(manpower:String = "5v5") {
-        goalForTaken[manpower]! += 1
+    func increaseGoaltForTaken(manpower:[Int] = [5, 5]) {
+        goalForTaken[aryToStr(manpower: manpower)]! += 1
     }
     
-    func increaseGoalAgainst(manpower:String = "5v5") {
-        goalAgainst[manpower]! += 1
+    func increaseGoalAgainst(manpower:[Int] = [5, 5]) {
+        goalAgainst[aryToStr(manpower: manpower)]! += 1
     }
     
-    func increasePenalty2min(manpower:String = "5v5") {
-        penalty2min[manpower]! += 1
+    func increasePenalty2min(manpower:[Int] = [5, 5]) {
+        penalty2min[aryToStr(manpower: manpower)]! += 1
     }
     
-    func increasePenaltyDrawn2min(manpower:String = "5v5") {
-        penaltyDrawn2min[manpower]! += 1
+    func increasePenaltyDrawn2min(manpower:[Int] = [5, 5]) {
+        penaltyDrawn2min[aryToStr(manpower: manpower)]! += 1
     }
     
-    func increasePenalty4min(manpower:String = "5v5") {
-        penalty4min[manpower]! += 1
+    func increasePenalty4min(manpower:[Int] = [5, 5]) {
+        penalty4min[aryToStr(manpower: manpower)]! += 1
     }
     
-    func increasePenaltyDrawn4min(manpower:String = "5v5") {
-        penaltyDrawn4min[manpower]! += 1
+    func increasePenaltyDrawn4min(manpower:[Int] = [5, 5]) {
+        penaltyDrawn4min[aryToStr(manpower: manpower)]! += 1
     }
     
-    func increasePenalty5min(manpower:String = "5v5") {
-        penalty5min[manpower]! += 1
+    func increasePenalty5min(manpower:[Int] = [5, 5]) {
+        penalty5min[aryToStr(manpower: manpower)]! += 1
     }
     
-    func increasePenaltyDrawn5min(manpower:String = "5v5") {
-        penaltyDrawn5min[manpower]! += 1
+    func increasePenaltyDrawn5min(manpower:[Int] = [5, 5]) {
+        penaltyDrawn5min[aryToStr(manpower: manpower)]! += 1
     }
     
-    func increaseIcing(manpower:String = "5v5") {
-        icing[manpower]! += 1
+    func increaseIcing(manpower:[Int] = [5, 5]) {
+        icing[aryToStr(manpower: manpower)]! += 1
     }
     
-    func increaseIcingByPlayer(manpower:String = "5v5") {
-        icingByPlayer[manpower]! += 1
+    func increaseIcingByPlayer(manpower:[Int] = [5, 5]) {
+        icingByPlayer[aryToStr(manpower: manpower)]! += 1
     }
     
-    func increaseIcingDrawn(manpower:String = "5v5") {
-        icingDrawn[manpower]! += 1
+    func increaseIcingDrawn(manpower:[Int] = [5, 5]) {
+        icingDrawn[aryToStr(manpower: manpower)]! += 1
     }
 }
 
