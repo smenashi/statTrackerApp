@@ -608,6 +608,8 @@ class ViewController: UIViewController {
         //                       and any other stats
         
         game.shotAgainst(manpower: _manpower)
+        let onIceSID = game.getOnIceSIDAsArray()
+        appDelegate.database?.addChronStat(seasonYear: game._season, game: game._opponent, period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "shotAgainst", manpower: _manpower, statOwnerSID: 0, onIce1SID: onIceSID[0], onIce2SID: onIceSID[1], onIce3SID: onIceSID[2], onIce4SID: onIceSID[3], onIce5SID: onIceSID[4], onIce6SID: onIceSID[5])
         
     }
     
@@ -645,6 +647,9 @@ class ViewController: UIViewController {
         //                              and any other stats
         game.goalAgainst()
         clearPenaltyBoxes()
+        
+        let onIceSID = game.getOnIceSIDAsArray()
+        appDelegate.database?.addChronStat(seasonYear: game._season, game: game._opponent, period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "goalAgainst", manpower: _manpower, statOwnerSID: 0, onIce1SID: onIceSID[0], onIce2SID: onIceSID[1], onIce3SID: onIceSID[2], onIce4SID: onIceSID[3], onIce5SID: onIceSID[4], onIce6SID: onIceSID[5])
     }
     
     @IBAction func onClickIcingFor(_ sender: Any) {
@@ -679,6 +684,9 @@ class ViewController: UIViewController {
     @IBAction func onClickIcingAgainst(_ sender: Any) {
         // Icing Against button clicked: update relevant stats to players on ice
         game.icingDrawn(manpower: _manpower)
+        
+        let onIceSID = game.getOnIceSIDAsArray()
+        appDelegate.database?.addChronStat(seasonYear: game._season, game: game._opponent, period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "icingDrawn", manpower: _manpower, statOwnerSID: 0, onIce1SID: onIceSID[0], onIce2SID: onIceSID[1], onIce3SID: onIceSID[2], onIce4SID: onIceSID[3], onIce5SID: onIceSID[4], onIce6SID: onIceSID[5])
     }
     
     
@@ -1220,6 +1228,7 @@ class ViewController: UIViewController {
     
     @IBAction func errorFlagClicked(_ sender: Any) {
         // what happens when the error flag is clicked
+        appDelegate.database?.addChronStat(seasonYear: game._season, game: game._opponent, period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "errorFlag", manpower: _manpower, statOwnerSID: 0, onIce1SID: 0, onIce2SID: 0, onIce3SID: 0, onIce4SID: 0, onIce5SID: 0, onIce6SID: 0)
     }
     
     
@@ -1364,9 +1373,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             //print(game.currIce[indexPath.row]._firstName)
             game.currIce[indexPath.row].increaseShotForTaken(manpower: _manpower)
             let onIceSID = game.getOnIceSIDAsArray()
-            print("ATTEMPT")
-            print(_manpower)
-            appDelegate.database?.addChronStat(seasonYear: game._season, game: game._opponent, period: gameTimer.period, time: Int(gameTimer.gameTime), statType: "shotFor", manpower: _manpower, statOwnerSID: game.currIce[indexPath.row]._studentID, onIce1SID: onIceSID[0], onIce2SID: onIceSID[1], onIce3SID: onIceSID[2], onIce4SID: onIceSID[3], onIce5SID: onIceSID[4], onIce6SID: onIceSID[5])
+            appDelegate.database?.addChronStat(seasonYear: game._season, game: game._opponent, period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "shotFor", manpower: _manpower, statOwnerSID: game.currIce[indexPath.row]._studentID, onIce1SID: onIceSID[0], onIce2SID: onIceSID[1], onIce3SID: onIceSID[2], onIce4SID: onIceSID[3], onIce5SID: onIceSID[4], onIce6SID: onIceSID[5])
         
         }
         
@@ -1377,6 +1384,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             //          the individual player and increment their relevant stat
             game.currIce[indexPath.row].increaseShotForTaken(manpower: _manpower)
             game.currIce[indexPath.row].increaseGoaltForTaken(manpower: _manpower)
+            let onIceSID = game.getOnIceSIDAsArray()
+            appDelegate.database?.addChronStat(seasonYear: game._season, game: game._opponent, period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "shotFor", manpower: _manpower, statOwnerSID: game.currIce[indexPath.row]._studentID, onIce1SID: onIceSID[0], onIce2SID: onIceSID[1], onIce3SID: onIceSID[2], onIce4SID: onIceSID[3], onIce5SID: onIceSID[4], onIce6SID: onIceSID[5])
+            appDelegate.database?.addChronStat(seasonYear: game._season, game: game._opponent, period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "goalFor", manpower: _manpower, statOwnerSID: game.currIce[indexPath.row]._studentID, onIce1SID: onIceSID[0], onIce2SID: onIceSID[1], onIce3SID: onIceSID[2], onIce4SID: onIceSID[3], onIce5SID: onIceSID[4], onIce6SID: onIceSID[5])
             
         }
         
@@ -1387,6 +1397,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             playerClicked.increasePenalty2min(manpower:_manpower)
             thisBox.text = String(playerClicked._jerseyNumber)
             
+            let onIceSID = game.getOnIceSIDAsArray()
+            appDelegate.database?.addChronStat(seasonYear: game._season, game: game._opponent, period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "2penaltyCommited", manpower: _manpower, statOwnerSID: game.currIce[indexPath.row]._studentID, onIce1SID: onIceSID[0], onIce2SID: onIceSID[1], onIce3SID: onIceSID[2], onIce4SID: onIceSID[3], onIce5SID: onIceSID[4], onIce6SID: onIceSID[5])
+            
         }
         
         if dropDownClicked == "2Them" {
@@ -1394,6 +1407,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             let thisBox = getCurrBoxJersey()
             thisBox.text = "OPPONENT"
             game.currIce[indexPath.row].increasePenaltyDrawn2min(manpower:_manpower)
+            
+            let onIceSID = game.getOnIceSIDAsArray()
+            appDelegate.database?.addChronStat(seasonYear: game._season, game: game._opponent, period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "2penaltyDrawn", manpower: _manpower, statOwnerSID: game.currIce[indexPath.row]._studentID, onIce1SID: onIceSID[0], onIce2SID: onIceSID[1], onIce3SID: onIceSID[2], onIce4SID: onIceSID[3], onIce5SID: onIceSID[4], onIce6SID: onIceSID[5])
         }
         
         if dropDownClicked == "4Us" {
@@ -1402,6 +1418,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             let thisBox = getCurrBoxJersey()
             playerClicked.increasePenalty4min(manpower:_manpower)
             thisBox.text = String(playerClicked._jerseyNumber)
+            
+            let onIceSID = game.getOnIceSIDAsArray()
+            appDelegate.database?.addChronStat(seasonYear: game._season, game: game._opponent, period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "4penaltyCommited", manpower: _manpower, statOwnerSID: game.currIce[indexPath.row]._studentID, onIce1SID: onIceSID[0], onIce2SID: onIceSID[1], onIce3SID: onIceSID[2], onIce4SID: onIceSID[3], onIce5SID: onIceSID[4], onIce6SID: onIceSID[5])
         }
         
         if dropDownClicked == "4Them" {
@@ -1409,6 +1428,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             let thisBox = getCurrBoxJersey()
             thisBox.text = "OPPONENT"
             game.currIce[indexPath.row].increasePenaltyDrawn4min(manpower:_manpower)
+            
+            let onIceSID = game.getOnIceSIDAsArray()
+            appDelegate.database?.addChronStat(seasonYear: game._season, game: game._opponent, period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "4penaltyDrawn", manpower: _manpower, statOwnerSID: game.currIce[indexPath.row]._studentID, onIce1SID: onIceSID[0], onIce2SID: onIceSID[1], onIce3SID: onIceSID[2], onIce4SID: onIceSID[3], onIce5SID: onIceSID[4], onIce6SID: onIceSID[5])
         }
         
         if dropDownClicked == "5Us" {
@@ -1417,6 +1439,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             let thisBox = getCurrBoxJersey()
             playerClicked.increasePenalty5min(manpower:_manpower)
             thisBox.text = String(playerClicked._jerseyNumber)
+            
+            let onIceSID = game.getOnIceSIDAsArray()
+            appDelegate.database?.addChronStat(seasonYear: game._season, game: game._opponent, period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "5penaltyCommited", manpower: _manpower, statOwnerSID: game.currIce[indexPath.row]._studentID, onIce1SID: onIceSID[0], onIce2SID: onIceSID[1], onIce3SID: onIceSID[2], onIce4SID: onIceSID[3], onIce5SID: onIceSID[4], onIce6SID: onIceSID[5])
         }
         
         if dropDownClicked == "5Them" {
@@ -1424,11 +1449,17 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             let thisBox = getCurrBoxJersey()
             thisBox.text = "OPPONENT"
             game.currIce[indexPath.row].increasePenaltyDrawn5min(manpower:_manpower)
+            
+            let onIceSID = game.getOnIceSIDAsArray()
+            appDelegate.database?.addChronStat(seasonYear: game._season, game: game._opponent, period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "5penaltyDrawn", manpower: _manpower, statOwnerSID: game.currIce[indexPath.row]._studentID, onIce1SID: onIceSID[0], onIce2SID: onIceSID[1], onIce3SID: onIceSID[2], onIce4SID: onIceSID[3], onIce5SID: onIceSID[4], onIce6SID: onIceSID[5])
         }
         
         if dropDownClicked == "icing" {
             print("icing clicked!")
             game.currIce[indexPath.row].increaseIcingByPlayer(manpower:_manpower)
+            
+            let onIceSID = game.getOnIceSIDAsArray()
+            appDelegate.database?.addChronStat(seasonYear: game._season, game: game._opponent, period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "icingCommited", manpower: _manpower, statOwnerSID: game.currIce[indexPath.row]._studentID, onIce1SID: onIceSID[0], onIce2SID: onIceSID[1], onIce3SID: onIceSID[2], onIce4SID: onIceSID[3], onIce5SID: onIceSID[4], onIce6SID: onIceSID[5])
         }
     }
 }
