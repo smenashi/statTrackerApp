@@ -29,10 +29,12 @@ class ViewController: UIViewController {
     // any functionality that is needed down the line
     
     // Game input from main menu screen
+    var inputCollegeText: String?
     
+    @IBOutlet weak var testInputLabel: UILabel!
+   
     
-    
-    
+    //    if let inputCollegeText =
     // Game Clock and Time //////////////////
     @IBOutlet weak var gameClock: UIButton!
     @IBOutlet weak var gameTime: UILabel!
@@ -54,8 +56,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var manPow5v4: UIButton!
     @IBOutlet weak var manPow5v3: UIButton!
     @IBOutlet weak var manPow4v5: UIButton!
-    @IBOutlet weak var manPow3v5: UIButton!
     @IBOutlet weak var manPow4v4: UIButton!
+    @IBOutlet weak var manPow4v3: UIButton!
+    @IBOutlet weak var manPow3v5: UIButton!
+    @IBOutlet weak var manPow3v4: UIButton!
+    @IBOutlet weak var manPow3v3: UIButton!
     /////////////////////////////////////////
     // Manpower buttons array
     var manPowerAlphas = Array<UIButton>()
@@ -163,18 +168,33 @@ class ViewController: UIViewController {
         manPow4v5.alpha = 1
         currConfig = 3
     }
-    @IBAction func click3v5(_ sender: Any) {
-        // manpower button 3v5 is clicked: change current manpower config to 3v5
-        manPowerAlphas[currConfig].alpha = 0.5
-        manPow3v5.alpha = 1
-        currConfig = 4
-    }
+    
     @IBAction func click4v4(_ sender: Any) {
         // manpower button 4v4 is clicked: change current manpower config to 4v4
         manPowerAlphas[currConfig].alpha = 0.5
         manPow4v4.alpha = 1
         currConfig = 5
     }
+    
+    @IBAction func click4v3(_ sender: Any) {
+        // manpower button 4v3 is clicked: change current manpower config to 4v3
+    }
+    
+    @IBAction func click3v5(_ sender: Any) {
+        // manpower button 3v5 is clicked: change current manpower config to 3v5
+        manPowerAlphas[currConfig].alpha = 0.5
+        manPow3v5.alpha = 1
+        currConfig = 4
+    }
+    @IBAction func click3v4(_ sender: Any) {
+        // manpower button 3v4 is clicked: change current manpower config to 3v4
+    }
+    @IBAction func click3v3(_ sender: Any) {
+        // manpower button 3v3 is clicked: change current manpower config to 3v3
+    }
+    
+    
+
     
     func manpowerUsPressedSwitch() {
         if _manpower == "5v5" {
@@ -1244,6 +1264,15 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        testInputLabel?.text = inputCollegeText
+//        print(testInputLabel.text)
+        print(inputCollegeText)
+//        if let receivedText = inputCollegeText{
+//            testInputLabel.text = receivedText
+//             print(testInputLabel.text)
+//        }
+//
+        
         init_roster()
         // hidden until drop down buttons {Shot For || Goal For} are pressed
         playersDropDown.isHidden = true
@@ -1256,13 +1285,16 @@ class ViewController: UIViewController {
         onClickGameClock((Any).self)
         
         // hardcoding starting manpower config
-        manPow3v5.alpha = 0.5
-        manPow4v4.alpha = 0.5
-        manPow4v5.alpha = 0.5
-        manPow5v3.alpha = 0.5
-        manPow5v4.alpha = 0.5
         manPow5v5.alpha = 1
-       
+        manPow5v4.alpha = 0.5
+        manPow5v3.alpha = 0.5
+        manPow4v5.alpha = 0.5
+        manPow4v4.alpha = 0.5
+        manPow4v3.alpha = 0.5
+        manPow3v5.alpha = 0.5
+        manPow3v4.alpha = 0.5
+        manPow3v3.alpha = 0.5
+        
         // populate array of manpower buttons for handling opacity changes
         manPowerAlphas += [manPow5v5, manPow5v4, manPow5v3, manPow4v5, manPow3v5, manPow4v4]
         
