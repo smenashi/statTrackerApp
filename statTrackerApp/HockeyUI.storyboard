@@ -1114,14 +1114,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Y3-ho-LyH">
-                                <rect key="frame" x="115" y="934" width="117" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Cancel"/>
-                                <connections>
-                                    <segue destination="fOh-0j-0RM" kind="show" id="Txw-mc-6vl"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="4a8-cK-GWI">
                                 <rect key="frame" x="457" y="20" width="75" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
@@ -1415,6 +1407,17 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 <color key="tintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Y3-ho-LyH">
+                                <rect key="frame" x="115" y="950" width="117" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="1lD-D6-LNp"/>
+                                    <constraint firstAttribute="width" constant="117" id="lUN-h7-W43"/>
+                                </constraints>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <segue destination="fOh-0j-0RM" kind="show" id="Txw-mc-6vl"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter Student ID#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SqY-bE-LWs">
                                 <rect key="frame" x="323" y="376" width="137" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1466,6 +1469,18 @@
                                     <action selector="next_nameClicked:" destination="Wzz-rR-rLg" eventType="touchUpInside" id="qr1-UP-hOY"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wKF-xU-2LX">
+                                <rect key="frame" x="530" y="950" width="92" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="92" id="EJd-5o-7GA"/>
+                                    <constraint firstAttribute="height" constant="30" id="zEY-Oe-jhx"/>
+                                </constraints>
+                                <state key="normal" title="Save and Exit"/>
+                                <connections>
+                                    <action selector="SaveExitClicked:" destination="Wzz-rR-rLg" eventType="touchUpInside" id="V6d-yb-p1e"/>
+                                    <segue destination="fOh-0j-0RM" kind="show" id="ySa-LL-khI"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X7C-o6-h5m">
                                 <rect key="frame" x="366" y="581" width="37" height="30"/>
                                 <state key="normal" title="Done"/>
@@ -1473,19 +1488,12 @@
                                     <action selector="doneButtonClicked:" destination="Wzz-rR-rLg" eventType="touchUpInside" id="CYa-tC-hjA"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wKF-xU-2LX">
-                                <rect key="frame" x="530" y="950" width="92" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Save and Exit"/>
-                                <connections>
-                                    <action selector="SaveExitClicked:" destination="Wzz-rR-rLg" eventType="touchUpInside" id="V6d-yb-p1e"/>
-                                    <segue destination="fOh-0j-0RM" kind="show" id="ySa-LL-khI"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Dm4-Fy-MF9" firstAttribute="leading" secondItem="Agu-5y-2Zg" secondAttribute="leading" constant="215" id="0QT-GB-UgS"/>
+                            <constraint firstItem="6Y3-ho-LyH" firstAttribute="leading" secondItem="Agu-5y-2Zg" secondAttribute="leading" constant="115" id="8S6-Jt-GpW"/>
+                            <constraint firstItem="Agu-5y-2Zg" firstAttribute="bottom" secondItem="wKF-xU-2LX" secondAttribute="bottom" constant="44" id="9Zt-8c-UGY"/>
                             <constraint firstItem="Agu-5y-2Zg" firstAttribute="trailing" secondItem="sin-6o-4fS" secondAttribute="trailing" constant="215" id="Ctk-gL-Jrr"/>
                             <constraint firstItem="Dm4-Fy-MF9" firstAttribute="top" secondItem="Agu-5y-2Zg" secondAttribute="top" constant="433" id="J6h-L8-5sS"/>
                             <constraint firstItem="X7C-o6-h5m" firstAttribute="top" secondItem="tv6-rN-xsZ" secondAttribute="bottom" constant="8" id="MUS-at-N82"/>
@@ -1498,7 +1506,9 @@
                             <constraint firstItem="tv6-rN-xsZ" firstAttribute="top" secondItem="sin-6o-4fS" secondAttribute="bottom" constant="16" id="mMd-a4-maB"/>
                             <constraint firstItem="Agu-5y-2Zg" firstAttribute="trailing" secondItem="tv6-rN-xsZ" secondAttribute="trailing" constant="215" id="nNw-2i-S58"/>
                             <constraint firstItem="sin-6o-4fS" firstAttribute="top" secondItem="Dm4-Fy-MF9" secondAttribute="bottom" constant="14" id="nhV-5F-jiB"/>
+                            <constraint firstItem="Agu-5y-2Zg" firstAttribute="trailing" secondItem="wKF-xU-2LX" secondAttribute="trailing" constant="146" id="omO-G7-A6X"/>
                             <constraint firstItem="tv6-rN-xsZ" firstAttribute="top" secondItem="sin-6o-4fS" secondAttribute="bottom" constant="16" id="w7d-xd-0eh"/>
+                            <constraint firstItem="Agu-5y-2Zg" firstAttribute="bottom" secondItem="6Y3-ho-LyH" secondAttribute="bottom" constant="44" id="zXr-wg-pjs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Agu-5y-2Zg"/>
                     </view>
