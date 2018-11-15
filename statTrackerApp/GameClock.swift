@@ -15,6 +15,7 @@ class GameClock: Clock {
     var timeLeft = true
     var clockOnFlag = true //initializing as true for startup logic
     var timer = Timer()
+    var period = 1
     
     func startGameClock(timerLabel:UILabel) {
         if timeLeft {
@@ -32,6 +33,15 @@ class GameClock: Clock {
         if gameTime < 0 {
             timeLeft = false
         }
+    }
+    
+    func getGameTime() -> (String, Int) {
+        let gameMin = 1200 - gameTime
+        return (formatTime(time: gameMin), period)
+    }
+    
+    func endPeriod() {
+        period += 1
     }
     
     func startNewPeriod(timerLabel:UILabel) {

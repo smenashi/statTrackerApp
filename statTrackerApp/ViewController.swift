@@ -1143,6 +1143,7 @@ class ViewController: UIViewController {
         // resets timer to 00:20:00
         playersDropDown.reloadData() // reload drop-down data
         gameTimer.stopGameClock()
+        gameTimer.endPeriod()
         clearPenaltyBoxes()
         gameTimer.startNewPeriod(timerLabel: gameTime)
         
