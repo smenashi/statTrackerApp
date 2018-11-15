@@ -1272,7 +1272,7 @@ class ViewController: UIViewController {
 //             print(testInputLabel.text)
 //        }
 //
-        
+        testInputLabel.isHidden = true
         init_roster()
         // hidden until drop down buttons {Shot For || Goal For} are pressed
         playersDropDown.isHidden = true
