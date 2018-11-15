@@ -600,7 +600,7 @@ class RosterScreenViewController: UIViewController {
             }
             else if player.position == 16{
                 p16 = player
-                F22Button.setTitle(player.lastName, for: .normal)
+                D22Button.setTitle(player.lastName, for: .normal)
             }
             else if player.position == 17{
                 p17 = player

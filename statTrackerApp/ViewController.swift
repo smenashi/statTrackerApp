@@ -1363,9 +1363,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             //          the individual player and increment their relevant stat
             //print(game.currIce[indexPath.row]._firstName)
             game.currIce[indexPath.row].increaseShotForTaken(manpower: _manpower)
-            print("******************")
-            print(game.onIce.count)
-            appDelegate.database?.addChronStat(seasonYear: game._season, game: game._opponent, time: 0, statType: "shotFor", manpower: _manpower, statOwnerSID: game.currIce[indexPath.row]._studentID, onIce1SID: 0, onIce2SID: 0, onIce3SID: 0, onIce4SID: 0, onIce5SID: 0)
+            let onIceSID = game.getOnIceSIDAsArray()
+            print("ATTEMPT")
+            print(_manpower)
+            appDelegate.database?.addChronStat(seasonYear: game._season, game: game._opponent, period: gameTimer.period, time: Int(gameTimer.gameTime), statType: "shotFor", manpower: _manpower, statOwnerSID: game.currIce[indexPath.row]._studentID, onIce1SID: onIceSID[0], onIce2SID: onIceSID[1], onIce3SID: onIceSID[2], onIce4SID: onIceSID[3], onIce5SID: onIceSID[4], onIce6SID: onIceSID[5])
         
         }
         
