@@ -52,8 +52,38 @@ class Game {
     // will store the string label corresponding to each player to be displayed on the screen
     var labelString = ""
     
-    
-    
+    func getOnIceSIDAsArray()->Array<Int> {
+        var p1:Int = 0
+        var p2:Int = 0
+        var p3:Int = 0
+        var p4:Int = 0
+        var p5:Int = 0
+        var p6:Int = 0
+        if currIce.count >= 6 {
+            p1 = currIce[0]._studentID
+            p2 = currIce[1]._studentID
+            p3 = currIce[2]._studentID
+            p4 = currIce[3]._studentID
+            p5 = currIce[4]._studentID
+            p6 = currIce[5]._studentID
+        }
+        else if currIce.count == 5 {
+            p1 = currIce[0]._studentID
+            p2 = currIce[1]._studentID
+            p3 = currIce[2]._studentID
+            p4 = currIce[3]._studentID
+            p5 = currIce[4]._studentID
+        }
+        else{
+            p1 = currIce[0]._studentID
+            p2 = currIce[1]._studentID
+            p3 = currIce[2]._studentID
+            p4 = currIce[3]._studentID
+        }
+        return [p1, p2, p3, p4, p5, p6]
+        
+    }
+
     
     // getting players
     func getAllPlayers() -> Array<Player> {

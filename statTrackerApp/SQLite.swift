@@ -40,13 +40,14 @@ class SQLiteDB {
         
         executeNoReturn(execCommand: "create table if not exists currentRoster(studentID INTEGER PRIMARY KEY, lastName TEXT NOT NULL, number INTEGER NOT NULL, position INTEGER NOT NULL)")
         executeNoReturn(execCommand: "create table if not exists allPlayers(studentID INTEGER PRIMARY KEY, lastName TEXT NOT NULL)")
-        executeNoReturn(execCommand: "create table if not exists chronGameStats( statID INTEGER PRIMARY KEY AUTOINCREMENT, seasonYear INTEGER NOT NULL, game TEXT NOT NULL, time INTEGER NOT NULL, statType TEXT NOT NULL, manpower TEXT NOT NULL, statOwnerSID INTEGER NOT NULL, onIce1SID INTEGER NOT NULL, onIce2SID INTEGER NOT NULL, onIce3SID INTEGER NOT NULL, onIce4SID INTEGER NOT NULL, onIce5SID INTEGER NOT NULL)")
+        executeNoReturn(execCommand: "drop table chronGameStats")
+        executeNoReturn(execCommand: "create table if not exists chronGameStats( statID INTEGER PRIMARY KEY AUTOINCREMENT, seasonYear INTEGER NOT NULL, game TEXT NOT NULL, period INTEGER NOT NULL, time INTEGER NOT NULL, statType TEXT NOT NULL, manpower TEXT NOT NULL, statOwnerSID INTEGER NOT NULL, onIce1SID INTEGER NOT NULL, onIce2SID INTEGER NOT NULL, onIce3SID INTEGER NOT NULL, onIce4SID INTEGER NOT NULL, onIce5SID INTEGER NOT NULL, onIce6SID NOT NULL)")
         //in chrongamestats, SID of 0 means nobody
 
     }
     
-    func addChronStat(seasonYear:Int, game:String, time:Int, statType:String, manpower:String, statOwnerSID:Int, onIce1SID:Int, onIce2SID:Int, onIce3SID:Int, onIce4SID:Int, onIce5SID:Int){
-        executeNoReturn(execCommand: "insert into chronGameStats(seasonYear, game, time, statType, manpower, statOwnerSID, onIce1SID, onIce2SID, onIce3SID, onIce4SID, onIce5SID) VALUES (\(seasonYear), \(game), \(time), \(statType), \(manpower), \(statOwnerSID), \(onIce1SID), \(onIce2SID), \(onIce3SID), \(onIce4SID), \(onIce5SID))")
+    func addChronStat(seasonYear:Int, game:String, period:Int, time:Int, statType:String, manpower:String, statOwnerSID:Int, onIce1SID:Int, onIce2SID:Int, onIce3SID:Int, onIce4SID:Int, onIce5SID:Int, onIce6SID:Int){
+        executeNoReturn(execCommand: "insert into chronGameStats(seasonYear, game, period, time, statType, manpower, statOwnerSID, onIce1SID, onIce2SID, onIce3SID, onIce4SID, onIce5SID, onIce6SID) VALUES (\(seasonYear), \"\(game)\", \(period), \(time), \"\(statType)\", \"\(manpower)\", \(statOwnerSID), \(onIce1SID), \(onIce2SID), \(onIce3SID), \(onIce4SID), \(onIce5SID), \(onIce6SID))")
     }
     
     func getCurrentRoster()->[rosterPlayer]{
