@@ -36,8 +36,8 @@ class GameClock: Clock {
     }
     
     func getGameTime() -> (String, Int) {
-        let gameMin = 1200 - gameTime
-        return (formatTime(time: gameMin), period)
+        let gameMin = formatTime(time: gameTime)
+        return (gameMin, period)
     }
     
     func endPeriod() {
