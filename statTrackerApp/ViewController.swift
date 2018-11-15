@@ -28,6 +28,11 @@ class ViewController: UIViewController {
     // organized by category for quick use and reference with
     // any functionality that is needed down the line
     
+    // Game input from main menu screen
+    
+    
+    
+    
     // Game Clock and Time //////////////////
     @IBOutlet weak var gameClock: UIButton!
     @IBOutlet weak var gameTime: UILabel!
@@ -50,7 +55,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var manPow5v3: UIButton!
     @IBOutlet weak var manPow4v5: UIButton!
     @IBOutlet weak var manPow3v5: UIButton!
-    @IBOutlet weak var manPow3v3: UIButton!
+    @IBOutlet weak var manPow4v4: UIButton!
     /////////////////////////////////////////
     // Manpower buttons array
     var manPowerAlphas = Array<UIButton>()
@@ -164,10 +169,10 @@ class ViewController: UIViewController {
         manPow3v5.alpha = 1
         currConfig = 4
     }
-    @IBAction func click3v3(_ sender: Any) {
-        // manpower button 3v3 is clicked: change current manpower config to 3v3
+    @IBAction func click4v4(_ sender: Any) {
+        // manpower button 4v4 is clicked: change current manpower config to 4v4
         manPowerAlphas[currConfig].alpha = 0.5
-        manPow3v3.alpha = 1
+        manPow4v4.alpha = 1
         currConfig = 5
     }
     
@@ -178,7 +183,7 @@ class ViewController: UIViewController {
         }
         else if _manpower == "5v4" {
             _manpower = "4v4"
-            click3v3((Any).self)
+            click4v4((Any).self)
         }
         else if _manpower == "4v5" {
             _manpower = "3v5"
@@ -1246,14 +1251,14 @@ class ViewController: UIViewController {
         
         // hardcoding starting manpower config
         manPow3v5.alpha = 0.5
-        manPow3v3.alpha = 0.5
+        manPow4v4.alpha = 0.5
         manPow4v5.alpha = 0.5
         manPow5v3.alpha = 0.5
         manPow5v4.alpha = 0.5
         manPow5v5.alpha = 1
        
         // populate array of manpower buttons for handling opacity changes
-        manPowerAlphas += [manPow5v5, manPow5v4, manPow5v3, manPow4v5, manPow3v5, manPow3v3]
+        manPowerAlphas += [manPow5v5, manPow5v4, manPow5v3, manPow4v5, manPow3v5, manPow4v4]
         
         // starting period opacities
         period1Label.alpha = 1
@@ -1365,7 +1370,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             game.currIce[indexPath.row].increaseShotForTaken(manpower: _manpower)
             print("******************")
             print(game.onIce.count)
-            appDelegate.database?.addChronStat(seasonYear: game._season, game: game._opponent, time: 0, statType: "shotFor", manpower: _manpower, statOwnerSID: game.currIce[indexPath.row]._studentID, onIce1SID: <#T##Int#>, onIce2SID: <#T##Int#>, onIce3SID: <#T##Int#>, onIce4SID: <#T##Int#>, onIce5SID: <#T##Int#>)
+//            appDelegate.database?.addChronStat(seasonYear: game._season, game: game._opponent, time: 0, statType: "shotFor", manpower: _manpower, statOwnerSID: game.currIce[indexPath.row]._studentID, onIce1SID: <#T##Int#>, onIce2SID: <#T##Int#>, onIce3SID: <#T##Int#>, onIce4SID: <#T##Int#>, onIce5SID: <#T##Int#>)
         
         }
         
