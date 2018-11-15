@@ -73,19 +73,17 @@ class Player {
     }
     
     // clock methods
-    func startClock() {
-        clock.startClock()
+    func startClock(manpower:[Int]) {
+        clock.startClock(manpower: manpower)
     }
     
-    func stopClock(manpower:[Int]) {
+    func stopClock() {
         clock.stopClock()
-        let time = getIceTime()
-        iceTime[aryToStr(manpower: manpower)] = time
+        let time = clock.getIceTime()
+        let clockManpower = clock.getCurrManpower()
+        iceTime[clockManpower] = time
     }
-    
-    func getIceTime() -> TimeInterval {
-        return clock.getIceTime()
-    }
+
     
     // convert manpower arrays into manpower strings
     func aryToStr(manpower:[Int]) -> String {

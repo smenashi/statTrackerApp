@@ -162,20 +162,20 @@ class Game {
         return onIce.count == 6
     }
     
-    func putOnIce(addPlayer:Player) {
+    func putOnIce(addPlayer:Player, manpower: [Int]) {
         onIce.insert(players.firstIndex(of: addPlayer) ?? -1)
         addPlayer.enablePlayer()
-        addPlayer.startClock()
+        addPlayer.startClock(manpower: manpower)
         
         // update array of players to be displayed in drop-down menu
         updateCurrentIce()
         
     }
     
-    func takeOffIce(removePlayer:Player, manpower:[Int]) {
+    func takeOffIce(removePlayer:Player) {
         onIce.remove(players.firstIndex(of: removePlayer) ?? -1)
         removePlayer.disablePlayer()
-        removePlayer.stopClock(manpower: manpower)
+        removePlayer.stopClock()
       
         // update array of players to be displayed in drop-down menu
         updateCurrentIce()
