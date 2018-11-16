@@ -1320,7 +1320,7 @@ class ViewController: UIViewController {
                 totPIMPlus = Float64(Float64(FiveFivePIMD + FiveFourPIMD + FourFivePIMD + FiveThreePIMD + ThreeFivePIMD + FourFourPIMD + FourThreePIMD + ThreeFourPIMD + ThreeThreePIMD)/Float64(totIceTime))
                 totPIMPlusMinus = Float64(Float64(totPIMPlus) - Float64(totPIMMinus))/Float64(totIceTime)
                 FiveFiveCorsiPlus = Float64(player.shotFor["5v5"]!)/Float64(totIceTime)
-                FiveFiveCorsiMinus = Float64(player.shotAgainst["5v5"]!)/Float64(totIceTime)
+                FiveFiveCorsiMinus = Float64(play er.shotAgainst["5v5"]!)/Float64(totIceTime)
                 FiveFiveCorsiPlusMinus = Float64(Float64(player.shotFor["5v5"]!)-Float64(player.shotAgainst["5v5"]!))/Float64(totIceTime)
                 FiveFiveIndivShotCorsi = Float64(player.shotForTaken["5v5"]!)/Float64(totIceTime)
                 FiveFiveIcingPlusCorsi = Float64(player.icingDrawn["5v5"]!)/Float64(totIceTime)
