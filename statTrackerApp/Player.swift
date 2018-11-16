@@ -126,14 +126,6 @@ class Player {
     
     func increasePenalty2min(manpower:[Int] = [5, 5]) {
         penalty2min[aryToStr(manpower: manpower)]! += 1
-        playerButton!.backgroundColor = .red
-        print("Hi")
-        disablePlayer()
-        delayPenalties(120) {
-            self.enablePlayer()
-            print("bye")
-            self.playerButton!.backgroundColor = .green
-        }
     }
     
     func increasePenaltyDrawn2min(manpower:[Int] = [5, 5]) {
