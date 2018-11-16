@@ -36,6 +36,7 @@ class SQLiteDB {
     func createStatTable(){
         //can add season game time
         //executeNoReturn(execCommand: "create table if not exists playerStatsByGame(rowID INTEGER PRIMARY KEY AUTOINCREMENT, seasonYear INTEGER NOT NULL, game TEXT NOT NULL, playerSID INTEGER NOT NULL, iceTime I)")
+        //executeNoReturn(execCommand: "drop table currentRoster")
         executeNoReturn(execCommand: "create table if not exists currentRoster(rosterID INTEGER PRIMARY KEY AUTOINCREMENT, firstName TEXT NOT NULL, lastName TEXT NOT NULL, number INTEGER NOT NULL, position INTEGER NOT NULL)")
         
         executeNoReturn(execCommand: "drop table gameStats")

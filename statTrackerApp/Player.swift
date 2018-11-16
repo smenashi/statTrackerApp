@@ -87,6 +87,10 @@ class Player {
         iceTime[clockManpower] = time
     }
 
+    func delayPenalties(_ time:Double, closure:@escaping ()->()) {
+        let when = DispatchTime.now() + time
+        DispatchQueue.main.asyncAfter(deadline: when, execute: closure)
+    }
     
     // convert manpower arrays into manpower strings
     func aryToStr(manpower:[Int]) -> String {
@@ -122,6 +126,14 @@ class Player {
     
     func increasePenalty2min(manpower:[Int] = [5, 5]) {
         penalty2min[aryToStr(manpower: manpower)]! += 1
+        playerButton!.backgroundColor = .red
+        print("Hi")
+        disablePlayer()
+        delayPenalties(120) {
+            self.enablePlayer()
+            print("bye")
+            self.playerButton!.backgroundColor = .green
+        }
     }
     
     func increasePenaltyDrawn2min(manpower:[Int] = [5, 5]) {

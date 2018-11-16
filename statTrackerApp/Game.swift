@@ -193,6 +193,11 @@ class Game {
         return players[number]
     }
     
+    func delayPenalties(_ time:Double, closure:@escaping ()->()) {
+        let when = DispatchTime.now() + time
+        DispatchQueue.main.asyncAfter(deadline: when, execute: closure)
+    }
+    
     // stat buttons
     func shotFor(manpower:[Int] = [5, 5]) {
         for player in onIce {
@@ -220,8 +225,15 @@ class Game {
         }
     }
     
-    func penalty2min(penaltyBy:Int, manpower:[Int] = [5, 5]) {
-        players[penaltyBy].increasePenalty2min(manpower: manpower)
+    func penalty2min(penaltyBy:Int, manpower:[Int] = [5, 5], button: UIButton) {
+        let player = players[penaltyBy]
+        player.increasePenalty2min(manpower: manpower)
+        button.backgroundColor = .red
+        player.disablePlayer()
+        delayPenalties(120) {
+            player.enablePlayer()
+            button.backgroundColor = .green
+        }
     }
     
     func penaltyDrawn2min(drawnBy:Int, manpower:[Int] = [5, 5]) {
@@ -229,7 +241,14 @@ class Game {
     }
     
     func penalty4min(penaltyBy:Int, manpower:[Int] = [5, 5]) {
-        players[penaltyBy].increasePenalty4min(manpower: manpower)
+        let player = players[penaltyBy]
+        player.increasePenalty4min(manpower: manpower)
+        player.playerButton!.backgroundColor = .red
+        player.disablePlayer()
+        delayPenalties(240) {
+            player.enablePlayer()
+            player.playerButton?.backgroundColor = .green
+        }
     }
     
     func penaltyDrawn4min(drawnBy:Int, manpower:[Int] = [5, 5]) {
@@ -237,7 +256,14 @@ class Game {
     }
     
     func penalty5min(penaltyBy:Int, manpower:[Int] = [5, 5]) {
-        players[penaltyBy].increasePenalty5min(manpower: manpower)
+        let player = players[penaltyBy]
+        player.increasePenalty5min(manpower: manpower)
+        player.playerButton?.backgroundColor = .red
+        player.disablePlayer()
+        delayPenalties(300) {
+            player.enablePlayer()
+            player.playerButton?.backgroundColor = .green
+        }
     }
     
     func penaltyDrawn5min(drawnBy:Int, manpower:[Int] = [5, 5]) {

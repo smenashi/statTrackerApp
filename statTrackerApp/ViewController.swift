@@ -737,32 +737,33 @@ class ViewController: UIViewController {
         // 2:00 For clicked: update relevant stats to players on ice
         //  has drop-down for selecting player
         
-        
-        playersDropDown.reloadData() // reload drop-down data
-        dropDownClicked = "2Us" // mark which dropDown was clicked
-        // get new X & Y positions for the drop-down menu
-        let newX = penalty2ForButton.frame.minX
-        let newY = penalty2ForButton.frame.maxY
-        
-        
-        // animation plays that "drops down" the table view --
-        if playersDropDown.isHidden{
-            playersDropDown.frame.origin.x = newX
-            playersDropDown.frame.origin.y = newY
-            animate(toggle: true, type: goalForButton)
-        }
-        else{
-            animate(toggle: false, type: goalForButton)
-        }
-        
-        let thisBox = getNextUsBox()
-        let penalty = PenaltyClock(penaltyTime: 120, timeUI: thisBox[0])
-        currBoxes.append(penalty)
-        manpowerUsPressedSwitch()
-        penalty.runPenaltyClock()
-        delayManpowerSwitch(120) {
-            self.manpowerUsReleasedSwitch()
-            thisBox[1].text = "Jersey #"
+        if _manpower[0] > 3 {
+            playersDropDown.reloadData() // reload drop-down data
+            dropDownClicked = "2Us" // mark which dropDown was clicked
+            // get new X & Y positions for the drop-down menu
+            let newX = penalty2ForButton.frame.minX
+            let newY = penalty2ForButton.frame.maxY
+            
+            
+            // animation plays that "drops down" the table view --
+            if playersDropDown.isHidden{
+                playersDropDown.frame.origin.x = newX
+                playersDropDown.frame.origin.y = newY
+                animate(toggle: true, type: goalForButton)
+            }
+            else{
+                animate(toggle: false, type: goalForButton)
+            }
+
+            let thisBox = getNextUsBox()
+            let penalty = PenaltyClock(penaltyTime: 120, timeUI: thisBox[0])
+            currBoxes.append(penalty)
+            manpowerUsPressedSwitch()
+            penalty.runPenaltyClock()
+            delayManpowerSwitch(120) {
+                self.manpowerUsReleasedSwitch()
+                thisBox[1].text = "Jersey #"
+            }
         }
     }
     
@@ -771,34 +772,34 @@ class ViewController: UIViewController {
         // 4:00 For clicked: update relevant stats to players on ice
         //  has drop-down for selecting player
         
+        if _manpower[0] > 3 {
+            playersDropDown.reloadData() // reload drop-down data
+            dropDownClicked = "4Us" // mark which dropDown was clicked
+            // get new X & Y positions for the drop-down menu
+            let newX = penalty4ForButton.frame.minX
+            let newY = penalty4ForButton.frame.maxY
+            
+            
+            // animation plays that "drops down" the table view --
+            if playersDropDown.isHidden{
+                playersDropDown.frame.origin.x = newX
+                playersDropDown.frame.origin.y = newY
+                animate(toggle: true, type: goalForButton)
+            }
+            else{
+                animate(toggle: false, type: goalForButton)
+            }
         
-        playersDropDown.reloadData() // reload drop-down data
-        dropDownClicked = "4Us" // mark which dropDown was clicked
-        // get new X & Y positions for the drop-down menu
-        let newX = penalty4ForButton.frame.minX
-        let newY = penalty4ForButton.frame.maxY
-        
-        
-        // animation plays that "drops down" the table view --
-        if playersDropDown.isHidden{
-            playersDropDown.frame.origin.x = newX
-            playersDropDown.frame.origin.y = newY
-            animate(toggle: true, type: goalForButton)
+            let thisBox = getNextUsBox()
+            let penalty = PenaltyClock(penaltyTime: 240, timeUI: thisBox[0])
+            currBoxes.append(penalty)
+            manpowerUsPressedSwitch()
+            penalty.runPenaltyClock()
+            delayManpowerSwitch(240) {
+                self.manpowerUsReleasedSwitch()
+                thisBox[1].text = "Jersey #"
+            }
         }
-        else{
-            animate(toggle: false, type: goalForButton)
-        }
-        
-        let thisBox = getNextUsBox()
-        let penalty = PenaltyClock(penaltyTime: 240, timeUI: thisBox[0])
-        currBoxes.append(penalty)
-        manpowerUsPressedSwitch()
-        penalty.runPenaltyClock()
-        delayManpowerSwitch(240) {
-            self.manpowerUsReleasedSwitch()
-            thisBox[1].text = "Jersey #"
-        }
-        
     }
     
     @IBOutlet weak var penalty5ForButton: UIButton!
@@ -806,32 +807,33 @@ class ViewController: UIViewController {
         // 5:00 For clicked: update relevant stats to players on ice
         //  has drop-down for selecting player
         
+        if _manpower[0] > 3 {
+            playersDropDown.reloadData() // reload drop-down data
+            dropDownClicked = "5Us" // mark which dropDown was clicked
+            // get new X & Y positions for the drop-down menu
+            let newX = penalty5ForButton.frame.minX
+            let newY = penalty5ForButton.frame.maxY
+            
+            
+            // animation plays that "drops down" the table view --
+            if playersDropDown.isHidden{
+                playersDropDown.frame.origin.x = newX
+                playersDropDown.frame.origin.y = newY
+                animate(toggle: true, type: goalForButton)
+            }
+            else{
+                animate(toggle: false, type: goalForButton)
+            }
         
-        playersDropDown.reloadData() // reload drop-down data
-        dropDownClicked = "5Us" // mark which dropDown was clicked
-        // get new X & Y positions for the drop-down menu
-        let newX = penalty5ForButton.frame.minX
-        let newY = penalty5ForButton.frame.maxY
-        
-        
-        // animation plays that "drops down" the table view --
-        if playersDropDown.isHidden{
-            playersDropDown.frame.origin.x = newX
-            playersDropDown.frame.origin.y = newY
-            animate(toggle: true, type: goalForButton)
-        }
-        else{
-            animate(toggle: false, type: goalForButton)
-        }
-        
-        let thisBox = getNextUsBox()
-        let penalty = PenaltyClock(penaltyTime: 300, timeUI: thisBox[0])
-        currBoxes.append(penalty)
-        manpowerUsPressedSwitch()
-        penalty.runPenaltyClock()
-        delayManpowerSwitch(300) {
-            self.manpowerUsReleasedSwitch()
-            thisBox[1].text = "Jersey #"
+            let thisBox = getNextUsBox()
+            let penalty = PenaltyClock(penaltyTime: 300, timeUI: thisBox[0])
+            currBoxes.append(penalty)
+            manpowerUsPressedSwitch()
+            penalty.runPenaltyClock()
+            delayManpowerSwitch(300) {
+                self.manpowerUsReleasedSwitch()
+                thisBox[1].text = "Jersey #"
+            }
         }
     }
 
@@ -840,92 +842,100 @@ class ViewController: UIViewController {
     @IBOutlet weak var penalty2Against: UIButton!
     @IBAction func penalty2AgainstClicked(_ sender: Any) {
         
-        playersDropDown.reloadData() // reload drop-down data
-        dropDownClicked = "2Them" // mark which dropDown was clicked
-        // get new X & Y positions for the drop-down menu
-        let newX = penalty2Against.frame.minX
-        let newY = penalty2Against.frame.maxY
+        if _manpower[1] > 3 {
+            playersDropDown.reloadData() // reload drop-down data
+            dropDownClicked = "2Them" // mark which dropDown was clicked
+            // get new X & Y positions for the drop-down menu
+            let newX = penalty2Against.frame.minX
+            let newY = penalty2Against.frame.maxY
+            
+            
+            // animation plays that "drops down" the table view --
+            if playersDropDown.isHidden{
+                playersDropDown.frame.origin.x = newX
+                playersDropDown.frame.origin.y = newY
+                animate(toggle: true, type: goalForButton)
+            }
+            else{
+                animate(toggle: false, type: goalForButton)
+            }
         
-        
-        // animation plays that "drops down" the table view --
-        if playersDropDown.isHidden{
-            playersDropDown.frame.origin.x = newX
-            playersDropDown.frame.origin.y = newY
-            animate(toggle: true, type: goalForButton)
-        }
-        else{
-            animate(toggle: false, type: goalForButton)
-        }
-        
-        let thisBox = getNextThemBox()
-        let penalty = PenaltyClock(penaltyTime: 120, timeUI: thisBox[0])
-        currBoxes.append(penalty)
-        manpowerThemPressedSwitch()
-        penalty.runPenaltyClock()
-        delayManpowerSwitch(120) {
-            self.manpowerThemReleasedSwitch()
-            thisBox[1].text = "Jersey #"
+            let thisBox = getNextThemBox()
+            let penalty = PenaltyClock(penaltyTime: 120, timeUI: thisBox[0])
+            currBoxes.append(penalty)
+            manpowerThemPressedSwitch()
+            penalty.runPenaltyClock()
+            delayManpowerSwitch(120) {
+                self.manpowerThemReleasedSwitch()
+                thisBox[1].text = "Jersey #"
+            }
         }
     }
    
     @IBOutlet weak var penalty4Against: UIButton!
     @IBAction func penalty4AgainstClicked(_ sender: Any) {
-        playersDropDown.reloadData() // reload drop-down data
-        dropDownClicked = "4Them" // mark which dropDown was clicked
-        // get new X & Y positions for the drop-down menu
-        let newX = penalty4Against.frame.minX
-        let newY = penalty4Against.frame.maxY
         
+        if _manpower[1] > 3 {
+            playersDropDown.reloadData() // reload drop-down data
+            dropDownClicked = "4Them" // mark which dropDown was clicked
+            // get new X & Y positions for the drop-down menu
+            let newX = penalty4Against.frame.minX
+            let newY = penalty4Against.frame.maxY
+            
+            
+            // animation plays that "drops down" the table view --
+            if playersDropDown.isHidden{
+                playersDropDown.frame.origin.x = newX
+                playersDropDown.frame.origin.y = newY
+                animate(toggle: true, type: goalForButton)
+            }
+            else{
+                animate(toggle: false, type: goalForButton)
+            }
         
-        // animation plays that "drops down" the table view --
-        if playersDropDown.isHidden{
-            playersDropDown.frame.origin.x = newX
-            playersDropDown.frame.origin.y = newY
-            animate(toggle: true, type: goalForButton)
-        }
-        else{
-            animate(toggle: false, type: goalForButton)
-        }
-        
-        let thisBox = getNextThemBox()
-        let penalty = PenaltyClock(penaltyTime: 240, timeUI: thisBox[0])
-        currBoxes.append(penalty)
-        manpowerThemPressedSwitch()
-        penalty.runPenaltyClock()
-        delayManpowerSwitch(240) {
-            self.manpowerThemReleasedSwitch()
-            thisBox[1].text = "Jersey #"
+            let thisBox = getNextThemBox()
+            let penalty = PenaltyClock(penaltyTime: 240, timeUI: thisBox[0])
+            currBoxes.append(penalty)
+            manpowerThemPressedSwitch()
+            penalty.runPenaltyClock()
+            delayManpowerSwitch(240) {
+                self.manpowerThemReleasedSwitch()
+                thisBox[1].text = "Jersey #"
+            }
         }
     }
     
     
     @IBOutlet weak var penalty5Against: UIButton!
     @IBAction func penalty5AgainstClicked(_ sender: Any) {
-        playersDropDown.reloadData() // reload drop-down data
-        dropDownClicked = "5Them" // mark which dropDown was clicked
-        // get new X & Y positions for the drop-down menu
-        let newX = penalty5Against.frame.minX
-        let newY = penalty5Against.frame.maxY
+       
+        if _manpower[1] > 3 {
+            playersDropDown.reloadData() // reload drop-down data
+            dropDownClicked = "5Them" // mark which dropDown was clicked
+            // get new X & Y positions for the drop-down menu
+            let newX = penalty5Against.frame.minX
+            let newY = penalty5Against.frame.maxY
+            
+            
+            // animation plays that "drops down" the table view --
+            if playersDropDown.isHidden{
+                playersDropDown.frame.origin.x = newX
+                playersDropDown.frame.origin.y = newY
+                animate(toggle: true, type: goalForButton)
+            }
+            else{
+                animate(toggle: false, type: goalForButton)
+            }
         
-        
-        // animation plays that "drops down" the table view --
-        if playersDropDown.isHidden{
-            playersDropDown.frame.origin.x = newX
-            playersDropDown.frame.origin.y = newY
-            animate(toggle: true, type: goalForButton)
-        }
-        else{
-            animate(toggle: false, type: goalForButton)
-        }
-        
-        let thisBox = getNextThemBox()
-        let penalty = PenaltyClock(penaltyTime: 300, timeUI: thisBox[0])
-        currBoxes.append(penalty)
-        manpowerThemPressedSwitch()
-        penalty.runPenaltyClock()
-        delayManpowerSwitch(300) {
-            self.manpowerThemReleasedSwitch()
-            thisBox[1].text = "Jersey #"
+            let thisBox = getNextThemBox()
+            let penalty = PenaltyClock(penaltyTime: 300, timeUI: thisBox[0])
+            currBoxes.append(penalty)
+            manpowerThemPressedSwitch()
+            penalty.runPenaltyClock()
+            delayManpowerSwitch(300) {
+                self.manpowerThemReleasedSwitch()
+                thisBox[1].text = "Jersey #"
+            }
         }
     }
     
@@ -1578,7 +1588,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             let thisBox = getCurrUsBoxJersey()
             //print("penalty 2Usclicked!")
             playerClicked.inBox = true
-            playerClicked.increasePenalty2min(manpower:_manpower)
+            playerClicked.increasePenalty2min(manpower: _manpower)
             thisBox.text = String(playerClicked._jerseyNumber)
             hamBox.append(playerClicked)
             game.takeOffIce(removePlayer: playerClicked)

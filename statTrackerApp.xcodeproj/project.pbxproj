@@ -95,8 +95,8 @@
 				8198238C21484C8200E02A9C /* Info.plist */,
 				81154425215969C800ACFF97 /* Player.swift */,
 				81154427215969D800ACFF97 /* Game.swift */,
-				8115442921596B3600ACFF97 /* HockeyViewController.swift */,
 				6F99F99B2166B23100E94C84 /* SQLite.swift */,
+				8115442921596B3600ACFF97 /* HockeyViewController.swift */,
 				6F99F99D2166B26B00E94C84 /* EmailHandler.swift */,
 				6F99F99F2166B2D100E94C84 /* UserDefaults.swift */,
 			);
