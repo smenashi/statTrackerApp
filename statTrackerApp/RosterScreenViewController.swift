@@ -9,13 +9,13 @@
 import UIKit
 
 class rosterPlayer {
-    var studentID: Int
+    var firstName: String
     var lastName: String
     var number: Int
     var position: Int //numbers here correspond to boxes - i.e. 1 is top left, 2 top middle, etc (0=inactive)
     
-    init(studentID: Int, lastName: String, number: Int, position: Int) {
-        self.studentID = studentID
+    init(firstName: String, lastName: String, number: Int, position: Int) {
+        self.firstName = firstName
         self.lastName = lastName
         self.number = number
         self.position = position
@@ -312,7 +312,7 @@ class RosterScreenViewController: UIViewController {
         }
         else if(currentSelectedPlayer?.position == 0){
             p19 = currentSelectedPlayer
-            p19?.position = 1
+            p19?.position = 19
             G1Button.setTitle(p19?.lastName, for: .normal)
         }
     }
@@ -324,7 +324,7 @@ class RosterScreenViewController: UIViewController {
         }
         else if(currentSelectedPlayer?.position == 0){
             p20 = currentSelectedPlayer
-            p20?.position = 1
+            p20?.position = 20
             G2Button.setTitle(p20?.lastName, for: .normal)
         }
     }
@@ -372,7 +372,7 @@ class RosterScreenViewController: UIViewController {
     var p22: rosterPlayer?
     
     // these will be used when adding players
-    var studentID = ""
+    var firstName = ""
     var lastName = ""
     var number = ""
     var cellBuffer = "" // buffers above attributes to place in the table row
@@ -385,10 +385,9 @@ class RosterScreenViewController: UIViewController {
         inputJerseyNum.text = ""
     }
     
-    func insertStudentID(){
-        // saves info from input in studentID var
-        //studentID.append(inputField.text!)
-        studentID.append(inputStudID.text!)
+    func insertFirstName(){
+        // saves info from input in firstname var
+        firstName.append(inputStudID.text!)
         //flushInput()
     }
     
@@ -422,8 +421,8 @@ class RosterScreenViewController: UIViewController {
 
     // these are depricated xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
     @IBAction func next_nameClicked(_ sender: Any) {
-        // input from studentId is processed
-        insertStudentID()
+        // input from firstname is processed
+        insertFirstName()
         enterStudID.isHidden = true
         enterLastName.isHidden = false
         next_name.isHidden = true
@@ -446,12 +445,9 @@ class RosterScreenViewController: UIViewController {
        // relevant UI elements are cleared from screen
         
         // inputs are handled
-        insertStudentID()
+        insertFirstName()
         insertPlayerName()
         insertPlayerNumber()
-        print("TESTAKLES")
-        print(lastName)
-        print(number)
         
         enterJerseyNum.isHidden = true
         inputField.isHidden = true
@@ -463,11 +459,10 @@ class RosterScreenViewController: UIViewController {
         inputLastName.isHidden = true
         inputJerseyNum.isHidden = true
         // append variables to cellBuffer
-        //cellBuffer += "\(studentID) "
         //cellBuffer += "\(lastName) "
         //cellBuffer += "\(number) "
         
-        playerArray.append(rosterPlayer(studentID: Int(studentID) ?? 0, lastName: lastName, number: Int(number) ?? 0, position: 0))
+        playerArray.append(rosterPlayer(firstName: firstName, lastName: lastName, number: Int(number) ?? 0, position: 0))
         
         // append to array that will populate the tableView
         //playerArray.append(cellBuffer)
@@ -482,16 +477,13 @@ class RosterScreenViewController: UIViewController {
         // clear buffer
         cellBuffer = ""
         // clear variables
-        studentID = ""
+        firstName = ""
         lastName = ""
         number = ""
         
         // end editting
         view.endEditing(true)
-        print(playerArray)
-        for player in playerArray{
-            print(player.lastName+" "+String(player.position))
-        }
+    
     }
     @IBAction func SaveExitClicked(_ sender: Any) {
         var sql:String
@@ -500,7 +492,7 @@ class RosterScreenViewController: UIViewController {
         appDelegate.database?.executeNoReturn(execCommand: sql)
         for player in playerArray {
             //replace when DB already works (for now temp fix)
-            sql = "insert into currentRoster(studentID, lastName, number, position) values( \(player.studentID), \"\(player.lastName)\", \(player.number), \(player.position))"
+            sql = "insert into currentRoster(firstName, lastName, number, position) values( \"\(player.firstName)\", \"\(player.lastName)\", \(player.number), \(player.position))"
             //print(sql)
             appDelegate.database?.executeNoReturn(execCommand: sql)
             
@@ -656,7 +648,7 @@ extension RosterScreenViewController: UITableViewDelegate, UITableViewDataSource
             // populates dropdown menu cells with labels
             let cell = tableView.dequeueReusableCell(withIdentifier: "player_roster", for: indexPath)
             // CHAD: as in ViewController.swift place here on the RHS, instead of "Player" what exactly you want
-            cell.textLabel?.text = playerArray[indexPath.row].lastName
+            cell.textLabel?.text = String(String(playerArray[indexPath.row].firstName.first!) + ". " +  playerArray[indexPath.row].lastName)
             return cell
     }
     

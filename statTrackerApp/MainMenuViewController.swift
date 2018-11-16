@@ -25,6 +25,8 @@ class MainMenuViewController: UIViewController {
         
         
         
+        
+        
 //        let inputText = inputCollege.text
 //        if let destinationViewController = segue.destination as? ViewController{
 //                ViewController.inputCollegeText = inputText
@@ -35,6 +37,7 @@ class MainMenuViewController: UIViewController {
 //        }
         
     }
+    
     
     
     override func viewDidLoad() {

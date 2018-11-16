@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fOh-0j-0RM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fOh-0j-0RM">
     <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -233,6 +233,7 @@
                                 <state key="normal" title="End Game"/>
                                 <connections>
                                     <action selector="onClickEndGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A6s-fD-REm"/>
+                                    <segue destination="nL9-SZ-gaJ" kind="show" id="jSv-ly-zAL"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EJN-8s-vE9">
@@ -1106,6 +1107,31 @@
             </objects>
             <point key="canvasLocation" x="901.5625" y="-113.08593749999999"/>
         </scene>
+        <!--Email View Controller-->
+        <scene sceneID="jWC-7F-s6a">
+            <objects>
+                <viewController storyboardIdentifier="EmailHandler" id="nL9-SZ-gaJ" customClass="EmailViewController" customModule="statTrackerApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sa9-rS-3ks">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CUQ-fJ-Cid">
+                                <rect key="frame" x="308" y="497" width="153" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Return to Main Screen"/>
+                                <connections>
+                                    <segue destination="fOh-0j-0RM" kind="show" id="Qa4-BX-brP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="L6u-B2-OZe"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PZA-lU-wLV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1033.59375" y="573.6328125"/>
+        </scene>
         <!--Roster Screen View Controller-->
         <scene sceneID="aIa-G1-vov">
             <objects>
@@ -1582,7 +1608,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B7E-1H-CNf">
-                                <rect key="frame" x="351" y="603" width="66" height="42"/>
+                                <rect key="frame" x="309" y="603" width="150" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Game"/>
                                 <connections>
@@ -1593,14 +1619,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="qaQ-69-qvZ" firstAttribute="leading" secondItem="zj1-DE-DL0" secondAttribute="leading" constant="346" id="E2H-4q-IBi"/>
-                            <constraint firstItem="zj1-DE-DL0" firstAttribute="trailing" secondItem="B7E-1H-CNf" secondAttribute="trailing" constant="351" id="Gt7-Fy-1Ma"/>
                             <constraint firstItem="mO9-Z3-CTZ" firstAttribute="centerY" secondItem="rU5-aE-3rE" secondAttribute="centerY" id="LOP-rd-bqW"/>
                             <constraint firstItem="zj1-DE-DL0" firstAttribute="trailing" secondItem="qaQ-69-qvZ" secondAttribute="trailing" constant="346" id="LYY-ld-DJU"/>
                             <constraint firstItem="mO9-Z3-CTZ" firstAttribute="top" secondItem="qaQ-69-qvZ" secondAttribute="bottom" constant="76" id="OFs-b3-SoA"/>
                             <constraint firstItem="B7E-1H-CNf" firstAttribute="top" secondItem="mO9-Z3-CTZ" secondAttribute="bottom" constant="76" id="ZUk-Z4-Zkd"/>
                             <constraint firstItem="mO9-Z3-CTZ" firstAttribute="centerX" secondItem="rU5-aE-3rE" secondAttribute="centerX" id="e6O-Lz-oMe"/>
+                            <constraint firstItem="zj1-DE-DL0" firstAttribute="trailing" secondItem="B7E-1H-CNf" secondAttribute="trailing" constant="309" id="ezd-Ot-wGf"/>
+                            <constraint firstItem="B7E-1H-CNf" firstAttribute="leading" secondItem="zj1-DE-DL0" secondAttribute="leading" constant="309" id="n3r-81-3nd"/>
                             <constraint firstItem="qaQ-69-qvZ" firstAttribute="top" secondItem="zj1-DE-DL0" secondAttribute="top" constant="359" id="w9d-Vy-2xd"/>
-                            <constraint firstItem="B7E-1H-CNf" firstAttribute="leading" secondItem="zj1-DE-DL0" secondAttribute="leading" constant="351" id="yB3-4V-PIv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zj1-DE-DL0"/>
                     </view>
@@ -1617,6 +1643,6 @@
         <image name="hirnlichtspieles-black-flag-vectorized-" width="2400" height="2306"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Txw-mc-6vl"/>
+        <segue reference="Qa4-BX-brP"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     var playerButtonColor = UIColor(red: 0.83921569, green: 0.72941176, blue: 0.54509804, alpha: 1.0)
     
     // hard-coding game
-    var game = Game(player1: Player(studentID: 0, lastName: "9", jerseyNum: 9), player2: Player(studentID: 0, lastName: "15", jerseyNum: 15), player3: Player(studentID: 0, lastName: "18", jerseyNum: 18), player4: Player(studentID: 0, lastName: "16", jerseyNum: 16), player5: Player(studentID: 0, lastName: "10", jerseyNum: 10), player6: Player(studentID: 0, lastName: "26", jerseyNum: 26), player7: Player(studentID: 0, lastName: "22", jerseyNum: 22), player8: Player(studentID: 0, lastName: "20", jerseyNum: 20), player9: Player(studentID: 0, lastName: "12", jerseyNum: 12), player10: Player(studentID: 0, lastName: "27", jerseyNum: 27), player11: Player(studentID: 0, lastName: "23", jerseyNum: 23), player12: Player(studentID: 0, lastName: "19", jerseyNum: 19), player13: Player(studentID: 0, lastName: "5", jerseyNum: 5), player14: Player(studentID: 0, lastName: "4", jerseyNum: 4), player15: Player(studentID: 0, lastName: "44", jerseyNum: 44), player16: Player(studentID: 0, lastName: "14", jerseyNum: 14), player17: Player(studentID: 0, lastName: "7", jerseyNum: 7), player18: Player(studentID: 0, lastName: "2", jerseyNum: 2), player19: Player(studentID: 0, lastName: "29", jerseyNum: 29), player20: Player(studentID: 0, lastName: "34", jerseyNum: 34), player21: Player(studentID: 0, lastName: "1", jerseyNum: 1), player22: Player(studentID: 0, lastName: "6", jerseyNum: 6))
+    var game = Game(player1: Player(firstName: "none", lastName: "9", jerseyNum: 9), player2: Player(firstName: "none", lastName: "15", jerseyNum: 15), player3: Player(firstName: "none", lastName: "18", jerseyNum: 18), player4: Player(firstName: "none", lastName: "16", jerseyNum: 16), player5: Player(firstName: "none", lastName: "10", jerseyNum: 10), player6: Player(firstName: "none", lastName: "26", jerseyNum: 26), player7: Player(firstName: "none", lastName: "22", jerseyNum: 22), player8: Player(firstName: "none", lastName: "20", jerseyNum: 20), player9: Player(firstName: "none", lastName: "12", jerseyNum: 12), player10: Player(firstName: "none", lastName: "27", jerseyNum: 27), player11: Player(firstName: "none", lastName: "23", jerseyNum: 23), player12: Player(firstName: "none", lastName: "19", jerseyNum: 19), player13: Player(firstName: "none", lastName: "5", jerseyNum: 5), player14: Player(firstName: "none", lastName: "4", jerseyNum: 4), player15: Player(firstName: "none", lastName: "44", jerseyNum: 44), player16: Player(firstName: "none", lastName: "14", jerseyNum: 14), player17: Player(firstName: "none", lastName: "7", jerseyNum: 7), player18: Player(firstName: "none", lastName: "2", jerseyNum: 2), player19: Player(firstName: "none", lastName: "29", jerseyNum: 29), player20: Player(firstName: "none", lastName: "34", jerseyNum: 34), player21: Player(firstName: "none", lastName: "1", jerseyNum: 1), player22: Player(firstName: "none", lastName: "6", jerseyNum: 6))
 
     var _manpower: [Int] = [5, 5]
     
@@ -125,10 +125,10 @@ class ViewController: UIViewController {
     /////////////////////////////////////////
     func init_roster(){
         let playerArray = appDelegate.database?.getCurrentRoster() ?? []
-        var tempRoster = Array(repeating: Player(studentID: 0, lastName: "Empty", jerseyNum: 0), count: 22)
+        var tempRoster = Array(repeating: Player(firstName: "Empty", lastName: "Empty", jerseyNum: 0), count: 22)
         for player in playerArray{
             if player.position != 0{
-                tempRoster[player.position - 1] = Player(studentID: player.studentID, lastName: player.lastName, jerseyNum: player.number)
+                tempRoster[player.position - 1] = Player(firstName: player.firstName, lastName: player.lastName, jerseyNum: player.number)
             }
         }
         tempRoster[0].playerButton = Player1
@@ -644,8 +644,8 @@ class ViewController: UIViewController {
         //                       and any other stats
         
         game.shotAgainst(manpower: _manpower)
-        let onIceSID = game.getOnIceSIDAsArray()
-        appDelegate.database?.addChronStat(seasonYear: game._season, game: game._opponent, period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "shotAgainst", manpower: manpowerStr(), statOwnerSID: 0, onIce1SID: onIceSID[0], onIce2SID: onIceSID[1], onIce3SID: onIceSID[2], onIce4SID: onIceSID[3], onIce5SID: onIceSID[4], onIce6SID: onIceSID[5])
+        let onIceNumbers = game.getOnIceNumbersAsArray()
+        appDelegate.database?.addChronStat(seasonYear: game._season, game: inputCollegeText ?? "Opponent", period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "shotAgainst", manpower: manpowerStr(), statOwnerNum: 0, onIce1Num: onIceNumbers[0], onIce2Num: onIceNumbers[1], onIce3Num: onIceNumbers[2], onIce4Num: onIceNumbers[3], onIce5Num: onIceNumbers[4], onIce6Num: onIceNumbers[5])
         
     }
     
@@ -684,8 +684,8 @@ class ViewController: UIViewController {
         game.goalAgainst()
         clearPenaltyBoxes()
         
-        let onIceSID = game.getOnIceSIDAsArray()
-        appDelegate.database?.addChronStat(seasonYear: game._season, game: game._opponent, period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "goalAgainst", manpower: manpowerStr(), statOwnerSID: 0, onIce1SID: onIceSID[0], onIce2SID: onIceSID[1], onIce3SID: onIceSID[2], onIce4SID: onIceSID[3], onIce5SID: onIceSID[4], onIce6SID: onIceSID[5])
+        let onIceNumbers = game.getOnIceNumbersAsArray()
+        appDelegate.database?.addChronStat(seasonYear: game._season, game: inputCollegeText ?? "Opponent", period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "goalAgainst", manpower: manpowerStr(), statOwnerNum: 0, onIce1Num: onIceNumbers[0], onIce2Num: onIceNumbers[1], onIce3Num: onIceNumbers[2], onIce4Num: onIceNumbers[3], onIce5Num: onIceNumbers[4], onIce6Num: onIceNumbers[5])
     }
     
     @IBAction func onClickIcingFor(_ sender: Any) {
@@ -721,8 +721,8 @@ class ViewController: UIViewController {
         // Icing Against button clicked: update relevant stats to players on ice
         game.icingDrawn(manpower: _manpower)
         
-        let onIceSID = game.getOnIceSIDAsArray()
-        appDelegate.database?.addChronStat(seasonYear: game._season, game: game._opponent, period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "icingDrawn", manpower: manpowerStr(), statOwnerSID: 0, onIce1SID: onIceSID[0], onIce2SID: onIceSID[1], onIce3SID: onIceSID[2], onIce4SID: onIceSID[3], onIce5SID: onIceSID[4], onIce6SID: onIceSID[5])
+        let onIceNumbers = game.getOnIceNumbersAsArray()
+        appDelegate.database?.addChronStat(seasonYear: game._season, game: inputCollegeText ?? "Opponent", period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "IcingDrawn", manpower: manpowerStr(), statOwnerNum: 0, onIce1Num: onIceNumbers[0], onIce2Num: onIceNumbers[1], onIce3Num: onIceNumbers[2], onIce4Num: onIceNumbers[3], onIce5Num: onIceNumbers[4], onIce6Num: onIceNumbers[5])
     }
     
     
@@ -1230,26 +1230,143 @@ class ViewController: UIViewController {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         for player in game.getAllPlayers() {
             //replace when DB already works (for now temp fix)
-            sql = "replace into playerStats(name, number, iceTime, shotsFor, shotsForTaken, shotsAgainst, goalsFor, goalsForTaken, goalsAgainst) values( \"\(player._studentID)\", \(player._jerseyNumber), \(player.iceTime), \(player.shotFor), \(player.shotForTaken), \(player.shotAgainst), \(player.goalFor), \(player.goalForTaken), \(player.goalAgainst))"
+            let FiveFiveIceTime = Int(player.iceTime["5v5"] ?? 0)
+            let FiveFourIceTime = Int(player.iceTime["5v4"] ?? 0)
+            let FourFiveIceTime = Int(player.iceTime["4v5"] ?? 0)
+            let FiveThreeIceTime = Int(player.iceTime["5v3"] ?? 0)
+            let ThreeFiveIceTime = Int(player.iceTime["3v5"] ?? 0)
+            let FourFourIceTime = Int(player.iceTime["4v4"] ?? 0)
+            let FourThreeIceTime = Int(player.iceTime["4v3"] ?? 0)
+            let ThreeFourIceTime = Int(player.iceTime["3v4"] ?? 0)
+            let ThreeThreeIceTime = Int(player.iceTime["3v3"] ?? 0)
+            let totIceTime = FiveFiveIceTime + FiveFourIceTime + FourFiveIceTime + FiveThreeIceTime + ThreeFiveIceTime + FourFourIceTime + FourThreeIceTime + ThreeFourIceTime + ThreeThreeIceTime
+            let FiveFiveShots = (player.shotForTaken["5v5"] ?? 0)
+            let FiveFourShots = (player.shotForTaken["5v4"] ?? 0)
+            let FourFiveShots = (player.shotForTaken["4v5"] ?? 0)
+            let FiveThreeShots = (player.shotForTaken["5v3"] ?? 0)
+            let ThreeFiveShots = (player.shotForTaken["3v5"] ?? 0)
+            let FourFourShots = (player.shotForTaken["4v4"] ?? 0)
+            let ThreeFourShots = (player.shotForTaken["3v4"] ?? 0)
+            let FourThreeShots = (player.shotForTaken["4v3"] ?? 0)
+            let ThreeThreeShots = (player.shotForTaken["3v3"] ?? 0)
+            let totShots = FiveFiveShots + FiveFourShots + FourFiveShots + FiveThreeShots + ThreeFiveShots + FourFourShots + FourThreeShots + ThreeFourShots + ThreeThreeShots
+            let FiveFiveGoals = (player.goalForTaken["5v5"] ?? 0)
+            let FiveFourGoals = (player.goalForTaken["5v4"] ?? 0)
+            let FourFiveGoals = (player.goalForTaken["4v5"] ?? 0)
+            let FiveThreeGoals = (player.goalForTaken["5v3"] ?? 0)
+            let ThreeFiveGoals = (player.goalForTaken["3v5"] ?? 0)
+            let FourFourGoals = (player.goalForTaken["4v4"] ?? 0)
+            let FourThreeGoals = (player.goalForTaken["4v3"] ?? 0)
+            let ThreeFourGoals = (player.goalForTaken["3v4"] ?? 0)
+            let ThreeThreeGoals = (player.goalForTaken["3v3"] ?? 0)
+            let totGoals = FiveFiveGoals + FiveFourGoals + FourFiveGoals + FiveThreeGoals + ThreeFiveGoals + FourFourGoals + FourThreeGoals + ThreeFourGoals + ThreeThreeGoals
+            let FiveFivePIMC = ((player.penalty2min["5v5"]!) * 2) + ((player.penalty4min["5v5"]!) * 4) + ((player.penalty5min["5v5"]!) * 5)
+            let FiveFourPIMC = ((player.penalty2min["5v4"]!) * 2) + ((player.penalty4min["5v4"]!) * 4) + ((player.penalty5min["5v4"]!) * 5)
+            let FourFivePIMC = ((player.penalty2min["4v5"]!) * 2) + ((player.penalty4min["4v5"]!) * 4) + ((player.penalty5min["4v5"]!) * 5)
+            let FiveThreePIMC = ((player.penalty2min["5v3"]!) * 2) + ((player.penalty4min["5v3"]!) * 4) + ((player.penalty5min["5v3"]!) * 5)
+            let ThreeFivePIMC = ((player.penalty2min["3v5"]!) * 2) + ((player.penalty4min["3v5"]!) * 4) + ((player.penalty5min["3v5"]!) * 5)
+            let FourFourPIMC = ((player.penalty2min["4v4"]!) * 2) + ((player.penalty4min["4v4"]!) * 4) + ((player.penalty5min["4v4"]!) * 5)
+            let FourThreePIMC = ((player.penalty2min["4v3"]!) * 2) + ((player.penalty4min["4v3"]!) * 4) + ((player.penalty5min["4v3"]!) * 5)
+            let ThreeFourPIMC = ((player.penalty2min["3v4"]!) * 2) + ((player.penalty4min["3v4"]!) * 4) + ((player.penalty5min["3v4"]!) * 5)
+            let ThreeThreePIMC = ((player.penalty2min["3v3"]!) * 2) + ((player.penalty4min["3v3"]!) * 4) + ((player.penalty5min["3v3"]!) * 5)
+            
+            let FiveFivePIMD = ((player.penaltyDrawn2min["5v5"]!) * 2) + ((player.penaltyDrawn4min["5v5"]!) * 4) + ((player.penaltyDrawn5min["5v5"]!) * 5)
+            let FiveFourPIMD = ((player.penaltyDrawn2min["5v4"]!) * 2) + ((player.penaltyDrawn4min["5v4"]!) * 4) + ((player.penaltyDrawn5min["5v4"]!) * 5)
+            let FourFivePIMD = ((player.penaltyDrawn2min["4v5"]!) * 2) + ((player.penaltyDrawn4min["4v5"]!) * 4) + ((player.penaltyDrawn5min["4v5"]!) * 5)
+            let FiveThreePIMD = ((player.penaltyDrawn2min["5v3"]!) * 2) + ((player.penaltyDrawn4min["5v3"]!) * 4) + ((player.penaltyDrawn5min["5v3"]!) * 5)
+            let ThreeFivePIMD = ((player.penaltyDrawn2min["3v5"]!) * 2) + ((player.penaltyDrawn4min["3v5"]!) * 4) + ((player.penaltyDrawn5min["3v5"]!) * 5)
+            let FourFourPIMD = ((player.penaltyDrawn2min["4v4"]!) * 2) + ((player.penaltyDrawn4min["4v4"]!) * 4) + ((player.penaltyDrawn5min["4v4"]!) * 5)
+            let FourThreePIMD = ((player.penaltyDrawn2min["4v3"]!) * 2) + ((player.penaltyDrawn4min["4v3"]!) * 4) + ((player.penaltyDrawn5min["4v3"]!) * 5)
+            let ThreeFourPIMD = ((player.penaltyDrawn2min["3v4"]!) * 2) + ((player.penaltyDrawn4min["3v4"]!) * 4) + ((player.penaltyDrawn5min["3v4"]!) * 5)
+            let ThreeThreePIMD = ((player.penaltyDrawn2min["3v3"]!) * 2) + ((player.penaltyDrawn4min["3v3"]!) * 4) + ((player.penaltyDrawn5min["3v3"]!) * 5)
+            var totPIMMinus = 0.0
+            var totPIMPlus = 0.0
+            var totPIMPlusMinus = 0.0
+            var FiveFiveCorsiPlus = 0.0
+            var FiveFiveCorsiMinus = 0.0
+            var FiveFiveCorsiPlusMinus = 0.0
+            var FiveFiveIndivShotCorsi = 0.0
+            var FiveFiveIcingPlusCorsi = 0.0
+            var FiveFiveIcingMinusCorsi = 0.0
+            var FiveFiveIcingPlusMinusCorsi = 0.0
+            var FiveFiveIndivIcingCorsi = 0.0
+            var FiveFourCorsiPlus = 0.0
+            var FiveFourCorsiMinus = 0.0
+            var FiveFourCorsiPlusMinus = 0.0
+            var FourFiveCorsiPlus = 0.0
+            var FourFiveCorsiMinus = 0.0
+            var FourFiveCorsiPlusMinus = 0.0
+            var FiveThreeCorsiPlus = 0.0
+            var FiveThreeCorsiMinus = 0.0
+            var FiveThreeCorsiPlusMinus = 0.0
+            var ThreeFiveCorsiPlus = 0.0
+            var ThreeFiveCorsiMinus = 0.0
+            var ThreeFiveCorsiPlusMinus = 0.0
+            var FourFourCorsiPlus = 0.0
+            var FourFourCorsiMinus = 0.0
+            var FourFourCorsiPlusMinus = 0.0
+            var FourThreeCorsiPlus = 0.0
+            var FourThreeCorsiMinus = 0.0
+            var FourThreeCorsiPlusMinus = 0.0
+            var ThreeFourCorsiPlus = 0.0
+            var ThreeFourCorsiMinus = 0.0
+            var ThreeFourCorsiPlusMinus = 0.0
+            var ThreeThreeCorsiPlus = 0.0
+            var ThreeThreeCorsiMinus = 0.0
+            var ThreeThreeCorsiPlusMinus = 0.0
+            if totIceTime != 0 {
+                totPIMMinus = Float64(Float64(FiveFivePIMC + FiveFourPIMC + FourFivePIMC + FiveThreePIMC + ThreeFivePIMC + FourFourPIMC + FourThreePIMC + ThreeFourPIMC + ThreeThreePIMC)/Float64(totIceTime))
+                //penalty minutes/(icetimeseconds/60)*60
+                totPIMPlus = Float64(Float64(FiveFivePIMD + FiveFourPIMD + FourFivePIMD + FiveThreePIMD + ThreeFivePIMD + FourFourPIMD + FourThreePIMD + ThreeFourPIMD + ThreeThreePIMD)/Float64(totIceTime))
+                totPIMPlusMinus = Float64(Float64(totPIMPlus) - Float64(totPIMMinus))/Float64(totIceTime)
+                FiveFiveCorsiPlus = Float64(player.shotFor["5v5"]!)/Float64(totIceTime)
+                FiveFiveCorsiMinus = Float64(player.shotAgainst["5v5"]!)/Float64(totIceTime)
+                FiveFiveCorsiPlusMinus = Float64(Float64(player.shotFor["5v5"]!)-Float64(player.shotAgainst["5v5"]!))/Float64(totIceTime)
+                FiveFiveIndivShotCorsi = Float64(player.shotForTaken["5v5"]!)/Float64(totIceTime)
+                FiveFiveIcingPlusCorsi = Float64(player.icingDrawn["5v5"]!)/Float64(totIceTime)
+                FiveFiveIcingMinusCorsi = Float64(player.icing["5v5"]!)/Float64(totIceTime)
+                FiveFiveIcingPlusMinusCorsi = Float64(Float64(player.icingDrawn["5v5"]!) - Float64(player.icing["5v5"]!))/Float64(totIceTime)
+                FiveFiveIndivIcingCorsi = Float64(player.icingByPlayer["5v5"]!)/Float64(totIceTime)
+                
+                FiveFourCorsiPlus = Float64(player.shotFor["5v4"]!)/Float64(totIceTime)
+                FiveFourCorsiMinus = Float64(player.shotAgainst["5v4"]!)/Float64(totIceTime)
+                FiveFourCorsiPlusMinus = Float64(Float64(player.shotFor["5v4"]!)-Float64(player.shotAgainst["5v4"]!))/Float64(totIceTime)
+                
+                FourFiveCorsiPlus = Float64(player.shotFor["4v5"]!)/Float64(totIceTime)
+                FourFiveCorsiMinus = Float64(player.shotAgainst["4v5"]!)/Float64(totIceTime)
+                FourFiveCorsiPlusMinus = Float64(Float64(player.shotFor["4v5"]!)-Float64(player.shotAgainst["4v5"]!))/Float64(totIceTime)
+                
+                FiveThreeCorsiPlus = Float64(player.shotFor["5v3"]!)/Float64(totIceTime)
+                FiveThreeCorsiMinus = Float64(player.shotAgainst["5v3"]!)/Float64(totIceTime)
+                FiveThreeCorsiPlusMinus = Float64(Float64(player.shotFor["5v3"]!)-Float64(player.shotAgainst["5v3"]!))/Float64(totIceTime)
+                
+                ThreeFiveCorsiPlus = Float64(player.shotFor["3v5"]!)/Float64(totIceTime)
+                ThreeFiveCorsiMinus = Float64(player.shotAgainst["3v5"]!)/Float64(totIceTime)
+                ThreeFiveCorsiPlusMinus = Float64(Float64(player.shotFor["3v5"]!)-Float64(player.shotAgainst["3v5"]!))/Float64(totIceTime)
+                
+                FourFourCorsiPlus = Float64(player.shotFor["4v4"]!)/Float64(totIceTime)
+                FourFourCorsiMinus = Float64(player.shotAgainst["4v4"]!)/Float64(totIceTime)
+                FourFourCorsiPlusMinus = Float64(Float64(player.shotFor["4v4"]!)-Float64(player.shotAgainst["4v4"]!))/Float64(totIceTime)
+                
+                FourThreeCorsiPlus = Float64(player.shotFor["4v3"]!)/Float64(totIceTime)
+                FourThreeCorsiMinus = Float64(player.shotAgainst["4v3"]!)/Float64(totIceTime)
+                FourThreeCorsiPlusMinus = Float64(Float64(player.shotFor["4v3"]!)-Float64(player.shotAgainst["4v3"]!))/Float64(totIceTime)
+                
+                ThreeFourCorsiPlus = Float64(player.shotFor["3v4"]!)/Float64(totIceTime)
+                ThreeFourCorsiMinus = Float64(player.shotAgainst["3v4"]!)/Float64(totIceTime)
+                ThreeFourCorsiPlusMinus = Float64(Float64(player.shotFor["3v4"]!)-Float64(player.shotAgainst["3v4"]!))/Float64(totIceTime)
+                
+                ThreeThreeCorsiPlus = Float64(player.shotFor["3v3"]!)/Float64(totIceTime)
+                ThreeThreeCorsiMinus = Float64(player.shotAgainst["3v3"]!)/Float64(totIceTime)
+                ThreeThreeCorsiPlusMinus = Float64(Float64(player.shotFor["3v3"]!)-Float64(player.shotAgainst["3v3"]!))/Float64(totIceTime)
+            }
+            sql = "replace into gameStats(game, firstName, lastName, number, totIceTime, totShots, totGoals, totPIMMinus, totPIMPlus, totPIMPlusMinus, FiveFiveCorsiPlus, FiveFiveCorsiMinus, FiveFiveCorsiPlusMinus, FiveFiveIndivShotsCorsi, FiveFiveIcingPlus, FiveFiveIcingMinus, FiveFiveIcingPlusMinus, FiveFiveIndivIcingCorsi, FiveFourCorsiPlus, FiveFourCorsiMinus, FiveFourCorsiPlusMinus, FourFiveCorsiPlus, FourFiveCorsiMinus, FourFiveCorsiPlusMinus, FourFourCorsiPlus, FourFourCorsiMinus, FourFourCorsiPlusMinus, FiveThreeCorsiPlus, FiveThreeCorsiMinus, FiveThreeCorsiPlusMinus, ThreeFiveCorsiPlus, ThreeFiveCorsiMinus, ThreeFiveCorsiPlusMinus, FourThreeCorsiPlus, FourThreeCorsiMinus, FourThreeCorsiPlusMinus, ThreeFourCorsiPlus, ThreeFourCorsiMinus, ThreeFourCorsiPlusMinus, ThreeThreeCorsiPlus, ThreeThreeCorsiMinus, ThreeThreeCorsiPlusMinus) values( \"\(inputCollegeText ?? "UnspecifiedOpponent")\", \"\(player._firstName)\", \"\(player._lastName)\", \(player._jerseyNumber), \(totIceTime), \(totShots), \(totGoals), \(totPIMMinus), \(totPIMPlus),\(totPIMPlusMinus), \(FiveFiveCorsiPlus), \(FiveFiveCorsiMinus), \(FiveFiveCorsiPlusMinus), \(FiveFiveIndivShotCorsi), \(FiveFiveIcingPlusCorsi), \(FiveFiveIcingMinusCorsi), \(FiveFiveIcingPlusMinusCorsi), \(FiveFiveIndivIcingCorsi), \(FiveFourCorsiPlus), \(FiveFourCorsiMinus), \(FiveFourCorsiPlusMinus), \(FourFiveCorsiPlus), \(FourFiveCorsiMinus), \(FourFiveCorsiPlusMinus), \(FourFourCorsiPlus), \(FourFourCorsiMinus), \(FourFourCorsiPlusMinus), \(FiveThreeCorsiPlus), \(FiveThreeCorsiMinus), \(FiveThreeCorsiPlusMinus), \(ThreeFiveCorsiPlus), \(ThreeFiveCorsiMinus), \(ThreeFiveCorsiPlusMinus), \(FourThreeCorsiPlus), \(FourThreeCorsiMinus), \(FourThreeCorsiPlusMinus), \(ThreeFourCorsiPlus), \(ThreeFourCorsiMinus), \(ThreeFourCorsiPlusMinus), \(ThreeThreeCorsiPlus), \(ThreeThreeCorsiMinus), \(ThreeThreeCorsiPlusMinus))"
             
             //print(sql)
             appDelegate.database?.executeNoReturn(execCommand: sql)
             
         }
-        //let emailer = EmailViewController()
-        let mystring = appDelegate.database?.getStatTableCSV()
-        if !MFMailComposeViewController.canSendMail() {
-            print("Mail services are not available")
-        }
-        let composeVC = MFMailComposeViewController()
-        composeVC.mailComposeDelegate = self as? MFMailComposeViewControllerDelegate
-        // Configure the fields of the interface.
-        composeVC.setToRecipients(["cmorse529@gmail.com"])
-        composeVC.setSubject("Game Statistics Summary")
-        composeVC.setMessageBody("Statistics attached", isHTML: false)
-        composeVC.addAttachmentData((mystring?.data(using: .utf8))!, mimeType: "text/csv", fileName: "gameStats.csv")
-        // Present the view controller modally.
-        self.present(composeVC, animated: true, completion: nil)
+  
         
         
         
@@ -1269,7 +1386,7 @@ class ViewController: UIViewController {
     
     @IBAction func errorFlagClicked(_ sender: Any) {
         // what happens when the error flag is clicked
-        appDelegate.database?.addChronStat(seasonYear: game._season, game: game._opponent, period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "errorFlag", manpower: manpowerStr(), statOwnerSID: 0, onIce1SID: 0, onIce2SID: 0, onIce3SID: 0, onIce4SID: 0, onIce5SID: 0, onIce6SID: 0)
+        appDelegate.database?.addChronStat(seasonYear: game._season, game: inputCollegeText ?? "Opponent", period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "errorFlag", manpower: manpowerStr(), statOwnerNum: 0, onIce1Num: 0, onIce2Num: 0, onIce3Num: 0, onIce4Num: 0, onIce5Num: 0, onIce6Num: 0)
     }
     
     
@@ -1334,8 +1451,7 @@ class ViewController: UIViewController {
         }
         /////player buttons now have the right names on them
         
-        
-    
+
     }
     
     
@@ -1363,7 +1479,14 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
      */
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is EmailViewController{
+            let vc = segue.destination as? EmailViewController
+            vc?.currentOpponent = inputCollegeText
+        }
+        
 
+    }
 }
 
 
@@ -1432,10 +1555,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             //          the individual player and increment their relevant stat
             //print(game.currIce[indexPath.row]._firstName)
             game.currIce[indexPath.row].increaseShotForTaken(manpower: _manpower)
-            let onIceSID = game.getOnIceSIDAsArray()
-            print("ATTEMPT")
-            print(_manpower)
-            appDelegate.database?.addChronStat(seasonYear: game._season, game: game._opponent, period: gameTimer.period, time: Int(gameTimer.gameTime), statType: "shotFor", manpower: manpowerStr(), statOwnerSID: game.currIce[indexPath.row]._studentID, onIce1SID: onIceSID[0], onIce2SID: onIceSID[1], onIce3SID: onIceSID[2], onIce4SID: onIceSID[3], onIce5SID: onIceSID[4], onIce6SID: onIceSID[5])
+            let onIceNumbers = game.getOnIceNumbersAsArray()
+            appDelegate.database?.addChronStat(seasonYear: game._season, game: inputCollegeText ?? "Opponent", period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "shotFor", manpower: manpowerStr(), statOwnerNum: game.currIce[indexPath.row]._jerseyNumber, onIce1Num: onIceNumbers[0], onIce2Num: onIceNumbers[1], onIce3Num: onIceNumbers[2], onIce4Num: onIceNumbers[3], onIce5Num: onIceNumbers[4], onIce6Num: onIceNumbers[5])
         
         }
         
@@ -1446,15 +1567,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             //          the individual player and increment their relevant stat
             game.currIce[indexPath.row].increaseShotForTaken(manpower: _manpower)
             game.currIce[indexPath.row].increaseGoaltForTaken(manpower: _manpower)
-            let onIceSID = game.getOnIceSIDAsArray()
-            appDelegate.database?.addChronStat(seasonYear: game._season, game: game._opponent, period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "shotFor", manpower: manpowerStr(), statOwnerSID: game.currIce[indexPath.row]._studentID, onIce1SID: onIceSID[0], onIce2SID: onIceSID[1], onIce3SID: onIceSID[2], onIce4SID: onIceSID[3], onIce5SID: onIceSID[4], onIce6SID: onIceSID[5])
-            appDelegate.database?.addChronStat(seasonYear: game._season, game: game._opponent, period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "goalFor", manpower: manpowerStr(), statOwnerSID: game.currIce[indexPath.row]._studentID, onIce1SID: onIceSID[0], onIce2SID: onIceSID[1], onIce3SID: onIceSID[2], onIce4SID: onIceSID[3], onIce5SID: onIceSID[4], onIce6SID: onIceSID[5])
+            let onIceNumbers = game.getOnIceNumbersAsArray()
+            appDelegate.database?.addChronStat(seasonYear: game._season, game: inputCollegeText ?? "Opponent", period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "shotFor", manpower: manpowerStr(), statOwnerNum: game.currIce[indexPath.row]._jerseyNumber, onIce1Num: onIceNumbers[0], onIce2Num: onIceNumbers[1], onIce3Num: onIceNumbers[2], onIce4Num: onIceNumbers[3], onIce5Num: onIceNumbers[4], onIce6Num: onIceNumbers[5])
+            appDelegate.database?.addChronStat(seasonYear: game._season, game: inputCollegeText ?? "Opponent", period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "GoalFor", manpower: manpowerStr(), statOwnerNum: game.currIce[indexPath.row]._jerseyNumber, onIce1Num: onIceNumbers[0], onIce2Num: onIceNumbers[1], onIce3Num: onIceNumbers[2], onIce4Num: onIceNumbers[3], onIce5Num: onIceNumbers[4], onIce6Num: onIceNumbers[5])
             
         }
         
         if dropDownClicked == "2Us" {
-            let onIceSID = game.getOnIceSIDAsArray()
-            appDelegate.database?.addChronStat(seasonYear: game._season, game: game._opponent, period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "2penaltyCommited", manpower: manpowerStr(), statOwnerSID: game.currIce[indexPath.row]._studentID, onIce1SID: onIceSID[0], onIce2SID: onIceSID[1], onIce3SID: onIceSID[2], onIce4SID: onIceSID[3], onIce5SID: onIceSID[4], onIce6SID: onIceSID[5])
             let playerClicked = game.currIce[indexPath.row]
             let thisBox = getCurrUsBoxJersey()
             //print("penalty 2Usclicked!")
@@ -1464,6 +1583,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             hamBox.append(playerClicked)
             game.takeOffIce(removePlayer: playerClicked)
             game.maxOnIce -= 1
+            game.updateCurrentIce()
+            let onIceNumbers = game.getOnIceNumbersAsArray()
+            appDelegate.database?.addChronStat(seasonYear: game._season, game: inputCollegeText ?? "Opponent", period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "2penaltyCommited", manpower: manpowerStr(), statOwnerNum: game.currIce[indexPath.row]._jerseyNumber, onIce1Num: onIceNumbers[0], onIce2Num: onIceNumbers[1], onIce3Num: onIceNumbers[2], onIce4Num: onIceNumbers[3], onIce5Num: onIceNumbers[4], onIce6Num: onIceNumbers[5])
+            
             
             
         }
@@ -1474,14 +1597,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             thisBox.text = "OPPONENT"
             game.currIce[indexPath.row].increasePenaltyDrawn2min(manpower:_manpower)
             
-            let onIceSID = game.getOnIceSIDAsArray()
-            appDelegate.database?.addChronStat(seasonYear: game._season, game: game._opponent, period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "2penaltyDrawn", manpower: manpowerStr(), statOwnerSID: game.currIce[indexPath.row]._studentID, onIce1SID: onIceSID[0], onIce2SID: onIceSID[1], onIce3SID: onIceSID[2], onIce4SID: onIceSID[3], onIce5SID: onIceSID[4], onIce6SID: onIceSID[5])
+            let onIceNumbers = game.getOnIceNumbersAsArray()
+            appDelegate.database?.addChronStat(seasonYear: game._season, game: inputCollegeText ?? "Opponent", period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "2penaltyDrawn", manpower: manpowerStr(), statOwnerNum: game.currIce[indexPath.row]._jerseyNumber, onIce1Num: onIceNumbers[0], onIce2Num: onIceNumbers[1], onIce3Num: onIceNumbers[2], onIce4Num: onIceNumbers[3], onIce5Num: onIceNumbers[4], onIce6Num: onIceNumbers[5])
         }
         
         if dropDownClicked == "4Us" {
-            let onIceSID = game.getOnIceSIDAsArray()
-            appDelegate.database?.addChronStat(seasonYear: game._season, game: game._opponent, period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "4penaltyCommited", manpower: manpowerStr(), statOwnerSID: game.currIce[indexPath.row]._studentID, onIce1SID: onIceSID[0], onIce2SID: onIceSID[1], onIce3SID: onIceSID[2], onIce4SID: onIceSID[3], onIce5SID: onIceSID[4], onIce6SID: onIceSID[5])
-            print("penalty 4Usclicked!")
             let playerClicked = game.currIce[indexPath.row]
             let thisBox = getCurrUsBoxJersey()
             playerClicked.inBox = true
@@ -1490,6 +1610,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             hamBox.append(playerClicked)
             game.takeOffIce(removePlayer: playerClicked)
             game.maxOnIce -= 1
+            game.updateCurrentIce()
+            let onIceNumbers = game.getOnIceNumbersAsArray()
+            appDelegate.database?.addChronStat(seasonYear: game._season, game: inputCollegeText ?? "Opponent", period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "4penaltyCommited", manpower: manpowerStr(), statOwnerNum: game.currIce[indexPath.row]._jerseyNumber, onIce1Num: onIceNumbers[0], onIce2Num: onIceNumbers[1], onIce3Num: onIceNumbers[2], onIce4Num: onIceNumbers[3], onIce5Num: onIceNumbers[4], onIce6Num: onIceNumbers[5])
             
             
         }
@@ -1500,14 +1623,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             thisBox.text = "OPPONENT"
             game.currIce[indexPath.row].increasePenaltyDrawn4min(manpower:_manpower)
             
-            let onIceSID = game.getOnIceSIDAsArray()
-            appDelegate.database?.addChronStat(seasonYear: game._season, game: game._opponent, period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "4penaltyDrawn", manpower: manpowerStr(), statOwnerSID: game.currIce[indexPath.row]._studentID, onIce1SID: onIceSID[0], onIce2SID: onIceSID[1], onIce3SID: onIceSID[2], onIce4SID: onIceSID[3], onIce5SID: onIceSID[4], onIce6SID: onIceSID[5])
+            let onIceNumbers = game.getOnIceNumbersAsArray()
+            appDelegate.database?.addChronStat(seasonYear: game._season, game: inputCollegeText ?? "Opponent", period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "4penaltyDrawn", manpower: manpowerStr(), statOwnerNum: game.currIce[indexPath.row]._jerseyNumber, onIce1Num: onIceNumbers[0], onIce2Num: onIceNumbers[1], onIce3Num: onIceNumbers[2], onIce4Num: onIceNumbers[3], onIce5Num: onIceNumbers[4], onIce6Num: onIceNumbers[5])
         }
         
         if dropDownClicked == "5Us" {
-            let onIceSID = game.getOnIceSIDAsArray()
-            appDelegate.database?.addChronStat(seasonYear: game._season, game: game._opponent, period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "5penaltyCommited", manpower: manpowerStr(), statOwnerSID: game.currIce[indexPath.row]._studentID, onIce1SID: onIceSID[0], onIce2SID: onIceSID[1], onIce3SID: onIceSID[2], onIce4SID: onIceSID[3], onIce5SID: onIceSID[4], onIce6SID: onIceSID[5])
-            print("penalty 5Usclicked!")
             let playerClicked = game.currIce[indexPath.row]
             let thisBox = getCurrUsBoxJersey()
             playerClicked.increasePenalty5min(manpower:_manpower)
@@ -1516,6 +1636,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             hamBox.append(playerClicked)
             game.takeOffIce(removePlayer: playerClicked)
             game.maxOnIce -= 1
+            game.updateCurrentIce()
+            let onIceNumbers = game.getOnIceNumbersAsArray()
+            appDelegate.database?.addChronStat(seasonYear: game._season, game: inputCollegeText ?? "Opponent", period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "5penaltyCommited", manpower: manpowerStr(), statOwnerNum: game.currIce[indexPath.row]._jerseyNumber, onIce1Num: onIceNumbers[0], onIce2Num: onIceNumbers[1], onIce3Num: onIceNumbers[2], onIce4Num: onIceNumbers[3], onIce5Num: onIceNumbers[4], onIce6Num: onIceNumbers[5])
             
             
         }
@@ -1526,18 +1649,20 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             thisBox.text = "OPPONENT"
             game.currIce[indexPath.row].increasePenaltyDrawn5min(manpower:_manpower)
             
-            let onIceSID = game.getOnIceSIDAsArray()
-            appDelegate.database?.addChronStat(seasonYear: game._season, game: game._opponent, period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "5penaltyDrawn", manpower: manpowerStr(), statOwnerSID: game.currIce[indexPath.row]._studentID, onIce1SID: onIceSID[0], onIce2SID: onIceSID[1], onIce3SID: onIceSID[2], onIce4SID: onIceSID[3], onIce5SID: onIceSID[4], onIce6SID: onIceSID[5])
+            let onIceNumbers = game.getOnIceNumbersAsArray()
+            appDelegate.database?.addChronStat(seasonYear: game._season, game: inputCollegeText ?? "Opponent", period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "5penaltyDrawn", manpower: manpowerStr(), statOwnerNum: game.currIce[indexPath.row]._jerseyNumber, onIce1Num: onIceNumbers[0], onIce2Num: onIceNumbers[1], onIce3Num: onIceNumbers[2], onIce4Num: onIceNumbers[3], onIce5Num: onIceNumbers[4], onIce6Num: onIceNumbers[5])
         }
         
         if dropDownClicked == "icing" {
             print("icing clicked!")
             game.currIce[indexPath.row].increaseIcingByPlayer(manpower:_manpower)
             
-            let onIceSID = game.getOnIceSIDAsArray()
-            appDelegate.database?.addChronStat(seasonYear: game._season, game: game._opponent, period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "icingCommited", manpower: manpowerStr(), statOwnerSID: game.currIce[indexPath.row]._studentID, onIce1SID: onIceSID[0], onIce2SID: onIceSID[1], onIce3SID: onIceSID[2], onIce4SID: onIceSID[3], onIce5SID: onIceSID[4], onIce6SID: onIceSID[5])
+            let onIceNumbers = game.getOnIceNumbersAsArray()
+            appDelegate.database?.addChronStat(seasonYear: game._season, game: inputCollegeText ?? "Opponent", period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "icingCommited", manpower: manpowerStr(), statOwnerNum: game.currIce[indexPath.row]._jerseyNumber, onIce1Num: onIceNumbers[0], onIce2Num: onIceNumbers[1], onIce3Num: onIceNumbers[2], onIce4Num: onIceNumbers[3], onIce5Num: onIceNumbers[4], onIce6Num: onIceNumbers[5])
         }
     }
+    
+    
 }
 
 

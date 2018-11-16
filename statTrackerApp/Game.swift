@@ -53,7 +53,7 @@ class Game {
     // will store the string label corresponding to each player to be displayed on the screen
     var labelString = ""
     
-    func getOnIceSIDAsArray()->Array<Int> {
+    func getOnIceNumbersAsArray()->Array<Int> {
         var p1:Int = 0
         var p2:Int = 0
         var p3:Int = 0
@@ -61,25 +61,25 @@ class Game {
         var p5:Int = 0
         var p6:Int = 0
         if currIce.count >= 6 {
-            p1 = currIce[0]._studentID
-            p2 = currIce[1]._studentID
-            p3 = currIce[2]._studentID
-            p4 = currIce[3]._studentID
-            p5 = currIce[4]._studentID
-            p6 = currIce[5]._studentID
+            p1 = currIce[0]._jerseyNumber
+            p2 = currIce[1]._jerseyNumber
+            p3 = currIce[2]._jerseyNumber
+            p4 = currIce[3]._jerseyNumber
+            p5 = currIce[4]._jerseyNumber
+            p6 = currIce[5]._jerseyNumber
         }
         else if currIce.count == 5 {
-            p1 = currIce[0]._studentID
-            p2 = currIce[1]._studentID
-            p3 = currIce[2]._studentID
-            p4 = currIce[3]._studentID
-            p5 = currIce[4]._studentID
+            p1 = currIce[0]._jerseyNumber
+            p2 = currIce[1]._jerseyNumber
+            p3 = currIce[2]._jerseyNumber
+            p4 = currIce[3]._jerseyNumber
+            p5 = currIce[4]._jerseyNumber
         }
         else{
-            p1 = currIce[0]._studentID
-            p2 = currIce[1]._studentID
-            p3 = currIce[2]._studentID
-            p4 = currIce[3]._studentID
+            p1 = currIce[0]._jerseyNumber
+            p2 = currIce[1]._jerseyNumber
+            p3 = currIce[2]._jerseyNumber
+            p4 = currIce[3]._jerseyNumber
         }
         return [p1, p2, p3, p4, p5, p6]
         

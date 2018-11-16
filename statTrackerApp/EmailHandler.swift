@@ -11,6 +11,10 @@ import UIKit
 import MessageUI
 
 class EmailViewController: UIViewController, MFMailComposeViewControllerDelegate {
+    
+    
+    var currentOpponent: String? = "Game"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,9 +22,24 @@ class EmailViewController: UIViewController, MFMailComposeViewControllerDelegate
             print("Mail services are not available")
             return
         }
-        //let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        //let a = appDelegate.database?.getStatTableCSV()
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let chronStats = appDelegate.database?.getChronStatTableCSV()
+        let gameStats = appDelegate.database?.getGameStatTableCSV()
         //sendEmail(data: (a?.data(using: .utf8))!)
+        //let emailer = EmailViewController()
+        
+       
+        let composeVC = MFMailComposeViewController()
+        composeVC.mailComposeDelegate = self as MFMailComposeViewControllerDelegate
+        // Configure the fields of the interface.
+        composeVC.setToRecipients(["cmorse529@gmail.com"])
+        composeVC.setSubject("\(currentOpponent ?? "") Game Summary")
+        composeVC.setMessageBody("Statistics attached", isHTML: false)
+        composeVC.addAttachmentData((chronStats?.data(using: .utf8))!, mimeType: "text/csv", fileName: "\(currentOpponent ?? "Game")_Play_By_Play.csv")
+        composeVC.addAttachmentData((gameStats?.data(using: .utf8))!, mimeType: "text/csv", fileName: "\(currentOpponent ?? "Game")_Stats.csv")
+        // Present the view controller modally.
+        self.present(composeVC, animated: true, completion: nil)
+ 
     }
     
     func sendEmail(data: Data) {
