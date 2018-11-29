@@ -180,59 +180,59 @@ class ViewController: UIViewController {
     // --------------------------------------------------------------------
     @IBAction func click5v5(_ sender: Any) {
         // manpower button 5v5 is clicked: change current manpower config to 5v5
-        manPowerAlphas[currConfig].alpha = 0.5
+        manPowerAlphas[currConfig].alpha = 0.25
         manPow5v5.alpha = 1
         currConfig = 0
 
     }
     @IBAction func click5v4(_ sender: Any) {
         // manpower button 5v4 is clicked: change current manpower config to 5v4
-        manPowerAlphas[currConfig].alpha = 0.5
+        manPowerAlphas[currConfig].alpha = 0.25
         manPow5v4.alpha = 1
         currConfig = 1
     }
     @IBAction func click5v3(_ sender: Any) {
         // manpower button 5v3 is clicked: change current manpower config to 5v3
-        manPowerAlphas[currConfig].alpha = 0.5
+        manPowerAlphas[currConfig].alpha = 0.25
         manPow5v3.alpha = 1
         currConfig = 2
     }
     @IBAction func click4v5(_ sender: Any) {
         // manpower button 4v5 is clicked: change current manpower config to 4v5
-        manPowerAlphas[currConfig].alpha = 0.5
+        manPowerAlphas[currConfig].alpha = 0.25
         manPow4v5.alpha = 1
         currConfig = 3
     }
     
     @IBAction func click4v4(_ sender: Any) {
         // manpower button 4v4 is clicked: change current manpower config to 4v4
-        manPowerAlphas[currConfig].alpha = 0.5
+        manPowerAlphas[currConfig].alpha = 0.25
         manPow4v4.alpha = 1
         currConfig = 4
     }
     
     @IBAction func click4v3(_ sender: Any) {
         // manpower button 4v3 is clicked: change current manpower config to 4v3
-        manPowerAlphas[currConfig].alpha = 0.5
+        manPowerAlphas[currConfig].alpha = 0.25
         manPow4v3.alpha = 1
         currConfig = 5
     }
     
     @IBAction func click3v5(_ sender: Any) {
         // manpower button 3v5 is clicked: change current manpower config to 3v5
-        manPowerAlphas[currConfig].alpha = 0.5
+        manPowerAlphas[currConfig].alpha = 0.25
         manPow3v5.alpha = 1
         currConfig = 6
     }
     @IBAction func click3v4(_ sender: Any) {
         // manpower button 3v4 is clicked: change current manpower config to 3v4
-        manPowerAlphas[currConfig].alpha = 0.5
+        manPowerAlphas[currConfig].alpha = 0.25
         manPow3v4.alpha = 1
         currConfig = 7
     }
     @IBAction func click3v3(_ sender: Any) {
         // manpower button 3v3 is clicked: change current manpower config to 3v3
-        manPowerAlphas[currConfig].alpha = 0.5
+        manPowerAlphas[currConfig].alpha = 0.25
         manPow3v3.alpha = 1
         currConfig = 8
     }
@@ -1536,14 +1536,14 @@ class ViewController: UIViewController {
         
         // hardcoding starting manpower config
         manPow5v5.alpha = 1
-        manPow5v4.alpha = 0.5
-        manPow5v3.alpha = 0.5
-        manPow4v5.alpha = 0.5
-        manPow4v4.alpha = 0.5
-        manPow4v3.alpha = 0.5
-        manPow3v5.alpha = 0.5
-        manPow3v4.alpha = 0.5
-        manPow3v3.alpha = 0.5
+        manPow5v4.alpha = 0.25
+        manPow5v3.alpha = 0.25
+        manPow4v5.alpha = 0.25
+        manPow4v4.alpha = 0.25
+        manPow4v3.alpha = 0.25
+        manPow3v5.alpha = 0.25
+        manPow3v4.alpha = 0.25
+        manPow3v3.alpha = 0.25
         
         // shadows for blue header
         blueHeader.layer.shadowOffset = CGSize(width: 0, height: 5)
