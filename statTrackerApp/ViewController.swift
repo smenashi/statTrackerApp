@@ -1546,16 +1546,18 @@ class ViewController: UIViewController {
         manPow3v3.alpha = 0.25
         
         // shadows for blue header
-        blueHeader.layer.shadowOffset = CGSize(width: 0, height: 5)
+//        blueHeader.layer.shadowOffset = CGSize(width: 0, height: 5)
+        blueHeader.layer.shadowOffset = CGSize(width: 1.5, height: 5)
         blueHeader.layer.shadowRadius = 1.5
         blueHeader.layer.shadowOpacity = 0.5
         
         // cosmetics for penalty boxes
         hamPenaltyBox.layer.shadowOffset = CGSize(width: 3, height: 3)
         hamPenaltyBox.layer.shadowOpacity = 0.5
+        hamPenaltyBox.layer.shadowRadius = 5
         opponentPenaltyBox.layer.shadowOffset = CGSize(width: 3, height: 3)
         opponentPenaltyBox.layer.shadowOpacity = 0.5
-//        hamPenaltyBox.layer.shadowRadius
+        opponentPenaltyBox.layer.shadowRadius = 5
         
         
         // populate array of manpower buttons for handling opacity changes
