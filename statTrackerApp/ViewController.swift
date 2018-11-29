@@ -42,8 +42,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var testInputLabel: UILabel!
    
     
-    //blue header for game screen
+    //Blue header for game screen
     @IBOutlet weak var blueHeader: UIView!
+    // Penalty boxes
+    @IBOutlet weak var hamPenaltyBox: UIImageView!
+    @IBOutlet weak var opponentPenaltyBox: UIImageView!
     
     // Game Clock and Time //////////////////
     @IBOutlet weak var gameClock: UIButton!
@@ -1546,6 +1549,14 @@ class ViewController: UIViewController {
         blueHeader.layer.shadowOffset = CGSize(width: 0, height: 5)
         blueHeader.layer.shadowRadius = 1.5
         blueHeader.layer.shadowOpacity = 0.5
+        
+        // cosmetics for penalty boxes
+        hamPenaltyBox.layer.shadowOffset = CGSize(width: 3, height: 3)
+        hamPenaltyBox.layer.shadowOpacity = 0.5
+        opponentPenaltyBox.layer.shadowOffset = CGSize(width: 3, height: 3)
+        opponentPenaltyBox.layer.shadowOpacity = 0.5
+//        hamPenaltyBox.layer.shadowRadius
+        
         
         // populate array of manpower buttons for handling opacity changes
         manPowerAlphas += [manPow5v5, manPow5v4, manPow5v3, manPow4v5, manPow4v4, manPow4v3, manPow3v5, manPow3v4, manPow3v3]
