@@ -1313,7 +1313,7 @@ class ViewController: UIViewController {
         
         // change alphas of period labels
         if currPeriod != 3{
-            periodLabels[currPeriod].alpha = 0.5
+            periodLabels[currPeriod].alpha = 0.2
             currPeriod += 1
             periodLabels[currPeriod].alpha = 1
         }
@@ -1565,9 +1565,9 @@ class ViewController: UIViewController {
         
         // starting period opacities
         period1Label.alpha = 1
-        period2Label.alpha = 0.5
-        period3Label.alpha = 0.5
-        otLabel.alpha = 0.5
+        period2Label.alpha = 0.2
+        period3Label.alpha = 0.2
+        otLabel.alpha = 0.2
         
         // populate array of labels
         periodLabels += [period1Label, period2Label, period3Label, otLabel]
