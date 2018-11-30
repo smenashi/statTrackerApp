@@ -1635,7 +1635,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     // extends ViewController with proper functionality to handle
     // the drop-down menu
     
-    
     func tableView(_ tableView: UITableView, numberOfSections section: Int) -> Int {
         // builds n number of cells in the table: n = number of players on ice + 1
         // +1 for "Unknown" option
@@ -1647,6 +1646,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         // +1 for "Unknown" option
         return game.getIce().count
     }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        // makes cells of dropdown buff colored
+        cell.textLabel?.textColor = (UIColor(red: 1, green: 1, blue: 1, alpha: 1))
+        
+    }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // populates dropdown menu cells with labels
