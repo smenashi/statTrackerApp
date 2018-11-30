@@ -53,6 +53,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var gameTime: UILabel!
     /////////////////////////////////////////
     
+    // Period button
+    @IBOutlet weak var endPeriodButton: UIButton!
+    
     // Period Labels //////////////////
     @IBOutlet weak var period1Label: UILabel!
     @IBOutlet weak var period2Label: UILabel!
@@ -1563,6 +1566,12 @@ class ViewController: UIViewController {
         // populate array of manpower buttons for handling opacity changes
         manPowerAlphas += [manPow5v5, manPow5v4, manPow5v3, manPow4v5, manPow4v4, manPow4v3, manPow3v5, manPow3v4, manPow3v3]
         
+        // period button border color
+        //  (other cosmetics applied through Xcode GUI)
+        // ref: http://uicolor.xyz/#/hex-to-ui converting hex to UIColor codes
+        let RedColor = (UIColor(red: 0.92, green: 0.25, blue: 0.15, alpha: 1))
+        endPeriodButton.layer.borderColor = RedColor.cgColor
+            
         // starting period opacities
         period1Label.alpha = 1
         period2Label.alpha = 0.2
