@@ -439,7 +439,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0E7-tH-SPG">
-                                <rect key="frame" x="20" y="881" width="115" height="115"/>
+                                <rect key="frame" x="22" y="881" width="115" height="115"/>
                                 <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="115" id="Q3J-Ec-bii"/>
@@ -1101,7 +1101,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kAn-ld-9eX" secondAttribute="trailing" constant="53" id="bXY-PV-aVX"/>
                             <constraint firstItem="WJf-ey-VLu" firstAttribute="leading" secondItem="Vxs-Dc-lRy" secondAttribute="trailing" constant="-155" id="cU8-CI-XFx"/>
                             <constraint firstItem="ebO-rA-K1B" firstAttribute="height" secondItem="Vxs-Dc-lRy" secondAttribute="height" id="d4k-lz-RWj"/>
-                            <constraint firstItem="0E7-tH-SPG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="dLC-ps-fSY"/>
+                            <constraint firstItem="0E7-tH-SPG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="22" id="dLC-ps-fSY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Kwo-NV-euT" secondAttribute="bottom" constant="85" id="dLw-Ax-WRI"/>
                             <constraint firstItem="HjE-iS-Woq" firstAttribute="top" secondItem="ye6-Fv-qDf" secondAttribute="bottom" constant="38" id="daJ-au-CCf"/>
                             <constraint firstItem="5Mh-bi-0jB" firstAttribute="leading" secondItem="B7C-oQ-dEz" secondAttribute="trailing" constant="7" id="dwV-X1-uK2"/>
