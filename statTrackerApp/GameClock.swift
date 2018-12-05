@@ -74,3 +74,24 @@ class GameClock: Clock {
         label.text = formatTime(time: TimeInterval(gameSecondsUI))
     }    
 }
+
+//----- Hash & Equate class extension -----//
+// making class hashable for queuing
+extension GameClock: Equatable {
+    static func == (lhs: GameClock, rhs: GameClock) -> Bool {
+        return lhs.gameTime == rhs.gameTime &&
+            lhs.gameSecondsUI == rhs.gameSecondsUI &&
+            lhs.timeLeft == rhs.timeLeft &&
+            lhs.clockOnFlag == rhs.clockOnFlag &&
+            lhs.timer == rhs.timer &&
+            lhs.period == rhs.period
+        
+    }
+    
+}
+
+extension GameClock: Hashable {
+    var hashValue: Int {
+        return gameTime.hashValue ^ gameSecondsUI.hashValue ^ timeLeft.hashValue ^ clockOnFlag.hashValue ^ timer.hashValue ^ period.hashValue
+    }
+}

@@ -25,7 +25,7 @@ class Player {
     var enabled = false
     var clock = PlayerClock()
     var inBox = false
-    var playerButton: UIButton?
+    var playerButton:UIButton?
     
     // stat variables
     // dictionaries keyed by manpower
@@ -62,6 +62,7 @@ class Player {
     var icingDrawn:[String: Int] = ["5v5":0, "5v4":0, "5v3":0, "4v5":0, "4v4":0, "4v3":0, "3v5":0, "3v4":0, "3v3":0]
     
     //------ methods ------//
+    
     // enabling/disabling
     func enablePlayer() {
         enabled = true
@@ -86,7 +87,7 @@ class Player {
         let clockManpower = clock.getCurrManpower()
         iceTime[clockManpower] = time
     }
-
+    
     func delayPenalties(_ time:Double, closure:@escaping ()->()) {
         let when = DispatchTime.now() + time
         DispatchQueue.main.asyncAfter(deadline: when, execute: closure)
@@ -190,4 +191,5 @@ extension Player: Hashable {
         return enabled.hashValue ^ _lastName.hashValue ^ _firstName.hashValue ^ _jerseyNumber.hashValue ^ shotFor.hashValue ^ shotAgainst.hashValue ^ goalFor.hashValue ^ goalAgainst.hashValue ^ penalty2min.hashValue ^ penaltyDrawn2min.hashValue ^ penalty4min.hashValue ^ penaltyDrawn4min.hashValue ^ penalty5min.hashValue ^ penaltyDrawn5min.hashValue ^  icing.hashValue ^ icingByPlayer.hashValue ^ icingDrawn.hashValue
     }
 }
+
 
