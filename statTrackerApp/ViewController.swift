@@ -16,8 +16,6 @@ class ViewController: UIViewController {
     var playerButtonColor = UIColor(red: 0.83921569, green: 0.72941176, blue: 0.54509804, alpha: 1.0)
     
     var game:Game!
-    // hard-coding game
-    //    var game = Game(player1: Player(firstName: "none", lastName: "9", jerseyNum: 9), player2: Player(firstName: "none", lastName: "15", jerseyNum: 15), player3: Player(firstName: "none", lastName: "18", jerseyNum: 18), player4: Player(firstName: "none", lastName: "16", jerseyNum: 16), player5: Player(firstName: "none", lastName: "10", jerseyNum: 10), player6: Player(firstName: "none", lastName: "26", jerseyNum: 26), player7: Player(firstName: "none", lastName: "22", jerseyNum: 22), player8: Player(firstName: "none", lastName: "20", jerseyNum: 20), player9: Player(firstName: "none", lastName: "12", jerseyNum: 12), player10: Player(firstName: "none", lastName: "27", jerseyNum: 27), player11: Player(firstName: "none", lastName: "23", jerseyNum: 23), player12: Player(firstName: "none", lastName: "19", jerseyNum: 19), player13: Player(firstName: "none", lastName: "5", jerseyNum: 5), player14: Player(firstName: "none", lastName: "4", jerseyNum: 4), player15: Player(firstName: "none", lastName: "44", jerseyNum: 44), player16: Player(firstName: "none", lastName: "14", jerseyNum: 14), player17: Player(firstName: "none", lastName: "7", jerseyNum: 7), player18: Player(firstName: "none", lastName: "2", jerseyNum: 2), player19: Player(firstName: "none", lastName: "29", jerseyNum: 29), player20: Player(firstName: "none", lastName: "34", jerseyNum: 34), player21: Player(firstName: "none", lastName: "1", jerseyNum: 1), player22: Player(firstName: "none", lastName: "6", jerseyNum: 6))
     
     var _manpower: [Int] = [5, 5]
     
@@ -26,8 +24,7 @@ class ViewController: UIViewController {
         let man2 = String(_manpower[1])
         return man1 + "v" + man2
     }
-    var hamBox:[Player] = []
-    var awayBox: [Player] = []
+
     var enableManpower = false
     
     @IBOutlet weak var displayCount: UILabel!
@@ -1066,22 +1063,6 @@ class ViewController: UIViewController {
     
     // -------------------------------------------------------------------------------
     // Game Clock Button: this starts/stops the countdown timer for the game
-    // ref: https://medium.com/ios-os-x-development/build-an-stopwatch-with-swift-3-0-c7040818a10f
-    
-    /*
-     // running value that will be updated
-     var gameSeconds = 1200                  // 1200 for real game
-     // init timer object
-     var gameTimer = Timer()
-     // to reset timer whenever a period ends
-     var newPeriod = true
-     
-     // boolean making sure only one timer is created
-     var isTimerRunning = false
-     
-     // gates game clock button usage
-     var clockPaused = true
-     */
     // initialize GameClock instance
     var gameTimer = GameClock()
     
@@ -1140,7 +1121,6 @@ class ViewController: UIViewController {
         startLabel.alpha = 1
         stopLabel.alpha = 0.4
         
-        // execute relevant stat-related logic for end of period here
     }
     
     // -------------------------------------------------------------------------------
@@ -1154,9 +1134,7 @@ class ViewController: UIViewController {
         
         for player in game.getIce() {
             game.getPlayer(number: player).stopClock()
-            
-            //            print(game.getPlayer(number: player)._jerseyNumber)
-            //            print(game.getPlayer(number: player)._lastName)
+  
             
         }
         var sql:String
@@ -1294,20 +1272,10 @@ class ViewController: UIViewController {
                 ThreeThreeCorsiPlusMinus = Float64(Float64(player.shotFor["3v3"]!)-Float64(player.shotAgainst["3v3"]!))/Float64(totIceTime)
             }
             sql = "replace into gameStats(game, firstName, lastName, number, totIceTime, totShots, totGoals, totPIMMinus, totPIMPlus, totPIMPlusMinus, FiveFiveCorsiPlus, FiveFiveCorsiMinus, FiveFiveCorsiPlusMinus, FiveFiveIndivShotsCorsi, FiveFiveIcingPlus, FiveFiveIcingMinus, FiveFiveIcingPlusMinus, FiveFiveIndivIcingCorsi, FiveFourCorsiPlus, FiveFourCorsiMinus, FiveFourCorsiPlusMinus, FourFiveCorsiPlus, FourFiveCorsiMinus, FourFiveCorsiPlusMinus, FourFourCorsiPlus, FourFourCorsiMinus, FourFourCorsiPlusMinus, FiveThreeCorsiPlus, FiveThreeCorsiMinus, FiveThreeCorsiPlusMinus, ThreeFiveCorsiPlus, ThreeFiveCorsiMinus, ThreeFiveCorsiPlusMinus, FourThreeCorsiPlus, FourThreeCorsiMinus, FourThreeCorsiPlusMinus, ThreeFourCorsiPlus, ThreeFourCorsiMinus, ThreeFourCorsiPlusMinus, ThreeThreeCorsiPlus, ThreeThreeCorsiMinus, ThreeThreeCorsiPlusMinus) values( \"\(inputCollegeText ?? "UnspecifiedOpponent")\", \"\(player._firstName)\", \"\(player._lastName)\", \(player._jerseyNumber), \(totIceTime), \(totShots), \(totGoals), \(totPIMMinus), \(totPIMPlus),\(totPIMPlusMinus), \(FiveFiveCorsiPlus), \(FiveFiveCorsiMinus), \(FiveFiveCorsiPlusMinus), \(FiveFiveIndivShotCorsi), \(FiveFiveIcingPlusCorsi), \(FiveFiveIcingMinusCorsi), \(FiveFiveIcingPlusMinusCorsi), \(FiveFiveIndivIcingCorsi), \(FiveFourCorsiPlus), \(FiveFourCorsiMinus), \(FiveFourCorsiPlusMinus), \(FourFiveCorsiPlus), \(FourFiveCorsiMinus), \(FourFiveCorsiPlusMinus), \(FourFourCorsiPlus), \(FourFourCorsiMinus), \(FourFourCorsiPlusMinus), \(FiveThreeCorsiPlus), \(FiveThreeCorsiMinus), \(FiveThreeCorsiPlusMinus), \(ThreeFiveCorsiPlus), \(ThreeFiveCorsiMinus), \(ThreeFiveCorsiPlusMinus), \(FourThreeCorsiPlus), \(FourThreeCorsiMinus), \(FourThreeCorsiPlusMinus), \(ThreeFourCorsiPlus), \(ThreeFourCorsiMinus), \(ThreeFourCorsiPlusMinus), \(ThreeThreeCorsiPlus), \(ThreeThreeCorsiMinus), \(ThreeThreeCorsiPlusMinus))"
-            
-            //print(sql)
+
             appDelegate.database?.executeNoReturn(execCommand: sql)
             
         }
-        
-        
-        
-        
-        //        print(game.currIceNames)
-        
-        // CHAD!!! This is the section where you can send stats to the database for processing
-        // Check out Player.swift for function calls for accessing player statistics
-        // To access all players (i.e. in a loop) use game.getaAllPlayers, which returns an array of all players
         
     }
     
@@ -1434,13 +1402,6 @@ class ViewController: UIViewController {
             }
         }
     }
-    
-    /*
-     override func didReceiveMemoryWarning() {
-     super.didReceiveMemoryWarning()
-     // Dispose of any resources that can be recreated.
-     }
-     */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is EmailViewController{
             let vc = segue.destination as? EmailViewController

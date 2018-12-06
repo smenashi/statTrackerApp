@@ -138,7 +138,6 @@ class PenaltyQueue {
         clockList[index] = PenaltyClock(penaltyTime: time, timeUI: getNextTimer(), queue:self, jerseyLabel: getNextBox())
         clockList[index]!.runPenaltyClock()
         availBoxList[currBox] = false
-        print(availBoxList)
         
     }
     
@@ -151,7 +150,6 @@ class PenaltyQueue {
     }
     
     func addPlayerIntoQ(time:TimeInterval) -> Int {
-        print(timeList)
         var index = count
         var shift = 0
         if index > 1 {
@@ -173,15 +171,12 @@ class PenaltyQueue {
     
     // put new player label into box
     func removeClock() {
-        print(timeList)
-        print(clockList)
         var index = 1
         clockList[0]!.timer.invalidate()
         clockList[0]!._timeUI.text = "00:00"
         updateAvailBoxAfterRemove(index:0)
         if usFlag {
             game.currIce.append(playerList[0]!)
-            print("ice after remove", game.currIce)
             playerList[0]!.enablePlayer()
             playerBoxList[0]!.backgroundColor = .green
             clockList[0]!._jerseyLabel.text = "Jersey #"
@@ -240,5 +235,3 @@ extension PenaltyQueue: Hashable {
         return playerList.hashValue ^ playerBoxList.hashValue ^ clockList.hashValue ^ _gameTimer.hashValue ^ usFlag.hashValue ^ boxAvail.hashValue
     }
 }
-
-//take out pri-queuing

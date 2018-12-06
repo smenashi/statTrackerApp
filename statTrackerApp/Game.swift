@@ -45,19 +45,11 @@ class Game {
         players.append(player22)
     }
     
-    // Added by Nick, for generating drop-down menus:
+    // Added by Nick and Sophie, for generating drop-down menus:
     // this will store the current players on ice in array form for the tableView object in ViewController to use
     var currIce: Array<Player> = Array()
-    // will store the string label corresponding to each player to be displayed on the screen
-    var labelString = ""
     
     func getOnIceNumbersAsArray()->Array<Int> {
-//        var p1:Int = 0
-//        var p2:Int = 0
-//        var p3:Int = 0
-//        var p4:Int = 0
-//        var p5:Int = 0
-//        var p6:Int = 0
         var currIceArray = Array<Int>()
         var i = 0
         while i < currIce.count {
@@ -68,29 +60,7 @@ class Game {
             currIceArray.append(0)
             i += 1
         }
-//        if currIce.count >= 6 {
-//            p1 = currIce[0]._jerseyNumber
-//            p2 = currIce[1]._jerseyNumber
-//            p3 = currIce[2]._jerseyNumber
-//            p4 = currIce[3]._jerseyNumber
-//            p5 = currIce[4]._jerseyNumber
-//            p6 = currIce[5]._jerseyNumber
-//        }
-//        else if currIce.count == 5 {
-//            p1 = currIce[0]._jerseyNumber
-//            p2 = currIce[1]._jerseyNumber
-//            p3 = currIce[2]._jerseyNumber
-//            p4 = currIce[3]._jerseyNumber
-//            p5 = currIce[4]._jerseyNumber
-//        }
-//        else if currIce.count == 4 {
-//            p1 = currIce[0]._jerseyNumber
-//            p2 = currIce[1]._jerseyNumber
-//            p3 = currIce[2]._jerseyNumber
-//            p4 = currIce[3]._jerseyNumber
-//        }
-        //return [p1, p2, p3, p4, p5, p6]
-        print(currIceArray)
+        
         return currIceArray
         
     }
@@ -142,7 +112,6 @@ class Game {
         for player in onIce {
             players[player].increaseShotFor(manpower: manpower)
         }
-        //players[takenBy].increaseShotForTaken(manpower: manpower)
     }
     
     func shotAgainst(manpower:[Int] = [5, 5]) {
@@ -155,7 +124,6 @@ class Game {
         for player in onIce {
             players[player].increaseGoalFor(manpower: manpower)
         }
-        //players[takenBy].increaseGoaltForTaken(manpower: manpower)
     }
     
     func goalAgainst(manpower:[Int] = [5, 5]) {
@@ -169,7 +137,6 @@ class Game {
         for player in onIce {
             players[player].increaseIcing(manpower: manpower)
         }
-        //players[drawnBy].increaseIcingByPlayer(manpower: manpower)
     }
     
     func icingDrawn(manpower:[Int] = [5, 5]) {
