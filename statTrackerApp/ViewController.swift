@@ -940,8 +940,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var timer3: UILabel!
     @IBOutlet weak var timer4: UILabel!
     
-    lazy var usPQ = PenaltyQueue(gameTimer: gameTimer, pbox1: jerseynum1, pbox2: jerseynum2, timerLabel1: timer1, timerLabel2: timer2, mP: manpowerUsPressedSwitch, mR: manpowerUsReleasedSwitch)
-    lazy var themPQ = PenaltyQueue(gameTimer: gameTimer, pbox1: jerseynum3, pbox2: jerseynum4, timerLabel1: timer3, timerLabel2: timer4, mP: manpowerThemPressedSwitch, mR: manpowerThemReleasedSwitch)
+    lazy var usPQ = PenaltyQueue(gameTimer: gameTimer, pbox1: jerseynum1, pbox2: jerseynum2, timerLabel1: timer1, timerLabel2: timer2, mP: manpowerUsPressedSwitch, mR: manpowerUsReleasedSwitch, _game:game)
+    lazy var themPQ = PenaltyQueue(gameTimer: gameTimer, pbox1: jerseynum3, pbox2: jerseynum4, timerLabel1: timer3, timerLabel2: timer4, mP: manpowerThemPressedSwitch, mR: manpowerThemReleasedSwitch, _game:game)
 
 
     
@@ -1462,13 +1462,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfSections section: Int) -> Int {
         // builds n number of cells in the table: n = number of players on ice + 1
         // +1 for "Unknown" option
-        return game.getIce().count
+        return game.currIce.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // populates n number of cells in the table: n = number of players on ice + 1
         // +1 for "Unknown" option
-        return game.getIce().count
+        return game.currIce.count
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -1482,7 +1482,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         // populates dropdown menu cells with labels
         
         // get latest array of player names
-        game.updateCurrentIce()
+//        game.updateCurrentIce()
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "player", for: indexPath)
         
@@ -1546,7 +1546,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             usPQ.newUsPenalty(player: playerClicked, time: 120, box: playerClicked.playerButton!)
             playerClicked.increasePenalty2min(manpower: _manpower)
             let onIceNumbers = game.getOnIceNumbersAsArray()
-            appDelegate.database?.addChronStat(seasonYear: game._season, game: inputCollegeText ?? "Opponent", period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "2penaltyCommited", manpower: manpowerStr(), statOwnerNum: game.currIce[indexPath.row]._jerseyNumber, onIce1Num: onIceNumbers[0], onIce2Num: onIceNumbers[1], onIce3Num: onIceNumbers[2], onIce4Num: onIceNumbers[3], onIce5Num: onIceNumbers[4], onIce6Num: onIceNumbers[5])
+            appDelegate.database?.addChronStat(seasonYear: game._season, game: inputCollegeText ?? "Opponent", period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "2penaltyCommited", manpower: manpowerStr(), statOwnerNum: playerClicked._jerseyNumber, onIce1Num: onIceNumbers[0], onIce2Num: onIceNumbers[1], onIce3Num: onIceNumbers[2], onIce4Num: onIceNumbers[3], onIce5Num: onIceNumbers[4], onIce6Num: onIceNumbers[5])
             
             
             
@@ -1564,7 +1564,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             usPQ.newUsPenalty(player: playerClicked, time: 240, box: playerClicked.playerButton!)
             playerClicked.increasePenalty4min(manpower:_manpower)
             let onIceNumbers = game.getOnIceNumbersAsArray()
-            appDelegate.database?.addChronStat(seasonYear: game._season, game: inputCollegeText ?? "Opponent", period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "4penaltyCommited", manpower: manpowerStr(), statOwnerNum: game.currIce[indexPath.row]._jerseyNumber, onIce1Num: onIceNumbers[0], onIce2Num: onIceNumbers[1], onIce3Num: onIceNumbers[2], onIce4Num: onIceNumbers[3], onIce5Num: onIceNumbers[4], onIce6Num: onIceNumbers[5])
+            appDelegate.database?.addChronStat(seasonYear: game._season, game: inputCollegeText ?? "Opponent", period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "4penaltyCommited", manpower: manpowerStr(), statOwnerNum: playerClicked._jerseyNumber, onIce1Num: onIceNumbers[0], onIce2Num: onIceNumbers[1], onIce3Num: onIceNumbers[2], onIce4Num: onIceNumbers[3], onIce5Num: onIceNumbers[4], onIce6Num: onIceNumbers[5])
             
             
         }
@@ -1581,7 +1581,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             usPQ.newUsPenalty(player: playerClicked, time: 300, box: playerClicked.playerButton!)
             playerClicked.increasePenalty5min(manpower:_manpower)
             let onIceNumbers = game.getOnIceNumbersAsArray()
-            appDelegate.database?.addChronStat(seasonYear: game._season, game: inputCollegeText ?? "Opponent", period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "5penaltyCommited", manpower: manpowerStr(), statOwnerNum: game.currIce[indexPath.row]._jerseyNumber, onIce1Num: onIceNumbers[0], onIce2Num: onIceNumbers[1], onIce3Num: onIceNumbers[2], onIce4Num: onIceNumbers[3], onIce5Num: onIceNumbers[4], onIce6Num: onIceNumbers[5])
+            appDelegate.database?.addChronStat(seasonYear: game._season, game: inputCollegeText ?? "Opponent", period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "5penaltyCommited", manpower: manpowerStr(), statOwnerNum: playerClicked._jerseyNumber, onIce1Num: onIceNumbers[0], onIce2Num: onIceNumbers[1], onIce3Num: onIceNumbers[2], onIce4Num: onIceNumbers[3], onIce5Num: onIceNumbers[4], onIce6Num: onIceNumbers[5])
             
             
         }

@@ -48,40 +48,50 @@ class Game {
     // Added by Nick, for generating drop-down menus:
     // this will store the current players on ice in array form for the tableView object in ViewController to use
     var currIce: Array<Player> = Array()
-    // this will store the names of current players to display on the screen
-    var currIceNames: Array<String> = Array()
     // will store the string label corresponding to each player to be displayed on the screen
     var labelString = ""
     
     func getOnIceNumbersAsArray()->Array<Int> {
-        var p1:Int = 0
-        var p2:Int = 0
-        var p3:Int = 0
-        var p4:Int = 0
-        var p5:Int = 0
-        var p6:Int = 0
-        if currIce.count >= 6 {
-            p1 = currIce[0]._jerseyNumber
-            p2 = currIce[1]._jerseyNumber
-            p3 = currIce[2]._jerseyNumber
-            p4 = currIce[3]._jerseyNumber
-            p5 = currIce[4]._jerseyNumber
-            p6 = currIce[5]._jerseyNumber
+//        var p1:Int = 0
+//        var p2:Int = 0
+//        var p3:Int = 0
+//        var p4:Int = 0
+//        var p5:Int = 0
+//        var p6:Int = 0
+        var currIceArray = Array<Int>()
+        var i = 0
+        while i < currIce.count {
+            currIceArray.append(currIce[i]._jerseyNumber)
+            i += 1
         }
-        else if currIce.count == 5 {
-            p1 = currIce[0]._jerseyNumber
-            p2 = currIce[1]._jerseyNumber
-            p3 = currIce[2]._jerseyNumber
-            p4 = currIce[3]._jerseyNumber
-            p5 = currIce[4]._jerseyNumber
+        while i < 6 {
+            currIceArray.append(0)
+            i += 1
         }
-        else{
-            p1 = currIce[0]._jerseyNumber
-            p2 = currIce[1]._jerseyNumber
-            p3 = currIce[2]._jerseyNumber
-            p4 = currIce[3]._jerseyNumber
-        }
-        return [p1, p2, p3, p4, p5, p6]
+//        if currIce.count >= 6 {
+//            p1 = currIce[0]._jerseyNumber
+//            p2 = currIce[1]._jerseyNumber
+//            p3 = currIce[2]._jerseyNumber
+//            p4 = currIce[3]._jerseyNumber
+//            p5 = currIce[4]._jerseyNumber
+//            p6 = currIce[5]._jerseyNumber
+//        }
+//        else if currIce.count == 5 {
+//            p1 = currIce[0]._jerseyNumber
+//            p2 = currIce[1]._jerseyNumber
+//            p3 = currIce[2]._jerseyNumber
+//            p4 = currIce[3]._jerseyNumber
+//            p5 = currIce[4]._jerseyNumber
+//        }
+//        else if currIce.count == 4 {
+//            p1 = currIce[0]._jerseyNumber
+//            p2 = currIce[1]._jerseyNumber
+//            p3 = currIce[2]._jerseyNumber
+//            p4 = currIce[3]._jerseyNumber
+//        }
+        //return [p1, p2, p3, p4, p5, p6]
+        print(currIceArray)
+        return currIceArray
         
     }
 
@@ -99,24 +109,24 @@ class Game {
     
     func putOnIce(addPlayer:Player, manpower: [Int]) {
         if addPlayer.inBox == false && getIce().count < maxOnIce{
-            onIce.insert(players.firstIndex(of: addPlayer) ?? -1)
+            onIce.insert(players.firstIndex(of: addPlayer)!)
             addPlayer.enablePlayer()
             addPlayer.startClock(manpower: manpower)
             addPlayer.playerButton?.backgroundColor = .green
         
         // update array of players to be displayed in drop-down menu
-            updateCurrentIce()
+        currIce.append(addPlayer)
         }
     }
     
     func takeOffIce(removePlayer:Player) {
-        onIce.remove(players.firstIndex(of: removePlayer) ?? -1)
+        onIce.remove(players.firstIndex(of: removePlayer)!)
         removePlayer.disablePlayer()
         removePlayer.stopClock()
         removePlayer.playerButton?.backgroundColor = UIColor(red: 0.83921569, green: 0.72941176, blue: 0.54509804, alpha: 1.0)
       
         // update array of players to be displayed in drop-down menu
-        updateCurrentIce()
+        currIce.remove(at: players.firstIndex(of: removePlayer)!)
     }
     
     func getIce() -> Set<Int> {
@@ -125,11 +135,6 @@ class Game {
     
     func getPlayer(number:Int) -> Player {
         return players[number]
-    }
-    
-    func delayPenalties(_ time:Double, closure:@escaping ()->()) {
-        let when = DispatchTime.now() + time
-        DispatchQueue.main.asyncAfter(deadline: when, execute: closure)
     }
     
     // stat buttons
@@ -173,27 +178,6 @@ class Game {
         }
     }
     
-    // Added by Nick: needed to be able to populate drop-downs: the UIKit framework is annoying and can't handle set elements
-    func updateCurrentIce(){
-        // updates arrays currIce and currIceNames whenever the on-ice config changes
-        
-        // reset values
-        currIce.removeAll()
-        currIceNames.removeAll()
-        labelString = ""
-        
-        // populate currIceNames with jersey numbers for now, will establish a proper string format down the line
-        for player in onIce {
-            currIce.append(players[player])
-            labelString = "Player # \(String(players[player]._jerseyNumber))" //+ players[player]._lastName
-            currIceNames.append(labelString)
-        }
-        
-        // sort them by jersey number: fix later
-        currIceNames.sort()
-        currIceNames.append("Unknown")
-        
-    }
 }
 
 

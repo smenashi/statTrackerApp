@@ -27,8 +27,9 @@ class PenaltyQueue {
     var currBox = 0
     var count = 0
     var areQueuing = false
+    var game:Game
     
-    init (gameTimer:GameClock, pbox1:UILabel, pbox2:UILabel, timerLabel1:UILabel, timerLabel2:UILabel, mP:@escaping ()->Void, mR:@escaping ()->Void) {
+    init (gameTimer:GameClock, pbox1:UILabel, pbox2:UILabel, timerLabel1:UILabel, timerLabel2:UILabel, mP:@escaping ()->Void, mR:@escaping ()->Void, _game:Game) {
         _gameTimer = gameTimer
         _pbox1 = pbox1
         _pbox2 = pbox2
@@ -36,6 +37,7 @@ class PenaltyQueue {
         _timerLabel2 = timerLabel2
         manpowerPressed = mP
         manpowerReleased = mR
+        game = _game
     }
     
         func getNextBox() -> UILabel {
@@ -97,7 +99,7 @@ class PenaltyQueue {
         if index < 2 {
             putInBox(_index: index, time:time)
         }
-        
+        game.currIce.remove(at:game.currIce.firstIndex(of: player)!)
     }
     
     func newThemPenalty(time:TimeInterval) {
@@ -178,6 +180,8 @@ class PenaltyQueue {
         clockList[0]!._timeUI.text = "00:00"
         updateAvailBoxAfterRemove(index:0)
         if usFlag {
+            game.currIce.append(playerList[0]!)
+            print("ice after remove", game.currIce)
             playerList[0]!.enablePlayer()
             playerBoxList[0]!.backgroundColor = .green
             clockList[0]!._jerseyLabel.text = "Jersey #"
@@ -214,7 +218,6 @@ class PenaltyQueue {
                 manpowerReleased()
             }
         }
-        print(timeList)
     }
 }
 
