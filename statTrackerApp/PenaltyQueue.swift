@@ -93,6 +93,7 @@ class PenaltyQueue {
         timeList[index] = time
         box.backgroundColor = .red
         player.disablePlayer()
+        player.inBox = true
         manpowerSwitch {
             manpowerPressed()
         }
@@ -178,6 +179,7 @@ class PenaltyQueue {
         if usFlag {
             game.currIce.append(playerList[0]!)
             playerList[0]!.enablePlayer()
+            playerList[0]!.inBox = false
             playerBoxList[0]!.backgroundColor = .green
             clockList[0]!._jerseyLabel.text = "Jersey #"
             playerList[0] = nil

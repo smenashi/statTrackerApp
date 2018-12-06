@@ -26,6 +26,7 @@ class Player {
     var clock = PlayerClock()
     var inBox = false
     var playerButton:UIButton?
+    var rosterPosition = 0
     
     // stat variables
     // dictionaries keyed by manpower

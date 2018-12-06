@@ -264,56 +264,56 @@ class ViewController: UIViewController {
         if _manpower == [5, 5] {
             click5v5((Any).self)
             for player in game.getIce() {
-                game.getPlayer(number: player).stopClock()
-                game.getPlayer(number: player).startClock(manpower: _manpower)
+                player.stopClock()
+                player.startClock(manpower: _manpower)
             }
         } else if _manpower == [5, 4] {
             click5v4((Any).self)
             for player in game.getIce() {
-                game.getPlayer(number: player).stopClock()
-                game.getPlayer(number: player).startClock(manpower: _manpower)
+                player.stopClock()
+                player.startClock(manpower: _manpower)
             }
         } else if _manpower == [5, 3] {
             click5v3((Any).self)
             for player in game.getIce() {
-                game.getPlayer(number: player).stopClock()
-                game.getPlayer(number: player).startClock(manpower: _manpower)
+                player.stopClock()
+                player.startClock(manpower: _manpower)
             }
         } else if _manpower == [4, 5] {
             click4v5((Any).self)
             for player in game.getIce() {
-                game.getPlayer(number: player).stopClock()
-                game.getPlayer(number: player).startClock(manpower: _manpower)
+                player.stopClock()
+                player.startClock(manpower: _manpower)
             }
         } else if _manpower == [4, 4] {
             click4v4((Any).self)
             for player in game.getIce() {
-                game.getPlayer(number: player).stopClock()
-                game.getPlayer(number: player).startClock(manpower: _manpower)
+                player.stopClock()
+                player.startClock(manpower: _manpower)
             }
         } else if _manpower == [4, 3] {
             click4v3((Any).self)
             for player in game.getIce() {
-                game.getPlayer(number: player).stopClock()
-                game.getPlayer(number: player).startClock(manpower: _manpower)
+                player.stopClock()
+                player.startClock(manpower: _manpower)
             }
         } else if _manpower == [3, 5] {
             click3v5((Any).self)
             for player in game.getIce() {
-                game.getPlayer(number: player).stopClock()
-                game.getPlayer(number: player).startClock(manpower: _manpower)
+                player.stopClock()
+                player.startClock(manpower: _manpower)
             }
         } else if _manpower == [3, 4] {
             click3v4((Any).self)
             for player in game.getIce() {
-                game.getPlayer(number: player).stopClock()
-                game.getPlayer(number: player).startClock(manpower: _manpower)
+                player.stopClock()
+                player.startClock(manpower: _manpower)
             }
         } else if _manpower == [3, 3] {
             click3v3((Any).self)
             for player in game.getIce() {
-                game.getPlayer(number: player).stopClock()
-                game.getPlayer(number: player).startClock(manpower: _manpower)
+                player.stopClock()
+                player.startClock(manpower: _manpower)
             }
         }
         enableManpower = false
@@ -964,15 +964,18 @@ class ViewController: UIViewController {
     
     @IBAction func clickF1(_ sender: Any) {
         // F1 line button clicked:  disengage 3 players from F, put F1 players on
-        let ice = game.getIce()
+        let ice = game.onIce
         let f1 = [0, 1, 2]
         for player in ice {
-            if player < 12 {
-                game.takeOffIce(removePlayer: game.getPlayer(number: player))
+            if player.rosterPosition < 12 {
+                if player.isEnabled() {
+                    game.takeOffIce(removePlayer: player)
+                }
             }
         }
         for forward in f1 {
             game.putOnIce(addPlayer: game.getPlayer(number: forward), manpower: _manpower)
+            
         }
     }
     
@@ -980,9 +983,11 @@ class ViewController: UIViewController {
         // F2 line button clicked:  disengage 3 players from F, put F2 players on
         let ice = game.getIce()
         let f2 = [3, 4, 5]
+        print("ice:", ice)
         for player in ice {
-            if player < 12 {
-                game.takeOffIce(removePlayer: game.getPlayer(number: player))
+            if player.rosterPosition < 12 {
+                print(player.rosterPosition)
+                game.takeOffIce(removePlayer: player)
             }
         }
         for forward in f2 {
@@ -995,8 +1000,8 @@ class ViewController: UIViewController {
         let ice = game.getIce()
         let f3 = [6, 7, 8]
         for player in ice {
-            if player < 12 {
-                game.takeOffIce(removePlayer: game.getPlayer(number: player))
+            if player.rosterPosition < 12 {
+                game.takeOffIce(removePlayer: player)
             }
         }
         for forward in f3 {
@@ -1009,8 +1014,8 @@ class ViewController: UIViewController {
         let ice = game.getIce()
         let f4 = [9, 10, 11]
         for player in ice {
-            if player < 12 {
-                game.takeOffIce(removePlayer: game.getPlayer(number: player))
+            if player.rosterPosition < 12 {
+                game.takeOffIce(removePlayer: player)
             }
         }
         for forward in f4 {
@@ -1023,8 +1028,8 @@ class ViewController: UIViewController {
         let ice = game.getIce()
         let d1 = [12, 13]
         for player in ice {
-            if player > 11 && player < 18 {
-                game.takeOffIce(removePlayer: game.getPlayer(number: player))
+            if player.rosterPosition > 11 && player.rosterPosition < 18 {
+                game.takeOffIce(removePlayer: player)
             }
         }
         for defender in d1 {
@@ -1037,8 +1042,8 @@ class ViewController: UIViewController {
         let ice = game.getIce()
         let d2 = [14, 15]
         for player in ice {
-            if player > 11 && player < 18 {
-                game.takeOffIce(removePlayer: game.getPlayer(number: player))
+            if player.rosterPosition > 11 && player.rosterPosition < 18 {
+                game.takeOffIce(removePlayer: player)
             }
         }
         for defender in d2 {
@@ -1051,8 +1056,8 @@ class ViewController: UIViewController {
         let ice = game.getIce()
         let d3 = [16, 17]
         for player in ice {
-            if player > 11 && player < 18 {
-                game.takeOffIce(removePlayer: game.getPlayer(number: player))
+            if player.rosterPosition > 11 && player.rosterPosition < 18 {
+                game.takeOffIce(removePlayer: player)
             }
         }
         for defender in d3 {
@@ -1080,7 +1085,7 @@ class ViewController: UIViewController {
             stopLabel.alpha = 0.4
             startLabel.alpha = 1
             for player in game.getIce() {
-                game.getPlayer(number: player).stopClock()
+                player.stopClock()
             }
         }
             
@@ -1090,7 +1095,7 @@ class ViewController: UIViewController {
             stopLabel.alpha = 1
             startLabel.alpha = 0.4
             for player in game.getIce() {
-                game.getPlayer(number: player).startClock(manpower: _manpower)
+                player.startClock(manpower: _manpower)
             }
         }
     }
@@ -1133,7 +1138,7 @@ class ViewController: UIViewController {
         //        print("These are all the players on ice: ")
         
         for player in game.getIce() {
-            game.getPlayer(number: player).stopClock()
+            player.stopClock()
   
             
         }
