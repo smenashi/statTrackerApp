@@ -1317,12 +1317,10 @@ class ViewController: UIViewController {
         //onClickGameClock((Any).self)
         
         // Nick: these need to be implemented in the storyboard
-        jerseynum3.text = "OPPONENT"
-        jerseynum4.text = "OPPONENT"
         timer1.text = "00:00"
         timer2.text = "00:00"
-        //timer3.text = "00:00"
-        //timer4.text = "00:00"
+        timer3.text = "00:00"
+        timer4.text = "00:00"
         
         clickD1((Any).self)
         clickF1((Any).self)

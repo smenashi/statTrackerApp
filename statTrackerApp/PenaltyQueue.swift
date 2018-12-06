@@ -192,7 +192,7 @@ class PenaltyQueue {
                 index += 1
             }
         } else {
-            clockList[0]!._jerseyLabel.text = "OPPONENT"
+//            clockList[0]!._jerseyLabel.text = "OPPONENT"
             clockList[0] = nil
             while timeList[index] != nil {
                 clockList[index - 1] = clockList[index]
