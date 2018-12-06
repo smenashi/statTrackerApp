@@ -11,10 +11,11 @@ import UIKit
 
 class PenaltyClock: Clock {
     
-    init(penaltyTime:TimeInterval, timeUI:UILabel, queue:PenaltyQueue) {
+    init(penaltyTime:TimeInterval, timeUI:UILabel, queue:PenaltyQueue, jerseyLabel:UILabel) {
         _penaltyTime = penaltyTime
         _timeUI = timeUI
         q = queue
+        _jerseyLabel = jerseyLabel
     }
     
     var _penaltyTime: TimeInterval
@@ -22,16 +23,18 @@ class PenaltyClock: Clock {
     var timer = Timer()
     var timerDone = false
     var q:PenaltyQueue
+    var _jerseyLabel:UILabel
     
     
     func runPenaltyClock() {
-        runPenaltyTimer(_timerLabel: _timeUI)
+        runPenaltyTimer()
     }
     
     //----- Timer object functions -----//
     // <script src=https://medium.com/ios-os-x-development/build-an-stopwatch-with-swift-3-0-c7040818a10f></script>
     
-    func runPenaltyTimer(_timerLabel:UILabel) {
+    func runPenaltyTimer() {
+        let _timerLabel = q.getNextTimer()
         // runs the timer countdown
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updatePenaltyTimer), userInfo: _timerLabel, repeats: true)
     }
@@ -47,7 +50,6 @@ class PenaltyClock: Clock {
                 }
             }
             else {
-                timer.invalidate()
                 q.removeClock()
             }
         }

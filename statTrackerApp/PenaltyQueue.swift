@@ -13,7 +13,8 @@ class PenaltyQueue {
     var playerList:[Player?] = [nil, nil, nil, nil, nil, nil]
     var playerBoxList:[UIButton?] = [nil, nil, nil, nil, nil, nil]
     var clockList:[PenaltyClock?] = [nil, nil, nil, nil, nil, nil]
-    //var boxLabelList:[UILabel?] = [nil, nil]
+    var timeList:[TimeInterval?] = [nil, nil, nil, nil, nil, nil]
+    var availBoxList:[Bool] = [true, true]
     var _pbox1:UILabel
     var _pbox2:UILabel
     var _timerLabel1:UILabel
@@ -23,53 +24,44 @@ class PenaltyQueue {
     var manpowerReleased:() -> Void
     var usFlag = true
     var boxAvail = true
-    //    var currBox:UILabel
-    //    var currTimer:UILabel
+    var currBox = 0
+    var count = 0
+    var areQueuing = false
     
     init (gameTimer:GameClock, pbox1:UILabel, pbox2:UILabel, timerLabel1:UILabel, timerLabel2:UILabel, mP:@escaping ()->Void, mR:@escaping ()->Void) {
         _gameTimer = gameTimer
         _pbox1 = pbox1
         _pbox2 = pbox2
-        //        currBox = _pbox1
         _timerLabel1 = timerLabel1
         _timerLabel2 = timerLabel2
-        //currTimer = _timerLabel1
         manpowerPressed = mP
         manpowerReleased = mR
-        
     }
     
-    //    func getNextBox() -> UILabel {
-    //        if currBox == _pbox1 {
-    //            currBox = _pbox2
-    //            return _pbox2
-    //        } else {
-    //            currBox = _pbox1
-    //            return _pbox1
-    //        }
-    //    }
-    //
-    //    func getNextTimer() -> UILabel {
-    //        if currTimer == _timerLabel1 {
-    //            currTimer = _timerLabel2
-    //            return _timerLabel2
-    //        } else {
-    //            currTimer = _timerLabel1
-    //
-    //        }
-    //    }
-    
-    func getLastPos() -> Int {
-        var i = 0
-        while i < 6 {
-            print(i)
-            if playerList[i] != nil {
-                i += 0
+        func getNextBox() -> UILabel {
+            if currBox == 0 {
+                return _pbox1
             } else {
-                return i
+                return _pbox2
             }
         }
-        return -1
+
+        func getNextTimer() -> UILabel {
+            if currBox == 0 {
+                return _timerLabel1
+            } else {
+                return _timerLabel2
+            }
+        }
+    
+    func updateAvailBox() {
+        if availBoxList[0] {
+            currBox = 0
+        } else if availBoxList[1] {
+            currBox = 1
+        } else {
+            currBox = -1
+        }
     }
     
     func getClockPos(clock: PenaltyClock) -> Int {
@@ -93,38 +85,82 @@ class PenaltyQueue {
     
     func newUsPenalty(player:Player, time:TimeInterval, box:UIButton) {
         let index = addPlayerIntoQ(time: time)
-        if index < 2 {
-            playerList[index] = player
-            _pbox1.text = String(player._jerseyNumber)
-            clockList[index] = PenaltyClock(penaltyTime: time, timeUI: _timerLabel1, queue:self)
-            clockList[index]!.runPenaltyClock()
-            playerBoxList[index] = box
-            box.backgroundColor = .red
-            player.disablePlayer()
-            manpowerSwitch {
-                manpowerPressed()
-            }
-            print(playerList)
+        count += 1
+        playerList[index] = player
+        playerBoxList[index] = box
+        timeList[index] = time
+        box.backgroundColor = .red
+        player.disablePlayer()
+        manpowerSwitch {
+            manpowerPressed()
         }
+        if index < 2 {
+            putInBox(_index: index, time:time)
+        }
+        
     }
     
     func newThemPenalty(time:TimeInterval) {
         usFlag = false
         let index = addPlayerIntoQ(time: time)
-        clockList[index] = PenaltyClock(penaltyTime: time, timeUI: _timerLabel1, queue: self)
-        clockList[index]!.runPenaltyClock()
+        timeList[index] = time
+        count += 1
         manpowerSwitch {
             manpowerPressed()
+        }
+        if index < 2 {
+            putInBox(_index: index, time:time)
+        }
+    }
+    
+    func putInBox(_index:Int, time:TimeInterval) {
+        var index = _index
+        updateAvailBox()
+        if areQueuing && timeList[1]! < timeList[0]! { // if queued penalty is less than remaining penalty after clear (edge case)
+            let tempPlayer = playerList[1]
+            let tempTime = timeList[1]
+            let tempBox = playerBoxList[1]
+            playerList[1] = playerList[0]
+            playerBoxList[1] = playerBoxList[0]
+            timeList[1] = timeList[0]
+            clockList[1] = clockList[0]
+            playerList[0] = tempPlayer
+            playerBoxList[0] = tempBox
+            timeList[0] = tempTime
+            index = 0
+            //areQueuing = false
+        }
+        if usFlag {
+            getNextBox().text = String(playerList[index]!._jerseyNumber)
+        }
+        clockList[index] = PenaltyClock(penaltyTime: time, timeUI: getNextTimer(), queue:self, jerseyLabel: getNextBox())
+        clockList[index]!.runPenaltyClock()
+        availBoxList[currBox] = false
+        print(availBoxList)
+        
+    }
+    
+    func updateAvailBoxAfterRemove(index:Int) {
+        if clockList[0]!._timeUI == _timerLabel1 {
+            availBoxList[0] = true
+        } else {
+            availBoxList[1] = true
         }
     }
     
     func addPlayerIntoQ(time:TimeInterval) -> Int {
-        var index = getLastPos()
-        while index > 0 {
-            if clockList[index - 1]!._penaltyTime > time {
+        print(timeList)
+        var index = count
+        var shift = 0
+        if index > 1 {
+            shift = 2
+        }
+        while index > shift {
+            if timeList[index - 1]! > time {
                 playerList[index] = playerList[index - 1]
                 clockList[index] = clockList[index - 1]
                 playerBoxList[index] = playerBoxList[index - 1]
+                timeList[index] = timeList[index - 1]
                 index -= 1
             } else {
                 return index
@@ -135,36 +171,50 @@ class PenaltyQueue {
     
     // put new player label into box
     func removeClock() {
+        print(timeList)
+        print(clockList)
         var index = 1
+        clockList[0]!.timer.invalidate()
+        clockList[0]!._timeUI.text = "00:00"
+        updateAvailBoxAfterRemove(index:0)
         if usFlag {
             playerList[0]!.enablePlayer()
             playerBoxList[0]!.backgroundColor = .green
-            manpowerSwitch {
-                manpowerReleased()
-            }
-            _pbox1.text = "Jersey #"
+            clockList[0]!._jerseyLabel.text = "Jersey #"
             playerList[0] = nil
             clockList[0] = nil
             playerBoxList[0] = nil
-            while clockList[index] != nil {
+            timeList[0] = nil
+            while timeList[index] != nil {
                 playerList[index - 1] = playerList[index]
                 clockList[index - 1] = clockList[index]
                 playerBoxList[index - 1] = playerBoxList[index]
+                timeList[index - 1] = timeList[index]
                 index += 1
             }
+        } else {
+            clockList[0]!._jerseyLabel.text = "OPPONENT"
+            clockList[0] = nil
+            while timeList[index] != nil {
+                clockList[index - 1] = clockList[index]
+                timeList[index - 1] = timeList[index]
+                index += 1
+            }
+        }
+        playerList[count - 1] = nil
+        clockList[count - 1] = nil
+        playerBoxList[count - 1] = nil
+        timeList[count - 1] = nil
+        count -= 1
+        if count > 1 {
+            areQueuing = true
+            putInBox(_index: 1, time: timeList[1]!)
         } else {
             manpowerSwitch {
                 manpowerReleased()
             }
-            _pbox1.text = "OPPONENT"
-            clockList[0] = nil
-            while clockList[index] != nil {
-                clockList[index - 1] = clockList[index]
-                index += 1
-            }
-            print(playerList)
         }
-        
+        print(timeList)
     }
 }
 
@@ -188,3 +238,4 @@ extension PenaltyQueue: Hashable {
     }
 }
 
+//take out pri-queuing

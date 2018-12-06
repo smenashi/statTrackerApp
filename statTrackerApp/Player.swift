@@ -88,11 +88,6 @@ class Player {
         iceTime[clockManpower] = time
     }
     
-    func delayPenalties(_ time:Double, closure:@escaping ()->()) {
-        let when = DispatchTime.now() + time
-        DispatchQueue.main.asyncAfter(deadline: when, execute: closure)
-    }
-    
     // convert manpower arrays into manpower strings
     func aryToStr(manpower:[Int]) -> String {
         let man1 = String(manpower[0])

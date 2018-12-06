@@ -323,23 +323,31 @@ class ViewController: UIViewController {
     }
     
     func manpowerUsPressedSwitch() {
-        _manpower[0] = _manpower[0] - 1
-        manpowerSwitch()
+        if _manpower[0] > 3 {
+            _manpower[0] = _manpower[0] - 1
+            manpowerSwitch()
+        }
     }
     
     func manpowerUsReleasedSwitch() {
-        _manpower[0] = _manpower[0] + 1
-        manpowerSwitch()
+        if _manpower[0] > 2 {
+            _manpower[0] = _manpower[0] + 1
+            manpowerSwitch()
+        }
     }
     
     func manpowerThemPressedSwitch() {
-        _manpower[1] = _manpower[1] - 1
-        manpowerSwitch()
+        if _manpower[1] > 3 {
+            _manpower[1] = _manpower[1] - 1
+            manpowerSwitch()
+        }
     }
     
     func manpowerThemReleasedSwitch() {
-        _manpower[1] = _manpower[1] + 1
-        manpowerSwitch()
+        if _manpower[1] > 2 {
+            _manpower[1] = _manpower[1] + 1
+            manpowerSwitch()
+        }
     }
     
     // function for delaying manpower switching
@@ -705,8 +713,12 @@ class ViewController: UIViewController {
         // : increase the SHOT and GOAL for for each player on ice here
         game.shotFor()
         game.goalFor(manpower: _manpower)
-        clearUsPenaltyBoxes()
-        clearThemPenaltyBoxes()
+        if usPQ.count > 0 {
+            usPQ.removeClock()
+        }
+        if themPQ.count > 0 {
+            themPQ.removeClock()
+        }
         
     }
     
@@ -714,8 +726,12 @@ class ViewController: UIViewController {
         // Goal Against button clicked: update relevant stats to players on ice
         //                              and any other stats
         game.goalAgainst()
-        clearUsPenaltyBoxes()
-        clearThemPenaltyBoxes()
+        if usPQ.count > 0 {
+            usPQ.removeClock()
+        }
+        if themPQ.count > 0 {
+            themPQ.removeClock()
+        }
         
         let onIceNumbers = game.getOnIceNumbersAsArray()
         appDelegate.database?.addChronStat(seasonYear: game._season, game: inputCollegeText ?? "Opponent", period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "goalAgainst", manpower: manpowerStr(), statOwnerNum: 0, onIce1Num: onIceNumbers[0], onIce2Num: onIceNumbers[1], onIce3Num: onIceNumbers[2], onIce4Num: onIceNumbers[3], onIce5Num: onIceNumbers[4], onIce6Num: onIceNumbers[5])
@@ -769,40 +785,25 @@ class ViewController: UIViewController {
     @IBAction func penalty2ForClicked(_ sender: Any) {
         // 2:00 For clicked: update relevant stats to players on ice
         //  has drop-down for selecting player
+
+        playersDropDown.reloadData() // reload drop-down data
+        dropDownClicked = "2Us" // mark which dropDown was clicked
+        // get new X & Y positions for the drop-down menu
+        let newX = penalty2ForButton.frame.minX
+        let newY = penalty2ForButton.frame.maxY
         
-        if _manpower[0] > 3 {
-            playersDropDown.reloadData() // reload drop-down data
-            dropDownClicked = "2Us" // mark which dropDown was clicked
-            // get new X & Y positions for the drop-down menu
-            let newX = penalty2ForButton.frame.minX
-            let newY = penalty2ForButton.frame.maxY
-            
-            
-            // animation plays that "drops down" the table view --
-            if playersDropDown.isHidden{
-                playersDropDown.frame.origin.x = newX
-                playersDropDown.frame.origin.y = newY
-                animate(toggle: true, type: goalForButton)
-            }
-            else{
-                animate(toggle: false, type: goalForButton)
-            }
-            
-            
-            
-            //            let currBoxNum = currUsBox
-            //            let thisBox = getNextUsBox()
-            //            let penalty = PenaltyClock(penaltyTime: 20, timeUI: thisBox[0])
-            //            currBoxes.append(penalty)
-            //            putTimerInUsBox(timer: penalty)
-            //            manpowerUsPressedSwitch()
-            //            penalty.runPenaltyClock()
-            //            delayManpowerSwitch(120) {
-            //                self.manpowerUsReleasedSwitch()
-            //                thisBox[1].text = "Jersey #"
-            //                self.usBoxes[currBoxNum] = nil
-            //            }
+        
+        // animation plays that "drops down" the table view --
+        if playersDropDown.isHidden{
+            playersDropDown.frame.origin.x = newX
+            playersDropDown.frame.origin.y = newY
+            animate(toggle: true, type: goalForButton)
         }
+        else{
+            animate(toggle: false, type: goalForButton)
+        }
+            
+        
     }
     
     @IBOutlet weak var penalty4ForButton: UIButton!
@@ -810,37 +811,23 @@ class ViewController: UIViewController {
         // 4:00 For clicked: update relevant stats to players on ice
         //  has drop-down for selecting player
         
-        if _manpower[0] > 3 {
-            playersDropDown.reloadData() // reload drop-down data
-            dropDownClicked = "4Us" // mark which dropDown was clicked
-            // get new X & Y positions for the drop-down menu
-            let newX = penalty4ForButton.frame.minX
-            let newY = penalty4ForButton.frame.maxY
-            
-            
-            // animation plays that "drops down" the table view --
-            if playersDropDown.isHidden{
-                playersDropDown.frame.origin.x = newX
-                playersDropDown.frame.origin.y = newY
-                animate(toggle: true, type: goalForButton)
-            }
-            else{
-                animate(toggle: false, type: goalForButton)
-            }
-            
-            //            let currBoxNum = currUsBox
-            //            let thisBox = getNextUsBox()
-            //            let penalty = PenaltyClock(penaltyTime: 240, timeUI: thisBox[0])
-            //            //currBoxes.append(penalty)
-            //            putTimerInUsBox(timer: penalty)
-            //            manpowerUsPressedSwitch()
-            //            penalty.runPenaltyClock()
-            //            delayManpowerSwitch(240) {
-            //                self.manpowerUsReleasedSwitch()
-            //                thisBox[1].text = "Jersey #"
-            //                self.usBoxes[currBoxNum] = nil
-            //            }
+        playersDropDown.reloadData() // reload drop-down data
+        dropDownClicked = "4Us" // mark which dropDown was clicked
+        // get new X & Y positions for the drop-down menu
+        let newX = penalty4ForButton.frame.minX
+        let newY = penalty4ForButton.frame.maxY
+        
+        
+        // animation plays that "drops down" the table view --
+        if playersDropDown.isHidden{
+            playersDropDown.frame.origin.x = newX
+            playersDropDown.frame.origin.y = newY
+            animate(toggle: true, type: goalForButton)
         }
+        else{
+            animate(toggle: false, type: goalForButton)
+        }
+        
     }
     
     @IBOutlet weak var penalty5ForButton: UIButton!
@@ -848,143 +835,92 @@ class ViewController: UIViewController {
         // 5:00 For clicked: update relevant stats to players on ice
         //  has drop-down for selecting player
         
-        if _manpower[0] > 3 {
-            playersDropDown.reloadData() // reload drop-down data
-            dropDownClicked = "5Us" // mark which dropDown was clicked
-            // get new X & Y positions for the drop-down menu
-            let newX = penalty5ForButton.frame.minX
-            let newY = penalty5ForButton.frame.maxY
-            
-            
-            // animation plays that "drops down" the table view --
-            if playersDropDown.isHidden{
-                playersDropDown.frame.origin.x = newX
-                playersDropDown.frame.origin.y = newY
-                animate(toggle: true, type: goalForButton)
-            }
-            else{
-                animate(toggle: false, type: goalForButton)
-            }
-            
-            //            let thisBox = getNextUsBox()
-            //            let currBoxNum = currUsBox
-            //            let penalty = PenaltyClock(penaltyTime: 300, timeUI: thisBox[0])
-            //            currBoxes.append(penalty)
-            //            putTimerInUsBox(timer: penalty)
-            //            manpowerUsPressedSwitch()
-            //            penalty.runPenaltyClock()
-            //            delayManpowerSwitch(300) {
-            //                self.manpowerUsReleasedSwitch()
-            //                thisBox[1].text = "Jersey #"
-            //                self.usBoxes[currBoxNum] = nil
-            //            }
+        playersDropDown.reloadData() // reload drop-down data
+        dropDownClicked = "5Us" // mark which dropDown was clicked
+        // get new X & Y positions for the drop-down menu
+        let newX = penalty5ForButton.frame.minX
+        let newY = penalty5ForButton.frame.maxY
+        
+        
+        // animation plays that "drops down" the table view --
+        if playersDropDown.isHidden{
+            playersDropDown.frame.origin.x = newX
+            playersDropDown.frame.origin.y = newY
+            animate(toggle: true, type: goalForButton)
         }
+        else{
+            animate(toggle: false, type: goalForButton)
+        }
+        
     }
     
     // <Min> Against: ---------------
     
     @IBOutlet weak var penalty2Against: UIButton!
     @IBAction func penalty2AgainstClicked(_ sender: Any) {
+
+        playersDropDown.reloadData() // reload drop-down data
+        dropDownClicked = "2Them" // mark which dropDown was clicked
+        // get new X & Y positions for the drop-down menu
+        let newX = penalty2Against.frame.minX
+        let newY = penalty2Against.frame.maxY
         
-        if _manpower[1] > 3 {
-            playersDropDown.reloadData() // reload drop-down data
-            dropDownClicked = "2Them" // mark which dropDown was clicked
-            // get new X & Y positions for the drop-down menu
-            let newX = penalty2Against.frame.minX
-            let newY = penalty2Against.frame.maxY
-            
-            
-            // animation plays that "drops down" the table view --
-            if playersDropDown.isHidden{
-                playersDropDown.frame.origin.x = newX
-                playersDropDown.frame.origin.y = newY
-                animate(toggle: true, type: goalForButton)
-            }
-            else{
-                animate(toggle: false, type: goalForButton)
-            }
-            
-            //            let thisBox = getNextThemBox()
-            //            let penalty = PenaltyClock(penaltyTime: 120, timeUI: thisBox[0])
-            //            currBoxes.append(penalty)
-            //            putTimerInThemBox(timer: penalty)
-            //            manpowerThemPressedSwitch()
-            //            penalty.runPenaltyClock()
-            //            delayManpowerSwitch(120) {
-            //                self.manpowerThemReleasedSwitch()
-            //                thisBox[1].text = "Jersey #"
-            //            }
+        
+        // animation plays that "drops down" the table view --
+        if playersDropDown.isHidden{
+            playersDropDown.frame.origin.x = newX
+            playersDropDown.frame.origin.y = newY
+            animate(toggle: true, type: goalForButton)
         }
+        else{
+            animate(toggle: false, type: goalForButton)
+        }
+        
     }
     
     @IBOutlet weak var penalty4Against: UIButton!
     @IBAction func penalty4AgainstClicked(_ sender: Any) {
         
-        if _manpower[1] > 3 {
-            playersDropDown.reloadData() // reload drop-down data
-            dropDownClicked = "4Them" // mark which dropDown was clicked
-            // get new X & Y positions for the drop-down menu
-            let newX = penalty4Against.frame.minX
-            let newY = penalty4Against.frame.maxY
-            
-            
-            // animation plays that "drops down" the table view --
-            if playersDropDown.isHidden{
-                playersDropDown.frame.origin.x = newX
-                playersDropDown.frame.origin.y = newY
-                animate(toggle: true, type: goalForButton)
-            }
-            else{
-                animate(toggle: false, type: goalForButton)
-            }
-            
-            //            let thisBox = getNextThemBox()
-            //            let penalty = PenaltyClock(penaltyTime: 240, timeUI: thisBox[0])
-            //            currBoxes.append(penalty)
-            //            putTimerInThemBox(timer: penalty)
-            //            manpowerThemPressedSwitch()
-            //            penalty.runPenaltyClock()
-            //            delayManpowerSwitch(240) {
-            //                self.manpowerThemReleasedSwitch()
-            //                thisBox[1].text = "Jersey #"
-            //            }
+        playersDropDown.reloadData() // reload drop-down data
+        dropDownClicked = "4Them" // mark which dropDown was clicked
+        // get new X & Y positions for the drop-down menu
+        let newX = penalty4Against.frame.minX
+        let newY = penalty4Against.frame.maxY
+        
+        
+        // animation plays that "drops down" the table view --
+        if playersDropDown.isHidden{
+            playersDropDown.frame.origin.x = newX
+            playersDropDown.frame.origin.y = newY
+            animate(toggle: true, type: goalForButton)
         }
+        else{
+            animate(toggle: false, type: goalForButton)
+        }
+        
     }
     
     
     @IBOutlet weak var penalty5Against: UIButton!
     @IBAction func penalty5AgainstClicked(_ sender: Any) {
         
-        if _manpower[1] > 3 {
-            playersDropDown.reloadData() // reload drop-down data
-            dropDownClicked = "5Them" // mark which dropDown was clicked
-            // get new X & Y positions for the drop-down menu
-            let newX = penalty5Against.frame.minX
-            let newY = penalty5Against.frame.maxY
-            
-            
-            // animation plays that "drops down" the table view --
-            if playersDropDown.isHidden{
-                playersDropDown.frame.origin.x = newX
-                playersDropDown.frame.origin.y = newY
-                animate(toggle: true, type: goalForButton)
-            }
-            else{
-                animate(toggle: false, type: goalForButton)
-            }
-            
-            //            let thisBox = getNextThemBox()
-            //            let penalty = PenaltyClock(penaltyTime: 300, timeUI: thisBox[0])
-            //            currBoxes.append(penalty)
-            //            putTimerInThemBox(timer: penalty)
-            //            manpowerThemPressedSwitch()
-            //            print(themBoxesTimers)
-            //            penalty.runPenaltyClock()
-            //            delayManpowerSwitch(300) {
-            //                self.manpowerThemReleasedSwitch()
-            //                thisBox[1].text = "Jersey #"
-            //            }
+        playersDropDown.reloadData() // reload drop-down data
+        dropDownClicked = "5Them" // mark which dropDown was clicked
+        // get new X & Y positions for the drop-down menu
+        let newX = penalty5Against.frame.minX
+        let newY = penalty5Against.frame.maxY
+        
+        
+        // animation plays that "drops down" the table view --
+        if playersDropDown.isHidden{
+            playersDropDown.frame.origin.x = newX
+            playersDropDown.frame.origin.y = newY
+            animate(toggle: true, type: goalForButton)
         }
+        else{
+            animate(toggle: false, type: goalForButton)
+        }
+        
     }
     
     // ----------------------------------------------
@@ -1006,156 +942,8 @@ class ViewController: UIViewController {
     
     lazy var usPQ = PenaltyQueue(gameTimer: gameTimer, pbox1: jerseynum1, pbox2: jerseynum2, timerLabel1: timer1, timerLabel2: timer2, mP: manpowerUsPressedSwitch, mR: manpowerUsReleasedSwitch)
     lazy var themPQ = PenaltyQueue(gameTimer: gameTimer, pbox1: jerseynum3, pbox2: jerseynum4, timerLabel1: timer3, timerLabel2: timer4, mP: manpowerThemPressedSwitch, mR: manpowerThemReleasedSwitch)
-    
-    var currUsBox: Int = 0
-    lazy var usBoxes: [Int: Player?] = [0: nil, 1: nil]
-    lazy var usBoxesTimers: [Int: PenaltyClock?] = [0: nil, 1: nil]
-    
-    var currThemBox: Int = 0
-    lazy var themBoxesTimers: [Int: PenaltyClock?] = [0: nil, 1: nil]
-    
-    
-    func putPlayerInUsBox(player:Player) {
-        if currUsBox == 0 {
-            usBoxes[1] = player
-        } else {
-            usBoxes[0] = player
-        }
-    }
-    
-    func putTimerInUsBox(timer:PenaltyClock) {
-        if currUsBox == 0 {
-            usBoxesTimers[1] = timer
-        } else {
-            usBoxesTimers[0] = timer
-        }
-    }
-    
-    func putTimerInThemBox(timer: PenaltyClock) {
-        if currThemBox == 0 {
-            themBoxesTimers[1] = timer
-        } else {
-            themBoxesTimers[0] = timer
-        }
-    }
-    
-    func getNextUsBox() -> [UILabel] {
-        if currUsBox == 0 {
-            currUsBox = 1
-            return [timer1, jerseynum1]
-        } else {
-            currUsBox = 0
-            return [timer2, jerseynum2]
-        }
-    }
-    
-    func getNextThemBox() -> [UILabel] {
-        if currThemBox == 0 {
-            currThemBox = 1
-            return [timer3, jerseynum3]
-        } else {
-            currThemBox = 0
-            return [timer4, jerseynum4]
-        }
-    }
-    
-    // for drop-down menu action
-    func getCurrUsBoxJersey() -> UILabel {
-        if currUsBox == 0 {
-            return jerseynum2
-        } else {
-            return jerseynum1
-        }
-    }
-    
-    func getCurrThemBoxJersey() -> UILabel {
-        if currUsBox == 0 {
-            return jerseynum4
-        } else {
-            return jerseynum3
-        }
-    }
-    
-    // for clearing penalty boxes
-    var currBoxes = Array<PenaltyClock>()
-    
-    func clearUsPenaltyBoxes() {
-        if _manpower[0] == 4 {
-            if usBoxes[0] == nil {
-                let returnPlayer = usBoxes[1]!!
-                manpowerUsReleasedSwitch()
-                returnPlayer.inBox = false
-                game.maxOnIce += 1
-                game.putOnIce(addPlayer: returnPlayer, manpower: _manpower)
-                jerseynum2.text = "Jersey #"
-                timer2.text = "00:00"
-                usBoxesTimers[1]!!.timer.invalidate()
-            } else {
-                let returnPlayer = usBoxes[0]!!
-                manpowerUsReleasedSwitch()
-                returnPlayer.inBox = false
-                game.maxOnIce += 1
-                game.putOnIce(addPlayer: returnPlayer, manpower: _manpower)
-                jerseynum1.text = "Jersey #"
-                timer1.text = "00:00"
-                usBoxesTimers[0]!!.timer.invalidate()
-            }
-        } else if _manpower[0] == 3 {
-            let usTimes = [usBoxesTimers[0]!!._penaltyTime, usBoxesTimers[1]!!._penaltyTime]
-            if usTimes[0] < usTimes[1] {
-                let returnPlayer = usBoxes[0]!!
-                returnPlayer.inBox = false
-                game.maxOnIce += 1
-                manpowerUsReleasedSwitch()
-                game.putOnIce(addPlayer: returnPlayer, manpower: _manpower)
-                jerseynum1.text = "Jersey #"
-                timer1.text = "00:00"
-                usBoxesTimers[0]!!.timer.invalidate()
-            } else {
-                let returnPlayer = usBoxes[1]!!
-                returnPlayer.inBox = false
-                game.maxOnIce += 1
-                manpowerUsReleasedSwitch()
-                game.putOnIce(addPlayer: returnPlayer, manpower: _manpower)
-                jerseynum2.text = "Jersey #"
-                timer2.text = "00:00"
-                usBoxesTimers[1]!!.timer.invalidate()
-            }
-        }
-    }
-    
-    func clearThemPenaltyBoxes() {
-        if _manpower[1] == 4 {
-            if themBoxesTimers[1] == nil {
-                manpowerThemReleasedSwitch()
-                game.maxOnIce += 1
-                jerseynum3.text = "Jersey #"
-                timer3.text = "00:00"
-                themBoxesTimers[0]!!.timer.invalidate()
-            } else {
-                manpowerThemReleasedSwitch()
-                game.maxOnIce += 1
-                jerseynum4.text = "Jersey #"
-                timer4.text = "00:00"
-                themBoxesTimers[1]!!.timer.invalidate()
-            }
-        } else if _manpower[1] == 3 {
-            let themTimes = [themBoxesTimers[0]!!._penaltyTime, themBoxesTimers[1]!!._penaltyTime]
-            if themTimes[0] < themTimes[1] {
-                manpowerThemReleasedSwitch()
-                game.maxOnIce += 1
-                jerseynum3.text = "Jersey #"
-                timer3.text = "00:00"
-                themBoxesTimers[0]!!.timer.invalidate()
-            } else {
-                manpowerThemReleasedSwitch()
-                game.maxOnIce += 1
-                jerseynum4.text = "Jersey #"
-                timer4.text = "00:00"
-                themBoxesTimers[1]!!.timer.invalidate()
-            }
-        }
-    }
+
+
     
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     
@@ -1756,16 +1544,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         if dropDownClicked == "2Us" {
             let playerClicked = game.currIce[indexPath.row]
             usPQ.newUsPenalty(player: playerClicked, time: 120, box: playerClicked.playerButton!)
-            //            let thisBox = getCurrUsBoxJersey()
-            //            putPlayerInUsBox(player: playerClicked)
-            //            //print("penalty 2Usclicked!")
-            //            playerClicked.inBox = true
-            //            playerClicked.increasePenalty2min(manpower: _manpower)
-            //            thisBox.text = String(playerClicked._jerseyNumber)
-            //            hamBox.append(playerClicked)
-            //            game.takeOffIce(removePlayer: playerClicked)
-            //            game.maxOnIce -= 1
-            //            game.updateCurrentIce()
+            playerClicked.increasePenalty2min(manpower: _manpower)
             let onIceNumbers = game.getOnIceNumbersAsArray()
             appDelegate.database?.addChronStat(seasonYear: game._season, game: inputCollegeText ?? "Opponent", period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "2penaltyCommited", manpower: manpowerStr(), statOwnerNum: game.currIce[indexPath.row]._jerseyNumber, onIce1Num: onIceNumbers[0], onIce2Num: onIceNumbers[1], onIce3Num: onIceNumbers[2], onIce4Num: onIceNumbers[3], onIce5Num: onIceNumbers[4], onIce6Num: onIceNumbers[5])
             
@@ -1775,11 +1554,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         
         if dropDownClicked == "2Them" {
             themPQ.newThemPenalty(time: 120)
-            //            print("penalty 2Themclicked!")
-            //            let thisBox = getCurrThemBoxJersey()
-            //            thisBox.text = "OPPONENT"
-            //            game.currIce[indexPath.row].increasePenaltyDrawn2min(manpower:_manpower)
-            //            game.maxOnIce -= 1
+            game.currIce[indexPath.row].increasePenaltyDrawn2min(manpower:_manpower)
             let onIceNumbers = game.getOnIceNumbersAsArray()
             appDelegate.database?.addChronStat(seasonYear: game._season, game: inputCollegeText ?? "Opponent", period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "2penaltyDrawn", manpower: manpowerStr(), statOwnerNum: game.currIce[indexPath.row]._jerseyNumber, onIce1Num: onIceNumbers[0], onIce2Num: onIceNumbers[1], onIce3Num: onIceNumbers[2], onIce4Num: onIceNumbers[3], onIce5Num: onIceNumbers[4], onIce6Num: onIceNumbers[5])
         }
@@ -1787,15 +1562,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         if dropDownClicked == "4Us" {
             let playerClicked = game.currIce[indexPath.row]
             usPQ.newUsPenalty(player: playerClicked, time: 240, box: playerClicked.playerButton!)
-            //            let thisBox = getCurrUsBoxJersey()
-            //            putPlayerInUsBox(player: playerClicked)
-            //            playerClicked.inBox = true
-            //            playerClicked.increasePenalty4min(manpower:_manpower)
-            //            thisBox.text = String(playerClicked._jerseyNumber)
-            //            hamBox.append(playerClicked)
-            //            game.takeOffIce(removePlayer: playerClicked)
-            //            game.maxOnIce -= 1
-            //            game.updateCurrentIce()
+            playerClicked.increasePenalty4min(manpower:_manpower)
             let onIceNumbers = game.getOnIceNumbersAsArray()
             appDelegate.database?.addChronStat(seasonYear: game._season, game: inputCollegeText ?? "Opponent", period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "4penaltyCommited", manpower: manpowerStr(), statOwnerNum: game.currIce[indexPath.row]._jerseyNumber, onIce1Num: onIceNumbers[0], onIce2Num: onIceNumbers[1], onIce3Num: onIceNumbers[2], onIce4Num: onIceNumbers[3], onIce5Num: onIceNumbers[4], onIce6Num: onIceNumbers[5])
             
@@ -1804,11 +1571,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         
         if dropDownClicked == "4Them" {
             themPQ.newThemPenalty(time: 240)
-            //            print("penalty 4Themclicked!")
-            //            let thisBox = getCurrThemBoxJersey()
-            //            thisBox.text = "OPPONENT"
-            //            game.currIce[indexPath.row].increasePenaltyDrawn4min(manpower:_manpower)
-            //            game.maxOnIce -= 1
+            game.currIce[indexPath.row].increasePenaltyDrawn4min(manpower:_manpower)
             let onIceNumbers = game.getOnIceNumbersAsArray()
             appDelegate.database?.addChronStat(seasonYear: game._season, game: inputCollegeText ?? "Opponent", period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "4penaltyDrawn", manpower: manpowerStr(), statOwnerNum: game.currIce[indexPath.row]._jerseyNumber, onIce1Num: onIceNumbers[0], onIce2Num: onIceNumbers[1], onIce3Num: onIceNumbers[2], onIce4Num: onIceNumbers[3], onIce5Num: onIceNumbers[4], onIce6Num: onIceNumbers[5])
         }
@@ -1816,15 +1579,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         if dropDownClicked == "5Us" {
             let playerClicked = game.currIce[indexPath.row]
             usPQ.newUsPenalty(player: playerClicked, time: 300, box: playerClicked.playerButton!)
-            //            let thisBox = getCurrUsBoxJersey()
-            //            putPlayerInUsBox(player: playerClicked)
-            //            playerClicked.increasePenalty5min(manpower:_manpower)
-            //            playerClicked.inBox = true
-            //            thisBox.text = String(playerClicked._jerseyNumber)
-            //            hamBox.append(playerClicked)
-            //            game.takeOffIce(removePlayer: playerClicked)
-            //            game.maxOnIce -= 1
-            //            game.updateCurrentIce()
+            playerClicked.increasePenalty5min(manpower:_manpower)
             let onIceNumbers = game.getOnIceNumbersAsArray()
             appDelegate.database?.addChronStat(seasonYear: game._season, game: inputCollegeText ?? "Opponent", period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "5penaltyCommited", manpower: manpowerStr(), statOwnerNum: game.currIce[indexPath.row]._jerseyNumber, onIce1Num: onIceNumbers[0], onIce2Num: onIceNumbers[1], onIce3Num: onIceNumbers[2], onIce4Num: onIceNumbers[3], onIce5Num: onIceNumbers[4], onIce6Num: onIceNumbers[5])
             
@@ -1834,10 +1589,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         if dropDownClicked == "5Them" {
             print("penalty 5Themclicked!")
             themPQ.newThemPenalty(time: 300)
-            //            let thisBox = getCurrThemBoxJersey()
-            //            thisBox.text = "OPPONENT"
-            //            game.currIce[indexPath.row].increasePenaltyDrawn5min(manpower:_manpower)
-            //            game.maxOnIce -= 1
+            game.currIce[indexPath.row].increasePenaltyDrawn5min(manpower:_manpower)
             let onIceNumbers = game.getOnIceNumbersAsArray()
             appDelegate.database?.addChronStat(seasonYear: game._season, game: inputCollegeText ?? "Opponent", period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "5penaltyDrawn", manpower: manpowerStr(), statOwnerNum: game.currIce[indexPath.row]._jerseyNumber, onIce1Num: onIceNumbers[0], onIce2Num: onIceNumbers[1], onIce3Num: onIceNumbers[2], onIce4Num: onIceNumbers[3], onIce5Num: onIceNumbers[4], onIce6Num: onIceNumbers[5])
         }

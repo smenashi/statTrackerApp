@@ -91,73 +91,7 @@ class Game {
         return players
     }
     
-    func getPlayer1() -> Player {
-        return players[0]
-    }
-    func getPlayer2() -> Player {
-        return players[1]
-    }
-    func getPlayer3() -> Player {
-        return players[2]
-    }
-    func getPlayer4() -> Player {
-        return players[3]
-    }
-    func getPlayer5() -> Player {
-        return players[4]
-    }
-    func getPlayer6() -> Player {
-        return players[5]
-    }
-    func getPlayer7() -> Player {
-        return players[6]
-    }
-    func getPlayer8() -> Player {
-        return players[7]
-    }
-    func getPlayer9() -> Player {
-        return players[8]
-    }
-    func getPlayer10() -> Player {
-        return players[9]
-    }
-    func getPlayer11() -> Player {
-        return players[10]
-    }
-    func getPlayer12() -> Player {
-        return players[11]
-    }
-    func getPlayer13() -> Player {
-        return players[12]
-    }
-    func getPlayer14() -> Player {
-        return players[13]
-    }
-    func getPlayer15() -> Player {
-        return players[14]
-    }
-    func getPlayer16() -> Player {
-        return players[15]
-    }
-    func getPlayer17() -> Player {
-        return players[16]
-    }
-    func getPlayer18() -> Player {
-        return players[17]
-    }
-    func getPlayer19() -> Player {
-        return players[18]
-    }
-    func getPlayer20() -> Player {
-        return players[19]
-    }
-    func getPlayer21() -> Player {
-        return players[20]
-    }
-    func getPlayer22() -> Player {
-        return players[21]
-    }
-    
+
     // managing ice
     func iceIsFull() -> Bool {
         return onIce.count == 6
@@ -225,50 +159,6 @@ class Game {
         }
     }
     
-    func penalty2min(penaltyBy:Int, manpower:[Int] = [5, 5], button: UIButton) {
-        let player = players[penaltyBy]
-        player.increasePenalty2min(manpower: manpower)
-        button.backgroundColor = .red
-        player.disablePlayer()
-        delayPenalties(120) {
-            player.enablePlayer()
-            button.backgroundColor = .green
-        }
-    }
-    
-    func penaltyDrawn2min(drawnBy:Int, manpower:[Int] = [5, 5]) {
-        players[drawnBy].increasePenaltyDrawn2min(manpower: manpower)
-    }
-    
-    func penalty4min(penaltyBy:Int, manpower:[Int] = [5, 5]) {
-        let player = players[penaltyBy]
-        player.increasePenalty4min(manpower: manpower)
-        player.playerButton!.backgroundColor = .red
-        player.disablePlayer()
-        delayPenalties(240) {
-            player.enablePlayer()
-            player.playerButton?.backgroundColor = .green
-        }
-    }
-    
-    func penaltyDrawn4min(drawnBy:Int, manpower:[Int] = [5, 5]) {
-        players[drawnBy].increasePenaltyDrawn4min(manpower: manpower)
-    }
-    
-    func penalty5min(penaltyBy:Int, manpower:[Int] = [5, 5]) {
-        let player = players[penaltyBy]
-        player.increasePenalty5min(manpower: manpower)
-        player.playerButton?.backgroundColor = .red
-        player.disablePlayer()
-        delayPenalties(300) {
-            player.enablePlayer()
-            player.playerButton?.backgroundColor = .green
-        }
-    }
-    
-    func penaltyDrawn5min(drawnBy:Int, manpower:[Int] = [5, 5]) {
-        players[drawnBy].increasePenaltyDrawn5min(manpower: manpower)
-    }
     
     func icing(manpower:[Int] = [5, 5]) {
         for player in onIce {
