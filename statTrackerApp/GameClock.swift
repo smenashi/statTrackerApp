@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 
 class GameClock: Clock {
-    var gameTime: TimeInterval = 300
-    var gameSecondsUI: TimeInterval = 300
+    var gameTime: TimeInterval = 30
+    var gameSecondsUI: TimeInterval = 30
     var timeLeft = true
     var clockOnFlag = true //initializing as true for startup logic
     var timer = Timer()
@@ -42,12 +42,15 @@ class GameClock: Clock {
     
     func endPeriod() {
         period += 1
+        timer.invalidate()
     }
     
     func startNewPeriod(timerLabel:UILabel) {
-        gameTime = 300
-        gameSecondsUI = 300
+        gameTime = 30
+        gameSecondsUI = 30
         timerLabel.text = formatTime(time: gameSecondsUI)
+        timeLeft = true;
+
     }
     
     func endGame(timerLabel:UILabel) {
