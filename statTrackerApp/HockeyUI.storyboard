@@ -1257,8 +1257,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BlockH_Hockey" translatesAutoresizingMaskIntoConstraints="NO" id="zAj-73-gor">
-                                <rect key="frame" x="-186" y="126" width="1141" height="998"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BlockH_Hockey" translatesAutoresizingMaskIntoConstraints="NO" id="MTR-sY-q6l">
+                                <rect key="frame" x="-659" y="-217" width="2087" height="1824"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view userInteractionEnabled="NO" alpha="0.94999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bO6-dR-vCD">
@@ -1761,7 +1761,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BlockH_Hockey" translatesAutoresizingMaskIntoConstraints="NO" id="CPB-ll-Nwr">
-                                <rect key="frame" x="-186" y="126" width="1141" height="998"/>
+                                <rect key="frame" x="-659" y="-217" width="2087" height="1824"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view userInteractionEnabled="NO" alpha="0.94999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jdo-a3-R6x">
@@ -1838,6 +1838,6 @@
         <image name="hirnlichtspieles-black-flag-vectorized-" width="2400" height="2306"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gRQ-Fr-8c3"/>
+        <segue reference="Qa4-BX-brP"/>
     </inferredMetricsTieBreakers>
 </document>
