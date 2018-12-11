@@ -22,20 +22,7 @@ class MainMenuViewController: UIViewController {
             let vc = segue.destination as? ViewController
             vc?.inputCollegeText = inputCollege.text
         }
-        
-        
-        
-        
-        
-//        let inputText = inputCollege.text
-//        if let destinationViewController = segue.destination as? ViewController{
-//                ViewController.inputCollegeText = inputText
-////        }
-//        let receivingVC = segue.destination as! ViewController
-//        if let text = inputCollege.text{
-//            receivingVC.inputCollegeText = text
-//        }
-        
+
     }
     
     

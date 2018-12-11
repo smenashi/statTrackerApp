@@ -360,8 +360,8 @@ class ViewController: UIViewController {
     //                  on the LHS of the screen.
     //
     // Cosmetically:    - players that are on: <Player_i>.backgroundColor = .green
-    //                  (for now), when deselected, their color returns to
-    //                  R: 214 G: 186 B: 139 (for now)
+    //                  , when deselected, their color returns to
+    //                  R: 214 G: 186 B: 139
     //                  - players will have last names and jersey #'s implemented
     //                      later down the line
     //
@@ -619,15 +619,16 @@ class ViewController: UIViewController {
     
     
     // -------------------------------------------------------------------------------
-    // Event buttons:   these are (for now)
+    // Event buttons:   these are
     //                      - Shot For
     //                      - Shot Against
     //                      - Goal For
     //                      - Goal Against
-    //                      - Penalties
     //                      - Icing
+    //                      - Icing Drawn
     //
-    // Cosmetically:    - Shot For, Goal For, Penalties, Penalties Drawn, and Icing have drop-down menus attached to them
+    // Cosmetically:    - Shot For, Goal For, Penalties, Penalties Drawn, Icing and Icing Drawn
+    //                      have drop-down menus attached to them
     //                  - these drop-down menus close either when the button is
     //                      pressed or when a cell is clicked
     //
@@ -642,7 +643,7 @@ class ViewController: UIViewController {
     //                          all players on the ice also get +1 to their
     //                          relevant stat
     //
-    //                  - Shot Against, Icing Against:
+    //                  - Shot Against, Icing, Icing Drawn:
     //                      - update relevant stats to the current players on ice
     //                          and any other relevant stats to the record
     //
@@ -782,9 +783,13 @@ class ViewController: UIViewController {
     
     
     // Penalty Buttons:
+    //  - Same functionality wrt drop downs as other event buttons
+    //  - 2:00, 4:00, 5:00 are for us
+    //  - Drawn buttons are those drawn, unsurprisingly
+    //
+    // - Functionality:
+    //      similar to recording other stats: based on what "dropDownClicked" string is
     // ----------------------------------------------
-    // <Min> For: -------------------
-    
     
     @IBOutlet weak var penalty2ForButton: UIButton!
     
@@ -1314,32 +1319,20 @@ class ViewController: UIViewController {
     //    @IBOutlet weak var playersDropDown: UITableViewCell!
     @IBOutlet weak var playersDropDown: UITableView!
     
-    // hardcoding players for demo purposes: will be in each cell of drop-down menu
-    var playersList = ["player1", "player2", "player3", "player4", "player5"]
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        testInputLabel?.text = inputCollegeText
-        //        print(testInputLabel.text)
-        //print(inputCollegeText)
-        //        if let receivedText = inputCollegeText{
-        //            testInputLabel.text = receivedText
-        //             print(testInputLabel.text)
-        //        }
-        //
-        testInputLabel.isHidden = true
-        init_roster()
-        // hidden until drop down buttons {Shot For || Goal For} are pressed
-        playersDropDown.isHidden = true
-        // hardcoding initial players visuals on ice for demo purposes
-        //onClickGameClock((Any).self)
         
-        // Nick: these need to be implemented in the storyboard
-//        timer1.text = "00:00"
-//        timer2.text = "00:00"
-//        timer3.text = "00:00"
-//        timer4.text = "00:00"
+        // test label for testing if the opponent input at main menu is passed to game screen
+        testInputLabel?.text = inputCollegeText
+        testInputLabel.isHidden = true
+        
+        
+        init_roster()
+       
+        // drop down menu is hidden until drop down buttons {Shot For || Goal For} are pressed
+        playersDropDown.isHidden = true
+        
         
         clickD1((Any).self)
         clickF1((Any).self)
@@ -1438,14 +1431,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     // the drop-down menu
     
     func tableView(_ tableView: UITableView, numberOfSections section: Int) -> Int {
-        // builds n number of cells in the table: n = number of players on ice + 1
-        // +1 for "Unknown" option
+        // builds n number of cells in the table: n = number of players on ice
         return game.currIce.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // populates n number of cells in the table: n = number of players on ice + 1
-        // +1 for "Unknown" option
+        // populates n number of cells in the table: n = number of players on ice 
         return game.currIce.count
     }
     
@@ -1459,8 +1450,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // populates dropdown menu cells with labels
         
-        // get latest array of player names
-//        game.updateCurrentIce()
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "player", for: indexPath)
         

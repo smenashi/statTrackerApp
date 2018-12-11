@@ -29,25 +29,16 @@ class RosterScreenViewController: UIViewController {
     @IBOutlet weak var RosterTable: UITableView!
     //@IBOutlet weak var removePlayer: UIButton!
     @IBOutlet weak var addPlayer: UIButton!
-    @IBOutlet weak var next_name: UIButton!
-    @IBOutlet weak var next_number: UIButton!
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var SaveExitButton: UIButton!
     
-    //input labels
-    @IBOutlet weak var enterStudID: UILabel!
-    @IBOutlet weak var enterLastName: UILabel!
-    @IBOutlet weak var enterJerseyNum: UILabel!
-    
     //input fields
-    @IBOutlet weak var inputField: UITextField!
     @IBOutlet weak var inputStudID: UITextField!
     @IBOutlet weak var inputLastName: UITextField!
     @IBOutlet weak var inputJerseyNum: UITextField!
     
     //cosmetic touch for when add player is clicked
     @IBOutlet weak var opaqueFilter: UIImageView!
-    
     
     //roster position buttons
     @IBOutlet weak var F11Button: UIButton!
@@ -375,11 +366,9 @@ class RosterScreenViewController: UIViewController {
     var firstName = ""
     var lastName = ""
     var number = ""
-    var cellBuffer = "" // buffers above attributes to place in the table row
     
     func flushInput(){
         //flushes input prompts once done is clicked
-        inputField.text = ""
         inputStudID.text = ""
         inputLastName.text = ""
         inputJerseyNum.text = ""
@@ -388,25 +377,21 @@ class RosterScreenViewController: UIViewController {
     func insertFirstName(){
         // saves info from input in firstname var
         firstName.append(inputStudID.text!)
-        //flushInput()
     }
     
     func insertPlayerName(){
         // saves info from input to lastName var
 //        lastName.append(inputField.text!)
         lastName.append(inputLastName.text!)
-        //flushInput()
     }
     
     func insertPlayerNumber(){
         // saves info from input to number var
 //        number.append(inputField.text!)
         number.append(inputJerseyNum.text!)
-        //flushInput()
     }
     
     @IBAction func addPlayerClicked(_ sender: Any) {
-       // inputField.isHidden = false
         // display input fields
         inputStudID.isHidden = false
         inputLastName.isHidden = false
@@ -415,42 +400,22 @@ class RosterScreenViewController: UIViewController {
         doneButton.isHidden = false
         // place filter
         opaqueFilter.isHidden = false
-       // enterStudID.isHidden = false
-       // next_name.isHidden = false
     }
 
-    // these are depricated xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-    @IBAction func next_nameClicked(_ sender: Any) {
-        // input from firstname is processed
-        insertFirstName()
-        enterStudID.isHidden = true
-        enterLastName.isHidden = false
-        next_name.isHidden = true
-        next_number.isHidden = false
-    }
-
-    @IBAction func next_numberClicked(_ sender: Any) {
-        // input for lastName processed
-        insertPlayerName()
-        enterLastName.isHidden = true
-        enterJerseyNum.isHidden = false
-        next_number.isHidden = true
-      //  doneButton.isHidden = false
-    }
-    // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
     
     @IBAction func doneButtonClicked(_ sender: Any) {
        // when user clicks the done button, input values are handled,
        // buffer gets flushed to table and cleared
        // relevant UI elements are cleared from screen
         
+//        if
+        
         // inputs are handled
         insertFirstName()
         insertPlayerName()
         insertPlayerNumber()
         
-        enterJerseyNum.isHidden = true
-        inputField.isHidden = true
+        // hide done button for input prompts
         doneButton.isHidden = true
         // hide opaque filter
         opaqueFilter.isHidden = true
@@ -458,14 +423,8 @@ class RosterScreenViewController: UIViewController {
         inputStudID.isHidden = true
         inputLastName.isHidden = true
         inputJerseyNum.isHidden = true
-        // append variables to cellBuffer
-        //cellBuffer += "\(lastName) "
-        //cellBuffer += "\(number) "
         
         playerArray.append(rosterPlayer(firstName: firstName, lastName: lastName, number: Int(number) ?? 0, position: 0))
-        
-        // append to array that will populate the tableView
-        //playerArray.append(cellBuffer)
         
         // no sections, insert
         let indexPath = IndexPath(row: playerArray.count - 1, section:0)
@@ -474,12 +433,16 @@ class RosterScreenViewController: UIViewController {
         RosterTable.insertRows(at: [indexPath], with: .automatic)
         RosterTable.endUpdates()
         
-        // clear buffer
-        cellBuffer = ""
         // clear variables
         firstName = ""
         lastName = ""
         number = ""
+        // NOTE: currently, hitting done on empty input fields crashes the app,
+        //          so a slightly-unaesthetic workaround is to not clear the
+        //          previously-input fields via flushInput().
+        //          Fix that bug to implement flushInput() correctly
+        // flushInput()
+        
         
         // end editting
         view.endEditing(true)
@@ -499,30 +462,14 @@ class RosterScreenViewController: UIViewController {
         }
     }
     
-    
-
-    
-  //  @IBAction func removePlayerClicked(_ sender: Any) {
-    //}
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // hide buttons for input handling
-        doneButton.isHidden = true
-        next_name.isHidden = true
-        next_number.isHidden = true
         
-        // hide input bars when loaded
-        inputField.isHidden = true
+        // hide elements for input handling
+        doneButton.isHidden = true
         inputStudID.isHidden = true
         inputLastName.isHidden = true
         inputJerseyNum.isHidden = true
-        
-        // hide input labels
-        enterStudID.isHidden = true
-        enterLastName.isHidden = true
-        enterJerseyNum.isHidden = true
         
         //hide opaque filter
         opaqueFilter.isHidden = true
@@ -620,9 +567,6 @@ class RosterScreenViewController: UIViewController {
             }
         }
         
-        // hidden unless add button is clicked
-//        inputField.isHidden = true
-        // Do any additional setup after loading the view.
     }
 }
     // extension for ViewController to properly handle drop-down menu
@@ -631,12 +575,9 @@ extension RosterScreenViewController: UITableViewDelegate, UITableViewDataSource
     
         // extends ViewController with proper functionality to handle
         // the drop-down menu
-        
-        
         func tableView(_ tableView: UITableView, numberOfSections section: Int) -> Int {
             // builds n number of cells in the table: hardcoded as 33 for now
             return 33
-//            return testArray.count
         }
         
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

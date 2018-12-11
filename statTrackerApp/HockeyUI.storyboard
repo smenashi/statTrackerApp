@@ -1307,56 +1307,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ze4-2h-OR7">
-                                <rect key="frame" x="215" y="405" width="338" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <rect key="contentStretch" x="1" y="0.050000000000000003" width="1" height="1"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qKX-3Y-xaT">
-                                <rect key="frame" x="373" y="220" width="37" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Next"/>
-                                <connections>
-                                    <action selector="next_numberClicked:" destination="Wzz-rR-rLg" eventType="touchUpInside" id="SX7-KD-pMz"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter Student ID#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SqY-bE-LWs">
-                                <rect key="frame" x="323" y="376" width="137" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter Last Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nsg-Jh-U9t">
-                                <rect key="frame" x="323" y="375" width="127" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter Jersey#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TgL-L0-QR5">
-                                <rect key="frame" x="323" y="375" width="106" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eCf-qb-rCF">
-                                <rect key="frame" x="366" y="125" width="37" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Next"/>
-                                <connections>
-                                    <action selector="next_nameClicked:" destination="Wzz-rR-rLg" eventType="touchUpInside" id="qr1-UP-hOY"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="4a8-cK-GWI">
                                 <rect key="frame" x="457" y="44" width="75" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
@@ -1736,15 +1686,9 @@
                         <outlet property="X1Button" destination="ba2-ak-HDH" id="Q1Z-Z4-RZ1"/>
                         <outlet property="addPlayer" destination="pIu-Mc-rbz" id="Dkg-7u-Y27"/>
                         <outlet property="doneButton" destination="X7C-o6-h5m" id="TKR-su-Kh4"/>
-                        <outlet property="enterJerseyNum" destination="TgL-L0-QR5" id="zfr-VN-iwB"/>
-                        <outlet property="enterLastName" destination="Nsg-Jh-U9t" id="ksP-zD-gqV"/>
-                        <outlet property="enterStudID" destination="SqY-bE-LWs" id="RvR-gM-jI7"/>
-                        <outlet property="inputField" destination="Ze4-2h-OR7" id="75u-72-qda"/>
                         <outlet property="inputJerseyNum" destination="tv6-rN-xsZ" id="Twd-Xz-HfN"/>
                         <outlet property="inputLastName" destination="sin-6o-4fS" id="Dqw-JB-d8N"/>
                         <outlet property="inputStudID" destination="Dm4-Fy-MF9" id="0ap-oN-xQU"/>
-                        <outlet property="next_name" destination="eCf-qb-rCF" id="1pS-ai-WM7"/>
-                        <outlet property="next_number" destination="qKX-3Y-xaT" id="wyY-MR-u1g"/>
                         <outlet property="opaqueFilter" destination="re7-tm-pYH" id="rSG-25-jyK"/>
                     </connections>
                 </viewController>
@@ -1834,10 +1778,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="BlockH_Hockey" width="344.39999389648438" height="344.39999389648438"/>
+        <image name="BlockH_Hockey" width="1435" height="1435"/>
         <image name="hirnlichtspieles-black-flag-vectorized-" width="2400" height="2306"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Qa4-BX-brP"/>
+        <segue reference="Txw-mc-6vl"/>
     </inferredMetricsTieBreakers>
 </document>
