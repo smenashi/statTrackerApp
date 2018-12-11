@@ -3,6 +3,7 @@
 //  statTrackerApp
 //
 //  Created by Sophie Menashi on 9/11/18.
+//  Updated by Nick Chkonia and Chad Morse.
 //  Copyright © 2018 Sophie Menashi. All rights reserved.
 //
 
