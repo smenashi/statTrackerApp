@@ -3,12 +3,18 @@
 //  statTrackerApp
 //
 //  Created by Sophie Menashi on 9/23/18.
+//  Updated by Nick Chkonia and Chad Morse.
 //  Copyright © 2018 Sophie Menashi. All rights reserved.
-//
+
+//  This class is functiomally is used as a controller for keeping track of the 22 Player object instances.
+//  One instance of this class is initialized per game, in the ViewController
+
 import UIKit
 import Foundation
 
 class Game {
+    
+    // optional attributes for implementing career-statistcs
     var _season = 2018
     var _gameId = 0
     var _opponent = "AWAY_TEAM"
@@ -18,7 +24,6 @@ class Game {
     var players = Array<Player> ()
     var maxOnIce = 6
     
-    // hard-coding game
     init(player1:Player, player2:Player, player3:Player, player4:Player, player5:Player, player6:Player, player7:Player, player8:Player, player9:Player, player10:Player, player11:Player, player12:Player, player13:Player, player14:Player, player15:Player, player16:Player, player17:Player, player18:Player, player19:Player, player20:Player, player21:Player, player22:Player){
         
         players.append(player1)
@@ -69,6 +74,7 @@ class Game {
     
     // Added by Nick and Sophie, for generating drop-down menus:
     // this will store the current players on ice in array form for the tableView object in ViewController to use
+    // for the dropdown menues
     var currIce: Array<Player> = Array()
     
     func getOnIceNumbersAsArray()->Array<Int> {
@@ -100,6 +106,8 @@ class Game {
     }
     
     func putOnIce(addPlayer:Player, manpower: [Int]) {
+    // This function puts a passed player onto the ice, enabling them logically
+    // and updating the UI elements
         if addPlayer.inBox == false && getIce().count < maxOnIce{
             onIce.append(addPlayer)
             addPlayer.enablePlayer()
@@ -112,14 +120,16 @@ class Game {
     }
     
     func takeOffIce(removePlayer:Player) {
-        if !removePlayer.inBox {
-            print(removePlayer.rosterPosition, removePlayer.inBox)
+    // This function removed a passed player from the ice, disabling them logically
+    // and updating the UI elements
+        if !removePlayer.inBox { // check to make sure the player isn't in a penalty box, and thus unremovable
             onIce.remove(at: onIce.firstIndex(of: removePlayer)!)
             removePlayer.disablePlayer()
             removePlayer.stopClock()
             removePlayer.playerButton?.backgroundColor = UIColor(red: 0.83921569, green: 0.72941176, blue: 0.54509804, alpha: 1.0)
         }
-            // update array of players to be displayed in drop-down menu
+        
+        // update array of players to be displayed in drop-down menu, only if currIce contains the current player
         if currIce.contains(removePlayer) {
             currIce.remove(at: currIce.firstIndex(of: removePlayer)!)
         }
@@ -133,7 +143,7 @@ class Game {
         return players[number]
     }
     
-    // stat buttons
+    // stat buttons for multiple player tracking 
     func shotFor(manpower:[Int] = [5, 5]) {
         for player in onIce {
             player.increaseShotFor(manpower: manpower)

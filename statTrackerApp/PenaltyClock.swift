@@ -4,6 +4,11 @@
 //
 //  Created by Sophie Menashi on 11/5/18.
 //  Copyright © 2018 Sophie Menashi. All rights reserved.
+
+//  Class Description:
+//  This class, which inherits from Clock, utilizes a native swift Timer instance
+//  in addition to the Clock functinoality (specifically time formmatting)
+//  to keep track of the penalty times.
 //
 
 import Foundation
@@ -12,6 +17,9 @@ import UIKit
 class PenaltyClock: Clock {
     
     init(penaltyTime:TimeInterval, timeUI:UILabel, queue:PenaltyQueue, jerseyLabel:UILabel) {
+    // initializing values based on which type of penatly is initialized by the penalty queue
+    // this class is linked to the penalty queue that creates it, so that the queue functions can be
+    // called within the timer firing function, updatePenaltyTimer
         _penaltyTime = penaltyTime
         _timeUI = timeUI
         q = queue
@@ -25,16 +33,13 @@ class PenaltyClock: Clock {
     var q:PenaltyQueue
     var _jerseyLabel:UILabel
     
-    
-    func runPenaltyClock() {
-        runPenaltyTimer()
-    }
-    
     //----- Timer object functions -----//
     // <script src=https://medium.com/ios-os-x-development/build-an-stopwatch-with-swift-3-0-c7040818a10f></script>
+    // The Timer object allwos for scheduled fire of a particular funciton, in this case, updatePenaltyTimer()
     
-    func runPenaltyTimer() {
-        let _timerLabel = q.getNextTimer()
+    func runPenaltyClock() {
+        // the firing is set to a 1 second interval
+        let _timerLabel = q.getNextTimer() // q.getNextTimer() is called from the queue to get the correct UI Label
         // runs the timer countdown
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updatePenaltyTimer), userInfo: _timerLabel, repeats: true)
     }
@@ -42,15 +47,16 @@ class PenaltyClock: Clock {
     @objc func updatePenaltyTimer(timer: Timer) {
         let label:UILabel = timer.userInfo as! UILabel
         // updates the values displayed on the game time label
-        // once timer runs out, will stop at 0:00
-        if q.getClockPos(clock: self) < 2 {
+        // once timer runs out, the timer is invalidated and the penalty relase logic is initiated,
+        // both within the PenaltyQueue class
+        if q.getClockPos(clock: self) < 2 { // this if statement prevents the timer from firing until the plauyer is put in the box
             if _penaltyTime > 0 {
-                if q.isClockOn() {
+                if q.isClockOn() { // this if statement prevnts the timer from firing if the game clock is paused
                     _penaltyTime -= 1
                 }
             }
             else {
-                q.removeClock()
+                q.removeClock() // clock removal logic is carried out in the linked PenaltyQueue instance
             }
         }
         

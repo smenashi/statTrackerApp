@@ -4,7 +4,11 @@
 //
 //  Created by Sophie Menashi on 9/21/18.
 //  Copyright © 2018 Sophie Menashi. All rights reserved.
-//
+
+//  This class is used for keeping track of individaul player statistcs, one instance of this class
+//  being intialized for each player in the lineup. Each statistic tracked in the class is entered into
+//  a dictionary keyed by manpower.
+
 import UIKit
 
 import Foundation
@@ -77,7 +81,7 @@ class Player {
         return enabled
     }
     
-    // clock methods
+    // clock methods for keeping track of individual ice time
     func startClock(manpower:[Int]) {
         clock.startClock(manpower: manpower)
     }
@@ -89,14 +93,14 @@ class Player {
         iceTime[clockManpower] = time
     }
     
-    // convert manpower arrays into manpower strings
+    // convert manpower arrays into manpower strings for database entries
     func aryToStr(manpower:[Int]) -> String {
         let man1 = String(manpower[0])
         let man2 = String(manpower[1])
         return man1 + "v" + man2
     }
     
-    // increasing stat methods --> insert statements go in these!
+    // increasing stat methods for end-game summary
     func increaseShotFor(manpower:[Int] = [5, 5]) {
         shotFor[aryToStr(manpower: manpower)]! += 1
     }

@@ -10,6 +10,7 @@ import UIKit
 import MessageUI
 
 class ViewController: UIViewController {
+    
     //this is for database access
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
@@ -17,8 +18,10 @@ class ViewController: UIViewController {
     
     var game:Game!
     
+    // manpower is a two-element array to make reconfiguring easier
     var _manpower: [Int] = [5, 5]
     
+    // general function for converting manpower array into a string, for database querying
     func manpowerStr() -> String {
         let man1 = String(_manpower[0])
         let man2 = String(_manpower[1])
@@ -258,7 +261,9 @@ class ViewController: UIViewController {
         }
     }
     
-    
+    // This function calls a switch statement that sets the manpower UI to the correct manpwoer
+    // and stops the player clocks to record previous manpower's time, and restarts the player clocks
+    // with the new manpower
     func manpowerSwitch() {
         enableManpower = true
         if _manpower == [5, 5] {
@@ -319,6 +324,9 @@ class ViewController: UIViewController {
         enableManpower = false
     }
     
+    // These functions automatically call the manpower switch based on what type
+    // of penalty is pressed, and eventaully released
+    
     func manpowerUsPressedSwitch() {
         if _manpower[0] > 3 {
             _manpower[0] = _manpower[0] - 1
@@ -345,13 +353,6 @@ class ViewController: UIViewController {
             _manpower[1] = _manpower[1] + 1
             manpowerSwitch()
         }
-    }
-    
-    // function for delaying manpower switching
-    // <script src=https://iosrevisited.blogspot.com/2017/08/dispatchafter-gcd-in-swift-swift-3.html></script>
-    func delayManpowerSwitch(_ time:Double, closure:@escaping ()->()) {
-        let when = DispatchTime.now() + time
-        DispatchQueue.main.asyncAfter(deadline: when, execute: closure)
     }
     
     // -------------------------------------------------------------------------------
@@ -630,7 +631,8 @@ class ViewController: UIViewController {
     //                  - these drop-down menus close either when the button is
     //                      pressed or when a cell is clicked
     //
-    // Logically:       - Shot For, Goal For:
+    // Logically:       (all logic is carried out by the TableView functions, see bottom of file)
+    //                      - Shot For, Icing For:
     //                      - when pressed, the drop down menu is populated with
     //                          all players currently on the ice, once pressed
     //                          that player gets +1 to their relevant stat
@@ -640,13 +642,20 @@ class ViewController: UIViewController {
     //                          all players on the ice also get +1 to their
     //                          relevant stat
     //
-    //                  - Shot Against, Goal Against:
+    //                  - Shot Against, Icing Against:
     //                      - update relevant stats to the current players on ice
     //                          and any other relevant stats to the record
+    //
+    //                  - Goal For, Goal Against:
+    //                      - same as shot and icing, with the addition of releasing one player
+    //                        from each peanlty box
+    //
     //                  - Penalties:
-    //                      - (not implemented yet) choose for/against, update stats
-    //                          accordingly
-    // -------------------------------------------------------------------------------
+    //                      - utilizes the PenaltyQueue class instances to queue penalties
+    //                      - one queue for "Us" penalties, one for "Them"
+    //                      - players clicked in dropdown for "Us" penalties are disabled and put in the box
+    //                      - players clicked in dropdown for "Them" penalties have their "penaltyDrawn" stat updated
+    // -----------------------------------------------------------------------------------------
     
     // this will come in handy for determining what stat the drop down menu corresponds to
     var dropDownClicked = ""
@@ -937,6 +946,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var timer3: UILabel!
     @IBOutlet weak var timer4: UILabel!
     
+    // penaltyQueue is created for both the "Us" peanlties and the "Them" penalties
     lazy var usPQ = PenaltyQueue(gameTimer: gameTimer, pbox1: jerseynum1, pbox2: jerseynum2, timerLabel1: timer1, timerLabel2: timer2, mP: manpowerUsPressedSwitch, mR: manpowerUsReleasedSwitch, _game:game)
     lazy var themPQ = PenaltyQueue(gameTimer: gameTimer, pbox1: jerseynum3, pbox2: jerseynum4, timerLabel1: timer3, timerLabel2: timer4, mP: manpowerThemPressedSwitch, mR: manpowerThemReleasedSwitch, _game:game)
 
@@ -1079,9 +1089,12 @@ class ViewController: UIViewController {
     @IBAction func onClickGameClock(_ sender: Any) {
         // CLOCK button clicked:
         playersDropDown.reloadData() // reload drop-down data
+        
+        // stops clock if the clock is on
         if gameTimer.clockOnFlag {
             gameTimer.stopGameClock()
             
+            // updates the UILabel
             stopLabel.alpha = 0.4
             startLabel.alpha = 1
             for player in game.getIce() {
@@ -1090,8 +1103,10 @@ class ViewController: UIViewController {
         }
             
         else {
-            // pauses the clock and changes boolean value
+            // starts the clock if the clock is off
             gameTimer.startGameClock(timerLabel: gameTime)
+            
+            // updates the UILaebl
             stopLabel.alpha = 1
             startLabel.alpha = 0.4
             for player in game.getIce() {
@@ -1107,7 +1122,6 @@ class ViewController: UIViewController {
     // Cosmetically:        - change .alpha of Period Buttons appropriately
     //
     // Logically:           - reset timer
-    //                      - update stats accordingly
     // -------------------------------------------------------------------------------
     @IBAction func onClickEndPeriod(_ sender: Any) {
         // resets timer to 00:20:00
@@ -1482,10 +1496,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         
         // Shot For button clicked, update that stat for selected player
         if dropDownClicked == "shotFor"{
-            //            print("Shot For was clicked!")
-            // : use game.currIceNames[indexPath.row] which is the jerseynumber of the selected player to access
-            //          the individual player and increment their relevant stat
-            //print(game.currIce[indexPath.row]._firstName)
             game.currIce[indexPath.row].increaseShotForTaken(manpower: _manpower)
             let onIceNumbers = game.getOnIceNumbersAsArray()
             appDelegate.database?.addChronStat(seasonYear: game._season, game: inputCollegeText ?? "Opponent", period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "shotFor", manpower: manpowerStr(), statOwnerNum: game.currIce[indexPath.row]._jerseyNumber, onIce1Num: onIceNumbers[0], onIce2Num: onIceNumbers[1], onIce3Num: onIceNumbers[2], onIce4Num: onIceNumbers[3], onIce5Num: onIceNumbers[4], onIce6Num: onIceNumbers[5])
@@ -1494,9 +1504,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         
         // Goal For button clicked, update that stat for selected player
         if dropDownClicked == "goalFor"{
-            //            print("Goal For was clicked!")
-            // : use game.currIceNames[indexPath.row] which is the jerseynumber of the selected player to access
-            //          the individual player and increment their relevant stat
             game.currIce[indexPath.row].increaseShotForTaken(manpower: _manpower)
             game.currIce[indexPath.row].increaseGoaltForTaken(manpower: _manpower)
             let onIceNumbers = game.getOnIceNumbersAsArray()
@@ -1505,6 +1512,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             
         }
         
+        // new "Us" penalty created and queued
         if dropDownClicked == "2Us" {
             let playerClicked = game.currIce[indexPath.row]
             usPQ.newUsPenalty(player: playerClicked, time: 120, box: playerClicked.playerButton!)
@@ -1516,6 +1524,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             
         }
         
+        // new "Them" penalty created and queued
         if dropDownClicked == "2Them" {
             themPQ.newThemPenalty(time: 120)
             game.currIce[indexPath.row].increasePenaltyDrawn2min(manpower:_manpower)
@@ -1523,6 +1532,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             appDelegate.database?.addChronStat(seasonYear: game._season, game: inputCollegeText ?? "Opponent", period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "2penaltyDrawn", manpower: manpowerStr(), statOwnerNum: game.currIce[indexPath.row]._jerseyNumber, onIce1Num: onIceNumbers[0], onIce2Num: onIceNumbers[1], onIce3Num: onIceNumbers[2], onIce4Num: onIceNumbers[3], onIce5Num: onIceNumbers[4], onIce6Num: onIceNumbers[5])
         }
         
+        // new "Us" penalty created and queued
         if dropDownClicked == "4Us" {
             let playerClicked = game.currIce[indexPath.row]
             usPQ.newUsPenalty(player: playerClicked, time: 240, box: playerClicked.playerButton!)
@@ -1533,6 +1543,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             
         }
         
+        // new "Them" penalty created and queued
         if dropDownClicked == "4Them" {
             themPQ.newThemPenalty(time: 240)
             game.currIce[indexPath.row].increasePenaltyDrawn4min(manpower:_manpower)
@@ -1540,6 +1551,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             appDelegate.database?.addChronStat(seasonYear: game._season, game: inputCollegeText ?? "Opponent", period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "4penaltyDrawn", manpower: manpowerStr(), statOwnerNum: game.currIce[indexPath.row]._jerseyNumber, onIce1Num: onIceNumbers[0], onIce2Num: onIceNumbers[1], onIce3Num: onIceNumbers[2], onIce4Num: onIceNumbers[3], onIce5Num: onIceNumbers[4], onIce6Num: onIceNumbers[5])
         }
         
+        // new "Us" penalty created and queued
         if dropDownClicked == "5Us" {
             let playerClicked = game.currIce[indexPath.row]
             usPQ.newUsPenalty(player: playerClicked, time: 300, box: playerClicked.playerButton!)
@@ -1550,6 +1562,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             
         }
         
+        // new "Them" penalty created and queued
         if dropDownClicked == "5Them" {
             print("penalty 5Themclicked!")
             themPQ.newThemPenalty(time: 300)
@@ -1561,7 +1574,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         if dropDownClicked == "icing" {
             print("icing clicked!")
             game.currIce[indexPath.row].increaseIcingByPlayer(manpower:_manpower)
-            
             let onIceNumbers = game.getOnIceNumbersAsArray()
             appDelegate.database?.addChronStat(seasonYear: game._season, game: inputCollegeText ?? "Opponent", period: gameTimer.period, time: Int(gameTimer.gameSecondsUI), statType: "icingCommited", manpower: manpowerStr(), statOwnerNum: game.currIce[indexPath.row]._jerseyNumber, onIce1Num: onIceNumbers[0], onIce2Num: onIceNumbers[1], onIce3Num: onIceNumbers[2], onIce4Num: onIceNumbers[3], onIce5Num: onIceNumbers[4], onIce6Num: onIceNumbers[5])
         }
@@ -1569,41 +1581,4 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     
 }
-
-
-
-
-
-/*     private func loadHockeyGame() {
- let hockeyViewController = HockeyViewController()
- addChild(hockeyViewController)
- }
- 
- override func viewDidLoad() {
- super.viewDidLoad()
- }
- 
- @IBAction func startGame(_ sender: Any) {
- loadHockeyGame()
- }
- }
- 
- extension UIViewController {
- func addChild(_ child: UIViewController) {
- addChildViewController(child)
- view.addSubview(child.view)
- child.didMove(toParentViewController: self)
- }
- 
- func removeChild() {
- guard parent != nil else {
- return
- }
- 
- willMove(toParentViewController: nil)
- removeFromParentViewController()
- view.removeFromSuperview()
- }
- }*/
-
 

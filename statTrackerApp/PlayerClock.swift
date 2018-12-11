@@ -4,7 +4,10 @@
 //
 //  Created by Sophie Menashi on 11/5/18.
 //  Copyright © 2018 Sophie Menashi. All rights reserved.
-//
+
+//  Class Description:
+//  This class, which inherits from the Clock superclass, uses Clock's stopwatch funcionality
+//  to keep track of individual player's iceTimes, according to current manpower.
 
 import Foundation
 
@@ -19,14 +22,15 @@ class PlayerClock: Clock {
     
     func stopClock () {
         iceTime[aryToStr(manpower: _manpower)]! += stop()
-        print(iceTime)
     }
     
     func getIceTime () -> TimeInterval {
+        // returns iceTime of player in given manpower configuration
         return iceTime[aryToStr(manpower: _manpower)]!
     }
     
     func getCurrManpower () -> String {
+        // converts current manpower configuration, which is passed as an array of length 2, into a string for dictionary parsing
         return aryToStr(manpower: _manpower)
     }
 
